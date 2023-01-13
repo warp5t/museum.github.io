@@ -3,3 +3,13 @@
   max-width: 1420px;
   margin: 0px auto;
 }
+.wrap{
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  overflow: hidden;
+  background: #FFFFFF;
+}
+.background-black{
+  background: #030303;
+}
