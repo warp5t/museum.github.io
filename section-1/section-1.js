@@ -112,12 +112,10 @@ const swipedetect = (el) => {
 			if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint){
 				if ((distX > 0)) {
 					if (isEnabled) {
-					//	indexGraficItem = currentItem;
 						previousItem(currentItem);
 					}
 				} else {
 					if (isEnabled) {
-					//	indexGraficItem = currentItem;
 						nextItem(currentItem);
 					}
 				}
@@ -137,12 +135,10 @@ const swipedetect = (el) => {
 					if (Math.abs(distX) >= threshold){
 							if ((distX > 0)) {
 								if (isEnabled) {
-								//	indexGraficItem = currentItem;
 									previousItem(currentItem);
 								}
 							} else {
 								if (isEnabled) {
-								//	indexGraficItem = currentItem;
 									nextItem(currentItem);
 								}
 							}
@@ -202,4 +198,30 @@ let currentCount = document.querySelector('.pannel-swipe__progress-counter');
 function changingCount(){
 	currentCount.innerText = '0' + (currentItem + 1);
 	console.log('currentItem : ', currentItem);
+}
+
+// ------------------------------ side-slide-bar ----------------------------
+
+var welcomeInfo_1920 = document.querySelector('.welcome__version-1920px');
+var welcomeInfo_1024 = document.querySelector('.welcome__version-1024px');
+let switch_1024 = true;
+function slidingSide(){
+	if(switch_1024){
+		welcomeInfo_1920.classList.toggle('welcome__info-hide-1920');
+	setTimeout(delayingSlide,500);
+	}
+	else {
+		welcomeInfo_1024.classList.toggle('welcome__info-show-1024');
+		setTimeout(delayingSlide,500);
+	}
+}
+function delayingSlide(){
+	if(switch_1024){
+		welcomeInfo_1024.classList.toggle('welcome__info-show-1024');
+		switch_1024 = false;
+	}
+	else{
+		welcomeInfo_1920.classList.toggle('welcome__info-hide-1920');
+		switch_1024 = true;
+	}
 }

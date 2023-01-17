@@ -18,6 +18,12 @@
   }
 }
 
+@media(max-width:1446px) {
+  .header__container {
+    height: 130px;
+  }
+}
+
 .header__wrap-logo {
   display: flex;
   align-items: flex-start;
