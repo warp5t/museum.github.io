@@ -150,8 +150,8 @@ const swipedetect = (el) => {
 	}, false);
 }
 
-var surfaceSwipe = document.getElementById('surface-swipe');
-swipedetect(surfaceSwipe);
+var surfaceSwipe_0 = document.getElementById('surface-swipe_0');
+swipedetect(surfaceSwipe_0);
 
 // -------------------------------- grafic-counter-carousel --------------------
 var indexGraficItem = 0;
@@ -234,13 +234,35 @@ function delayingSlide() {
 
 // ---------------------- resizing surface-swipe -------------------------
 let gallerySize = document.querySelector('.welcome__gallery');
+let body = document.getElementById('body');
+let surfaceSwipe_1 = document.getElementById('surface-swipe_1');
 
 function resizingSurfaceSwipe() {
 	setTimeout(function () {
-			surfaceSwipe.style.width = gallerySize.offsetWidth + 'px';
-		surfaceSwipe.style.height = gallerySize.offsetHeight + 'px';
-		console.log('resizing');
-		console.log('|     |');
+		if(body.offsetWidth >= 894){
+			surfaceSwipe_0.style.width = gallerySize.offsetWidth + 'px';
+		  surfaceSwipe_0.style.height = gallerySize.offsetHeight + 'px';
+		  console.log('resizing');
+		  console.log('|     |');
+		}
+		else if(body.offsetWidth <= 893){
+			swipedetect(surfaceSwipe_1);
+		}
 	}, 1000);
 }
+
+(function wrapResizing(){
+	resizingSurfaceSwipe();
+}());
+
 window.addEventListener('resize', resizingSurfaceSwipe);
+
+// ------------------- gallery hide ------------------------------------
+let gallery = document.querySelector('.welcome__wrap-gallery');
+let controlPannelSwipe = document.querySelector('.welcome__control-pannel-swipe');
+function galleryHiding(){
+	if(body.offsetWidth <= 1024){
+		gallery.classList.toggle('gallery-hide')
+		controlPannelSwipe.classList.toggle('hide-control-pannel')
+	}
+}
