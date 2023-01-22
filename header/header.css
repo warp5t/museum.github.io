@@ -39,7 +39,20 @@
   display: inline-block;
   margin: -1.5px 25px 0 0;
 }
-
+@media(max-width:470px){
+  .header__logo{
+    display: none;
+  }
+}
+.header__logo-420{
+  display: none;
+}
+@media(max-width:470px){
+  .header__logo-420{
+    display: inline-block;
+    margin: -1px 25px 0 0;
+  }
+}
 .header__text {
   font-family: 'Forum';
   font-style: normal;
@@ -49,7 +62,12 @@
   letter-spacing: 5px;
   text-transform: uppercase;
 }
-
+@media(max-width:470px){
+  .header__text{
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
 .header__navigation {
 
 }

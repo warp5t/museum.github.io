@@ -3,6 +3,7 @@
 .welcome__container {
   position: relative;
   display: flex;
+  height: auto;
 }
 
 @media(max-width:1446px) {
@@ -72,7 +73,7 @@
   }
 }
 .welcome__version-1024px {
-  transform: translateX(-108%);
+  transform: translateX(-144%);
   transition-duration: 0.2s;
 }
 
@@ -132,8 +133,6 @@
 }
 }
 
-
-
 .slide-menu__arrow::before {
   position: absolute;
   bottom: 0;
@@ -185,16 +184,15 @@
   row-gap: 20px;
   width:100%
 }
-.welcome__gallery-768::after{
-  content:'';
-  width: 206%;
-  height: 1px;
-  margin: 35px 0 35px 0;
-  background-color:rgba(255, 255, 255, 0.5);
+@media(max-width:470px){
+  .welcome__gallery-768 {
+    display: none;
+  }
 }
 .welcome__image-768 {
 width: 100%;
 }
+
 .welcome__image-768:nth-child(1) {
   grid-area: 1/1/2/3;
 }
@@ -204,7 +202,44 @@ width: 100%;
 .welcome__image-768:nth-child(3) {
   grid-area: 2/2/2/3;
 }
+
+.welcome__gallery-420 {
+  display: none;
+}
+@media(max-width:470px){
+  .welcome__gallery-420 {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 35px 0 0;
+}
+}
+
+.welcome__image-420 {
+
+}
+.welcome__image-420:not(:last-child) {
+  padding: 0 12px 0 0;
+}
+
+.welcome__line-decor{
+  width: 0;
+  height: 2px;
+  margin: 35px 0 35px 0;
+  background-color:rgba(255, 255, 255, 0.5);
+}
+
+@media(max-width:440px){
+  .welcome__line-decor{
+  margin: 20px 0 24px 0;
+  }
+}
+
 .welcome__social-net-768 {
+}
+@media(max-width:470px){
+  .welcome__social-net-768 {
+    padding: 0 35px 0 0;
+  }
 }
 .welcome__navigation-768 {
   
@@ -215,17 +250,25 @@ width: 100%;
   justify-content: center;
 }
 .navigation-768__item {
+  
+}
+.navigation-768__item:not(:last-child){
+  margin: 0 25px 0 0;
+}
+@media(max-width:420px){
+  .navigation-768__item:not(:last-child){
+  margin: 0 5px 0 0;
+}
+}
+.navigation-768__wrap-icon{
   display: flex;
   justify-content: center;
   align-items:center;
   width: 48px;
   height: 48px;
   border: 1px solid #666666;
-filter: drop-shadow(0px 0px 0px #666666);
-border-radius: 50px;
-}
-.navigation-768__item:not(:last-child){
-  margin: 0 25px 0 0;
+  filter: drop-shadow(0px 0px 0px #666666);
+  border-radius: 50px;
 }
 .navigation-768__icon {
 }
@@ -255,6 +298,7 @@ border-radius: 50px;
 .welcome__title {
   padding: 0 0 25px 0;
 }
+
 @media(max-width:1024px){
   .welcome__title {
     text-align: center;
@@ -265,6 +309,13 @@ border-radius: 50px;
   .welcome__title {
     line-height: 60px;
     font-size: 40px;
+  }
+}
+
+@media(max-width:470px){
+  .welcome__title {
+    line-height: 40px;
+    font-size: 28px;
   }
 }
 
@@ -300,6 +351,18 @@ border-radius: 50px;
   }
 }
 
+@media(max-width:768px) {
+  .welcome__subtitle {
+   padding: 0 0 50px 0;
+  }
+}
+
+@media(max-width:470px) {
+  .welcome__subtitle {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
 
 .welcome__button {
   font-family: 'Roboto';
@@ -356,7 +419,7 @@ border-radius: 50px;
 }
 
 .gallery-hide{
-  transform: translateX(104%);
+  transform: translateX(107%);
   transition-duration: 1s;
   /* transition-delay: 1s; */
 }
@@ -449,6 +512,12 @@ border-radius: 50px;
     height: 100px;
   }
 }
+
+@media(max-width:470px) {
+  .welcome__control-pannel-swipe {
+    height: 80px;
+  }
+}
 .hide-control-pannel{
   transform: translateX(-100%);
   transition-duration: 1s;
@@ -481,6 +550,12 @@ border-radius: 50px;
   padding: 0 55px 0 0;
 }
 
+@media(max-width:470px){
+  .pannel-swipe__counter{
+    padding: 0 25px 0 0;
+  }
+}
+
 .pannel-swipe__progress-counter {
   margin: 0 10px 0 0;
 }
@@ -504,12 +579,29 @@ border-radius: 50px;
   padding: 0 60px 0 0;
 }
 
+@media(max-width:470px){
+  .pannel-swipe__grafic-counter{
+    padding: 0 25px 0 0;
+  }
+}
+
 .pannel-swipe__grafic-item {
   width: 16px;
   height: 16px;
   background: #FFFFFF;
 }
-
+@media(max-width:768px){
+   .pannel-swipe__grafic-item{
+    width: 12px;
+    height: 12px;
+  }
+}
+@media(max-width:470px){
+  .pannel-swipe__grafic-item{
+  width: 7px;
+  height: 7px;
+  }
+}
 .pannel-swipe__grafic-item:hover {
   background-color: #9D8665;
   cursor: pointer;
@@ -517,6 +609,12 @@ border-radius: 50px;
 
 .pannel-swipe__grafic-item:not(:last-child) {
   margin: 0 25px 0 0;
+}
+
+@media(max-width:470px){
+  .pannel-swipe__grafic-item:not(:last-child) {
+    margin: 0 10px 0 0;
+  }
 }
 
 .recolor-active {

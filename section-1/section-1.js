@@ -266,3 +266,58 @@ function galleryHiding(){
 		controlPannelSwipe.classList.toggle('hide-control-pannel')
 	}
 }
+
+// --------------------- adaptive height 768 slide ---------------------------
+
+let section_1_768 = document.querySelector('.welcome__container');
+let switcher_768 = true;
+let breakPoint_0 = {
+	 width: 893,
+	 height: 949,
+};
+let breakPoint_1 = {
+	width: 470,
+	height: 593,
+};
+let breakPoint_2 = {
+	width: 420,
+	height: 543,
+};
+function heighting_768(){
+	if(section_1_768.offsetWidth <= breakPoint_0.width && section_1_768.offsetWidth > breakPoint_1.width && switcher_768 == true){
+		 let difference = (breakPoint_0.width - section_1_768.offsetWidth) / 2;
+		 section_1_768.style.height = breakPoint_0.height + 'px';
+		 section_1_768.style.height = (breakPoint_0.height - difference)+ 'px';
+		 switcher_768 = false;
+	}
+	 else if(section_1_768.offsetWidth <= breakPoint_1.width && section_1_768.offsetWidth > breakPoint_2.width && switcher_768 == true){
+		let difference = (breakPoint_1.width - section_1_768.offsetWidth) / 2;
+		 section_1_768.style.height = breakPoint_1.height + 'px';
+		 section_1_768.style.height = (breakPoint_1.height - difference)+ 'px';
+		 switcher_768 = false;
+	}
+	else if(section_1_768.offsetWidth <= breakPoint_2.width && switcher_768 == true){
+		let difference = (breakPoint_2.width - section_1_768.offsetWidth) / 2;
+		 section_1_768.style.height = breakPoint_2.height + 'px';
+		 section_1_768.style.height = (breakPoint_2.height - difference)+ 'px';
+		 switcher_768 = false;
+	}
+	else if(switcher_768 == false){
+		section_1_768.style.height = 'auto';
+		switcher_768 = true;
+	}
+}
+console.log(section_1_768.offsetHeight);
+
+// ----------------------- width line decor -----------------------------
+let lineDecor = document.querySelector('.welcome__line-decor');
+let gallery_768 = document.querySelector('.welcome__wrap-768');
+let gallery_420 = document.querySelector('.welcome__gallery-420');
+function widtingLineDecor(){
+	if(body.offsetWidth <= 1024 && body.offsetWidth > 470){
+		lineDecor.style.width = gallery_768.offsetWidth + 'px';
+	}
+	else if(body.offsetWidth <= 470){
+		lineDecor.style.width = (gallery_420.offsetWidth) + 'px';
+	}
+}
