@@ -290,6 +290,19 @@ width: 100%;
   }
 }
 
+@media(max-width:893px) {
+  .title-section {
+    line-height: 60px;
+    font-size: 40px;
+  }
+}
+
+@media(max-width:470px) {
+  .title-section {
+    line-height: 40px;
+    font-size: 28px;
+  }
+}
 .title-white {
   color: #FFFFFF;
 }
@@ -302,20 +315,6 @@ width: 100%;
 @media(max-width:1024px){
   .welcome__title {
     text-align: center;
-  }
-}
-
-@media(max-width:893px){
-  .welcome__title {
-    line-height: 60px;
-    font-size: 40px;
-  }
-}
-
-@media(max-width:470px){
-  .welcome__title {
-    line-height: 40px;
-    font-size: 28px;
   }
 }
 

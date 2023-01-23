@@ -313,6 +313,7 @@ console.log(section_1_768.offsetHeight);
 let lineDecor = document.querySelector('.welcome__line-decor');
 let gallery_768 = document.querySelector('.welcome__wrap-768');
 let gallery_420 = document.querySelector('.welcome__gallery-420');
+
 function widtingLineDecor(){
 	if(body.offsetWidth <= 1024 && body.offsetWidth > 470){
 		lineDecor.style.width = gallery_768.offsetWidth + 'px';
