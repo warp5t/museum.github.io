@@ -1,7 +1,19 @@
 .visiting {}
 
 .visiting__container {
+  padding: 75px 20px;
+}
 
+@media(max-width:1060px) {
+  .visiting__container {
+    padding: 60px 20px;
+  }
+}
+
+@media(max-width:900px) {
+  .visiting__container {
+    padding: 40px 20px 80px 20px;
+  }
 }
 
 ._container {}
@@ -12,14 +24,47 @@
   color: #9D8665;
 }
 
-.visiting__title::after {
-  content: '';
-  display: inline-block;
+@media(max-width:1260px) {
+  .visiting__title {
+    font-size: 80px;
+    line-height: 90px;
+    letter-spacing: 5px;
+  }
+}
+
+@media(max-width:1060px) {
+  .visiting__title {
+    font-size: 50px;
+    line-height: 75px;
+  }
+}
+
+@media(max-width:900px) {
+  .visiting__title {
+    font-size: 40px;
+    line-height: 60px;
+    padding: 0 0 20px 0;
+  }
+}
+
+.visiting__line-decor {
   height: 3px;
-  padding: 0 0 0 0;
+  margin: 0 0 75px 0;
   width: 100%;
   background: #710707;
   border-radius: 0px;
+}
+
+@media(max-width:1060px) {
+  .visiting__line-decor {
+    margin: 0 0 60px 0;
+  }
+}
+
+@media(max-width:900px) {
+  .visiting__line-decor {
+    margin: 0 0 40px 0;
+  }
 }
 
 .title-section {}
@@ -34,6 +79,34 @@
   grid-template-rows: repeat(2, 1fr);
   grid-column-gap: 60px;
   grid-row-gap: 75px;
+}
+
+@media(max-width:1060px) {
+  .card-tour {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-column-gap: 108px;
+    grid-row-gap: 60px;
+    padding: 0 108px;
+  }
+}
+
+@media(max-width:900px) {
+  .card-tour {
+    grid-column-gap: 56px;
+    grid-row-gap: 40px;
+    padding: 0 56px;
+  }
+}
+
+@media(max-width:712px) {
+  .card-tour {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 50px;
+    grid-row-gap: 40px;
+    padding: 0 50px;
+  }
 }
 
 .card-tour__wrap {
@@ -64,6 +137,58 @@
   grid-area: 2/3/3/4;
 }
 
+@media(max-width:1060px) {
+  .card-tour__wrap:nth-child(1) {
+    grid-area: 1/1/2/2;
+  }
+
+  .card-tour__wrap:nth-child(2) {
+    grid-area: 1/2/2/3;
+  }
+
+  .card-tour__wrap:nth-child(3) {
+    grid-area: 2/1/3/2;
+  }
+
+  .card-tour__wrap:nth-child(4) {
+    grid-area: 2/2/3/3;
+  }
+
+  .card-tour__wrap:nth-child(5) {
+    grid-area: 3/1/4/2;
+  }
+
+  .card-tour__wrap:nth-child(6) {
+    grid-area: 3/2/4/3;
+  }
+}
+
+@media(max-width: 712px) {
+  .card-tour__wrap:nth-child(1) {
+    grid-area: 1/1/2/2;
+  }
+
+  .card-tour__wrap:nth-child(2) {
+    grid-area: 2/1/3/2;
+  }
+
+  .card-tour__wrap:nth-child(3) {
+    grid-area: 3/1/4/2;
+  }
+
+  .card-tour__wrap:nth-child(4) {
+    grid-area: 4/1/5/2;
+  }
+
+  .card-tour__wrap:nth-child(5) {
+    grid-area: 5/1/6/2;
+  }
+
+  .card-tour__wrap:nth-child(6) {
+    grid-area: 6/1/7/2;
+  }
+}
+
 .card-tour__image {
   width: 100%;
   height: auto;
@@ -73,15 +198,22 @@
 .card-tour__info {}
 
 .card-tour__title {
-font-family: 'Forum';
-font-style: normal;
-font-weight: 400;
-font-size: 32px;
-line-height: 35px;
-letter-spacing: 5px;
-text-transform: uppercase;
-color: #000000;
+  font-family: 'Forum';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 32px;
+  line-height: 35px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #000000;
   padding: 0 0 10px 0;
+}
+
+@media(max-width:712px) {
+  .card-tour__title {
+    font-size: 18px;
+    line-height: 20px;
+  }
 }
 
 .card-tour__line-decor {
@@ -89,11 +221,31 @@ color: #000000;
   width: 300px;
   background: #710707;
   margin: 0 0 10px 0;
-  transition-duration: 1s;
+  transition-duration: 0.7s;
 }
-.longing-line{
+
+@media(max-width:1260px) {
+  .card-tour__line-decor {
+    width: 55%;
+  }
+}
+
+@media(max-width:1024px) {
+  .card-tour__line-decor {
+    width: 150px;
+  }
+}
+
+@media(max-width:1020px) {
+  .card-tour__line-decor {
+    width: 55%;
+  }
+}
+
+.longing-line {
   width: 100%;
 }
+
 .card-tour__virt-tour {
   font-family: 'Roboto';
   font-style: normal;
@@ -104,6 +256,13 @@ color: #000000;
   padding: 0 0 10px 0;
 }
 
+@media(max-width:712px) {
+  .card-tour__virt-tour {
+    font-size: 16px;
+    line-height: 19px;
+  }
+}
+
 .card-tour__panorama-view {
   font-family: 'Roboto';
   font-style: normal;
@@ -112,4 +271,11 @@ color: #000000;
   line-height: 21px;
   color: #000000;
   padding: 0 0 0 0;
+}
+
+@media(max-width:712px) {
+  .card-tour__panorama-view {
+    font-size: 16px;
+    line-height: 19px;
+  }
 }
