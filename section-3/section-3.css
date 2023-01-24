@@ -1,0 +1,42 @@
+.explore {
+}
+.explore__container {
+  display: flex;
+  flex-direction: row;
+  padding: 75px 0;
+}
+.explore__info {
+  padding: 0 60px 0 0;
+}
+.exploer__title {
+  white-space: nowrap;
+  padding: 0 0 25px 0;
+}
+.explore__line-decore{
+  height: 3px;
+  width:100%;
+  background: #710707;
+  margin: 0 0 75px 0;
+}
+.title-section {
+}
+.explore__line-about {
+font-family: 'Roboto';
+font-style: normal;
+font-weight: 300;
+font-size: 22px;
+line-height: 38px;
+padding: 0 0 25px 0;
+}
+
+.explore__wrap-picture {
+  position: relative;
+}
+.expore__before {
+  position: relative;
+}
+.expore__after {
+position: absolute;
+top: 0;
+right: 0;
+}
