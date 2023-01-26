@@ -158,11 +158,7 @@ var indexGraficItem = 0;
 var graficItem = document.querySelectorAll('.pannel-swipe__grafic-item');
 graficItem.forEach(function (item, index) {
 	item.addEventListener('click', function () {
-		console.log({
-			item
-		}, {
-			index
-		});
+		//console.log({item}, {index});
 		if (isEnabled) {
 			indexGraficItem = index;
 			recoloring_swipe_button(indexGraficItem)
@@ -203,7 +199,7 @@ let currentCount = document.querySelector('.pannel-swipe__progress-counter');
 
 function changingCount() {
 	currentCount.innerText = '0' + (currentItem + 1);
-	console.log('currentItem : ', currentItem);
+//	console.log('currentItem : ', currentItem);
 }
 
 // ------------------------------ side-slide-bar ----------------------------
@@ -242,8 +238,8 @@ function resizingSurfaceSwipe() {
 		if(body.offsetWidth >= 894){
 			surfaceSwipe_0.style.width = gallerySize.offsetWidth + 'px';
 		  surfaceSwipe_0.style.height = gallerySize.offsetHeight + 'px';
-		  console.log('resizing');
-		  console.log('|     |');
+		//  console.log('resizing');
+		 // console.log('|     |');
 		}
 		else if(body.offsetWidth <= 893){
 			swipedetect(surfaceSwipe_1);
@@ -307,7 +303,7 @@ function heighting_768(){
 		switcher_768 = true;
 	}
 }
-console.log(section_1_768.offsetHeight);
+//console.log(section_1_768.offsetHeight);
 
 // ----------------------- width line decor -----------------------------
 let lineDecor = document.querySelector('.welcome__line-decor');
