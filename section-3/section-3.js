@@ -8,7 +8,7 @@ let upperPartLine = document.querySelector('.explore__line-1');
 let startX, moveX, different = 0;
 let permissionLine = false;
 let initionalPosition = 421;
-lineCoodinating();
+//lineCoodinating();
 let number = initionalPosition;
 let currentPosition;
 let widthLineSwipe = Math.round(slideLine.offsetWidth / 2);
@@ -16,7 +16,7 @@ let widthPicture = wrapPicture.offsetWidth;
 let lineCoordinateX;
 
 let touch;
-let touchobj;
+let touchobj, touchobj_0;
 
 currentPosition = initionalPosition;
 
@@ -67,13 +67,13 @@ function mouseDowning(e){
 
 function mouseMoving(e){
   if(touch == false){
-    startX = e.pageX;
+    moveX = e.pageX;
   }
   else if(touch == true){
-    touchobj = e.changedTouches[0];
+    touchobj_0 = e.changedTouches[0];
 			moveX = touchobj.pageX;
   }
-  if (moveX != e.pageX || moveX != touchobj.pageX) {
+  if (moveX != startX || moveX != startX) {console.log(startX);
     different = startX - moveX;
     lineCoordinateX = currentPosition + ((-1) * different);
     slideLine.style.left = (lineCoordinateX) + 'px';
@@ -135,7 +135,7 @@ setTimeout(wrapCalling,5);
 function wrapCalling(){
   pictureHalfing(currentPosition);
   slideLineHalfing();
-  lineCoodinating();
+ // lineCoodinating();
 }
 
 // ------------------------ resize adapting image -------------------------------

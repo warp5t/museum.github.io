@@ -103,7 +103,7 @@ padding: 0 0 25px 0;
   }
 }
 
-@media(max-width:1140px){
+@media(max-width:768px){
   .explore__line-about {
     display: none;
   }
@@ -113,11 +113,14 @@ padding: 0 0 25px 0;
 }
 .explore__wrap-picture {
   position: relative;
-  overflow: hidden;
+  -moz-user-select: none;
+-khtml-user-select: none;
+user-select: none;
 }
 @media(max-width:1140px){
   .explore__wrap-picture {
     align-self: center;
+    overflow: hidden;
   }
 }
 @media(max-width:768px){
