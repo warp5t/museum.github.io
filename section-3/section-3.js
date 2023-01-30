@@ -8,7 +8,7 @@ let upperPartLine = document.querySelector('.explore__line-1');
 let startX, moveX, different = 0;
 let permissionLine = false;
 let initionalPosition = 421;
-//lineCoodinating();
+lineCoodinating();
 let number = initionalPosition;
 let currentPosition;
 let widthLineSwipe = Math.round(slideLine.offsetWidth / 2);
@@ -16,7 +16,7 @@ let widthPicture = wrapPicture.offsetWidth;
 let lineCoordinateX;
 
 let touch;
-let touchobj, touchobj_0;
+let touchobj;
 
 currentPosition = initionalPosition;
 
@@ -26,14 +26,12 @@ slideLine.addEventListener('mousedown', function(e) {
 })
 
 wrapPicture.addEventListener('mousemove', function(e) {
- // touch = false;
   if (permissionLine == true) {
     mouseMoving(e);
   }
 })
 
 slideLine.addEventListener('mouseup', function() {
-//  touch = false;
   mouseUpping();
 })
 
@@ -56,6 +54,7 @@ slideLine.addEventListener('touchend', function() {
 
 function mouseDowning(e){
   permissionLine = true;
+
   if(touch == false){
     startX = e.pageX;
   }
@@ -70,10 +69,10 @@ function mouseMoving(e){
     moveX = e.pageX;
   }
   else if(touch == true){
-    touchobj_0 = e.changedTouches[0];
-			moveX = touchobj.pageX;
+    touchobj = e.changedTouches[0];
+		moveX = touchobj.pageX;
   }
-  if (moveX != startX || moveX != startX) {console.log(startX);
+  if (moveX != startX) {console.log(startX);
     different = startX - moveX;
     lineCoordinateX = currentPosition + ((-1) * different);
     slideLine.style.left = (lineCoordinateX) + 'px';
@@ -127,7 +126,7 @@ function slideLineHalfing(){
 
   lowerPartLine.style.height = Math.round(reHeightLine_D) + 'px';
   upperPartLine.style.height = Math.round(reHeightLine_U ) + 'px';
-  console.log(calcHeightPicture);
+ // console.log(calcHeightPicture);
 }
 
 setTimeout(wrapCalling,5);
