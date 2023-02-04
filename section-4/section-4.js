@@ -78,10 +78,31 @@ videoPlayer.onclick = function(){
   videoPlayer.pause();
  }
 }
+let switcherHide = false;
+let mouseover = false;
+
+function pannelHide(){
+   if(mouseover == false){
+        controllPannel.style.bottom = '-85px';
+      }
+    switcherHide = false;
+}
 
 videoPlayer.addEventListener('mousemove',function(){
+  switcherHide = true;
+  if(switcherHide == true){
+    controllPannel.style.bottom = '0px'; 
+    setTimeout(pannelHide,5000)
+  }
+})
+
+controllPannel.addEventListener('mouseover',function(){
+  mouseover = true;
   controllPannel.style.bottom = '0px';
-  // setTimeout(function(){
-  //   controllPannel.style.bottom = '-80px';
-  // },6000)
+  console.log('hover');
+})
+
+controllPannel.addEventListener('mouseout',function(){
+  mouseover = false;
+  setTimeout(pannelHide,5000)
 })
