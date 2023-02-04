@@ -134,7 +134,7 @@ setTimeout(wrapCalling,5);
 function wrapCalling(){
   pictureHalfing(currentPosition);
   slideLineHalfing();
- // lineCoodinating();
+  lineCoodinating();
 }
 
 // ------------------------ resize adapting image -------------------------------
