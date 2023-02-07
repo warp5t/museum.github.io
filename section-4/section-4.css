@@ -76,6 +76,7 @@ color: #000000;
 }
 
 .controll-pannel__progress-time {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items:center;
@@ -85,20 +86,28 @@ color: #000000;
 }
 
 .controll-pannel__passed-time {
+  position: absolute;
+  top: 0;
+  left: 0;
   height: 8px;
   width: 0px;
   background: #710707;
 }
 
 .controll-pannel__dot{
+  position: relative;
   width: 15px;
   height: 15px;
   border-radius: 50%;
+  float: right;
   background: #FFFFFF;
+  margin: -3.5px -10px 0 0;
+  pointer-events: none;
 }
 
 .controll-pannel__wrap-volume{
  position: relative;
+ user-select: none;
 }
 
 .controll-pannel__volume {
@@ -122,6 +131,7 @@ color: #000000;
 }
 
 .controll-pannel__progress-volume {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items:center;
@@ -132,8 +142,11 @@ color: #000000;
 }
 
 .controll-pannel__passed_volume {
+  position:absolute;
+  top: 0;
+  left: 0;
   height: 8px;
-  width: 0px;
+  width: 104px;
   background: #710707;
 }
 

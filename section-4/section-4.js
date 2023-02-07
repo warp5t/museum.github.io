@@ -133,6 +133,62 @@ controllPannel.addEventListener('mouseout', function () {
 
 // ---                       --- sound ---                        ---
 
+let scaleVolume = document.querySelector('.controll-pannel__progress-volume');
+let progessVolume = document.querySelector('.controll-pannel__passed_volume');
+let controlDotVol = document.querySelector('.controll-pannel__dot-volume');
+
+let permissionVolume = false;
+let widthProgress,volumeLevel;
+
+function widthProgressing(progress){
+  if(permissionVolume){
+  widthProgress = progress;
+  progessVolume.style.width = progress+ 'px';
+  }
+}
+
+function voluming(){
+  if(permissionVolume){
+  volumeLevel = widthProgress / (scaleVolume.offsetWidth -1);
+  videoPlayer.volume = volumeLevel;
+  if(volumeLevel <= 0.05){
+    videoPlayer.muted = true;
+    soundIcon.style.zIndex = 8;
+  }
+  else if(volumeLevel > 0.05){
+    videoPlayer.muted = false;
+    soundIcon.style.zIndex = 10;
+  }
+}
+}
+
+scaleVolume.addEventListener('mousedown',function(e){
+  permissionVolume = true;
+  widthProgressing(e.layerX);
+  voluming();
+});
+
+scaleVolume.addEventListener('mousemove',function(e){
+  widthProgressing(e.layerX);
+  voluming();
+  console.log(e.layerX);
+});
+
+
+scaleVolume.addEventListener('mouseover',function(e){
+ if(permissionVolume){
+  permissionVolume = true;
+ }
+});
+
+scaleVolume.addEventListener('mouseup',function(e){
+  permissionVolume = false;
+});
+
+// scaleVolume.addEventListener('mouseout',function(e){
+//   permissionVolume = false;
+// })
+
 let soundPermission = false;
 
 soundButton.onclick = function () {
@@ -147,8 +203,9 @@ soundButton.onclick = function () {
   }
 }
 
+// ---                       --- fullscreen mode ---                        ---
 
-
+let playerWrap = document.querySelector('.video__player-wrap');
 
 function getFullscreenElement() {
   return document.fullscreenElement ||
@@ -161,7 +218,7 @@ function toggleFullscreen() {
   if (getFullscreenElement()) {
     document.exitFullscreen()
   } else {
-    videoPlayer.requestFullscreen().catch(console.log);
+    playerWrap.requestFullscreen().catch(console.log);
   }
 }
 
@@ -170,6 +227,5 @@ fullscreenButton.addEventListener('click',function(){
 });
 
 videoPlayer.addEventListener('dblclick',function(){
-  console.log('dbclick');
   toggleFullscreen();
 });
