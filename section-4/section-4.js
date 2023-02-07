@@ -79,7 +79,7 @@ videoPlayer.controls = false;
 // ---                       --- play/pause ---                        ---
 let playPermission = false;
 
-videoPlayer.onclick = function () {
+videoPlayer.onclick = function() {
   if (videoPlayer.paused) {
     videoPlayer.play()
     playIcon.style.zIndex = 8;
@@ -91,7 +91,7 @@ videoPlayer.onclick = function () {
   }
 }
 
-playButton.onclick = function () {
+playButton.onclick = function() {
   if (playPermission == false) {
     playIcon.style.zIndex = 8;
     playPermission = true;
@@ -135,7 +135,6 @@ controllPannel.addEventListener('mouseout', function () {
 
 let scaleVolume = document.querySelector('.controll-pannel__progress-volume');
 let progessVolume = document.querySelector('.controll-pannel__passed_volume');
-let controlDotVol = document.querySelector('.controll-pannel__dot-volume');
 
 let permissionVolume = false;
 let widthProgress,volumeLevel;
@@ -171,14 +170,6 @@ scaleVolume.addEventListener('mousedown',function(e){
 scaleVolume.addEventListener('mousemove',function(e){
   widthProgressing(e.layerX);
   voluming();
-  console.log(e.layerX);
-});
-
-
-scaleVolume.addEventListener('mouseover',function(e){
- if(permissionVolume){
-  permissionVolume = true;
- }
 });
 
 scaleVolume.addEventListener('mouseup',function(e){
@@ -191,15 +182,17 @@ scaleVolume.addEventListener('mouseup',function(e){
 
 let soundPermission = false;
 
-soundButton.onclick = function () {
+soundButton.onclick = function() {
   if (soundPermission) {
     soundIcon.style.zIndex = 10;
     videoPlayer.muted = false;
     soundPermission = false;
+    progessVolume.style.width = ((scaleVolume.offsetWidth -1) * videoPlayer.volume) + 'px';
   } else {
     soundIcon.style.zIndex = 8;
     videoPlayer.muted = true;
     soundPermission = true;
+    progessVolume.style.width = '0px';
   }
 }
 
@@ -216,16 +209,62 @@ function getFullscreenElement() {
 
 function toggleFullscreen() {
   if (getFullscreenElement()) {
-    document.exitFullscreen()
+    document.exitFullscreen();
   } else {
-    playerWrap.requestFullscreen().catch(console.log);
+    playerWrap.requestFullscreen();
   }
 }
 
 fullscreenButton.addEventListener('click',function(){
   toggleFullscreen();
+  console.log(scaleVideo.offsetWidth);
 });
 
 videoPlayer.addEventListener('dblclick',function(){
   toggleFullscreen();
 });
+
+// ---                       --- video progress control ---                        ---
+
+let scaleVideo = document.querySelector('.controll-pannel__progress-time');
+let progressVideo = document.querySelector('.controll-pannel__passed-time');
+
+let permissionVideo = false;
+let pastTime;
+
+
+scaleVideo.addEventListener('mousedown',function(e){
+  permissionVideo = true;
+  videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo.offsetWidth;
+  progressVideo.style.width = e.layerX + 'px';
+})
+
+scaleVideo.addEventListener('mousemove',function(e){
+ if (permissionVideo){
+    videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo.offsetWidth;
+    progressVideo.style.width = e.layerX + 'px';
+    if(videoPlayer.paused){
+       playIcon.style.zIndex = 10;
+    }
+    else{
+      playIcon.style.zIndex = 8;
+    }
+    playPermission = false;
+ }
+})
+
+scaleVideo.addEventListener('mouseup',function(){
+  permissionVideo = false;
+})
+
+videoPlayer.addEventListener('timeupdate',function(){
+  console.log(videoPlayer.currentTime);
+
+  pastTime = (videoPlayer.currentTime * scaleVideo.offsetWidth) / videoPlayer.duration;
+  progressVideo.style.width = pastTime + 'px';
+
+  if(videoPlayer.ended){
+    progressVideo.style.width = '0px';
+    playIcon.style.zIndex = 10;
+  }
+})
