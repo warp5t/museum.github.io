@@ -38,6 +38,31 @@ color: #000000;
   position: relative;
   width: 100%;
 }
+.video__circle-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  width: 220px;
+  height: 220px;
+  border:9px #FFFFFF solid;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.video__speed-cooficent{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  transform: translate(-50%, -50%);
+  color:aliceblue;
+  font-size: 80px;
+}
+.video__big-icon-play {
+  padding: 0 0 0 13px;
+}
 .video__controll-pannel {
   position:absolute;
   bottom: -80px;

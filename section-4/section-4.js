@@ -76,8 +76,14 @@ videoPlayer.controls = false;
 //   console.log(e);
 // })
 // ---                       --- play/pause ---                        ---
+let playIconBig = document.querySelector('.video__circle-icon ');
 let playPermission = false;
 let bckspPermission;
+
+playIconBig.onclick = function() {
+  bckspPermission = true;
+  playPausing()
+}
 
 videoPlayer.onclick = function() {
   bckspPermission = true;
@@ -93,10 +99,12 @@ function playPausing(){
   if (playPermission == false) {
     videoPlayer.play()
     playIcon.style.zIndex = 8;
+    playIconBig.style.display = 'none';
     playPermission = true;
   } else {
     videoPlayer.pause();
     playIcon.style.zIndex = 10;
+    playIconBig.style.display = 'flex';
     playPermission = false;
   }
   setTimeout(function(){
@@ -276,13 +284,16 @@ videoPlayer.addEventListener('timeupdate',function(){
   if(videoPlayer.ended){
     progressVideo.style.width = '0px';
     playIcon.style.zIndex = 10;
+    playIconBig.style.display = 'flex';
   }
 })
 
 // ---                       --- keyboard control player ---                        ---
 
+let displaySpeed = document.querySelector('.video__speed-cooficent');
 let shift, left, right, bcksp, mute, fllscr;
 let speedCooficent = 1;
+let codeCommand;
 
 window.addEventListener('keydown',function(e){
   if(e.keyCode == 16){
@@ -307,6 +318,7 @@ window.addEventListener('keydown',function(e){
     fllscr = true;
   }
   comboValidating()
+  cooficentSpeedDrawing()
 });
 
 
@@ -336,12 +348,11 @@ window.addEventListener('keyup',function(e){
 
 function comboValidating(){
   if(shift == true && right == true){
-    console.log('code_1');
     if(speedCooficent < 3.5 && speedCooficent >= 1 ){
       speedCooficent += 0.5;
       videoPlayer.playbackRate = speedCooficent;
     }
-    else if(speedCooficent > 0.25 && speedCooficent <= 1){
+    else if(speedCooficent >= 0.2 && speedCooficent <= 1){
       speedCooficent += 0.2;
      speedCooficent = Number(speedCooficent.toFixed(1));
       videoPlayer.playbackRate = speedCooficent;
@@ -349,7 +360,6 @@ function comboValidating(){
     console.log(speedCooficent);
   }
   else if(shift == true && left == true){
-    console.log('code_2');
     if(speedCooficent > 1){
       speedCooficent -= 0.5;
       videoPlayer.playbackRate = speedCooficent;
@@ -362,17 +372,24 @@ function comboValidating(){
     console.log(speedCooficent);
   }
   else if(bcksp == true){
-    console.log('code_3');
     if(bckspPermission){
       playPausing()
     }
   }
   else if(mute == true){
-    console.log('code_4');
     soundToggling()
   }
   else if(fllscr == true){
-    console.log('code_5');
     toggleFullscreen()
   }
+}
+
+function iconRemoving(){
+  displaySpeed.style.display = 'none';
+}
+
+function cooficentSpeedDrawing(){
+  displaySpeed.style.display = 'flex';
+  displaySpeed.innerText = 'x' + speedCooficent;
+  setTimeout(iconRemoving,3000);
 }
