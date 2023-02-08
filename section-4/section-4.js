@@ -393,3 +393,20 @@ function cooficentSpeedDrawing(){
   displaySpeed.innerText = 'x' + speedCooficent;
   setTimeout(iconRemoving,3000);
 }
+
+// ---                 --- slide show video / postering main video ---                        ---
+
+let videoContainer = {
+  videoSrc_1: "section-4/video0.mp4",
+  poster_1: "section-4/poster1.jpg",
+  videoSrc_2: "section-4/video1.mp4",
+  poster_2: "section-4/poster2.jpg",
+  videoSrc_3: "section-4/video2.mp4",
+  poster_3: "section-4/poster3.jpg",
+  videoSrc_4: "section-4/video3.mp4",
+  poster_4: "section-4/poster4.jpg",
+  videoSrc_5: "section-4/video4.mp4",
+  poster_5: "section-4/poster5.jpg"
+}
+videoPlayer.src = videoContainer.videoSrc_2;
+videoPlayer.poster = videoContainer.poster_2;
