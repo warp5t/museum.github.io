@@ -231,16 +231,26 @@
 
 .video__list-video {
   display: flex;
-  margin: 40px -21px;
-  overflow: hidden;
+  margin: 40px 0px;
+
+}
+
+.video__mover{
+ position: relative;
+ right:0;
+ overflow: hidden;
 }
 
 .video__you-tube {
+  position: relative;
+  right: 0px;
   width: 452px;
   height: 254px;
   background-color: #C4C4C4;
-  margin: 0 21px;
+  margin: 0 42px 0 0;
   flex-shrink: 0;
+  transition-duration: 1s;
+  color:#710707
 }
 
 .video__dots-item {

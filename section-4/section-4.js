@@ -394,7 +394,14 @@ function cooficentSpeedDrawing(){
   setTimeout(iconRemoving,3000);
 }
 
-// ---                 --- slide show video / postering main video ---                        ---
+// ---                 --- carousel video / postering main video ---                        ---
+let videoYouTube = document.querySelectorAll('.video__you-tube');
+let leftButton = document.querySelector('.video__darrows-L');
+let rightButton = document.querySelector('.video__darrows-R');
+let videoMover = document.querySelector('.video__mover');
+let videoList = document.querySelector('.video__list-video');
+
+let delayTime = 700;
 
 let videoContainer = {
   videoSrc_1: "section-4/video0.mp4",
@@ -408,5 +415,97 @@ let videoContainer = {
   videoSrc_5: "section-4/video4.mp4",
   poster_5: "section-4/poster5.jpg"
 }
+
 videoPlayer.src = videoContainer.videoSrc_2;
 videoPlayer.poster = videoContainer.poster_2;
+
+//right: calc((452px + 42px)* 0);
+
+videoYouTube[0].style.backgroundColor = 'red';
+
+let counterSlide = 0;
+let marginCommon = 42;
+let result;
+let direction;
+function xMoving(){
+  result = ((videoYouTube[1].offsetWidth + marginCommon) * counterSlide);
+  videoYouTube.forEach(function(e) {
+     e.style.right = result + 'px';
+  });
+  padding();
+  console.log('xMoving');
+}
+function padding(){
+  result = ((videoYouTube[1].offsetWidth + marginCommon) * counterSlide);
+  if(direction == 'right'){
+     
+   setTimeout(function(){videoList.style.paddingLeft = result + 'px';},delayTime);
+  }
+  else if(direction == 'left'){
+  //  setTimeout(function(){videoList.style.paddingRight = result + 'px';},delayTime);
+  }
+ 
+}
+
+//let indexFrst = 4, indexLst = 0;
+
+let indexVideo = 0;
+
+function floping(){
+
+  if(direction == 'right'){
+    termItem = videoYouTube[indexVideo];
+  videoYouTube[indexVideo].remove();
+  videoList.append(termItem);
+  if(indexVideo >= 4){
+    indexVideo = 0;
+   }
+  else if(indexVideo >= 0){
+  indexVideo++;
+  }
+  }
+  else if(direction == 'left'){
+    if(indexVideo > 0){
+      indexVideo--;
+     }
+    else if(indexVideo == 0){
+    indexVideo = 4;
+    }
+    termItem = videoYouTube[indexVideo];
+    videoYouTube[indexVideo].remove();
+    videoList.prepend(termItem);
+
+    console.log('left', indexVideo);
+  }
+
+  console.log('floping');
+}
+
+rightButton.onclick = function(){
+  direction = 'right';
+  counterSlide++;
+  xMoving();
+  setTimeout(function(){ floping()},delayTime)
+}
+
+
+
+leftButton.onclick = function(){
+  direction = 'left';
+  counterSlide--;
+  // if(counterSlide == -1){
+  //   while(indexVideo != 3){
+  //     if(indexVideo > 0){
+  //     indexVideo--;
+  //    }
+  //   else if(indexVideo == 0){
+  //   indexVideo = 4;
+  //   }
+  //   termItem = videoYouTube[indexVideo];
+  //   videoYouTube[indexVideo].remove();
+  //   videoList.prepend(termItem);
+  //   }
+  // }
+  xMoving();
+  setTimeout(function(){floping()},delayTime)
+}
