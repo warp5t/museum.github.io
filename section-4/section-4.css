@@ -232,7 +232,7 @@
 .video__list-video {
   display: flex;
   margin: 40px 0px;
-
+  
 }
 
 .video__mover{
@@ -244,6 +244,7 @@
 .video__you-tube {
   position: relative;
   right: 0px;
+  left: unset;
   width: 452px;
   height: 254px;
   background-color: #C4C4C4;
@@ -277,9 +278,12 @@
 .video__dot {
   width: 12px;
   height: 12px;
-  background: #999999;
+  background-color: #999999;
   border-radius: 50%;
   margin: 0 20px 0 0;
+}
+.video__dot:hover{
+  cursor: pointer;
 }
 
 .video__dot:hover {
