@@ -418,8 +418,8 @@ videoYouTube[0].style.backgroundColor = 'red';
 
 let counterSlide = 0;
 let marginCommon = parseInt(window.getComputedStyle(videoYouTube[0], "").marginRight);
-let result;
-let direction, sizeStep;
+let direction, sizeStep, result, permissionButton = true;
+let timeDelay = 1000;
 
 let switchDot = true;
 let switchIndexDot = 0;
@@ -466,26 +466,37 @@ function dotRecoloring() {
 }
 dotRecoloring();
 
+function permissing(){
+  permissionButton = false;
+  setTimeout(function(){permissionButton = true},timeDelay);
+}
+
 rightButton.onclick = function() {
   direction = 'right';
-  counterSlide++;
+  if(permissionButton){
+    counterSlide++;
   rightMoving_1();
   setTimeout(function() {
     rightMoving_2()
-  }, 1000)
+  }, timeDelay)
   dotRecoloring()
   counterSlide--;
+  permissing();
+  }
 }
 
 leftButton.onclick = function() {
   direction = 'left';
+  if(permissionButton){
   counterSlide--;
   leftMoving_1();
   setTimeout(function() {
     leftMoving_2()
-  }, 10);
+  }, 5);
   dotRecoloring();
   counterSlide++;
+  permissing();
+  }
 }
 
 
@@ -528,7 +539,7 @@ function rightMoving_1() {
     videoYouTube.forEach(function (e) {
       e.style.right = result + 'px';
     })
-  }, 10);
+  }, 5);
 }
 
 function rightMoving_2() {
