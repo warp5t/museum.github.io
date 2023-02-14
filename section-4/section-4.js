@@ -458,7 +458,7 @@ let indexVideo = 0;
 function floping() {
   if (direction == 'right') {
     termItem = videoYouTube[indexVideo];
-    videoYouTube[indexVideo].remove();
+   // videoYouTube[indexVideo].remove();
     videoList.append(termItem);
     if (indexVideo >= 4) {
       indexVideo = 0;
@@ -483,11 +483,11 @@ function floping() {
   }
   console.log('floping');
 }
+
 let switchDot = true;
 let switchIndexDot = 0;
 
 function dotRecoloring() {
-
   if (direction == 'right') {
     switchIndexDot++;
     if (switchIndexDot > 4) {
@@ -525,9 +525,12 @@ dotRecoloring();
 
 rightButton.onclick = function() {
   direction = 'right';
-  counterSlide++;
-  xMoving();
-  setTimeout(function () {floping()}, delayTime)
+  // counterSlide++;
+  // xMoving();
+  // setTimeout(function () {floping()}, delayTime)
+  testMoving_2();
+  setTimeout(function(){testMoving_1();},1000)
+  
   dotRecoloring()
 }
 
@@ -556,8 +559,9 @@ leftButton.onclick = function() {
 
 
 function flipping(){
-  counterSlide--;
-   if (indexVideo > 0) {
+  if(direction == 'left'){
+     counterSlide--;
+   if (indexVideo > 0){
         indexVideo--;
       } else if (indexVideo == 0) {
         indexVideo = 4;
@@ -569,21 +573,50 @@ function flipping(){
        e.style.transitionDuration = 'unset';
        e.style.left = result  + 'px';
   });
-
   videoList.prepend(videoYouTube[indexVideo]);
   }
   counterSlide++;
+  }
+  else if(direction == 'right'){
+    counterSlide++;
+    if (indexVideo >= 4) {
+      indexVideo = 0;
+    } else if (indexVideo >= 0) {
+      indexVideo++;
+    }
+   if(counterSlide > 0){
+     sizeStep = ((videoYouTube[1].offsetWidth + marginCommon));
+     result = sizeStep * counterSlide;
+   videoYouTube.forEach(function (e) {
+        e.style.transitionDuration = '1s';
+        e.style.right = result  + 'px';
+   });
+   videoList.append(videoYouTube[indexVideo]);
+   }
+   counterSlide++;
+  }
 }
 
 function transitioning(){
-  videoYouTube.forEach(function(e) {
+  if(direction == 'left'){
+    videoYouTube.forEach(function(e) {
     e.style.transitionDuration = '1s';
 });
 videoYouTube.forEach(function(e){
   e.style.right = 'unset';
-  e.style.left = previousResult + 'px';
+  e.style.left = '0px';
  })
- //previousResult = result;
+  }
+  else if(direction == 'right'){
+    videoYouTube.forEach(function(e) {
+      e.style.transitionDuration = 'unset';
+  });
+  videoYouTube.forEach(function(e){
+    e.style.right = 'unset';
+    e.style.left = '0px';
+   })
+  }
+// previousResult = result;
 }
 
 function patternMoving(){
@@ -593,12 +626,48 @@ function patternMoving(){
   setTimeout(function(){transitioning()},10);
 }
 
-function secondMoving(){
-  floping();
- // videoList.prepend(videoYouTube[indexVideo]);
+function testMoving_0(){
+  counterSlide++;
   sizeStep = ((videoYouTube[1].offsetWidth + marginCommon));
-  result = sizeStep * (counterSlide * (-1));
-  videoYouTube.forEach(function (e) {
-    e.style.left = result  + 'px';
-});
+  result = sizeStep * counterSlide;
+  //videoYouTube.forEach(function(e){});
+ // e.style.left = 'unset';
+  videoYouTube.forEach(function(e){
+    e.style.transitionDuration = '1s';
+    e.style.right = result + 'px';
+    e.style.left = 'unset';
+   })
+   counterSlide--;
 }
+
+function testMoving_1(){
+
+  videoYouTube.forEach(function (e) {
+  e.style.transitionDuration = 'unset';
+  e.style.right = 'unset';
+  e.style.left = '0px';
+});
+videoList.append(videoYouTube[indexVideo]);
+if (indexVideo >= 4) {
+  indexVideo = 0;
+} else if (indexVideo >= 0) {
+  indexVideo++;
+}
+}
+
+function testMoving_2(){
+  videoYouTube.forEach(function(e){
+    e.style.left = 'unset';
+   })
+   videoYouTube.forEach(function(e){
+    e.style.transitionDuration = '1s';
+   })
+    videoYouTube.forEach(function(e){
+    e.style.right = '0px';
+   })
+setTimeout(function(){
+   videoYouTube.forEach(function(e){
+    e.style.right = '494px';})
+   },10);
+}
+
