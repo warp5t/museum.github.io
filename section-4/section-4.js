@@ -229,6 +229,7 @@ function toggleFullscreen() {
     exitFullscreenBtn.style.zIndex = 7;
   } else {
     playerWrap.requestFullscreen();
+    window.scrollTo(0,1);
     exitFullscreenBtn.style.zIndex = 11;
   }
 }
@@ -429,9 +430,10 @@ window.addEventListener('resize', () => {
   stepCaclulating();
 });
 
-(function stepCaclulating() {
+function stepCaclulating() {
   sizeStep = ((videoYouTube[1].offsetWidth + marginCommon));
-}())
+}
+stepCaclulating();
 
 function dotRecoloring() {
   if (direction == 'right') {

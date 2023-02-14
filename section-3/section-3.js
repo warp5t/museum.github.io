@@ -60,7 +60,7 @@ function mouseDowning(e){
   }
   else if(touch == true){
     touchobj = e.changedTouches[0];
-			startX = touchobj.pageX;
+		startX = touchobj.pageX;
   }
 }
 
@@ -105,7 +105,9 @@ function limintChecking() {
 }
 
 function pictureHalfing(wdth){
-  pictureBefore.style.width = (wdth + widthLineSwipe) + 'px';
+  if(wdth < pictureAfter.offsetWidth + widthLineSwipe * 2){
+    pictureBefore.style.width = (wdth + widthLineSwipe) + 'px';
+  }
 }
 
 function lineCoodinating(){
@@ -148,6 +150,7 @@ window.addEventListener("resize",function(){
 function imageResizing(){
   pictureBefore.style.height = wrapPicture.offsetHeight + 'px';
   pictureBefore.style.width = wrapPicture.offsetWidth + 'px';
+  console.log('imageResizing');
 };
 
 imageResizing();

@@ -29,7 +29,9 @@
   color: #000000;
 }
 
-.video__wrap-video {}
+.video__wrap-video {
+  user-select: none;
+}
 
 .video__main-video {
   position: relative;
