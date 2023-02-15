@@ -234,7 +234,7 @@
 .video__list-video {
   display: flex;
   margin: 40px 0px;
-  
+  width: 100%;
 }
 
 .video__mover{

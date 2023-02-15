@@ -150,7 +150,7 @@ window.addEventListener("resize",function(){
 function imageResizing(){
   pictureBefore.style.height = wrapPicture.offsetHeight + 'px';
   pictureBefore.style.width = wrapPicture.offsetWidth + 'px';
-  console.log('imageResizing');
+ // console.log('imageResizing');
 };
 
 imageResizing();

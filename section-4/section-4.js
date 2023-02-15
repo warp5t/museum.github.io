@@ -387,18 +387,7 @@ function cooficentSpeedDrawing() {
   setTimeout(iconRemoving, 3000);
 }
 
-// ---                 --- carousel video / postering main video ---                        ---
-
-let videoYouTube = document.querySelectorAll('.video__you-tube');
-let leftButton = document.querySelector('.video__darrows-L');
-let rightButton = document.querySelector('.video__darrows-R');
-let videoMover = document.querySelector('.video__mover');
-let videoList = document.querySelector('.video__list-video');
-let dotItems = document.querySelectorAll('.video__dot');
-
-let delayTime = 700;
-let indexVideo = 0;
-
+// ---                 --- postering main video ---                   -----
 let videoContainer = {
   videoSrc_1: "section-4/video0.mp4",
   poster_1: "section-4/poster1.jpg",
@@ -415,7 +404,19 @@ let videoContainer = {
 videoPlayer.src = videoContainer.videoSrc_2;
 videoPlayer.poster = videoContainer.poster_2;
 
-videoYouTube[0].style.backgroundColor = 'red';
+// ---                 --- carousel video  ---                        ---
+
+let videoYouTube = document.querySelectorAll('.video__you-tube');
+let leftButton = document.querySelector('.video__darrows-L');
+let rightButton = document.querySelector('.video__darrows-R');
+let videoMover = document.querySelector('.video__mover');
+let videoList = document.querySelector('.video__list-video');
+let dotItems = document.querySelectorAll('.video__dot');
+
+let delayTime = 700;
+let indexVideo = 0;
+
+videoYouTube[0].style.backgroundColor = '#7c0964';
 
 let counterSlide = 0;
 let marginCommon = parseInt(window.getComputedStyle(videoYouTube[0], "").marginRight);
@@ -424,16 +425,17 @@ let timeDelay = 1000;
 
 let switchDot = true;
 let switchIndexDot = 0;
+let differentStepDot;
 
 window.addEventListener('resize', () => {
   marginCommon = parseInt(window.getComputedStyle(videoYouTube[0], "").marginRight);
-  stepCaclulating();
+  stepCalculating();
 });
 
-function stepCaclulating() {
+function stepCalculating() {
   sizeStep = ((videoYouTube[1].offsetWidth + marginCommon));
 }
-stepCaclulating();
+stepCalculating();
 
 function dotRecoloring() {
   if (direction == 'right') {
@@ -468,6 +470,25 @@ function dotRecoloring() {
 }
 dotRecoloring();
 
+dotItems.forEach(function(item,index){
+  item.addEventListener('click',function(){
+    dotItems[switchIndexDot].style.backgroundColor = '#999999';
+    item.style.backgroundColor = '#333333';
+    differentStepDot = index - switchIndexDot;
+    if(differentStepDot > 0){
+      console.log('move to right');
+    }
+    else if(differentStepDot < 0){
+      console.log('move to left');
+    }
+    else{
+      console.log('zero');
+    }
+    differentStepDot = Math.abs(differentStepDot);
+    switchIndexDot = index;
+  })
+});
+
 function permissing(){
   permissionButton = false;
   setTimeout(function(){permissionButton = true},timeDelay);
@@ -494,7 +515,7 @@ leftButton.onclick = function() {
   leftMoving_1();
   setTimeout(function() {
     leftMoving_2()
-  }, 5);
+  }, 8);
   dotRecoloring();
   counterSlide++;
   permissing();
@@ -541,7 +562,7 @@ function rightMoving_1() {
     videoYouTube.forEach(function (e) {
       e.style.right = result + 'px';
     })
-  }, 5);
+  }, 8);
 }
 
 function rightMoving_2() {
@@ -557,3 +578,30 @@ function rightMoving_2() {
     indexVideo++;
   }
 }
+
+
+let termVariable;
+let dinamicItemVideo = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
+
+function containing(){
+  videoYouTube.forEach(function(e) {
+     e.style.right = 'unset';
+     e.style.left = '-494px';
+     })
+  termVariable = videoYouTube[4].cloneNode(true);
+  videoList.prepend(termVariable);
+}
+
+//document.querySelector('.video__list-video').getElementsByClassName("video__you-tube")
+
+
+function lefting(){
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    console.log(i);
+  dinamicItemVideo[i].style.left = '0px';
+
+  // dinamicItemVideo.forEach(function(item,index){
+  //     item.style.left = '0px';
+}
+}
+
