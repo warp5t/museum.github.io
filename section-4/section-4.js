@@ -477,13 +477,22 @@ dotItems.forEach(function(item,index){
     differentStepDot = index - switchIndexDot;
     if(differentStepDot > 0){
       console.log('move to right');
+      while(differentStepDot != 0){
+        finishRightMoving();
+        differentStepDot--;
+      }
     }
     else if(differentStepDot < 0){
       console.log('move to left');
+      while(differentStepDot != 0){
+        finishLeftMoving();
+        differentStepDot++;
+      }
     }
     else{
       console.log('zero');
     }
+    console.log({differentStepDot});
     differentStepDot = Math.abs(differentStepDot);
     switchIndexDot = index;
   })
@@ -497,31 +506,40 @@ function permissing(){
 rightButton.onclick = function() {
   direction = 'right';
   if(permissionButton){
-    counterSlide++;
-  rightMoving_1();
-  setTimeout(function() {
-    rightMoving_2()
-  }, timeDelay)
-  dotRecoloring()
-  counterSlide--;
+  finishRightMoving()
   permissing();
   }
+  dotRecoloring()
 }
 
 leftButton.onclick = function() {
   direction = 'left';
   if(permissionButton){
+  finishLeftMoving();
+  permissing();
+  }
+  dotRecoloring();
+}
+
+function finishRightMoving(){
+    counterSlide++;
+  rightMoving_1();
+  setTimeout(function() {
+    rightMoving_2()
+  }, timeDelay)
+  
+  counterSlide--;
+}
+
+function finishLeftMoving(){
   counterSlide--;
   leftMoving_1();
   setTimeout(function() {
     leftMoving_2()
   }, 8);
-  dotRecoloring();
+ 
   counterSlide++;
-  permissing();
-  }
 }
-
 
 function leftMoving_1() {
   if (indexVideo > 0) {
@@ -588,7 +606,7 @@ function containing(){
      e.style.right = 'unset';
      e.style.left = '-494px';
      })
-  termVariable = videoYouTube[4].cloneNode(true);
+  termVariable = videoYouTube[indexVideo].cloneNode(true);
   videoList.prepend(termVariable);
 }
 
@@ -596,12 +614,11 @@ function containing(){
 
 
 function lefting(){
+  result = sizeStep * counterSlide;
   for(let i = 0; dinamicItemVideo.length > i; i++){
     console.log(i);
-  dinamicItemVideo[i].style.left = '0px';
+  dinamicItemVideo[i].style.left = result + 'px';
+ //counterSlide++;
 
-  // dinamicItemVideo.forEach(function(item,index){
-  //     item.style.left = '0px';
 }
 }
-
