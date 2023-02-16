@@ -298,3 +298,10 @@
 }
 
 #video {}
+
+#log{
+  width: 300px;
+  height:90px;
+  background-color: #0fe1f0;
+  font-size: 50px;
+}

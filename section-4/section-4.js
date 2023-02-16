@@ -412,8 +412,8 @@ let rightButton = document.querySelector('.video__darrows-R');
 let videoMover = document.querySelector('.video__mover');
 let videoList = document.querySelector('.video__list-video');
 let dotItems = document.querySelectorAll('.video__dot');
+let dinamicItemVideo = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
 
-let delayTime = 700;
 let indexVideo = 0;
 
 videoYouTube[0].style.backgroundColor = '#7c0964';
@@ -421,9 +421,10 @@ videoYouTube[0].style.backgroundColor = '#7c0964';
 let counterSlide = 0;
 let marginCommon = parseInt(window.getComputedStyle(videoYouTube[0], "").marginRight);
 let direction, sizeStep, result, permissionButton = true;
-let timeDelay = 1000;
+let timeDelayMaj = 1000, timeDelayMin = 10;
 
-let switchDot = true;
+
+let switchDot = 0;
 let switchIndexDot = 0;
 let differentStepDot;
 
@@ -472,124 +473,38 @@ dotRecoloring();
 
 dotItems.forEach(function(item,index){
   item.addEventListener('click',function(){
+    buttonCode = 2;
+    switchDot = 1;
     dotItems[switchIndexDot].style.backgroundColor = '#999999';
     item.style.backgroundColor = '#333333';
     differentStepDot = index - switchIndexDot;
-    if(differentStepDot > 0){
-      console.log('move to right');
-      while(differentStepDot != 0){
-        finishRightMoving();
-        differentStepDot--;
-      }
+    if(differentStepDot == 1){
+      console.log('move to right one step');
+      finishRightig();
     }
-    else if(differentStepDot < 0){
+    else if(differentStepDot > 1){
+      result = sizeStep * differentStepDot;
+      dotRightMoving(result);
+      adding();
+    }
+
+    else if(differentStepDot == -1){
       console.log('move to left');
-      while(differentStepDot != 0){
-        finishLeftMoving();
-        differentStepDot++;
+        finishLefting();
       }
-    }
     else{
       console.log('zero');
     }
-    console.log({differentStepDot});
-    differentStepDot = Math.abs(differentStepDot);
     switchIndexDot = index;
   })
 });
 
 function permissing(){
   permissionButton = false;
-  setTimeout(function(){permissionButton = true},timeDelay);
+  setTimeout(function(){permissionButton = true},timeDelayMaj);
 }
 
-rightButton.onclick = function() {
-  direction = 'right';
-  if(permissionButton){
-  finishRightMoving()
-  permissing();
-  }
-  dotRecoloring()
-}
-
-leftButton.onclick = function() {
-  direction = 'left';
-  if(permissionButton){
-  finishLeftMoving();
-  permissing();
-  }
-  dotRecoloring();
-}
-
-function finishRightMoving(){
-    counterSlide++;
-  rightMoving_1();
-  setTimeout(function() {
-    rightMoving_2()
-  }, timeDelay)
-  
-  counterSlide--;
-}
-
-function finishLeftMoving(){
-  counterSlide--;
-  leftMoving_1();
-  setTimeout(function() {
-    leftMoving_2()
-  }, 8);
- 
-  counterSlide++;
-}
-
-function leftMoving_1() {
-  if (indexVideo > 0) {
-    indexVideo--;
-  } else if (indexVideo == 0) {
-    indexVideo = 4;
-  }
-  result = sizeStep * counterSlide;
-  videoYouTube.forEach(function (e) {
-    e.style.transitionDuration = 'unset';
-    e.style.left = result + 'px';
-  });
-  videoList.prepend(videoYouTube[indexVideo]);
-}
-
-function leftMoving_2() {
-  videoYouTube.forEach(function (e) {
-    e.style.transitionDuration = '1s';
-  });
-  videoYouTube.forEach(function (e) {
-    e.style.right = 'unset';
-    e.style.left = '0px';
-  })
-}
-
-function rightMoving_1() {
-  result = sizeStep * counterSlide;
-  videoYouTube.forEach(function (e) {
-    e.style.left = 'unset';
-  })
-  videoYouTube.forEach(function (e) {
-    e.style.transitionDuration = '1s';
-  })
-  videoYouTube.forEach(function (e) {
-    e.style.right = '0px';
-  })
-  setTimeout(function () {
-    videoYouTube.forEach(function (e) {
-      e.style.right = result + 'px';
-    })
-  }, 8);
-}
-
-function rightMoving_2() {
-  videoYouTube.forEach(function (e) {
-    e.style.transitionDuration = 'unset';
-    e.style.right = 'unset';
-    e.style.left = '0px';
-  });
-  videoList.append(videoYouTube[indexVideo]);
+function indVidIncreasing(){
   if (indexVideo >= 4) {
     indexVideo = 0;
   } else if (indexVideo >= 0) {
@@ -597,14 +512,123 @@ function rightMoving_2() {
   }
 }
 
+function indVidDecreasing(){
+  if (indexVideo > 0) {
+    indexVideo--;
+  } else if (indexVideo == 0) {
+    indexVideo = 4;
+  }
+}
+
+rightButton.onclick = function() {
+  direction = 'right';
+  if(permissionButton){
+  finishRightig()
+  permissing();
+  dotRecoloring()
+  }
+}
+
+leftButton.onclick = function() {
+  direction = 'left';
+  if(permissionButton){
+  finishLefting();
+  permissing();
+  dotRecoloring();
+ // buttonCode = 1;
+ // deleting();
+ // lefting();
+  }
+}
+ 
+let buttonCode;
+
+function finishRightig(){
+  buttonCode = 0;
+    counterSlide++;
+  rightMoving_1();
+  setTimeout(function() {
+    rightMoving_2()
+  }, timeDelayMaj)
+  counterSlide--;
+}
+
+function finishLefting(){
+  counterSlide--;
+  leftMoving_1();
+  setTimeout(function() {
+    leftMoving_2()
+  }, timeDelayMin);
+  counterSlide++;
+}
+
+function leftMoving_1() {
+  indVidDecreasing();
+  result = sizeStep * counterSlide;
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.left = result + 'px';
+  }
+  videoList.prepend(videoYouTube[indexVideo]);
+}
+
+function leftMoving_2() {
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.transitionDuration = '1s';
+  }
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.right = 'unset';
+    dinamicItemVideo[i].style.left = '0px';
+  }
+}
+
+function dotRightMoving(result_a){
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.left = 'unset';
+    dinamicItemVideo[i].style.transitionDuration = '1s'
+  }
+    for(let i = 0; dinamicItemVideo.length > i; i++){
+      dinamicItemVideo[i].style.right = '0px';
+    }
+    setTimeout(function(){
+      for(let i = 0; dinamicItemVideo.length > i; i++){
+        dinamicItemVideo[i].style.right = result_a + 'px';
+      }
+    },timeDelayMin)
+}
+
+function rightMoving_1() {
+  result = sizeStep * counterSlide;
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.left = 'unset';
+    dinamicItemVideo[i].style.transitionDuration = '1s';
+    dinamicItemVideo[i].style.right = '0px';
+  }
+  setTimeout(function () {
+    for(let i = 0; dinamicItemVideo.length > i; i++){
+      dinamicItemVideo[i].style.right = result + 'px';
+    }
+  }, timeDelayMin);
+}
+
+function rightMoving_2() {
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.right = 'unset';
+    dinamicItemVideo[i].style.left = '0px';
+  }
+  videoList.append(videoYouTube[indexVideo]);
+  indVidIncreasing();
+}
+
 
 let termVariable;
-let dinamicItemVideo = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
 
 function containing(){
+  result = sizeStep * counterSlide;
   videoYouTube.forEach(function(e) {
      e.style.right = 'unset';
-     e.style.left = '-494px';
+     e.style.left = result + 'px';
      })
   termVariable = videoYouTube[indexVideo].cloneNode(true);
   videoList.prepend(termVariable);
@@ -616,9 +640,62 @@ function containing(){
 function lefting(){
   result = sizeStep * counterSlide;
   for(let i = 0; dinamicItemVideo.length > i; i++){
-    console.log(i);
+    dinamicItemVideo[i].style.transitionDuration = '1s';
+  }
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.left = '0px';
+  }
+  setTimeout(() => {
+      for(let i = 0; dinamicItemVideo.length > i; i++){
   dinamicItemVideo[i].style.left = result + 'px';
- //counterSlide++;
+}
+  }, timeDelayMin);
 
 }
+let indexDinamic = 0;
+let arrItems = [];
+function adding(){
+  if(differentStepDot > 2){
+   // differentStepDot = Math.abs(differentStepDot);
+   console.log({differentStepDot});
+    differentStepDot = differentStepDot - 2;
+    while(differentStepDot != 0){
+      arrItems.push(videoYouTube[indexVideo].cloneNode(true));
+      videoList.append(arrItems[indexVideo]);
+      indVidIncreasing();
+      differentStepDot--;
+      indexDinamic++;
+    }
+  }
+}
+
+function deleting(){
+  if(buttonCode == 0){
+
+  }
+  else if(buttonCode == 1){
+  dinamicItemVideo[(dinamicItemVideo.length - indexDinamic)].remove();
+  indexDinamic--;
+  }
+  else if(buttonCode == 2){
+    while(indexDinamic != 0){
+
+  }
+  }
+}
+function loging(){
+  console.log('||||||||||||||||||||||||||||||||');
+  console.log('counterSlide: ',counterSlide);
+  console.log('direction: ',direction);
+  console.log('sizeStep: ',sizeStep);
+  console.log('result: ',result);
+  console.log('permissionButton: ',permissionButton);
+  console.log('timeDelayMaj: ',timeDelayMaj);
+  console.log('switchDot: ',switchDot);
+  console.log('switchIndexDot: ',switchIndexDot);
+  console.log('differentStepDot: ',differentStepDot);
+  console.log('indexDinamic: ',indexDinamic);
+  console.log('arrItems: ',arrItems);
+  console.log('buttonCode: ',buttonCode);
+  console.log('indexVideo: ',indexVideo);
 }
