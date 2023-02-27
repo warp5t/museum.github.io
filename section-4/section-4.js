@@ -473,153 +473,13 @@ function dotRecoloring() {
   }
 }
 dotRecoloring();
-// ------------------------------ dot click ------------------------------------
-
-// dotItems.forEach(function(item,index){
-
-//    item.addEventListener('click',function(){
-//     if(permissionButton == true){
-//     indexDotClick = index;
-//     dotItems[switchIndexDot].style.backgroundColor = '#999999';
-//     item.style.backgroundColor = '#333333';
-//     differentStepDot = index - switchIndexDot;
-//     if(switchIndexDot == 0){
-//       arrItems.length = 0;
-//     }
-//     if(differentStepDot == 1){
-//       console.log('move to right one step');
-//        if(window.getComputedStyle(dinamicItemVideo[0], "").right != '0px' ){
-//          dotCode = 0;
-//          console.log('dotCode',dotCode);
-//       }
-//       else{
-//         dotCode = 1;
-//         console.log('dotCode',dotCode);
-//       }
-//       finishRightig();
-//     }
-//     else if(differentStepDot == 2){
-//       dotCode = 2;
-//       console.log('move to right two steps');
-//       console.log('dotCode',dotCode);
-//       indexVideo = index;
-//       result = sizeStep * differentStepDot;
-//       dotRightMoving(result);
-//     }
-//     else if(differentStepDot > 2){
-//       dotCode = 3;
-//       console.log('move to right several steps');
-//       console.log('dotCode',dotCode);
-//       result = sizeStep * differentStepDot
-//       dotRightMoving(result);
-//       rightAdding();
-//       delayIndexing();
-//     }
-//     else if(differentStepDot == -1){
-//       console.log('move to left one step');
-//       if(window.getComputedStyle(dinamicItemVideo[0], "").right != '0px' ){
-//          dotCode = 4;
-//          console.log('dotCode',dotCode);
-//       }
-//       finishLefting();
-//       }
-//     else if(differentStepDot < -1){
-//       console.log('move to left several steps');
-//       if(parseInt(window.getComputedStyle(dinamicItemVideo[0], "").left) == 0 ){
-//         dotCode = 5;
-//         console.log('dotCode',dotCode);
-//       }
-//       if(parseInt(window.getComputedStyle(dinamicItemVideo[0], "").right) != sizeStep * 4){
-//         dotCode = 7;
-//         console.log('534');
-//       }
-//       else{
-//       dotCode = 6;
-//       console.log('dotCode',dotCode);
-//       }
-//       result = parseInt(window.getComputedStyle(dinamicItemVideo[0], "").left) - (sizeStep * (differentStepDot));
-//       dotLeftMoving(result);
-//       arrClearing();
-//       delayIndexing(index);
-//     }
-//     else{
-//       dotCode = 8;
-//       console.log('dotCode',dotCode);
-//       console.log('zero');
-//     }
-//     switchIndexDot = index;
-//     permissing();
-//   }
-//   })
-
-// });
-
-function delayIndexing(index){
-   setTimeout(function() {
-      if(index != indexVideo){
-        indexVideo = switchIndexDot;
-        console.log('delay indexing');
-    }
-    }, timeDelayMaj);
-    console.log('index', index);
-}
-// ------------------------ incr decr indexVideo ------------------------------
-
-function indVidIncreasing(){
-  if (indexVideo >= dinamicItemVideo.length - 1) {
-    indexVideo = 0;
-  } else if (indexVideo >= 0) {
-    indexVideo++;
-  }
-}
-
-function indVidDecreasing(){
-  if (indexVideo > 0) {
-    indexVideo--;
-  } else if (indexVideo == 0) {
-    indexVideo = dinamicItemVideo.length - 1;
-  }
-}
-
-function permissing(){
-  permissionButton = false;
-  setTimeout(function(){permissionButton = true},timeDelayMaj + 500);
-}
-// ------------------------ incr decr indexVideo ------------------------------
-
-function indVidIncreasing(){
-  if (indexVideo >= dinamicItemVideo.length - 1) {
-    indexVideo = 0;
-  } else if (indexVideo >= 0) {
-    indexVideo++;
-  }
-}
-
-function indVidDecreasing(){
-  if (indexVideo > 0) {
-    indexVideo--;
-  } else if (indexVideo == 0) {
-    indexVideo = dinamicItemVideo.length - 1;
-  }
-}
 
 // ----------------------------- buttons left right ------------------------------------
 
 rightButton.onclick = function() {
   direction = 'right';
-  dotCode = 1;
   if(permissionButton){
   dotRecoloring();
-  // if(indexDinamic != 0){
-  //   overRighting_1();
-  //   setTimeout(overRighting_2, timeDelayMin*3);
-  //   setTimeout(function(){
-  //     rightMoving_2();
-  //   }, timeDelayMaj);
-  // }
-  // else if(indexDinamic == 0){
-  //   finishRightig();
-  // }
   oneStepRighting();
   permissing();
   }
@@ -627,322 +487,24 @@ rightButton.onclick = function() {
 
 leftButton.onclick = function() {
   direction = 'left';
-  if(window.getComputedStyle(dinamicItemVideo[0], "").right != '0px'){
-    dotCode = 4;
- }
- else{
-  dotCode = 'leftCode';
- }
   if(permissionButton){
-    dotRecoloring();
-    finishLefting();
-    permissing();
+  dotRecoloring();
+  oneStepLefting()
+  permissing();
   }
 }
 
-function finishRightig(){
-  rightMoving_1();
-  setTimeout(rightMoving_2, timeDelayMaj);
-  setTimeout(lengthChecking, timeDelayMaj);
-  setTimeout(listApdateting, timeDelayMaj- 10);
+function permissing(){
+  permissionButton = false;
+  setTimeout(function(){permissionButton = true},timeDelayMaj + 500);
 }
 
-function finishLefting(){
-  leftMoving_1();
-  setTimeout(leftMoving_2, timeDelayMin);
-  zeroControl();
-}
-
-// ------------------------------------ left moving scenario ----------------------------------
-
-function leftMoving_1() {
- if(dotCode != 4){
- indVidDecreasing();
-  counterSlide--;
-  result = sizeStep * counterSlide;
-  for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.left = result + 'px';
-  }
-  counterSlide++;
-  videoList.prepend(videoYouTube[indexVideo]);
-  }
-}
-
-function leftMoving_2() {
-  if(dotCode == 4){
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.transitionDuration =  timeDelayMaj + 'ms';
-    }
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      let right_0 = parseInt(window.getComputedStyle(dinamicItemVideo[0], "").right);
-      dinamicItemVideo[i].style.right =  right_0 - sizeStep + 'px';
-      dinamicItemVideo[i].style.left = 'unset';
-    }
-  }
-
-  else{
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.transitionDuration =  timeDelayMaj + 'ms';
-  }
-  for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.right = 'unset';
-    dinamicItemVideo[i].style.left = '0px';
-  }
-  }
-}
-
-function zeroControl(){
-  if(switchIndexDot == 0 && indexDinamic != 0 && indexVideo != 0){
-    let index = 0;
-    console.log('zeroControl')
-     for(let i = 0; arrItems.length > i; i++){
-       arrItems[index].remove();
-       index++;
-     }
-     indexVideo = 0;
-     indexDinamic = 0;
-     setTimeout(() => {
-      for(let i = 0; videoYouTube.length > i; i++){
-        videoYouTube[i].style.left = '0px';
-        videoYouTube[i].style.right = 'unset';
-     }
-     }, timeDelayMaj);
-  }
-}
-
-let counter;
-function dotLeftMoving(result_b){
-
-  if(dotCode == 5){
-    counter = switchIndexDot;
-    while(counter != 0){
-    indVidDecreasing();
-    videoList.prepend(videoYouTube[counter - 1]);
-    counter--;
-    }
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.right = 'unset';
-      dinamicItemVideo[i].style.left = (-1) * result_b + 'px';
-    }
-    setTimeout(() => {
-      for(let i = 0; dinamicItemVideo.length > i; i++){
-        dinamicItemVideo[i].style.transitionDuration =  timeDelayMaj + 'ms';
-      }
-      for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.left = '0px';
-    }
-    }, timeDelayMin);
-  }
-  else if(dotCode == 6){
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.transitionDuration =  timeDelayMaj + 'ms';
-    }
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.right = result_b + 'px';
-      dinamicItemVideo[i].style.left = 'unset';
-    }
-  }
-}
-
-function leftRemoving(){
-  console.log({differentStepDot});
-    setTimeout(() => {
-       while(differentStepDot != 0){
-      dinamicItemVideo[(dinamicItemVideo.length - 1)].remove();
-      indVidIncreasing();
-      differentStepDot++;
-      indexDinamic++;
-    }
-    }, timeDelayMaj);
-}
-
-function arrClearing(){
-  setTimeout(() => {
-     for(let i = 0; arrItems.length > i; i++){
-     arrItems[i].remove();
-}
-  }, timeDelayMaj);
-}
-// ------------------------- right moving scenario ----------------------------
-
-function rightMoving_1() {
-  counterSlide++;
-  result = sizeStep * counterSlide;
-  if(dotCode == 0){
-    result = parseInt(window.getComputedStyle(dinamicItemVideo[0], "").right) + (sizeStep * counterSlide);
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.right = result + 'px';
-    };
-  }
-  else if(dotCode == 1){
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.left = 'unset';
-    dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
-    dinamicItemVideo[i].style.right = '0px';
-  }
-  setTimeout(function() {
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.right = result + 'px';
-    };
-  }, timeDelayMin);
-  }
-  counterSlide--;
-}
-
-function rightMoving_2() {
-  if(dotCode == 0){
-  let stepRight, termIndex = 0;
-  stepRight = parseInt(window.getComputedStyle(dinamicItemVideo[0], "").right) / sizeStep;
-  stepRight = Math.round(stepRight);
-  console.log(stepRight);
-   for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.right = 'unset';
-    dinamicItemVideo[i].style.left = '0px';
-  }
-  while(stepRight > 0){
-    console.log(termIndex);
-    videoList.append(videoYouTube[termIndex]);
-    termIndex++;
-    stepRight--;
-    }
-  }
-  else if(dotCode == 1){
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.right = 'unset';
-    dinamicItemVideo[i].style.left = '0px';
-  }
-  setTimeout(() => {
-  indVidIncreasing();
-  }, timeDelayMin);
-  videoList.append(videoYouTube[indexVideo]);
-  }
-}
-
-function lengthChecking(){
-  if(dinamicItemVideo.length > 5){
-    for(let i = 0; arrItems.length > i; i++){
-      arrItems[i].remove();
-    }
-    arrItems.length = 0;
-  }
-}
-
-let arrVideo = [];
-
-function listApdateting(){
-  if(switchIndexDot == 1){
-  for(let i = 0; videoYouTube.length > i; i++){
-    videoYouTube[i].style.right = 'unset';
-    videoYouTube[i].style.left = '0px';
-    videoYouTube[i].style.transitionDuration = 'unset';
-    arrVideo[i] = videoYouTube[i];
-  }
-  for(let i = 0; videoYouTube.length > i; i++){
-    videoYouTube[i].remove();
-  }
-  for(let i = 0; videoYouTube.length > i; i++){
-    videoList.append(arrVideo[i]);
-  }
-  }
-}
-
-function dotRightMoving(result_a){
-  for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.left = 'unset';
-    dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
-    dinamicItemVideo[i].style.right = '0px';
-  }
-    setTimeout(function(){
-      for(let i = 0; dinamicItemVideo.length > i; i++){
-        dinamicItemVideo[i].style.right = result_a + 'px';
-      }
-    },timeDelayMin)
-}
-
-function overRighting_1(){
-  let interResult;
-  let iterator = 1;
-  interResult = parseInt(window.getComputedStyle(dinamicItemVideo[0], "").right) - (sizeStep * indexDinamic);
-  while(indexDinamic != 0){
-    dinamicItemVideo[0].remove();
-    indexDinamic--;
-    iterator++;
-  }
-  for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.right = interResult + 'px';
-  }
-  for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.left = '0px';
-    dinamicItemVideo[i].style.right = 'unset';
-  }
-  while(iterator != 0){
-    videoList.append(dinamicItemVideo[0]);
-    iterator--;
-  }
-}
-
-function overRighting_2(){
-  counterSlide++;
-  result = sizeStep * counterSlide;
-  for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.left = 'unset';
-    dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
-    dinamicItemVideo[i].style.right = '0px';
-  }
-  setTimeout(function() {
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.right = result + 'px';
-    };
-  }, timeDelayMin * 3);
-  counterSlide--;
-}
-
-function rightAdding(){console.log('882');
-  if(switchIndexDot == 3 && differentStepDot == 2){
-    
-  }
-  if(differentStepDot > 2){
-   console.log({differentStepDot});
-    differentStepDot = differentStepDot - 2;
-    while(differentStepDot != 0){
-      arrItems.push(videoYouTube[indexVideo].cloneNode(true));
-      videoList.append(arrItems[indexVideo]);
-      indVidIncreasing();
-      differentStepDot--;
-      indexDinamic++;
-    }
-  }
-}
-
-function loging(){
-  console.log('||||||||||||||||||||||||||||||||');
-  console.log('counterSlide: ',counterSlide);
-  console.log('direction: ',direction);
-  console.log('sizeStep: ',sizeStep);
-  console.log('result: ',result);
-  console.log('permissionButton: ',permissionButton);
-  console.log('timeDelayMaj: ',timeDelayMaj);
-  console.log('timeDelayMin: ',timeDelayMin);
-  console.log('dotCode: ',dotCode);
-  console.log('switchIndexDot: ',switchIndexDot);
-  console.log('differentStepDot: ',differentStepDot);
-  console.log('indexDinamic: ',indexDinamic);
-  console.log('arrItems: ',arrItems);
-  console.log('buttonCode: ',buttonCode);
-  console.log('indexVideo: ',indexVideo);
-  console.log('right: ',window.getComputedStyle(dinamicItemVideo[0], "").right);
-  console.log('left: ',window.getComputedStyle(dinamicItemVideo[0], "").left);
-}
+// ------------------------------ dot click ------------------------------------
 
 dotItems.forEach(function(item,index){
-
+let dotIndex;
   item.addEventListener('click',function(){
    if(permissionButton == true){
-   indexDotClick = index;
    dotItems[switchIndexDot].style.backgroundColor = '#999999';
    item.style.backgroundColor = '#333333';
    differentStepDot = index - switchIndexDot;
@@ -962,16 +524,13 @@ dotItems.forEach(function(item,index){
     fourStepRighting();
    }
    else if(differentStepDot == -1){
-
+    oneStepLefting();
    }
    else if(differentStepDot == -2){
-
+    twoStepLefting();
    }
-   else if(differentStepDot == -3){
-
-   }
-   else if(differentStepDot == -4){
-
+   else if(differentStepDot == -3 || differentStepDot == -4){
+    threeFourStepLefting(differentStepDot);
    }
    console.log('975',differentStepDot);
    switchIndexDot = index;
@@ -979,6 +538,8 @@ dotItems.forEach(function(item,index){
    }
    })
    })
+
+// ----------------------- right move scenario --------------------------------
 
    function appending(counterSlide){
     while(counterSlide > 0){
@@ -1034,9 +595,10 @@ dotItems.forEach(function(item,index){
   }
 
    function threeStepRighting(){
-    arrItems.push(videoYouTube[0].cloneNode(true));
-    videoList.append(arrItems[0]);
+    arrItems.length = 0;
     counterSlide = 3;
+    arrItems.push(dinamicItemVideo[0].cloneNode(true));
+    videoList.append(arrItems[0]);
     result = sizeStep * counterSlide;
     firstRightActing();
     setTimeout(() => {
@@ -1053,17 +615,141 @@ dotItems.forEach(function(item,index){
    }
 
    function fourStepRighting(){
+    arrItems.length = 0;
     let counter = 2;
     let index = 0;
+    counterSlide = 4;
+    result = sizeStep * counterSlide;
     while(counter != 0){
       arrItems.push(videoYouTube[index].cloneNode(true));
       videoList.append(arrItems[index]);
       counter--;
       index++;
     }
-    counterSlide = 4;
+    firstRightActing();
+    setTimeout(() => {
+      for(let i = 0; dinamicItemVideo.length > i; i++){
+        dinamicItemVideo[i].style.right = result + 'px';
+      }
+    }, timeDelayMin);
+    setTimeout(() => {
+      while(index != 0){
+        dinamicItemVideo[0].remove();
+        index--;
+      }
+      counterSlide -= 2;
+      appending(counterSlide);
+      finalRightActing();
+    }, timeDelayMaj);
    }
 
-   function arrPushing(){
-    
+// ----------------------- left move scenario --------------------------------
+
+function firstLeftActing(){
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.left = '0px';
+    dinamicItemVideo[i].style.right = 'unset';
+  }
+}
+
+function oneStepLefting(){
+  counterSlide = -1;
+  result = sizeStep * counterSlide;
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.left = result + 'px'; 
+    dinamicItemVideo[i].style.right = 'unset';
+  }
+  videoList.prepend(dinamicItemVideo[dinamicItemVideo.length -1]);
+
+ setTimeout(() => {
+   for(let i = 0; dinamicItemVideo.length > i; i++){
+     dinamicItemVideo[i].style.transitionDuration =  timeDelayMaj + 'ms';
    }
+   for(let i = 0; dinamicItemVideo.length > i; i++){
+     dinamicItemVideo[i].style.left = '0px';
+   }
+   counterSlide = 0;
+ }, timeDelayMin);
+}
+
+function twoStepLefting(){
+  counterSlide = -2;
+  result = sizeStep * counterSlide;
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.left = result + 'px'; 
+    dinamicItemVideo[i].style.right = 'unset';
+  }
+  while(counterSlide != 0){
+    videoList.prepend(dinamicItemVideo[dinamicItemVideo.length -1]);
+    counterSlide++;
+  }
+  setTimeout(() => {
+    for(let i = 0; dinamicItemVideo.length > i; i++){
+      dinamicItemVideo[i].style.transitionDuration =  timeDelayMaj + 'ms';
+    }
+    for(let i = 0; dinamicItemVideo.length > i; i++){
+      dinamicItemVideo[i].style.left = '0px';
+    }
+    counterSlide = 0;
+  }, timeDelayMin);
+}
+
+function threeFourStepLefting(differentStepDot) {
+    arrItems.length = 0;
+  let counter = differentStepDot;
+  let index = 0;
+  result = sizeStep * differentStepDot;
+  while(differentStepDot != 0){
+    arrItems.push(dinamicItemVideo[(dinamicItemVideo.length -1) - index].cloneNode(true));
+    index++;
+    differentStepDot++;
+  }
+  index = 0;
+  while(counter != 0){
+    videoList.prepend(arrItems[index]);
+    index++;
+    counter++;
+  }
+  for(let i = 0; dinamicItemVideo.length > i; i++){
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.left = result + 'px';
+    dinamicItemVideo[i].style.right = 'unset';
+  }
+  setTimeout(() => {
+    for(let i = 0; dinamicItemVideo.length > i; i++){
+      dinamicItemVideo[i].style.transitionDuration =  timeDelayMaj + 'ms';
+    }
+    for(let i = 0; dinamicItemVideo.length > i; i++){
+      dinamicItemVideo[i].style.left = '0px';
+    }
+  }, timeDelayMin);
+  setTimeout(() => {
+    while(index != 0){
+      dinamicItemVideo[dinamicItemVideo.length -1].remove();
+      index--;
+    }
+  }, timeDelayMaj);
+}
+
+function loging(){
+  console.log('||||||||||||||||||||||||||||||||');
+  console.log('counterSlide: ',counterSlide);
+  console.log('direction: ',direction);
+  console.log('sizeStep: ',sizeStep);
+  console.log('result: ',result);
+  console.log('permissionButton: ',permissionButton);
+  console.log('timeDelayMaj: ',timeDelayMaj);
+  console.log('timeDelayMin: ',timeDelayMin);
+  console.log('dotCode: ',dotCode);
+  console.log('switchIndexDot: ',switchIndexDot);
+  console.log('differentStepDot: ',differentStepDot);
+  console.log('indexDinamic: ',indexDinamic);
+  console.log('arrItems: ',arrItems);
+  console.log('buttonCode: ',buttonCode);
+  console.log('indexVideo: ',indexVideo);
+  console.log('right: ',window.getComputedStyle(dinamicItemVideo[0], "").right);
+  console.log('left: ',window.getComputedStyle(dinamicItemVideo[0], "").left);
+}
