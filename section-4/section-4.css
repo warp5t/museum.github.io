@@ -253,7 +253,47 @@
   margin: 0 42px 0 0;
   flex-shrink: 0;
   transition-duration: 1s;
-  color:#710707
+}
+
+
+.video__player{
+
+}
+.video__wrap-cover{
+
+}
+
+.video__you-tube:hover {
+  cursor: pointer;
+}
+
+.video__cover{
+  position:absolute;
+  top: 0;
+  left: 0;
+  width: 452px;
+  height: 254px;
+}
+
+.video__icon-you-tube {
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+
+.video__gear {
+  position: relative;
+}
+.video__wrap-icon{
+
+ position: absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+}
+.video__triagle {
+  
 }
 
 .video__dots-item {
