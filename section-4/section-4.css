@@ -255,16 +255,16 @@
   transition-duration: 1s;
 }
 
+.video__you-tube:hover {
+  cursor: pointer;
+}
 
 .video__player{
 
 }
-.video__wrap-cover{
 
-}
-
-.video__you-tube:hover {
-  cursor: pointer;
+.video__wrap-upper{
+  display: block;
 }
 
 .video__cover{
@@ -285,13 +285,14 @@
 .video__gear {
   position: relative;
 }
-.video__wrap-icon{
 
+.video__wrap-icon{
  position: absolute;
   top:50%;
   left:50%;
   transform:translate(-50%, -50%);
 }
+
 .video__triagle {
   
 }

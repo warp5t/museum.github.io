@@ -667,7 +667,7 @@ function twoStepLefting(){
   result = sizeStep * counterSlide;
   for(let i = 0; dinamicItemVideo.length > i; i++){
     dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.left = result + 'px'; 
+    dinamicItemVideo[i].style.left = result + 'px';
     dinamicItemVideo[i].style.right = 'unset';
   }
   while(counterSlide != 0){
@@ -740,8 +740,9 @@ function loging(){
 
 // ------------------------ API youtube ----------------------------------
 
-  let playListArr = ['Qifmo4r1nFY','0UUK4VDblXM','yx-HYerClEA'];
- 
+  let player_1,player_2,player_3,player_4,player_5;
+  let arrVideoId = ['zp1BXPX8jcU','Vi5D6FKhRmo','NOhDysLnTvY','aWmJ5DgyWPI','2OR0OCr6uRE'];
+  let commonIndex = 2;
  // 2. This code loads the IFrame Player API code asynchronously.
  var tag = document.createElement('script');
 
@@ -751,60 +752,97 @@ function loging(){
 
  // 3. This function creates an <iframe> (and YouTube player)
  //    after the API code downloads.
- var player;
+
+ 
 
  function onYouTubeIframeAPIReady() {
-   player = new YT.Player('player_1', {
+  player_1 = new YT.Player('player_1', {
      height: '100%',
      width: '100%',
-     videoId: 'M7lc1UVf-VE',
+     videoId: 'zp1BXPX8jcU',
      playerVars: {
        'playsinline': 1,
        'controls': 1,
-       'modestbranding':0,
-       'showinfo': 0
+       'host': 'https://www.youtube.com',
      },
-     events: {
-       'onReady': onPlayerReady,
-       'onStateChange': onPlayerStateChange
-     }
    });
+   
+   player_2 = new YT.Player('player_2', {
+    height: '100%',
+    width: '100%',
+    videoId: 'Vi5D6FKhRmo',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
+
+  player_3 = new YT.Player('player_3', {
+    height: '100%',
+    width: '100%',
+    videoId: 'NOhDysLnTvY',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
+
+  player_4 = new YT.Player('player_4', {
+    height: '100%',
+    width: '100%',
+    videoId: 'aWmJ5DgyWPI',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
+
+  player_5 = new YT.Player('player_5', {
+    height: '100%',
+    width: '100%',
+    videoId: '2OR0OCr6uRE',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
  }
 
- // 4. The API will call this function when the video player is ready.
- function onPlayerReady(event) {
-   event.target.playVideo();
-  // event.target.loadPlaylist(playlist,index,startSeconds);
+ function videoStoping() {
+  player.stopVideo();
  }
-
- // 5. The API calls this function when the player's state changes.
- //    The function indicates that when playing a video (state=1),
- //    the player should play for six seconds and then stop.
- var done = false;
- function onPlayerStateChange(event) {
-   if (event.data == YT.PlayerState.PLAYING) {
-    // setTimeout(stopVideo, 6000);
-     done = true;
-   }
- }
- function stopVideo() {
-   player.stopVideo();
+ function videoPlaying(){
+  player.playVideo();
  }
 
  let cardPlayer = document.querySelectorAll('.video__you-tube .video__wrap-upper');
  let coverPlayer = document.querySelector('.video__wrap-cover');
- let videoCover =
-
-//  for(let i = 0; cardPlayer.length > i; i++){
-//   cardPlayer.addEventListener('click',function(item,index){
-//     item.style.display = 'none';
-//     console.log('clicked');
-//   })
-//  }
+ let dinamicCards = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
+ 
  cardPlayer.forEach(function(item,index){
   item.addEventListener('click',function(){
     item.style.display = 'none';
     console.log('clicked');
     console.log(index);
   })
+ //item.style.display = 'none';
+ })
+
+ for(let i = 0; dinamicItemVideo.length > i; i++){
+  dinamicItemVideo[i].addEventListener('click',function(){
+    // console.log(cardPlayer[i].index);
+    dinamicItemVideo[i].style.display = 'none';
+    console.log(i);
+  })
+ }
+ // #ff0000
+
+ arrItems[0].onclick = function(){console.log('arrItems[0]')}
+
+ arrItems[1].addEventListener('click',function(){
+  console.log('arrItems[1]');
  })
