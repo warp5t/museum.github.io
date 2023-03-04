@@ -59,6 +59,7 @@
   border: 9px #FFFFFF solid;
   transform: translate(-50%, -50%);
   border-radius: 50%;
+  z-index: 2;
 }
 
 .video__speed-cooficent {
@@ -86,6 +87,7 @@
   height: 85px;
   background-color: #000000;
   transition-duration: 1s;
+  z-index: 5;
 }
 
 .controll-pannel__play-wrap {
@@ -259,42 +261,27 @@
   cursor: pointer;
 }
 
-.video__player{
-
+.video__shroud{ 
+  position: absolute;
+  top: 45px;
+  left: 0;
+  width:100%;
+  height: 159px;
+  background-color: #999999;
+  opacity: 0;
+  z-index: 5;
 }
 
-.video__wrap-upper{
-  display: block;
+.video__player{
+position: relative;
+z-index: 2;
 }
 
 .video__cover{
-  position:absolute;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 452px;
-  height: 254px;
-}
-
-.video__icon-you-tube {
-  position: absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-}
-
-.video__gear {
-  position: relative;
-}
-
-.video__wrap-icon{
- position: absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%, -50%);
-}
-
-.video__triagle {
-  
+  z-index: 0;
 }
 
 .video__dots-item {

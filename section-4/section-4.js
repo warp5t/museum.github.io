@@ -400,6 +400,29 @@ let videoContainer = {
 videoPlayer.src = videoContainer.videoSrc_2;
 videoPlayer.poster = videoContainer.poster_2;
 
+function mainVideoChanging(dot){
+  if(dot == 0){
+    videoPlayer.src = videoContainer.videoSrc_2;
+    videoPlayer.poster = videoContainer.poster_2;
+  }
+  else if(dot == 1){
+    videoPlayer.src = videoContainer.videoSrc_3;
+    videoPlayer.poster = videoContainer.poster_3;
+  }
+  else if(dot == 2){
+    videoPlayer.src = videoContainer.videoSrc_4;
+    videoPlayer.poster = videoContainer.poster_4;
+  }
+  else if(dot == 3){
+    videoPlayer.src = videoContainer.videoSrc_5;
+    videoPlayer.poster = videoContainer.poster_5;
+  }
+  else if(dot == 4){
+    videoPlayer.src = videoContainer.videoSrc_1;
+    videoPlayer.poster = videoContainer.poster_1;
+  }
+}
+
 // ---                 --- carousel video  ---                        ---
 
 let videoYouTube = document.querySelectorAll('.video__you-tube');
@@ -459,6 +482,7 @@ function dotRecoloring() {
   } else {
     dotItems[switchIndexDot].style.backgroundColor = '#333333';
   }
+  mainVideoChanging(switchIndexDot);
 }
 dotRecoloring();
 
@@ -469,6 +493,7 @@ rightButton.onclick = function() {
   if(permissionButton){
   dotRecoloring();
   oneStepRighting();
+  allStopping();
   permissing();
   }
 }
@@ -477,7 +502,8 @@ leftButton.onclick = function() {
   direction = 'left';
   if(permissionButton){
   dotRecoloring();
-  oneStepLefting()
+  oneStepLefting();
+  allStopping();
   permissing();
   }
 }
@@ -490,7 +516,6 @@ function permissing(){
 // ------------------------------ dot click ------------------------------------
 
 dotItems.forEach(function(item,index){
-let dotIndex;
   item.addEventListener('click',function(){
    if(permissionButton == true){
    dotItems[switchIndexDot].style.backgroundColor = '#999999';
@@ -522,6 +547,8 @@ let dotIndex;
    }
    console.log('975',differentStepDot);
    switchIndexDot = index;
+   mainVideoChanging(index);
+   allStopping();
    permissing();
    }
    })
@@ -585,7 +612,12 @@ let dotIndex;
    function threeStepRighting(){
     arrItems.length = 0;
     counterSlide = 3;
-    arrItems.push(dinamicItemVideo[0].cloneNode(true));
+    arrItems[0] = dinamicItemVideo[0].cloneNode(true);
+      arrItems[0].addEventListener('click',function(e){
+      console.log(e.target.id,'e.target.id');
+      console.log(e.target,'e.target');
+      playingStoping(e.target.id);
+       });
     videoList.append(arrItems[0]);
     result = sizeStep * counterSlide;
     firstRightActing();
@@ -609,7 +641,12 @@ let dotIndex;
     counterSlide = 4;
     result = sizeStep * counterSlide;
     while(counter != 0){
-      arrItems.push(videoYouTube[index].cloneNode(true));
+      arrItems[index] = videoYouTube[index].cloneNode(true);
+      arrItems[index].addEventListener('click',function(e){
+      console.log(e.target.id,'e.target.id');
+      console.log(e.target,'e.target');
+      playingStoping(e.target.id);
+       });
       videoList.append(arrItems[index]);
       counter--;
       index++;
@@ -691,7 +728,13 @@ function threeFourStepLefting(differentStepDot) {
   let index = 0;
   result = sizeStep * differentStepDot;
   while(differentStepDot != 0){
-    arrItems.push(dinamicItemVideo[(dinamicItemVideo.length -1) - index].cloneNode(true));
+  cardShroud[(dinamicItemVideo.length -1) - index].style.display = 'none';
+   arrItems[index] = dinamicItemVideo[(dinamicItemVideo.length -1) - index].cloneNode(true);
+   arrItems[index].addEventListener('click',function(e){
+   console.log(e.target.id,'e.target.id');
+   console.log(e.target,'e.target');
+   playingStoping(e.target.id);
+    });
     index++;
     differentStepDot++;
   }
@@ -740,20 +783,14 @@ function loging(){
 
 // ------------------------ API youtube ----------------------------------
 
-  let player_1,player_2,player_3,player_4,player_5;
-  let arrVideoId = ['zp1BXPX8jcU','Vi5D6FKhRmo','NOhDysLnTvY','aWmJ5DgyWPI','2OR0OCr6uRE'];
-  let commonIndex = 2;
- // 2. This code loads the IFrame Player API code asynchronously.
+ let player_1,player_2,player_3,player_4,player_5;
+ let arrPlayers = [];
+
  var tag = document.createElement('script');
 
  tag.src = "https://www.youtube.com/iframe_api";
  var firstScriptTag = document.getElementsByTagName('script')[0];
  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
- // 3. This function creates an <iframe> (and YouTube player)
- //    after the API code downloads.
-
- 
 
  function onYouTubeIframeAPIReady() {
   player_1 = new YT.Player('player_1', {
@@ -766,7 +803,7 @@ function loging(){
        'host': 'https://www.youtube.com',
      },
    });
-   
+
    player_2 = new YT.Player('player_2', {
     height: '100%',
     width: '100%',
@@ -820,29 +857,142 @@ function loging(){
  }
 
  let cardPlayer = document.querySelectorAll('.video__you-tube .video__wrap-upper');
+ var cardShroud = document.querySelectorAll('.video__you-tube .video__shroud');
  let coverPlayer = document.querySelector('.video__wrap-cover');
  let dinamicCards = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
- 
- cardPlayer.forEach(function(item,index){
+
+
+ cardShroud.forEach(function(item,index){
   item.addEventListener('click',function(){
-    item.style.display = 'none';
-    console.log('clicked');
-    console.log(index);
+    console.log(index,'851');
+    console.log(item.id);
+    playingStoping(item.id)
   })
- //item.style.display = 'none';
  })
+ let playStopPermission_1 = true, playStopPermission_2 = true, playStopPermission_3 = true;
 
- for(let i = 0; dinamicItemVideo.length > i; i++){
-  dinamicItemVideo[i].addEventListener('click',function(){
-    // console.log(cardPlayer[i].index);
-    dinamicItemVideo[i].style.display = 'none';
-    console.log(i);
-  })
+ function playingStoping(target){
+    if(target == 'shroud_1'){
+      console.log('playingStoping - ',target);
+      if(playStopPermission_1){
+        playStopPermission_1 = false;
+        playStopPermission_2 = true;
+        playStopPermission_3 = true;
+        playStopPermission_4 = true;
+        playStopPermission_5 = true;
+        player_1.playVideo();
+        player_2.pauseVideo();
+        player_3.pauseVideo();
+        player_4.pauseVideo();
+        player_5.pauseVideo();
+      }
+      else{
+        playStopPermission_1 = true;
+        playStopPermission_2 = true;
+        playStopPermission_3 = true;
+        playStopPermission_4 = true;
+        playStopPermission_5 = true;
+        player_1.pauseVideo();
+      }
+    }
+    else if(target == 'shroud_2'){
+      console.log('playingStoping - ',target);
+      if(playStopPermission_2){
+        playStopPermission_2 = false;
+        playStopPermission_1 = true;
+        playStopPermission_3 = true;
+        playStopPermission_4 = true;
+        playStopPermission_5 = true;
+        player_2.playVideo();
+        player_1.pauseVideo();
+        player_3.pauseVideo();
+        player_4.pauseVideo();
+        player_5.pauseVideo();
+      }
+      else{
+        playStopPermission_2 = true;
+        playStopPermission_1 = true;
+        playStopPermission_3 = true;
+        playStopPermission_4 = true;
+        playStopPermission_5 = true;
+        player_2.pauseVideo();
+      }
+    }
+    else if(target == 'shroud_3'){
+      console.log('playingStoping - ',target);
+      if(playStopPermission_3){
+        playStopPermission_3 = false;
+        playStopPermission_1 = true;
+        playStopPermission_2 = true;
+        playStopPermission_4 = true;
+        playStopPermission_5 = true;
+        player_3.playVideo();
+        player_1.pauseVideo();
+        player_2.pauseVideo();
+        player_4.pauseVideo();
+        player_5.pauseVideo();
+      }
+      else{
+        playStopPermission_3 = true;
+        playStopPermission_1 = true;
+        playStopPermission_2 = true;
+        playStopPermission_4 = true;
+        playStopPermission_5 = true;
+        player_3.pauseVideo();
+      }
+    }
+    else if(target == 'shroud_4'){
+      console.log('playingStoping - ',target);
+      if(playStopPermission_4){
+        playStopPermission_4 = false;
+        playStopPermission_1 = true;
+        playStopPermission_2 = true;
+        playStopPermission_3 = true;
+        playStopPermission_5 = true;
+        player_4.playVideo();
+        player_1.pauseVideo();
+        player_2.pauseVideo();
+        player_3.pauseVideo();
+        player_5.pauseVideo();
+      }
+      else{
+        playStopPermission_4 = true;
+        playStopPermission_1 = true;
+        playStopPermission_2 = true;
+        playStopPermission_3 = true;
+        playStopPermission_5 = true;
+        player_4.pauseVideo();
+      }
+    }
+    else if(target == 'shroud_5'){
+      console.log('playingStoping - ',target);
+      if(playStopPermission_4){
+        playStopPermission_5 = false;
+        playStopPermission_1 = true;
+        playStopPermission_2 = true;
+        playStopPermission_3 = true;
+        playStopPermission_4 = true;
+        player_5.playVideo();
+        player_1.pauseVideo();
+        player_2.pauseVideo();
+        player_3.pauseVideo();
+        player_4.pauseVideo();
+    }
+    else{
+      playStopPermission_5 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      player_5.pauseVideo();
+    }
  }
- // #ff0000
+}
 
- arrItems[0].onclick = function(){console.log('arrItems[0]')}
-
- arrItems[1].addEventListener('click',function(){
-  console.log('arrItems[1]');
- })
+function allStopping(){
+  player_1.stopVideo();
+  player_2.stopVideo();
+  player_3.stopVideo();
+  player_4.stopVideo();
+  player_5.stopVideo();
+}
