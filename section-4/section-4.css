@@ -237,8 +237,18 @@
   display: flex;
   margin: 40px 0px;
   width: 100%;
+  
 }
-
+.video__list-video_2{
+  position: absolute;
+  display: flex;
+  margin: 40px 0px;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: #aaff21;
+  display: none;
+}
 .video__mover{
  position: relative;
  right:0;
@@ -259,6 +269,17 @@
 
 .video__you-tube:hover {
   cursor: pointer;
+}
+
+.video__cover-play-button{
+position: absolute;
+bottom: 0;
+left: 0;
+width: 51px;
+height: 40px;
+background-color: antiquewhite;
+opacity: 0.5;
+z-index: 3;
 }
 
 .video__shroud{ 
