@@ -1,79 +1,11 @@
-// let playListArr = ['Qifmo4r1nFY', '0UUK4VDblXM', 'yx-HYerClEA'];
-
-// // 2. This code loads the IFrame Player API code asynchronously.
-// var tag = document.createElement('script');
-
-// tag.src = "https://www.youtube.com/iframe_api";
-// var firstScriptTag = document.getElementsByTagName('script')[0];
-// firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-
-// // 3. This function creates an <iframe> (and YouTube player)
-// //    after the API code downloads.
-// var player;
-
-// function onYouTubeIframeAPIReady() {
-//   player = new YT.Player('player_348', {
-//     height: '650',
-//     width: '100%',
-//     videoId: 'zp1BXPX8jcU',
-//     playerVars: {
-//       'playsinline': 1,
-//       'controls': 0,
-//       'modestbranding': 1,
-//       'showinfo': 0,
-//       'autohide': 0
-//     },
-//     events: {
-//       'onReady': onPlayerReady,
-//       'onStateChange': onPlayerStateChange
-//     }
-//   });
-// }
-
-// // 4. The API will call this function when the video player is ready.
-// function onPlayerReady(event) {
-//   event.target.playVideo();
-//   // event.target.loadPlaylist(playlist,index,startSeconds);
-// }
-
-// // 5. The API calls this function when the player's state changes.
-// //    The function indicates that when playing a video (state=1),
-// //    the player should play for six seconds and then stop.
-// var done = false;
-
-// function onPlayerStateChange(event) {
-//   if (event.data == YT.PlayerState.PLAYING) {
-//     // setTimeout(stopVideo, 6000);
-//     done = true;
-//   }
-// }
-
-// function stopVideo() {
-//   player.stopVideo();
-// }
-// // let index = 0;
-// // button.onclick = function(){
-// // player.seekTo(300,true);
-// //player.loadVideoById("0UUK4VDblXM", 300, "large")
-// //  player.cuePlaylist(playListArr,index,0);
-// //    player.playVideo();
-// //    index++;
-// //   console.log('current time',player.getCurrentTime());
-
-// // }
-
 // -------------------------------- custom player ------------------------------
 let videoPlayer = document.getElementById('video');
 let controllPannel = document.querySelector('.video__controll-pannel');
 let playButton = document.querySelector('.controll-pannel__play-wrap');
 let playIcon = document.querySelector('.controll-pannel__play');
 
-
 videoPlayer.controls = false;
 
-// video.addEventListener('durationchange',function(e){
-//   console.log(e);
-// })
 // ---                       --- play/pause ---                        ---
 let playIconBig = document.querySelector('.video__circle-icon ');
 let playPermission = false;
@@ -110,7 +42,9 @@ function playPausing() {
     bckspPermission = false;
   }, 30000);
 }
+
 // ---                       --- show/hide control pannel ---                        ---
+
 let switcherHide = false;
 let mouseover = false;
 
@@ -246,7 +180,6 @@ let progressVideo = document.querySelector('.controll-pannel__passed-time');
 let permissionVideo = false;
 let pastTime;
 
-
 scaleVideo.addEventListener('mousedown', function (e) {
   permissionVideo = true;
   videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo.offsetWidth;
@@ -285,30 +218,29 @@ videoPlayer.addEventListener('timeupdate', function () {
 // ---                       --- keyboard control player ---                        ---
 
 let displaySpeed = document.querySelector('.video__speed-cooficent');
-let shift, left, right, bcksp, mute, fllscr;
+let shift, left, right, spc, mute, fllscr;
 let speedCooficent = 1;
 let codeCommand;
 
 window.addEventListener('keydown', function (e) {
-  if (e.keyCode == 16) {
+  console.log(e.key)
+  console.log(e.keyCode)
+  if (e.key == 'Shift') {
     shift = true;
   }
-  if (e.keyCode == 190) {
+  if (e.key == '>') {
     right = true;
   }
-  if (e.keyCode == 188) {
+  if (e.key == '<') {
     left = true;
   }
-  if (e.keyCode == 32) {
-    bcksp = true;
+  if (e.key == ' ') {
+    spc = true;
   }
-  if (e.keyCode == 77) {
+  if (e.key == 'm') {
     mute = true;
   }
-  if (e.keyCode == 32) {
-    bcksp = true;
-  }
-  if (e.keyCode == 70) {
+  if (e.key == 'f') {
     fllscr = true;
   }
   comboValidating()
@@ -317,25 +249,22 @@ window.addEventListener('keydown', function (e) {
 
 
 window.addEventListener('keyup', function (e) {
-  if (e.keyCode == 16) {
+  if (e.key == 'Shift') {
     shift = false;
   }
-  if (e.keyCode == 190) {
+  if (e.key == '>') {
     right = false;
   }
-  if (e.keyCode == 188) {
+  if (e.key == '<') {
     left = false;
   }
-  if (e.keyCode == 32) {
-    bcksp = false;
+  if (e.key == ' ') {
+    spc = false;
   }
-  if (e.keyCode == 77) {
+  if (e.key == 'm') {
     mute = false;
   }
-  if (e.keyCode == 32) {
-    bcksp = false;
-  }
-  if (e.keyCode == 70) {
+  if (e.key == 'f') {
     fllscr = false;
   }
 });
@@ -361,7 +290,7 @@ function comboValidating() {
       videoPlayer.playbackRate = speedCooficent;
     }
     console.log(speedCooficent);
-  } else if (bcksp == true) {
+  } else if (spc == true) {
     if (bckspPermission) {
       playPausing()
     }
@@ -427,10 +356,6 @@ let videoMover = document.querySelector('.video__mover');
 let videoList = document.querySelector('.video__list-video');
 let dotItems = document.querySelectorAll('.video__dot');
 let dinamicItemVideo = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
-
-function refreshItemVideo() {
-  dinamicItemVideo = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
-}
 
 let counterSlide = 0;
 let marginCommon = parseInt(window.getComputedStyle(videoYouTube[0], "").marginRight);
@@ -525,30 +450,11 @@ dotItems.forEach(function (item, index) {
       differentStepDot = index - switchIndexDot;
       if (differentStepDot == 0) {
 
-      } 
-     else if(differentStepDot > 0) {
+      } else if (differentStepDot > 0) {
         stepRighting(differentStepDot)
-      }
-      else if(differentStepDot < 0) {
+      } else if (differentStepDot < 0) {
         stepLefting(differentStepDot)
       }
-      // else if (differentStepDot == 1) {
-      //   oneStepRighting();
-      // } else if (differentStepDot == 2) {
-      //   twoStepRighting();
-      // } else if (differentStepDot == 3) {
-      //   threeStepRighting();
-      // } else if (differentStepDot == 4) {
-      //   fourStepRighting();
-      // } else if (differentStepDot == -1) {
-      //   oneStepLefting();
-      // } else if (differentStepDot == -2) {
-      //   twoStepLefting();
-      // } else if (differentStepDot == -3) {
-      //   threeStepLefting();
-      // } else if (differentStepDot == -4) {
-      //   fourStepLefting()
-      // }
       console.log('975', differentStepDot);
       switchIndexDot = index;
       mainVideoChanging(index);
@@ -598,162 +504,7 @@ function stepRighting(countStep) {
   }, timeDelayMaj);
 }
 
-// function oneStepRighting() {
-//   counterSlide = 1;
-//   result = sizeStep * counterSlide;
-//   firstRightActing();
-//   setTimeout(() => {
-//     for (let i = 0; dinamicItemVideo.length > i; i++) {
-//       dinamicItemVideo[i].style.right = result + 'px';
-//     }
-//   }, timeDelayMin);
-//   setTimeout(() => {
-//     finalRightActing();
-//     appending(counterSlide);
-//   }, timeDelayMaj);
-// }
-
-// function twoStepRighting() {
-//   counterSlide = 2;
-//   result = sizeStep * counterSlide;
-//   firstRightActing();
-//   setTimeout(() => {
-//     for (let i = 0; dinamicItemVideo.length > i; i++) {
-//       dinamicItemVideo[i].style.right = result + 'px';
-//     }
-//   }, timeDelayMin);
-//   setTimeout(() => {
-//     finalRightActing();
-//     appending(counterSlide);
-//   }, timeDelayMaj);
-// }
-
-// function threeStepRighting() {
-//   counterSlide = 3;
-//   result = sizeStep * counterSlide;
-//   firstRightActing();
-//   setTimeout(() => {
-//     for (let i = 0; dinamicItemVideo.length > i; i++) {
-//       dinamicItemVideo[i].style.right = result + 'px';
-//     }
-//   }, timeDelayMin);
-//   setTimeout(() => {
-//     finalRightActing();
-//     appending(counterSlide);
-//   }, timeDelayMaj);
-// }
-
-
-/**
-*?   function threeStepRighting(){
-*?    arrItems.length = 0;
-*?   counterSlide = 3;
-*?   arrItems[0] = dinamicItemVideo[0].cloneNode(true);
-*?   console.log(arrItems[0].id, '620 line')
-*?     arrItems[0].addEventListener('click',function(e){
-*?     console.log(e.target.id,'e.target.id');
-*?     console.log(e.target,'e.target');
-*?     playingStoping(e.target.id);
-*?      });
-*?   videoList.append(arrItems[0]);
-*?   result = sizeStep * counterSlide;
-*?   firstRightActing();
-*?   setTimeout(() => {
-*?     for(let i = 0; dinamicItemVideo.length > i; i++){
-*?       dinamicItemVideo[i].style.right = result + 'px';
-*?     }
-*?   }, timeDelayMin);
-*?   setTimeout(() => {
-*?     dinamicItemVideo[0].remove();
-*?     counterSlide -= 1;
-*?     appending(counterSlide);
-*?     finalRightActing();
-*?     refreshItemVideo()
-*?   }, timeDelayMaj);
-*?  }
-*/
-
-// function fourStepRighting() {
-//   counterSlide = 4;
-//   result = sizeStep * counterSlide;
-//   firstRightActing();
-//   setTimeout(() => {
-//     for (let i = 0; dinamicItemVideo.length > i; i++) {
-//       dinamicItemVideo[i].style.right = result + 'px';
-//     }
-//   }, timeDelayMin);
-//   setTimeout(() => {
-//     finalRightActing();
-//     appending(counterSlide);
-//   }, timeDelayMaj);
-// }
-
-//  function fourStepRighting(){
-//   arrItems.length = 0;
-//   let counter = 2;
-//   let index = 0;
-//   counterSlide = 4;
-//   result = sizeStep * counterSlide;
-//   while(counter != 0){
-//     arrItems[index] = videoYouTube[index].cloneNode(true);
-//     console.log(arrItems[0].id, '651 line')
-//     arrItems[index].addEventListener('click',function(e){
-//     console.log(e.target.id,'e.target.id');
-//     console.log(e.target,'e.target');
-//     playingStoping(e.target.id);
-//      });
-//     videoList.append(arrItems[index]);
-//     counter--;
-//     index++;
-//   }
-//   firstRightActing();
-//   setTimeout(() => {
-//     for(let i = 0; dinamicItemVideo.length > i; i++){
-//       dinamicItemVideo[i].style.right = result + 'px';
-//     }
-//   }, timeDelayMin);
-//   setTimeout(() => {
-//     while(index != 0){
-//       dinamicItemVideo[0].remove();
-//       index--;
-//       refreshItemVideo()
-//     }
-//     counterSlide -= 2;
-//     appending(counterSlide);
-//     finalRightActing();
-//   }, timeDelayMaj);
-//  }
-
 // ----------------------- left move scenario --------------------------------
-
-function firstLeftActing() {
-  for (let i = 0; dinamicItemVideo.length > i; i++) {
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.left = '0px';
-    dinamicItemVideo[i].style.right = 'unset';
-  }
-}
-
-function oneStepLefting() {
-  counterSlide = -1;
-  result = sizeStep * counterSlide;
-  for (let i = 0; dinamicItemVideo.length > i; i++) {
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.left = result + 'px';
-    dinamicItemVideo[i].style.right = 'unset';
-  }
-  videoList.prepend(dinamicItemVideo[dinamicItemVideo.length - 1]);
-
-  setTimeout(() => {
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
-    }
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.left = '0px';
-    }
-    counterSlide = 0;
-  }, timeDelayMin);
-}
 
 function stepLefting(countStep) {
   counterSlide = countStep;
@@ -776,120 +527,6 @@ function stepLefting(countStep) {
     }
     counterSlide = 0;
   }, timeDelayMin);
-}
-
-function twoStepLefting() {
-  counterSlide = -2;
-  result = sizeStep * counterSlide;
-  for (let i = 0; dinamicItemVideo.length > i; i++) {
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.left = result + 'px';
-    dinamicItemVideo[i].style.right = 'unset';
-  }
-  while (counterSlide != 0) {
-    videoList.prepend(dinamicItemVideo[dinamicItemVideo.length - 1]);
-    counterSlide++;
-  }
-  setTimeout(() => {
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
-    }
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.left = '0px';
-    }
-    counterSlide = 0;
-  }, timeDelayMin);
-}
-
-function threeStepLefting() {
-  counterSlide = -3;
-  result = sizeStep * counterSlide;
-  for (let i = 0; dinamicItemVideo.length > i; i++) {
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.left = result + 'px';
-    dinamicItemVideo[i].style.right = 'unset';
-  }
-  while (counterSlide != 0) {
-    videoList.prepend(dinamicItemVideo[dinamicItemVideo.length - 1]);
-    counterSlide++;
-  }
-  setTimeout(() => {
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
-    }
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.left = '0px';
-    }
-    counterSlide = 0;
-  }, timeDelayMin);
-}
-
-function fourStepLefting() {
-  counterSlide = -4;
-  result = sizeStep * counterSlide;
-  for (let i = 0; dinamicItemVideo.length > i; i++) {
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.left = result + 'px';
-    dinamicItemVideo[i].style.right = 'unset';
-  }
-  while (counterSlide != 0) {
-    videoList.prepend(dinamicItemVideo[dinamicItemVideo.length - 1]);
-    counterSlide++;
-  }
-  setTimeout(() => {
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
-    }
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.left = '0px';
-    }
-    counterSlide = 0;
-  }, timeDelayMin);
-}
-
-
-function threeFourStepLefting(differentStepDot) {
-  arrItems.length = 0;
-  let counter = differentStepDot;
-  let index = 0;
-  result = sizeStep * differentStepDot;
-  while (differentStepDot != 0) {
-    //  cardShroud[(dinamicItemVideo.length -1) - index].style.display = 'none';
-    arrItems[index] = dinamicItemVideo[(dinamicItemVideo.length - 1) - index].cloneNode(true);
-    arrItems[index].addEventListener('click', function (e) {
-      console.log(e.target.id, 'e.target.id');
-      console.log(e.target, 'e.target');
-      playingStoping(e.target.id);
-    });
-    index++;
-    differentStepDot++;
-  }
-  index = 0;
-  while (counter != 0) {
-    videoList.prepend(arrItems[index]);
-    index++;
-    counter++;
-  }
-  for (let i = 0; dinamicItemVideo.length > i; i++) {
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.left = result + 'px';
-    dinamicItemVideo[i].style.right = 'unset';
-  }
-  setTimeout(() => {
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
-    }
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.left = '0px';
-    }
-  }, timeDelayMin);
-  setTimeout(() => {
-    while (index != 0) {
-      dinamicItemVideo[dinamicItemVideo.length - 1].remove();
-      index--;
-      refreshItemVideo()
-    }
-  }, timeDelayMaj);
 }
 
 function loging() {
@@ -1050,16 +687,6 @@ cardShroud.forEach(function (item, index) {
   })
   arrPlayers[index] = item;
 })
-
-
-//  videoYouTube.forEach(function(item,index){
-//   videoYouTube[[index]].addEventListener('click',function(){
-//     console.log(index,'869');
-//     console.log(item.id);
-//     playingStoping(item.id)
-//   })
-//   arrPlayers[index] = videoYouTube[index];
-//  })
 
 let playStopPermission_1 = true,
   playStopPermission_2 = true,
