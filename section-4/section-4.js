@@ -1,4 +1,3 @@
-
 // let playListArr = ['Qifmo4r1nFY', '0UUK4VDblXM', 'yx-HYerClEA'];
 
 // // 2. This code loads the IFrame Player API code asynchronously.
@@ -225,7 +224,7 @@ function toggleFullscreen() {
     exitFullscreenBtn.style.zIndex = 7;
   } else {
     playerWrap.requestFullscreen();
-    window.scrollTo(0,1);
+    window.scrollTo(0, 1);
     exitFullscreenBtn.style.zIndex = 11;
   }
 }
@@ -400,24 +399,20 @@ let videoContainer = {
 videoPlayer.src = videoContainer.videoSrc_2;
 videoPlayer.poster = videoContainer.poster_2;
 
-function mainVideoChanging(dot){
-  if(dot == 0){
+function mainVideoChanging(dot) {
+  if (dot == 0) {
     videoPlayer.src = videoContainer.videoSrc_2;
     videoPlayer.poster = videoContainer.poster_2;
-  }
-  else if(dot == 1){
+  } else if (dot == 1) {
     videoPlayer.src = videoContainer.videoSrc_3;
     videoPlayer.poster = videoContainer.poster_3;
-  }
-  else if(dot == 2){
+  } else if (dot == 2) {
     videoPlayer.src = videoContainer.videoSrc_4;
     videoPlayer.poster = videoContainer.poster_4;
-  }
-  else if(dot == 3){
+  } else if (dot == 3) {
     videoPlayer.src = videoContainer.videoSrc_5;
     videoPlayer.poster = videoContainer.poster_5;
-  }
-  else if(dot == 4){
+  } else if (dot == 4) {
     videoPlayer.src = videoContainer.videoSrc_1;
     videoPlayer.poster = videoContainer.poster_1;
   }
@@ -433,10 +428,15 @@ let videoList = document.querySelector('.video__list-video');
 let dotItems = document.querySelectorAll('.video__dot');
 let dinamicItemVideo = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
 
+function refreshItemVideo() {
+  dinamicItemVideo = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
+}
+
 let counterSlide = 0;
 let marginCommon = parseInt(window.getComputedStyle(videoYouTube[0], "").marginRight);
 let direction, sizeStep, result, permissionButton = true;
-let timeDelayMaj = 1000, timeDelayMin = 5;
+let timeDelayMaj = 1000,
+  timeDelayMin = 5;
 
 let switchIndexDot = 0;
 let differentStepDot;
@@ -488,323 +488,406 @@ dotRecoloring();
 
 // ----------------------------- buttons left right ------------------------------------
 
-rightButton.onclick = function() {
+rightButton.onclick = function () {
   direction = 'right';
-  if(permissionButton){
-  dotRecoloring();
-  oneStepRighting();
-  allStopping();
-  permissing();
+  if (permissionButton) {
+    dotRecoloring();
+    oneStepRighting();
+    allStopping();
+    permissing();
   }
 }
 
-leftButton.onclick = function() {
+leftButton.onclick = function () {
   direction = 'left';
-  if(permissionButton){
-  dotRecoloring();
-  oneStepLefting();
-  allStopping();
-  permissing();
+  if (permissionButton) {
+    dotRecoloring();
+    oneStepLefting();
+    allStopping();
+    permissing();
   }
 }
 
-function permissing(){
+function permissing() {
   permissionButton = false;
-  setTimeout(function(){permissionButton = true},timeDelayMaj + 500);
+  setTimeout(function () {
+    permissionButton = true
+  }, timeDelayMaj + 500);
 }
 
 // ------------------------------ dot click ------------------------------------
 
-dotItems.forEach(function(item,index){
-  item.addEventListener('click',function(){
-   if(permissionButton == true){
-   dotItems[switchIndexDot].style.backgroundColor = '#999999';
-   item.style.backgroundColor = '#333333';
-   differentStepDot = index - switchIndexDot;
-   if(differentStepDot == 0){
+dotItems.forEach(function (item, index) {
+  item.addEventListener('click', function () {
+    if (permissionButton == true) {
+      dotItems[switchIndexDot].style.backgroundColor = '#999999';
+      item.style.backgroundColor = '#333333';
+      differentStepDot = index - switchIndexDot;
+      if (differentStepDot == 0) {
 
-   }
-   else if(differentStepDot == 1){
-    oneStepRighting();
-   }
-   else if(differentStepDot == 2){
-    twoStepRighting();
-   }
-   else if(differentStepDot == 3){
-    threeStepRighting();
-   }
-   else if(differentStepDot == 4){
-    fourStepRighting();
-   }
-   else if(differentStepDot == -1){
-    oneStepLefting();
-   }
-   else if(differentStepDot == -2){
-    twoStepLefting();
-   }
-   else if(differentStepDot == -3 || differentStepDot == -4){
-    threeFourStepLefting(differentStepDot);
-   }
-   console.log('975',differentStepDot);
-   switchIndexDot = index;
-   mainVideoChanging(index);
-   allStopping();
-   permissing();
-   }
-   })
-   })
+      } else if (differentStepDot == 1) {
+        oneStepRighting();
+      } else if (differentStepDot == 2) {
+        twoStepRighting();
+      } else if (differentStepDot == 3) {
+        threeStepRighting();
+      } else if (differentStepDot == 4) {
+        fourStepRighting();
+      } else if (differentStepDot == -1) {
+        oneStepLefting();
+      } else if (differentStepDot == -2) {
+        twoStepLefting();
+      } else if (differentStepDot == -3) {
+        threeStepLefting();
+      } else if (differentStepDot == -4) {
+        fourStepLefting()
+      }
+      console.log('975', differentStepDot);
+      switchIndexDot = index;
+      mainVideoChanging(index);
+      allStopping();
+      permissing();
+    }
+  })
+})
 
 // ----------------------- right move scenario --------------------------------
 
-   function appending(counterSlide){
-    while(counterSlide > 0){
-      videoList.append(dinamicItemVideo[0]);
-      counterSlide--;
-      }
-   }
-
-   function firstRightActing(){
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
-      dinamicItemVideo[i].style.left = 'unset';
-      dinamicItemVideo[i].style.right = '0px';
-    }
-   }
-
-  function finalRightActing(){
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.transitionDuration = 'unset';
-      dinamicItemVideo[i].style.left = '0px';
-      dinamicItemVideo[i].style.right = 'unset';
-    }
-   }
-
-   function oneStepRighting(){
-    counterSlide = 1;
-     result = sizeStep * counterSlide;
-    firstRightActing();
-    setTimeout(() => {
-      for(let i = 0; dinamicItemVideo.length > i; i++){
-        dinamicItemVideo[i].style.right = result + 'px';
-      }
-    }, timeDelayMin);
-    setTimeout(() => {
-      finalRightActing();
-    appending(counterSlide);
-    }, timeDelayMaj);
+function appending(counterSlide) {
+  while (counterSlide > 0) {
+    videoList.append(dinamicItemVideo[0]);
+    counterSlide--;
   }
+}
 
-   function twoStepRighting(){
-    counterSlide = 2;
-    result = sizeStep * counterSlide;
-    firstRightActing();
-    setTimeout(() => {
-      for(let i = 0; dinamicItemVideo.length > i; i++){
-        dinamicItemVideo[i].style.right = result + 'px';
-      }
-    }, timeDelayMin);
-    setTimeout(() => {
-      finalRightActing();
-      appending(counterSlide);
-    }, timeDelayMaj);
+function firstRightActing() {
+  for (let i = 0; dinamicItemVideo.length > i; i++) {
+    dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
+    dinamicItemVideo[i].style.left = 'unset';
+    dinamicItemVideo[i].style.right = '0px';
   }
+}
 
-   function threeStepRighting(){
-    arrItems.length = 0;
-    counterSlide = 3;
-    arrItems[0] = dinamicItemVideo[0].cloneNode(true);
-      arrItems[0].addEventListener('click',function(e){
-      console.log(e.target.id,'e.target.id');
-      console.log(e.target,'e.target');
-      playingStoping(e.target.id);
-       });
-    videoList.append(arrItems[0]);
-    result = sizeStep * counterSlide;
-    firstRightActing();
-    setTimeout(() => {
-      for(let i = 0; dinamicItemVideo.length > i; i++){
-        dinamicItemVideo[i].style.right = result + 'px';
-      }
-    }, timeDelayMin);
-    setTimeout(() => {
-      dinamicItemVideo[0].remove();
-      counterSlide -= 1;
-      appending(counterSlide);
-      finalRightActing();
-    }, timeDelayMaj);
-   }
-
-   function fourStepRighting(){
-    arrItems.length = 0;
-    let counter = 2;
-    let index = 0;
-    counterSlide = 4;
-    result = sizeStep * counterSlide;
-    while(counter != 0){
-      arrItems[index] = videoYouTube[index].cloneNode(true);
-      arrItems[index].addEventListener('click',function(e){
-      console.log(e.target.id,'e.target.id');
-      console.log(e.target,'e.target');
-      playingStoping(e.target.id);
-       });
-      videoList.append(arrItems[index]);
-      counter--;
-      index++;
-    }
-    firstRightActing();
-    setTimeout(() => {
-      for(let i = 0; dinamicItemVideo.length > i; i++){
-        dinamicItemVideo[i].style.right = result + 'px';
-      }
-    }, timeDelayMin);
-    setTimeout(() => {
-      while(index != 0){
-        dinamicItemVideo[0].remove();
-        index--;
-      }
-      counterSlide -= 2;
-      appending(counterSlide);
-      finalRightActing();
-    }, timeDelayMaj);
-   }
-
-// ----------------------- left move scenario --------------------------------
-
-function firstLeftActing(){
-  for(let i = 0; dinamicItemVideo.length > i; i++){
+function finalRightActing() {
+  for (let i = 0; dinamicItemVideo.length > i; i++) {
     dinamicItemVideo[i].style.transitionDuration = 'unset';
     dinamicItemVideo[i].style.left = '0px';
     dinamicItemVideo[i].style.right = 'unset';
   }
 }
 
-function oneStepLefting(){
-  counterSlide = -1;
+function oneStepRighting() {
+  counterSlide = 1;
   result = sizeStep * counterSlide;
-  for(let i = 0; dinamicItemVideo.length > i; i++){
-    dinamicItemVideo[i].style.transitionDuration = 'unset';
-    dinamicItemVideo[i].style.left = result + 'px'; 
-    dinamicItemVideo[i].style.right = 'unset';
-  }
-  videoList.prepend(dinamicItemVideo[dinamicItemVideo.length -1]);
-
- setTimeout(() => {
-   for(let i = 0; dinamicItemVideo.length > i; i++){
-     dinamicItemVideo[i].style.transitionDuration =  timeDelayMaj + 'ms';
-   }
-   for(let i = 0; dinamicItemVideo.length > i; i++){
-     dinamicItemVideo[i].style.left = '0px';
-   }
-   counterSlide = 0;
- }, timeDelayMin);
+  firstRightActing();
+  setTimeout(() => {
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.right = result + 'px';
+    }
+  }, timeDelayMin);
+  setTimeout(() => {
+    finalRightActing();
+    appending(counterSlide);
+  }, timeDelayMaj);
 }
 
-function twoStepLefting(){
-  counterSlide = -2;
+function twoStepRighting() {
+  counterSlide = 2;
   result = sizeStep * counterSlide;
-  for(let i = 0; dinamicItemVideo.length > i; i++){
+  firstRightActing();
+  setTimeout(() => {
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.right = result + 'px';
+    }
+  }, timeDelayMin);
+  setTimeout(() => {
+    finalRightActing();
+    appending(counterSlide);
+  }, timeDelayMaj);
+}
+
+function threeStepRighting() {
+  counterSlide = 3;
+  result = sizeStep * counterSlide;
+  firstRightActing();
+  setTimeout(() => {
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.right = result + 'px';
+    }
+  }, timeDelayMin);
+  setTimeout(() => {
+    finalRightActing();
+    appending(counterSlide);
+  }, timeDelayMaj);
+}
+
+//  function threeStepRighting(){
+//   arrItems.length = 0;
+//   counterSlide = 3;
+//   arrItems[0] = dinamicItemVideo[0].cloneNode(true);
+//   console.log(arrItems[0].id, '620 line')
+//     arrItems[0].addEventListener('click',function(e){
+//     console.log(e.target.id,'e.target.id');
+//     console.log(e.target,'e.target');
+//     playingStoping(e.target.id);
+//      });
+//   videoList.append(arrItems[0]);
+//   result = sizeStep * counterSlide;
+//   firstRightActing();
+//   setTimeout(() => {
+//     for(let i = 0; dinamicItemVideo.length > i; i++){
+//       dinamicItemVideo[i].style.right = result + 'px';
+//     }
+//   }, timeDelayMin);
+//   setTimeout(() => {
+//     dinamicItemVideo[0].remove();
+//     counterSlide -= 1;
+//     appending(counterSlide);
+//     finalRightActing();
+//     refreshItemVideo()
+//   }, timeDelayMaj);
+//  }
+
+function fourStepRighting() {
+  counterSlide = 4;
+  result = sizeStep * counterSlide;
+  firstRightActing();
+  setTimeout(() => {
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.right = result + 'px';
+    }
+  }, timeDelayMin);
+  setTimeout(() => {
+    finalRightActing();
+    appending(counterSlide);
+  }, timeDelayMaj);
+}
+
+//  function fourStepRighting(){
+//   arrItems.length = 0;
+//   let counter = 2;
+//   let index = 0;
+//   counterSlide = 4;
+//   result = sizeStep * counterSlide;
+//   while(counter != 0){
+//     arrItems[index] = videoYouTube[index].cloneNode(true);
+//     console.log(arrItems[0].id, '651 line')
+//     arrItems[index].addEventListener('click',function(e){
+//     console.log(e.target.id,'e.target.id');
+//     console.log(e.target,'e.target');
+//     playingStoping(e.target.id);
+//      });
+//     videoList.append(arrItems[index]);
+//     counter--;
+//     index++;
+//   }
+//   firstRightActing();
+//   setTimeout(() => {
+//     for(let i = 0; dinamicItemVideo.length > i; i++){
+//       dinamicItemVideo[i].style.right = result + 'px';
+//     }
+//   }, timeDelayMin);
+//   setTimeout(() => {
+//     while(index != 0){
+//       dinamicItemVideo[0].remove();
+//       index--;
+//       refreshItemVideo()
+//     }
+//     counterSlide -= 2;
+//     appending(counterSlide);
+//     finalRightActing();
+//   }, timeDelayMaj);
+//  }
+
+// ----------------------- left move scenario --------------------------------
+
+function firstLeftActing() {
+  for (let i = 0; dinamicItemVideo.length > i; i++) {
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.left = '0px';
+    dinamicItemVideo[i].style.right = 'unset';
+  }
+}
+
+function oneStepLefting() {
+  counterSlide = -1;
+  result = sizeStep * counterSlide;
+  for (let i = 0; dinamicItemVideo.length > i; i++) {
     dinamicItemVideo[i].style.transitionDuration = 'unset';
     dinamicItemVideo[i].style.left = result + 'px';
     dinamicItemVideo[i].style.right = 'unset';
   }
-  while(counterSlide != 0){
-    videoList.prepend(dinamicItemVideo[dinamicItemVideo.length -1]);
-    counterSlide++;
-  }
+  videoList.prepend(dinamicItemVideo[dinamicItemVideo.length - 1]);
+
   setTimeout(() => {
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.transitionDuration =  timeDelayMaj + 'ms';
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
     }
-    for(let i = 0; dinamicItemVideo.length > i; i++){
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
       dinamicItemVideo[i].style.left = '0px';
     }
     counterSlide = 0;
   }, timeDelayMin);
 }
 
+function twoStepLefting() {
+  counterSlide = -2;
+  result = sizeStep * counterSlide;
+  for (let i = 0; dinamicItemVideo.length > i; i++) {
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.left = result + 'px';
+    dinamicItemVideo[i].style.right = 'unset';
+  }
+  while (counterSlide != 0) {
+    videoList.prepend(dinamicItemVideo[dinamicItemVideo.length - 1]);
+    counterSlide++;
+  }
+  setTimeout(() => {
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
+    }
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.left = '0px';
+    }
+    counterSlide = 0;
+  }, timeDelayMin);
+}
+
+function threeStepLefting() {
+  counterSlide = -3;
+  result = sizeStep * counterSlide;
+  for (let i = 0; dinamicItemVideo.length > i; i++) {
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.left = result + 'px';
+    dinamicItemVideo[i].style.right = 'unset';
+  }
+  while (counterSlide != 0) {
+    videoList.prepend(dinamicItemVideo[dinamicItemVideo.length - 1]);
+    counterSlide++;
+  }
+  setTimeout(() => {
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
+    }
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.left = '0px';
+    }
+    counterSlide = 0;
+  }, timeDelayMin);
+}
+
+function fourStepLefting() {
+  counterSlide = -4;
+  result = sizeStep * counterSlide;
+  for (let i = 0; dinamicItemVideo.length > i; i++) {
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.left = result + 'px';
+    dinamicItemVideo[i].style.right = 'unset';
+  }
+  while (counterSlide != 0) {
+    videoList.prepend(dinamicItemVideo[dinamicItemVideo.length - 1]);
+    counterSlide++;
+  }
+  setTimeout(() => {
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
+    }
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.left = '0px';
+    }
+    counterSlide = 0;
+  }, timeDelayMin);
+}
+
+
 function threeFourStepLefting(differentStepDot) {
-    arrItems.length = 0;
+  arrItems.length = 0;
   let counter = differentStepDot;
   let index = 0;
   result = sizeStep * differentStepDot;
-  while(differentStepDot != 0){
- //  cardShroud[(dinamicItemVideo.length -1) - index].style.display = 'none';
-  arrItems[index] = dinamicItemVideo[(dinamicItemVideo.length -1) - index].cloneNode(true);
-   arrItems[index].addEventListener('click',function(e){
-   console.log(e.target.id,'e.target.id');
-   console.log(e.target,'e.target');
-   playingStoping(e.target.id);
+  while (differentStepDot != 0) {
+    //  cardShroud[(dinamicItemVideo.length -1) - index].style.display = 'none';
+    arrItems[index] = dinamicItemVideo[(dinamicItemVideo.length - 1) - index].cloneNode(true);
+    arrItems[index].addEventListener('click', function (e) {
+      console.log(e.target.id, 'e.target.id');
+      console.log(e.target, 'e.target');
+      playingStoping(e.target.id);
     });
     index++;
     differentStepDot++;
   }
   index = 0;
-  while(counter != 0){
+  while (counter != 0) {
     videoList.prepend(arrItems[index]);
     index++;
     counter++;
   }
-  for(let i = 0; dinamicItemVideo.length > i; i++){
+  for (let i = 0; dinamicItemVideo.length > i; i++) {
     dinamicItemVideo[i].style.transitionDuration = 'unset';
     dinamicItemVideo[i].style.left = result + 'px';
     dinamicItemVideo[i].style.right = 'unset';
   }
   setTimeout(() => {
-    for(let i = 0; dinamicItemVideo.length > i; i++){
-      dinamicItemVideo[i].style.transitionDuration =  timeDelayMaj + 'ms';
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
     }
-    for(let i = 0; dinamicItemVideo.length > i; i++){
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
       dinamicItemVideo[i].style.left = '0px';
     }
   }, timeDelayMin);
   setTimeout(() => {
-    while(index != 0){
-      dinamicItemVideo[dinamicItemVideo.length -1].remove();
+    while (index != 0) {
+      dinamicItemVideo[dinamicItemVideo.length - 1].remove();
       index--;
+      refreshItemVideo()
     }
   }, timeDelayMaj);
 }
 
-function loging(){
+function loging() {
   console.log('||||||||||||||||||||||||||||||||');
-  console.log('counterSlide: ',counterSlide);
-  console.log('direction: ',direction);
-  console.log('sizeStep: ',sizeStep);
-  console.log('result: ',result);
-  console.log('permissionButton: ',permissionButton);
-  console.log('timeDelayMaj: ',timeDelayMaj);
-  console.log('timeDelayMin: ',timeDelayMin);
-  console.log('switchIndexDot: ',switchIndexDot);
-  console.log('differentStepDot: ',differentStepDot);
-  console.log('arrItems: ',arrItems);
-  console.log('right: ',window.getComputedStyle(dinamicItemVideo[0], "").right);
-  console.log('left: ',window.getComputedStyle(dinamicItemVideo[0], "").left);
+  console.log('counterSlide: ', counterSlide);
+  console.log('direction: ', direction);
+  console.log('sizeStep: ', sizeStep);
+  console.log('result: ', result);
+  console.log('permissionButton: ', permissionButton);
+  console.log('timeDelayMaj: ', timeDelayMaj);
+  console.log('timeDelayMin: ', timeDelayMin);
+  console.log('switchIndexDot: ', switchIndexDot);
+  console.log('differentStepDot: ', differentStepDot);
+  console.log('arrItems: ', arrItems);
+  console.log('right: ', window.getComputedStyle(dinamicItemVideo[0], "").right);
+  console.log('left: ', window.getComputedStyle(dinamicItemVideo[0], "").left);
   seriesing();
+  allStopping();
 }
 
 // ------------------------ API youtube ----------------------------------
 
- let player_1,player_2,player_3,player_4,player_5;
+let player_1, player_2, player_3, player_4, player_5, player_6, player_7, player_8, player_9, player_10;
 
- var tag = document.createElement('script');
+function initApiYouTube() {
+  var tag = document.createElement('script');
 
- tag.src = "https://www.youtube.com/iframe_api";
- var firstScriptTag = document.getElementsByTagName('script')[0];
- firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+initApiYouTube()
 
- function onYouTubeIframeAPIReady() {
+function onYouTubeIframeAPIReady() {
   player_1 = new YT.Player('player_1', {
-     height: '100%',
-     width: '100%',
-     videoId: 'zp1BXPX8jcU',
-     playerVars: {
-       'playsinline': 1,
-       'controls': 1,
-       'host': 'https://www.youtube.com',
-     },
-   });
+    height: '100%',
+    width: '100%',
+    videoId: 'zp1BXPX8jcU',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
 
-   player_2 = new YT.Player('player_2', {
+  player_2 = new YT.Player('player_2', {
     height: '100%',
     width: '100%',
     videoId: 'Vi5D6FKhRmo',
@@ -847,23 +930,78 @@ function loging(){
       'host': 'https://www.youtube.com',
     },
   });
- }
 
- let cardPlayer = document.querySelectorAll('.video__you-tube .video__wrap-upper');
- var cardShroud = document.querySelectorAll('.video__you-tube .video__shroud');
- let coverPlayer = document.querySelector('.video__wrap-cover');
- let dinamicCards = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
+  player_6 = new YT.Player('player_6', {
+    height: '100%',
+    width: '100%',
+    videoId: 'zp1BXPX8jcU',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
+
+  player_7 = new YT.Player('player_7', {
+    height: '100%',
+    width: '100%',
+    videoId: 'Vi5D6FKhRmo',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
+
+  player_8 = new YT.Player('player_8', {
+    height: '100%',
+    width: '100%',
+    videoId: 'NOhDysLnTvY',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
+
+  player_9 = new YT.Player('player_9', {
+    height: '100%',
+    width: '100%',
+    videoId: 'aWmJ5DgyWPI',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
+
+  player_10 = new YT.Player('player_10', {
+    height: '100%',
+    width: '100%',
+    videoId: '2OR0OCr6uRE',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
+}
+
+let cardPlayer = document.querySelectorAll('.video__you-tube .video__wrap-upper');
+var cardShroud = document.querySelectorAll('.video__you-tube .video__shroud');
+let coverPlayer = document.querySelector('.video__wrap-cover');
+let dinamicCards = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
 
 let arrPlayers = [];
 
- cardShroud.forEach(function(item,index){
-  item.addEventListener('click',function(){
-    console.log(index,'851');
+cardShroud.forEach(function (item, index) {
+  item.addEventListener('click', function () {
+    console.log(index, '851');
     console.log(item.id);
     playingStoping(item.id)
   })
   arrPlayers[index] = item;
- })
+})
 
 
 //  videoYouTube.forEach(function(item,index){
@@ -875,149 +1013,404 @@ let arrPlayers = [];
 //   arrPlayers[index] = videoYouTube[index];
 //  })
 
- let playStopPermission_1 = true, playStopPermission_2 = true, playStopPermission_3 = true, playStopPermission_4 = true ,playStopPermission_5 = true;
+let playStopPermission_1 = true,
+  playStopPermission_2 = true,
+  playStopPermission_3 = true,
+  playStopPermission_4 = true,
+  playStopPermission_5 = true,
+  playStopPermission_6 = true,
+  playStopPermission_7 = true,
+  playStopPermission_8 = true,
+  playStopPermission_9 = true,
+  playStopPermission_10 = true;
 
- function playingStoping(target){
-    if(target == 'shroud_1'){
-      console.log('playingStoping - ',target);
-      if(playStopPermission_1){
-        playStopPermission_1 = false;
-        playStopPermission_2 = true;
-        playStopPermission_3 = true;
-        playStopPermission_4 = true;
-        playStopPermission_5 = true;
-        player_1.playVideo();
-        player_2.pauseVideo();
-        player_3.pauseVideo();
-        player_4.pauseVideo();
-        player_5.pauseVideo();
-      }
-      else{
-        playStopPermission_1 = true;
-        playStopPermission_2 = true;
-        playStopPermission_3 = true;
-        playStopPermission_4 = true;
-        playStopPermission_5 = true;
-        player_1.pauseVideo();
-      }
+function playingStoping(target) {
+  if (target == 'shroud_1') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_1) {
+      playStopPermission_1 = false;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_1.playVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_1.pauseVideo();
     }
-    else if(target == 'shroud_2'){
-      console.log('playingStoping - ',target);
-      if(playStopPermission_2){
-        playStopPermission_2 = false;
-        playStopPermission_1 = true;
-        playStopPermission_3 = true;
-        playStopPermission_4 = true;
-        playStopPermission_5 = true;
-        player_2.playVideo();
-        player_1.pauseVideo();
-        player_3.pauseVideo();
-        player_4.pauseVideo();
-        player_5.pauseVideo();
-      }
-      else{
-        playStopPermission_2 = true;
-        playStopPermission_1 = true;
-        playStopPermission_3 = true;
-        playStopPermission_4 = true;
-        playStopPermission_5 = true;
-        player_2.pauseVideo();
-      }
+  } else if (target == 'shroud_2') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_2) {
+      playStopPermission_2 = false;
+      playStopPermission_1 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_2.playVideo();
+      player_1.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_2 = true;
+      playStopPermission_1 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_2.pauseVideo();
     }
-    else if(target == 'shroud_3'){
-      console.log('playingStoping - ',target);
-      if(playStopPermission_3){
-        playStopPermission_3 = false;
-        playStopPermission_1 = true;
-        playStopPermission_2 = true;
-        playStopPermission_4 = true;
-        playStopPermission_5 = true;
-        player_3.playVideo();
-        player_1.pauseVideo();
-        player_2.pauseVideo();
-        player_4.pauseVideo();
-        player_5.pauseVideo();
-      }
-      else{
-        playStopPermission_3 = true;
-        playStopPermission_1 = true;
-        playStopPermission_2 = true;
-        playStopPermission_4 = true;
-        playStopPermission_5 = true;
-        player_3.pauseVideo();
-      }
+  } else if (target == 'shroud_3') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_3) {
+      playStopPermission_3 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_3.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_3 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      player_3.pauseVideo();
     }
-    else if(target == 'shroud_4'){
-      console.log('playingStoping - ',target);
-      if(playStopPermission_4){
-        playStopPermission_4 = false;
-        playStopPermission_1 = true;
-        playStopPermission_2 = true;
-        playStopPermission_3 = true;
-        playStopPermission_5 = true;
-        player_4.playVideo();
-        player_1.pauseVideo();
-        player_2.pauseVideo();
-        player_3.pauseVideo();
-        player_5.pauseVideo();
-      }
-      else{
-        playStopPermission_4 = true;
-        playStopPermission_1 = true;
-        playStopPermission_2 = true;
-        playStopPermission_3 = true;
-        playStopPermission_5 = true;
-        player_4.pauseVideo();
-      }
+  } else if (target == 'shroud_4') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_4) {
+      playStopPermission_4 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_4.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_4 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_4.pauseVideo();
     }
-    else if(target == 'shroud_5'){
-      console.log('playingStoping - ',target);
-      if(playStopPermission_5){
-        playStopPermission_5 = false;
-        playStopPermission_1 = true;
-        playStopPermission_2 = true;
-        playStopPermission_3 = true;
-        playStopPermission_4 = true;
-        player_5.playVideo();
-        player_1.pauseVideo();
-        player_2.pauseVideo();
-        player_3.pauseVideo();
-        player_4.pauseVideo();
-    }
-    else{
+  } else if (target == 'shroud_5') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_5) {
+      playStopPermission_5 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_5.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
       playStopPermission_5 = true;
       playStopPermission_1 = true;
       playStopPermission_2 = true;
       playStopPermission_3 = true;
       playStopPermission_4 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
       player_5.pauseVideo();
     }
- }
+  } else if (target == 'shroud_6') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_6) {
+      playStopPermission_6 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_6.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_6 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_6.pauseVideo();
+    }
+  } else if (target == 'shroud_7') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_7) {
+      playStopPermission_7 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_7.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_7 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_7.pauseVideo();
+    }
+  } else if (target == 'shroud_8') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_8) {
+      playStopPermission_8 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_8.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_8 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_8.pauseVideo();
+    }
+  } else if (target == 'shroud_9') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_9) {
+      playStopPermission_9 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_10 = true;
+      player_9.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_9 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_10 = true;
+      player_9.pauseVideo();
+    }
+  } else if (target == 'shroud_10') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_10) {
+      playStopPermission_10 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      player_10.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+    } else {
+      playStopPermission_10 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      player_10.pauseVideo();
+    }
+  }
 }
 
-function allStopping(){
+function allStopping() {
   player_1.stopVideo();
   player_2.stopVideo();
   player_3.stopVideo();
   player_4.stopVideo();
   player_5.stopVideo();
+  player_6.stopVideo();
+  player_7.stopVideo();
+  player_8.stopVideo();
+  player_9.stopVideo();
+  player_10.stopVideo();
 }
 
-function seriesing(){
+function seriesing() {
   // oneStepRighting()
   // oneStepRighting()
   // oneStepRighting()
   // oneStepRighting()
-setTimeout(() => {
-  oneStepRighting()
-}, 300);
-setTimeout(() => {
-  oneStepRighting()
-}, 600);
-setTimeout(() => {
-  oneStepRighting()
-}, 900);
-setTimeout(() => {
-  oneStepRighting()
-}, 1200);
+  setTimeout(() => {
+    oneStepRighting()
+  }, 300);
+  setTimeout(() => {
+    oneStepRighting()
+  }, 600);
+  setTimeout(() => {
+    oneStepRighting()
+  }, 900);
+  setTimeout(() => {
+    oneStepRighting()
+  }, 1200);
 }
