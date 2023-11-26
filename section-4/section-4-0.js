@@ -1,235 +1,523 @@
-// const buttonDebugging = document.createElement('button');
-// buttonDebugging.style.height = '130px';
-// buttonDebugging.style.width = '130px';
-// buttonDebugging.style.background = 'green';
-// const body_00 = document.getElementById('body');
-// body_00.append(buttonDebugging);
+// ------------------------ API youtube ----------------------------------
 
+let player_1, player_2, player_3, player_4, player_5, player_6, player_7, player_8, player_9, player_10;
 
-// let clonedIframe_1, clonedIframe_2, clonedIframe_3, clonedIframe_4, clonedIframe_5;
-// let clonePlayer_1, clonePlayer_2, clonePlayer_3, clonePlayer_4, clonePlayer_5;
+function initApiYouTube() {
+  var tag = document.createElement('script');
 
-// const btnClear = document.createElement('button');
-// btnClear.style.height = '130px';
-// btnClear.style.width = '130px';
-// btnClear.style.background = 'red';
-// body_00.append(btnClear);
+  tag.src = "https://www.youtube.com/iframe_api";
+  var firstScriptTag = document.getElementsByTagName('script')[0];
+  firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+initApiYouTube()
 
-// let containerVideoClone;
+function onYouTubeIframeAPIReady() {
+  player_1 = new YT.Player('player_1', {
+    height: '100%',
+    width: '100%',
+    videoId: 'zp1BXPX8jcU',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
 
-// buttonDebugging.addEventListener('click', () => {
-//     containerVideoClone = document.createElement('div');
-//     body_00.appendChild(containerVideoClone)
-//     containerVideoClone.innerText = 'check';
-//     containerVideoClone.style.color = 'black';
+  player_2 = new YT.Player('player_2', {
+    height: '100%',
+    width: '100%',
+    videoId: 'Vi5D6FKhRmo',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
 
-//     const btnVideo_1 = document.createElement('button');
-//     const btnVideo_2 = document.createElement('button');
-//     const btnVideo_3 = document.createElement('button');
-//     const btnVideo_4 = document.createElement('button');
-//     const btnVideo_5 = document.createElement('button');
-//     btnVideo_1.classList.add('button-technic');
-//     btnVideo_2.classList.add('button-technic');
-//     btnVideo_3.classList.add('button-technic');
-//     btnVideo_4.classList.add('button-technic');
-//     btnVideo_5.classList.add('button-technic');
-//     containerVideoClone.appendChild(btnVideo_1);
-//     containerVideoClone.appendChild(btnVideo_2);
-//     containerVideoClone.appendChild(btnVideo_3);
-//     containerVideoClone.appendChild(btnVideo_4);
-//     containerVideoClone.appendChild(btnVideo_5);
+  player_3 = new YT.Player('player_3', {
+    height: '100%',
+    width: '100%',
+    videoId: 'NOhDysLnTvY',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
 
+  player_4 = new YT.Player('player_4', {
+    height: '100%',
+    width: '100%',
+    videoId: 'aWmJ5DgyWPI',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
 
-//     clonedIframe_1 = document.createElement('div');
-//     clonedIframe_2 = document.createElement('div');
-//     clonedIframe_3 = document.createElement('div');
-//     clonedIframe_4 = document.createElement('div');
-//     clonedIframe_5 = document.createElement('div');
+  player_5 = new YT.Player('player_5', {
+    height: '100%',
+    width: '100%',
+    videoId: '2OR0OCr6uRE',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
 
-//     let arrID = [];
-//     arrID.length = 5;
-//     for (let i = 0; arrID.length > i; i++) {
-//         const randNumber = Math.trunc((Math.random().toString(10)) * 1000);
+  player_6 = new YT.Player('player_6', {
+    height: '100%',
+    width: '100%',
+    videoId: 'zp1BXPX8jcU',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
 
-//         if (arrID.includes(randNumber)) {
-//             i--
-//         } else {
-//             arrID[i] = randNumber
-//         }
-//     }
+  player_7 = new YT.Player('player_7', {
+    height: '100%',
+    width: '100%',
+    videoId: 'Vi5D6FKhRmo',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
 
-//     let newId_1 = 'player_' + arrID[0];
-//     let newId_2 = 'player_' + arrID[1];
-//     let newId_3 = 'player_' + arrID[2];
-//     let newId_4 = 'player_' + arrID[3];
-//     let newId_5 = 'player_' + arrID[4];
+  player_8 = new YT.Player('player_8', {
+    height: '100%',
+    width: '100%',
+    videoId: 'NOhDysLnTvY',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
 
-//     console.log(newId_1)
+  player_9 = new YT.Player('player_9', {
+    height: '100%',
+    width: '100%',
+    videoId: 'aWmJ5DgyWPI',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
 
-//     clonedIframe_1.setAttribute('id', newId_1);
-//     clonedIframe_2.setAttribute('id', newId_2);
-//     clonedIframe_3.setAttribute('id', newId_3);
-//     clonedIframe_4.setAttribute('id', newId_4);
-//     clonedIframe_5.setAttribute('id', newId_5);
+  player_10 = new YT.Player('player_10', {
+    height: '100%',
+    width: '100%',
+    videoId: '2OR0OCr6uRE',
+    playerVars: {
+      'playsinline': 1,
+      'controls': 1,
+      'host': 'https://www.youtube.com',
+    },
+  });
+}
 
+let cardPlayer = document.querySelectorAll('.video__you-tube .video__wrap-upper');
+var cardShroud = document.querySelectorAll('.video__you-tube .video__shroud');
+let coverPlayer = document.querySelector('.video__wrap-cover');
+let dinamicCards = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
 
+let arrPlayers = [];
 
-//     var tag = document.createElement('script');
+cardShroud.forEach(function (item, index) {
+  item.addEventListener('click', function () {
+    console.log(index, '851');
+    console.log(item.id);
+    playingStoping(item.id)
+  })
+  arrPlayers[index] = item;
+})
 
-//     tag.src = "https://www.youtube.com/iframe_api";
-//     var firstScriptTag = document.getElementsByTagName('script')[0];
-//     containerVideoClone.appendChild(tag, firstScriptTag);
+let playStopPermission_1 = true,
+  playStopPermission_2 = true,
+  playStopPermission_3 = true,
+  playStopPermission_4 = true,
+  playStopPermission_5 = true,
+  playStopPermission_6 = true,
+  playStopPermission_7 = true,
+  playStopPermission_8 = true,
+  playStopPermission_9 = true,
+  playStopPermission_10 = true;
 
+function playingStoping(target) {
+  if (target == 'shroud_1') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_1) {
+      playStopPermission_1 = false;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_1.playVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_1.pauseVideo();
+    }
+  } else if (target == 'shroud_2') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_2) {
+      playStopPermission_2 = false;
+      playStopPermission_1 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_2.playVideo();
+      player_1.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_2 = true;
+      playStopPermission_1 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_2.pauseVideo();
+    }
+  } else if (target == 'shroud_3') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_3) {
+      playStopPermission_3 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_3.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_3 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      player_3.pauseVideo();
+    }
+  } else if (target == 'shroud_4') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_4) {
+      playStopPermission_4 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_4.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_4 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_4.pauseVideo();
+    }
+  } else if (target == 'shroud_5') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_5) {
+      playStopPermission_5 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_5.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_5 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_5.pauseVideo();
+    }
+  } else if (target == 'shroud_6') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_6) {
+      playStopPermission_6 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_6.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_6 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_6.pauseVideo();
+    }
+  } else if (target == 'shroud_7') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_7) {
+      playStopPermission_7 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_7.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_7 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_7.pauseVideo();
+    }
+  } else if (target == 'shroud_8') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_8) {
+      playStopPermission_8 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_8.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_9.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_8 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_9 = true;
+      playStopPermission_10 = true;
+      player_8.pauseVideo();
+    }
+  } else if (target == 'shroud_9') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_9) {
+      playStopPermission_9 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_10 = true;
+      player_9.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_10.pauseVideo();
+    } else {
+      playStopPermission_9 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_10 = true;
+      player_9.pauseVideo();
+    }
+  } else if (target == 'shroud_10') {
+    console.log('playingStoping - ', target);
+    if (playStopPermission_10) {
+      playStopPermission_10 = false;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      player_10.playVideo();
+      player_1.pauseVideo();
+      player_2.pauseVideo();
+      player_3.pauseVideo();
+      player_4.pauseVideo();
+      player_5.pauseVideo();
+      player_6.pauseVideo();
+      player_7.pauseVideo();
+      player_8.pauseVideo();
+      player_9.pauseVideo();
+    } else {
+      playStopPermission_10 = true;
+      playStopPermission_1 = true;
+      playStopPermission_2 = true;
+      playStopPermission_3 = true;
+      playStopPermission_4 = true;
+      playStopPermission_5 = true;
+      playStopPermission_6 = true;
+      playStopPermission_7 = true;
+      playStopPermission_8 = true;
+      playStopPermission_9 = true;
+      player_10.pauseVideo();
+    }
+  }
+}
 
-
-
-//     function initApiYouTube() {
-//     clonePlayer_1 = new YT.Player(newId_1, {
-//         height: '100%',
-//         width: '100%',
-//         videoId: 'zp1BXPX8jcU',
-//         playerVars: {
-//             'playsinline': 1,
-//             'controls': 1,
-//             'host': 'https://www.youtube.com',
-//         },
-//         // events: {
-//         //     'onReady': onPlayerReady
-//         // }
-//     });
-
-//     clonePlayer_2 = new YT.Player(newId_2, {
-//         height: '100%',
-//         width: '100%',
-//         videoId: 'Vi5D6FKhRmo',
-//         playerVars: {
-//             'playsinline': 1,
-//             'controls': 1,
-//             'host': 'https://www.youtube.com',
-//         },
-//         // events: {
-//         //     'onReady': onPlayerReady
-//         // }
-//     });
-
-//     clonePlayer_3 = new YT.Player(newId_3, {
-//         height: '100%',
-//         width: '100%',
-//         videoId: 'NOhDysLnTvY',
-//         playerVars: {
-//             'playsinline': 1,
-//             'controls': 1,
-//             'host': 'https://www.youtube.com',
-//         },
-//         // events: {
-//         //     'onReady': onPlayerReady
-//         // }
-//     });
-
-//     clonePlayer_4 = new YT.Player(newId_4, {
-//         height: '100%',
-//         width: '100%',
-//         videoId: 'aWmJ5DgyWPI',
-//         playerVars: {
-//             'playsinline': 1,
-//             'controls': 1,
-//             'host': 'https://www.youtube.com',
-//         },
-//         // events: {
-//         //     'onReady': onPlayerReady
-//         // }
-//     });
-
-//     clonePlayer_5 = new YT.Player(newId_5, {
-//         height: '100%',
-//         width: '100%',
-//         videoId: '2OR0OCr6uRE',
-//         playerVars: {
-//             'playsinline': 1,
-//             'controls': 1,
-//             'host': 'https://www.youtube.com',
-//         },
-//         // events: {
-//         //     'onReady': onPlayerReady
-//         // }
-//     });
-
-//     function onPlayerReady(event) {
-//         event.target.playVideo(); // Call playVideo() method when the player is ready
-//     }
-
-
-//     }
-
-//     containerVideoClone.appendChild(clonedIframe_1)
-//     containerVideoClone.appendChild(clonedIframe_2)
-//     containerVideoClone.appendChild(clonedIframe_3)
-//     containerVideoClone.appendChild(clonedIframe_4)
-//     containerVideoClone.appendChild(clonedIframe_5)
-//     clonedIframe_1.innerText = 'check_item'
-//     clonedIframe_2.innerText = 'check_item'
-//     clonedIframe_3.innerText = 'check_item'
-//     clonedIframe_4.innerText = 'check_item'
-//     clonedIframe_5.innerText = 'check_item'
-
-//     btnVideo_1.addEventListener('click', () => {
-//         let permiss = true;
-//         if (permiss) {
-//             clonePlayer_1.playVideo()
-//             permiss = false;
-//         } else {
-//             clonePlayer_1.pauseVideo()
-//             permiss = true;
-//         }
-//     })
-//     btnVideo_2.addEventListener('click', () => {
-//         let permiss = true;
-//         if (permiss) {
-//             clonePlayer_2.playVideo()
-//             permiss = false;
-//         } else {
-//             clonePlayer_2.pauseVideo()
-//             permiss = true;
-//         }
-//     })
-//     btnVideo_3.addEventListener('click', () => {
-//         let permiss = true;
-//         if (permiss) {
-//             clonePlayer_3.playVideo()
-//             permiss = false;
-//         } else {
-//             clonePlayer_3.pauseVideo()
-//             permiss = true;
-//         }
-//     })
-//     btnVideo_4.addEventListener('click', () => {
-//         let permiss = true;
-//         if (permiss) {
-//             clonePlayer_4.playVideo()
-//             permiss = false;
-//         } else {
-//             clonePlayer_4.pauseVideo()
-//             permiss = true;
-//         }
-//     })
-//     btnVideo_5.addEventListener('click', () => {
-//         let permiss = true;
-//         if (permiss) {
-//             clonePlayer_5.playVideo()
-//             permiss = false;
-//         } else {
-//             clonePlayer_5.pauseVideo()
-//             permiss = true;
-//         }
-//     })
-
-//     // initYouTubePlayerAPI()
-// })
-
-// function clearNode() {
-//     containerVideoClone.innerHTML = '';
-// }
-
-// btnClear.onclick = clearNode;
-
-
+function allStopping() {
+  player_1.stopVideo();
+  player_2.stopVideo();
+  player_3.stopVideo();
+  player_4.stopVideo();
+  player_5.stopVideo();
+  player_6.stopVideo();
+  player_7.stopVideo();
+  player_8.stopVideo();
+  player_9.stopVideo();
+  player_10.stopVideo();
+}
