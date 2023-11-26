@@ -492,7 +492,7 @@ rightButton.onclick = function () {
   direction = 'right';
   if (permissionButton) {
     dotRecoloring();
-    oneStepRighting();
+    stepRighting(1);
     allStopping();
     permissing();
   }
@@ -502,7 +502,7 @@ leftButton.onclick = function () {
   direction = 'left';
   if (permissionButton) {
     dotRecoloring();
-    oneStepLefting();
+    stepLefting(-1);
     allStopping();
     permissing();
   }
@@ -525,23 +525,30 @@ dotItems.forEach(function (item, index) {
       differentStepDot = index - switchIndexDot;
       if (differentStepDot == 0) {
 
-      } else if (differentStepDot == 1) {
-        oneStepRighting();
-      } else if (differentStepDot == 2) {
-        twoStepRighting();
-      } else if (differentStepDot == 3) {
-        threeStepRighting();
-      } else if (differentStepDot == 4) {
-        fourStepRighting();
-      } else if (differentStepDot == -1) {
-        oneStepLefting();
-      } else if (differentStepDot == -2) {
-        twoStepLefting();
-      } else if (differentStepDot == -3) {
-        threeStepLefting();
-      } else if (differentStepDot == -4) {
-        fourStepLefting()
+      } 
+     else if(differentStepDot > 0) {
+        stepRighting(differentStepDot)
       }
+      else if(differentStepDot < 0) {
+        stepLefting(differentStepDot)
+      }
+      // else if (differentStepDot == 1) {
+      //   oneStepRighting();
+      // } else if (differentStepDot == 2) {
+      //   twoStepRighting();
+      // } else if (differentStepDot == 3) {
+      //   threeStepRighting();
+      // } else if (differentStepDot == 4) {
+      //   fourStepRighting();
+      // } else if (differentStepDot == -1) {
+      //   oneStepLefting();
+      // } else if (differentStepDot == -2) {
+      //   twoStepLefting();
+      // } else if (differentStepDot == -3) {
+      //   threeStepLefting();
+      // } else if (differentStepDot == -4) {
+      //   fourStepLefting()
+      // }
       console.log('975', differentStepDot);
       switchIndexDot = index;
       mainVideoChanging(index);
@@ -576,8 +583,8 @@ function finalRightActing() {
   }
 }
 
-function oneStepRighting() {
-  counterSlide = 1;
+function stepRighting(countStep) {
+  counterSlide = countStep;
   result = sizeStep * counterSlide;
   firstRightActing();
   setTimeout(() => {
@@ -591,77 +598,95 @@ function oneStepRighting() {
   }, timeDelayMaj);
 }
 
-function twoStepRighting() {
-  counterSlide = 2;
-  result = sizeStep * counterSlide;
-  firstRightActing();
-  setTimeout(() => {
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.right = result + 'px';
-    }
-  }, timeDelayMin);
-  setTimeout(() => {
-    finalRightActing();
-    appending(counterSlide);
-  }, timeDelayMaj);
-}
-
-function threeStepRighting() {
-  counterSlide = 3;
-  result = sizeStep * counterSlide;
-  firstRightActing();
-  setTimeout(() => {
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.right = result + 'px';
-    }
-  }, timeDelayMin);
-  setTimeout(() => {
-    finalRightActing();
-    appending(counterSlide);
-  }, timeDelayMaj);
-}
-
-//  function threeStepRighting(){
-//   arrItems.length = 0;
-//   counterSlide = 3;
-//   arrItems[0] = dinamicItemVideo[0].cloneNode(true);
-//   console.log(arrItems[0].id, '620 line')
-//     arrItems[0].addEventListener('click',function(e){
-//     console.log(e.target.id,'e.target.id');
-//     console.log(e.target,'e.target');
-//     playingStoping(e.target.id);
-//      });
-//   videoList.append(arrItems[0]);
+// function oneStepRighting() {
+//   counterSlide = 1;
 //   result = sizeStep * counterSlide;
 //   firstRightActing();
 //   setTimeout(() => {
-//     for(let i = 0; dinamicItemVideo.length > i; i++){
+//     for (let i = 0; dinamicItemVideo.length > i; i++) {
 //       dinamicItemVideo[i].style.right = result + 'px';
 //     }
 //   }, timeDelayMin);
 //   setTimeout(() => {
-//     dinamicItemVideo[0].remove();
-//     counterSlide -= 1;
-//     appending(counterSlide);
 //     finalRightActing();
-//     refreshItemVideo()
+//     appending(counterSlide);
 //   }, timeDelayMaj);
-//  }
+// }
 
-function fourStepRighting() {
-  counterSlide = 4;
-  result = sizeStep * counterSlide;
-  firstRightActing();
-  setTimeout(() => {
-    for (let i = 0; dinamicItemVideo.length > i; i++) {
-      dinamicItemVideo[i].style.right = result + 'px';
-    }
-  }, timeDelayMin);
-  setTimeout(() => {
-    finalRightActing();
-    appending(counterSlide);
-  }, timeDelayMaj);
-}
+// function twoStepRighting() {
+//   counterSlide = 2;
+//   result = sizeStep * counterSlide;
+//   firstRightActing();
+//   setTimeout(() => {
+//     for (let i = 0; dinamicItemVideo.length > i; i++) {
+//       dinamicItemVideo[i].style.right = result + 'px';
+//     }
+//   }, timeDelayMin);
+//   setTimeout(() => {
+//     finalRightActing();
+//     appending(counterSlide);
+//   }, timeDelayMaj);
+// }
+
+// function threeStepRighting() {
+//   counterSlide = 3;
+//   result = sizeStep * counterSlide;
+//   firstRightActing();
+//   setTimeout(() => {
+//     for (let i = 0; dinamicItemVideo.length > i; i++) {
+//       dinamicItemVideo[i].style.right = result + 'px';
+//     }
+//   }, timeDelayMin);
+//   setTimeout(() => {
+//     finalRightActing();
+//     appending(counterSlide);
+//   }, timeDelayMaj);
+// }
+
+
+/**
+*?   function threeStepRighting(){
+*?    arrItems.length = 0;
+*?   counterSlide = 3;
+*?   arrItems[0] = dinamicItemVideo[0].cloneNode(true);
+*?   console.log(arrItems[0].id, '620 line')
+*?     arrItems[0].addEventListener('click',function(e){
+*?     console.log(e.target.id,'e.target.id');
+*?     console.log(e.target,'e.target');
+*?     playingStoping(e.target.id);
+*?      });
+*?   videoList.append(arrItems[0]);
+*?   result = sizeStep * counterSlide;
+*?   firstRightActing();
+*?   setTimeout(() => {
+*?     for(let i = 0; dinamicItemVideo.length > i; i++){
+*?       dinamicItemVideo[i].style.right = result + 'px';
+*?     }
+*?   }, timeDelayMin);
+*?   setTimeout(() => {
+*?     dinamicItemVideo[0].remove();
+*?     counterSlide -= 1;
+*?     appending(counterSlide);
+*?     finalRightActing();
+*?     refreshItemVideo()
+*?   }, timeDelayMaj);
+*?  }
+*/
+
+// function fourStepRighting() {
+//   counterSlide = 4;
+//   result = sizeStep * counterSlide;
+//   firstRightActing();
+//   setTimeout(() => {
+//     for (let i = 0; dinamicItemVideo.length > i; i++) {
+//       dinamicItemVideo[i].style.right = result + 'px';
+//     }
+//   }, timeDelayMin);
+//   setTimeout(() => {
+//     finalRightActing();
+//     appending(counterSlide);
+//   }, timeDelayMaj);
+// }
 
 //  function fourStepRighting(){
 //   arrItems.length = 0;
@@ -719,6 +744,29 @@ function oneStepLefting() {
   }
   videoList.prepend(dinamicItemVideo[dinamicItemVideo.length - 1]);
 
+  setTimeout(() => {
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
+    }
+    for (let i = 0; dinamicItemVideo.length > i; i++) {
+      dinamicItemVideo[i].style.left = '0px';
+    }
+    counterSlide = 0;
+  }, timeDelayMin);
+}
+
+function stepLefting(countStep) {
+  counterSlide = countStep;
+  result = sizeStep * counterSlide;
+  for (let i = 0; dinamicItemVideo.length > i; i++) {
+    dinamicItemVideo[i].style.transitionDuration = 'unset';
+    dinamicItemVideo[i].style.left = result + 'px';
+    dinamicItemVideo[i].style.right = 'unset';
+  }
+  while (counterSlide != 0) {
+    videoList.prepend(dinamicItemVideo[dinamicItemVideo.length - 1]);
+    counterSlide++;
+  }
   setTimeout(() => {
     for (let i = 0; dinamicItemVideo.length > i; i++) {
       dinamicItemVideo[i].style.transitionDuration = timeDelayMaj + 'ms';
