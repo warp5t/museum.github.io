@@ -151,7 +151,7 @@ let playStopPermission_1 = true,
   playStopPermission_10 = true;
 
 function playingStoping(target) {
-  if (target == 'shroud_1') {
+  if (target == 'shroud_1' || target == 'playBtn_1') {
     console.log('playingStoping - ', target);
     if (playStopPermission_1) {
       playStopPermission_1 = false;
@@ -187,7 +187,7 @@ function playingStoping(target) {
       playStopPermission_10 = true;
       player_1.pauseVideo();
     }
-  } else if (target == 'shroud_2') {
+  } else if (target == 'shroud_2' || target == 'playBtn_2') {
     console.log('playingStoping - ', target);
     if (playStopPermission_2) {
       playStopPermission_2 = false;
@@ -223,7 +223,7 @@ function playingStoping(target) {
       playStopPermission_10 = true;
       player_2.pauseVideo();
     }
-  } else if (target == 'shroud_3') {
+  } else if (target == 'shroud_3' || target == 'playBtn_3') {
     console.log('playingStoping - ', target);
     if (playStopPermission_3) {
       playStopPermission_3 = false;
@@ -254,7 +254,7 @@ function playingStoping(target) {
       playStopPermission_5 = true;
       player_3.pauseVideo();
     }
-  } else if (target == 'shroud_4') {
+  } else if (target == 'shroud_4' || target == 'playBtn_4') {
     console.log('playingStoping - ', target);
     if (playStopPermission_4) {
       playStopPermission_4 = false;
@@ -290,7 +290,7 @@ function playingStoping(target) {
       playStopPermission_10 = true;
       player_4.pauseVideo();
     }
-  } else if (target == 'shroud_5') {
+  } else if (target == 'shroud_5' || target == 'playBtn_5') {
     console.log('playingStoping - ', target);
     if (playStopPermission_5) {
       playStopPermission_5 = false;
@@ -326,7 +326,7 @@ function playingStoping(target) {
       playStopPermission_10 = true;
       player_5.pauseVideo();
     }
-  } else if (target == 'shroud_6') {
+  } else if (target == 'shroud_6' || target == 'playBtn_6') {
     console.log('playingStoping - ', target);
     if (playStopPermission_6) {
       playStopPermission_6 = false;
@@ -362,7 +362,7 @@ function playingStoping(target) {
       playStopPermission_10 = true;
       player_6.pauseVideo();
     }
-  } else if (target == 'shroud_7') {
+  } else if (target == 'shroud_7' || target == 'playBtn_7') {
     console.log('playingStoping - ', target);
     if (playStopPermission_7) {
       playStopPermission_7 = false;
@@ -398,7 +398,7 @@ function playingStoping(target) {
       playStopPermission_10 = true;
       player_7.pauseVideo();
     }
-  } else if (target == 'shroud_8') {
+  } else if (target == 'shroud_8' || target == 'playBtn_8') {
     console.log('playingStoping - ', target);
     if (playStopPermission_8) {
       playStopPermission_8 = false;
@@ -434,7 +434,7 @@ function playingStoping(target) {
       playStopPermission_10 = true;
       player_8.pauseVideo();
     }
-  } else if (target == 'shroud_9') {
+  } else if (target == 'shroud_9' || target == 'playBtn_9') {
     console.log('playingStoping - ', target);
     if (playStopPermission_9) {
       playStopPermission_9 = false;
@@ -470,7 +470,7 @@ function playingStoping(target) {
       playStopPermission_10 = true;
       player_9.pauseVideo();
     }
-  } else if (target == 'shroud_10') {
+  } else if (target == 'shroud_10' || target == 'playBtn_10') {
     console.log('playingStoping - ', target);
     if (playStopPermission_10) {
       playStopPermission_10 = false;
