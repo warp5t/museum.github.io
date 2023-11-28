@@ -33,5 +33,4 @@ window.addEventListener('load', () => {
 deguBtn.addEventListener('click', () => {
 	console.log('DEBUG')
 	recalcSizeVideoCards()
-	
 })

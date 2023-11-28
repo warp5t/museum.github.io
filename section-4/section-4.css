@@ -3,9 +3,15 @@
 .video__container {
   padding: 75px 0;
 }
+
 @media(max-width:1495px) {
   .video__container {
     margin: 0px 20px 0px 20px;
+  }
+}
+@media(max-width:1240px) {
+  .video__container {
+    padding: 60px 0;
   }
 }
 
@@ -16,11 +22,22 @@
   align-items: stretch;
   padding: 0 0 75px 0;
 }
+@media(max-width:1240px) {
+  .video__info{
+    padding: 0px 0px 40px 0px;
+  }
+}
 
 .video__title {
   white-space: nowrap;
   color: #9D8665;
   padding: 0 115px 0 0;
+}
+
+@media(max-width:1240px) {
+  .video__title {
+    padding: 0px 0px 0px 0px;
+  }
 }
 
 .title-section {}
@@ -73,6 +90,14 @@
   z-index: 2;
 }
 
+@media(max-width:1240px) {
+  .video__circle-icon {
+    width: 152px;
+  height: 152px;
+  border: 6px #FFFFFF solid;
+  }
+}
+
 .video__speed-cooficent {
   position: absolute;
   top: 50%;
@@ -85,6 +110,11 @@
 
 .video__big-icon-play {
   padding: 0 0 0 13px;
+}
+@media(max-width:1240px) {
+  .video__big-icon-play {
+    width: 78px;
+  }
 }
 
 .video__controll-pannel {
@@ -101,28 +131,47 @@
   z-index: 5;
 }
 
+@media(max-width:1240px) {
+  .video__controll-pannel {
+    bottom: -55px;
+    height: 60px;
+  }
+}
+
 .controll-pannel__play-wrap {
   position: relative;
 }
 
 .controll-pannel__play {
   position: relative;
-  width: 23px;
-  height: 31px;
+  width: 22px;
+  height: 30px;
   margin: 0 50px 0 30px;
   background-color: #000000;
   z-index: 10;
+}
+
+@media(max-width:1240px) {
+  .controll-pannel__play {
+    margin: 0 40px 0 30px;
+  }
 }
 
 .controll-pannel__pause {
   position: absolute;
   top: 0;
   left: 0;
-  width: 23px;
-  height: 31px;
+  width: 22px;
+  height: 30px;
   margin: 0 50px 0 30px;
   background-color: #000000;
   z-index: 9;
+}
+
+@media(max-width:1240px) {
+  .controll-pannel__pause {
+    margin: 0 40px 0 30px;
+  }
 }
 
 .controll-pannel__progress-time {
@@ -135,6 +184,12 @@
   background-color: #C4C4C4;
 }
 
+@media(max-width:1240px) {
+  .controll-pannel__progress-time {
+    height: 5px;
+  }
+}
+
 .controll-pannel__passed-time {
   position: absolute;
   top: 0;
@@ -142,6 +197,12 @@
   height: 8px;
   width: 0px;
   background: #710707;
+}
+
+@media(max-width:1240px) {
+  .controll-pannel__passed-time {
+    height: 5px;
+  }
 }
 
 .controll-pannel__dot {
@@ -153,6 +214,13 @@
   background: #FFFFFF;
   margin: -3.5px -10px 0 0;
   pointer-events: none;
+}
+
+@media(max-width:1240px) {
+  .controll-pannel__dot {
+    width: 13px;
+    height: 13px;
+  }
 }
 
 .controll-pannel__wrap-volume {
@@ -169,6 +237,14 @@
   z-index: 10;
 }
 
+@media(max-width:1240px) {
+  .controll-pannel__volume {
+    width: 26px;
+    height: 20px;
+    margin: 0 30px;
+  }
+}
+
 .controll-pannel__volume-mute {
   position: absolute;
   top: 0;
@@ -178,6 +254,14 @@
   margin: 0 50px;
   background-color: #000000;
   z-index: 9;
+}
+
+@media(max-width:1240px) {
+  .controll-pannel__volume-mute {
+    width: 26px;
+    height: 20px;
+    margin: 0 30px;
+  }
 }
 
 .controll-pannel__progress-volume {
@@ -191,6 +275,12 @@
   margin: 0 50px 0 0;
 }
 
+@media(max-width:1240px) {
+  .controll-pannel__progress-volume {
+    height: 5px;
+  }
+}
+
 .controll-pannel__passed_volume {
   position: absolute;
   top: 0;
@@ -198,6 +288,12 @@
   height: 8px;
   width: 104px;
   background: #710707;
+}
+
+@media(max-width:1240px) {
+  .controll-pannel__passed_volume {
+    height: 5px;
+  }
 }
 
 .controll-pannel__wrap-screen {
@@ -215,6 +311,14 @@
   background-color: #000000;
 }
 
+@media(max-width:1240px) {
+  .controll-pannel__full-screen-exit  {
+    width: 26px;
+    height: 26px;
+    margin: 0 40px 0 0;
+  }
+}
+
 .controll-pannel__full-screen {
   position: relative;
   width: 35px;
@@ -222,6 +326,14 @@
   margin: 0 30px 0 0;
   z-index: 10;
   background-color: #000000;
+}
+
+@media(max-width:1240px) {
+  .controll-pannel__full-screen   {
+    width: 26px;
+    height: 26px;
+    margin: 0 40px 0 0;
+  }
 }
 
 .controll-pannel__wrap-screen:hover .controll-pannel__full-screen {
@@ -237,6 +349,14 @@
   margin: 0 30px 0 0;
   z-index: 9;
   background-color: #000000;
+}
+
+@media(max-width:1240px) {
+  .controll-pannel__full-screen-hover {
+    width: 26px;
+    height: 26px;
+    margin: 0 40px 0 0;
+  }
 }
 
 .video__slider-video {
@@ -291,9 +411,16 @@
   width: 51px;
   height: 40px;
   background-color: antiquewhite;
-  opacity: 0.5;
+  opacity: 0;
   z-index: 3;
 }
+
+/* @media(max-width:1240px) {
+  .video__cover-play-button {
+    opacity: 0.5;
+  }
+} */
+
 
 .video__shroud {
   position: absolute;
