@@ -3,6 +3,11 @@
 .video__container {
   padding: 75px 0;
 }
+@media(max-width:1495px) {
+  .video__container {
+    margin: 0px 20px 0px 20px;
+  }
+}
 
 .video__info {
   display: flex;
@@ -27,6 +32,12 @@
   font-size: 22px;
   line-height: 38px;
   color: #000000;
+}
+
+@media(max-width:1495px) {
+  .video__about {
+    display: none;
+  }
 }
 
 .video__wrap-video {
@@ -237,9 +248,10 @@
   display: flex;
   margin: 40px 0px;
   width: 100%;
-  
+
 }
-.video__list-video_2{
+
+.video__list-video_2 {
   position: absolute;
   display: flex;
   margin: 40px 0px;
@@ -249,10 +261,11 @@
   background-color: #aaff21;
   display: none;
 }
-.video__mover{
- position: relative;
- right:0;
- overflow: hidden;
+
+.video__mover {
+  position: relative;
+  right: 0;
+  overflow: hidden;
 }
 
 .video__you-tube {
@@ -271,38 +284,40 @@
   cursor: pointer;
 }
 
-.video__cover-play-button{
-position: absolute;
-bottom: 0;
-left: 0;
-width: 51px;
-height: 40px;
-background-color: antiquewhite;
-opacity: 0.5;
-z-index: 3;
+.video__cover-play-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 51px;
+  height: 40px;
+  background-color: antiquewhite;
+  opacity: 0.5;
+  z-index: 3;
 }
 
-.video__shroud{ 
+.video__shroud {
   position: absolute;
   top: 45px;
   left: 0;
-  width:100%;
+  width: 100%;
   height: 159px;
   background-color: #999999;
   opacity: 0;
   z-index: 5;
 }
 
-.video__player{
-position: relative;
-z-index: 2;
+.video__player {
+  position: relative;
+  z-index: 2;
 }
 
-.video__cover{
+.video__cover {
   position: absolute;
   top: 0;
   left: 0;
   z-index: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .video__dots-item {
@@ -318,7 +333,7 @@ z-index: 2;
   cursor: pointer;
 }
 
-.video__darrows-R{
+.video__darrows-R {
   display: block;
 }
 
@@ -333,7 +348,8 @@ z-index: 2;
   border-radius: 50%;
   margin: 0 20px 0 0;
 }
-.video__dot:hover{
+
+.video__dot:hover {
   cursor: pointer;
 }
 
@@ -348,9 +364,18 @@ z-index: 2;
 
 #video {}
 
-#log{
+#log {
   width: 300px;
-  height:90px;
+  height: 90px;
   background-color: #0fe1f0;
   font-size: 50px;
 }
+
+
+
+
+/* .video__subwrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+} */

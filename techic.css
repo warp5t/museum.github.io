@@ -4,3 +4,11 @@
     background-color: darkblue;
     margin: 20px;
 }
+#debug{
+    width: 100px;
+    height: 90px;
+    background-color: burlywood;
+}
+.wrap-tech {
+    display: flex;
+}
