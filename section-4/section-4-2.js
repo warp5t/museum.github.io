@@ -1,4 +1,3 @@
-
 const initWidthVideoMover = 1440;
 const initWidthCardVideo = 452;
 const initHeightCardVideo = 254;
@@ -6,31 +5,37 @@ const initHeightCardVideo = 254;
 const deguBtn = document.getElementById('debug');
 
 function recalcSizeVideoCards() {
-	const videoMover = document.querySelector('.video__mover');
-	const cardVideo = document.querySelectorAll('.video__you-tube');
-	const arrCardVideo = Array.from(cardVideo)
-	const sizeVideoMover = videoMover.offsetWidth;
-	const calcWidth = Math.round((initWidthCardVideo * sizeVideoMover) / initWidthVideoMover);
+  const wrapVideo = document.querySelector('.video__wrap-video');
+  const cardVideo = document.querySelectorAll('.video__you-tube');
+  let ammountCards = 3;
+  const marginRghtCard = parseInt(window.getComputedStyle(cardVideo[0], null).getPropertyValue('margin-right'));
+  const arrCardVideo = Array.from(cardVideo)
+  const sizeWrapVideo = wrapVideo.offsetWidth;
+  console.log(sizeWrapVideo)
+  const calcWidth = Math.round((initWidthCardVideo * sizeWrapVideo) / initWidthVideoMover);
   const calcHeight = Math.round((initHeightCardVideo * calcWidth) / initWidthCardVideo);
-	arrCardVideo.forEach((el) => {
-		el.style.width = calcWidth + 'px';
+  const rawWdhtContainer = (calcWidth * 3) + (2 * marginRghtCard);
+  const processedWdthResult = Math.ceil((rawWdhtContainer - sizeWrapVideo) / ammountCards) + 1;
+  console.log(processedWdthResult, ' - processedWdth')
+  arrCardVideo.forEach((el) => {
+    el.style.width = (calcWidth - processedWdthResult) + 'px';
     el.style.height = calcHeight + 'px';
-	})
+  })
 }
 
 window.addEventListener('resize', () => {
-	console.log('resize ZZzzZZzz ------')
+  console.log('resize ZZzzZZzz ------')
   setTimeout(() => {
     recalcSizeVideoCards()
   }, 500);
 })
 
 window.addEventListener('load', () => {
-	console.log('load  ------')
-	recalcSizeVideoCards()
+  console.log('load  ------')
+  recalcSizeVideoCards()
 })
 
 deguBtn.addEventListener('click', () => {
-	console.log('DEBUG')
-	recalcSizeVideoCards()
+  console.log('DEBUG')
+  recalcSizeVideoCards()
 })
