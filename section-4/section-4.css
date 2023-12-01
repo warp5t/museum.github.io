@@ -24,7 +24,7 @@
 }
 @media(max-width:1240px) {
   .video__info{
-    padding: 0px 0px 40px 0px;
+    padding: 0px 0px 26px 0px;
   }
 }
 
@@ -93,6 +93,7 @@
 
 @media(max-width:1240px) {
   .video__circle-icon {
+    top: 44%;
     width: 152px;
   height: 152px;
   border: 6px #FFFFFF solid;
@@ -388,11 +389,11 @@
   right: 0;
   overflow: hidden;
 }
-@media(max-width:1024px){
+/* @media(max-width:1024px){
   .video__mover {
     margin: 0px 0px 40px 0px;
   }
-}
+} */
 
 .video__you-tube {
   position: relative;
