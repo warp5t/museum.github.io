@@ -26,7 +26,7 @@
 
 @media(max-width:1024px) {
   .header__container {
-    height: 127px;
+    height: 108px;
     padding: 2px 20px 0px 20px;
   }
 }
@@ -35,6 +35,12 @@
   display: flex;
   align-items: flex-start;
 }
+
+/* @media(max-width:768px){
+  .header__wrap-logo {
+    padding: 0 0 11px 0;
+  }
+} */
 
 .header__logo {
   display: inline-block;
@@ -114,11 +120,18 @@
 .header__wrap-burger:hover{
   cursor: pointer;
 }
+
 @media(min-width:1446px){
   .header__wrap-burger{
     display: none;
   }
 }
+/* @media(max-width:768px) {
+  .header__wrap-burger{
+  margin: 0 0 22px 0;
+  }
+} */
+
 .header__burger-line-1 {
   width: 32px;
   height: 2px;
