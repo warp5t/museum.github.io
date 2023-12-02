@@ -257,7 +257,7 @@ let gallery = document.querySelector('.welcome__wrap-gallery');
 let controlPannelSwipe = document.querySelector('.welcome__control-pannel-swipe');
 
 function galleryHiding() {
-  if (body.offsetWidth <= 1024) {
+  if (body.offsetWidth <= 1023) {
     gallery.classList.toggle('gallery-hide')
     controlPannelSwipe.classList.toggle('hide-control-pannel')
   }
