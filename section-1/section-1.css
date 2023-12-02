@@ -18,9 +18,9 @@
     height: 584px;
   }
 }
+
 @media(max-width:1023px) {
   .welcome__container {
-    flex-direction: column;
     height: auto;
   }
 }
