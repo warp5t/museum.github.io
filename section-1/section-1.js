@@ -320,7 +320,7 @@ const gallery_420 = document.querySelector('.welcome__gallery-420');
 function widtingLineDecor() {
   if (body.offsetWidth <= 1023 && body.offsetWidth > 470) {
     lineDecor.style.width = gallery_768.offsetWidth + 'px';
-  } else if (body.offsetWidth <= 470) {
+  } else if (body.offsetWidth <= 470 && body.offsetWidth > 420) {
     lineDecor.style.width = (gallery_420.offsetWidth) + 'px';
-  }
+  } 
 }
