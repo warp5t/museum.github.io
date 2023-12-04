@@ -208,8 +208,6 @@ var welcomeInfo_1920 = document.querySelector('.welcome__version-1920px');
 var welcomeInfo_1024 = document.querySelector('.welcome__version-1024px');
 const welcomeContRePadding = document.querySelector('.container-repadding-768');
 const welcomeCont = document.querySelector('.welcome__container');
-// welcomeCont.classList.add(welcomeContRePadding)
-
 
 let switch_1024 = true;
 
@@ -227,11 +225,11 @@ function delayingSlide() {
   if (switch_1024) {
     welcomeInfo_1024.classList.toggle('welcome__info-show-1024');
     switch_1024 = false;
-    // welcomeCont.style.padding = '0 2px 0px 20px';
+    welcomeCont.style.padding = '0 2px 0px 20px';
   } else {
     welcomeInfo_1920.classList.toggle('welcome__info-hide-1920');
     switch_1024 = true;
-    // welcomeCont.style.padding = '0 20px 0px 20px';
+    welcomeCont.style.padding = '0 20px 0px 20px';
   }
 }
 
