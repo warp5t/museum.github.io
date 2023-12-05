@@ -29,6 +29,7 @@
     font-size: 80px;
     line-height: 90px;
     letter-spacing: 5px;
+    padding: 0 0 22px 0;
   }
 }
 
@@ -85,9 +86,9 @@
   .card-tour {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
-    grid-column-gap: 108px;
+    grid-column-gap: 107px;
     grid-row-gap: 60px;
-    padding: 0 108px;
+    padding: 0px 100px 0px 108px;
   }
 }
 
@@ -213,6 +214,8 @@
   .card-tour__title {
     font-size: 25px;
     line-height: 20px;
+    padding: 0 0 18px 0;
+    white-space: nowrap;
   }
 }
 
@@ -263,6 +266,13 @@
   padding: 0 0 10px 0;
 }
 
+@media(max-width:1024px) {
+  .card-tour__virt-tour {
+    font-size: 20px;
+    padding: 0 0 5px 0;
+  }
+}
+
 @media(max-width:712px) {
   .card-tour__virt-tour {
     font-size: 16px;
@@ -278,6 +288,12 @@
   line-height: 21px;
   color: #000000;
   padding: 0 0 0 0;
+}
+
+@media(max-width:1024px) {
+  .card-tour__panorama-view {
+    font-size: 16px;
+  }
 }
 
 @media(max-width:712px) {
