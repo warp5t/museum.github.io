@@ -209,6 +209,13 @@
   padding: 0 0 10px 0;
 }
 
+@media(max-width:1024px) {
+  .card-tour__title {
+    font-size: 25px;
+    line-height: 20px;
+  }
+}
+
 @media(max-width:712px) {
   .card-tour__title {
     font-size: 18px;
