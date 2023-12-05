@@ -31,11 +31,11 @@
   }
 }
 
-/* @media(max-width:768px) {
+@media(max-width:768px) {
   .welcome__container {
-    padding: 0 2px 0px 20px;
+    margin: -10px 0px 0px;
   }
-} */
+}
 
 .welcome__info {
   position: relative;
@@ -136,7 +136,7 @@
 
 @media(max-width:768px) {
   .welcome__slide-menu {
-    padding: 25px 0 0 35px;
+    padding: 36px 0 0 35px;
   }
 }
 

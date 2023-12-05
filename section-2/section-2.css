@@ -100,6 +100,14 @@
   }
 }
 
+/* @media(max-width:768px) {
+  .card-tour {
+    grid-column-gap: 56px;
+    grid-row-gap: 36px;
+    padding: 0 56px;
+  }
+} */
+
 @media(max-width:712px) {
   .card-tour {
     grid-template-columns: repeat(1, 1fr);
@@ -197,8 +205,19 @@
   margin: 0 0 25px 0;
 }
 
+@media(max-width:768px) {
+  .card-tour__image {
+    margin: 0px 0 20px 0;
+  }
+}
+
 .card-tour__info {}
 
+@media(max-width:768px) {
+  .card-tour__info {
+    padding: 3px 0 0 0;
+  }
+}
 .card-tour__title {
   font-family: 'Forum';
   font-style: normal;
@@ -217,6 +236,15 @@
     line-height: 20px;
     padding: 0 0 18px 0;
     white-space: nowrap;
+  }
+}
+
+@media(max-width:768px) {
+  .card-tour__title {
+    font-size: 21px;
+    line-height: 16px;
+    letter-spacing: 4px;
+    padding: 0px 0 16px 0;
   }
 }
 
@@ -270,6 +298,13 @@
 @media(max-width:1024px) {
   .card-tour__virt-tour {
     font-size: 20px;
+    padding: 0 0 5px 0;
+  }
+}
+
+@media(max-width:768px) {
+  .card-tour__virt-tour {
+    font-size: 18px;
     padding: 0 0 5px 0;
   }
 }
