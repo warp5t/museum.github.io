@@ -701,6 +701,12 @@
   font-size: 19px;
 }
 
+@media(max-width:1024px) {
+  .pannel-swipe__counter {
+    padding: 0 47px 0 0;
+  }
+}
+
 @media(max-width:470px) {
   .pannel-swipe__counter {
     padding: 0 25px 0 0;
@@ -753,6 +759,12 @@
 .pannel-swipe__grafic-counter {
   display: flex;
   padding: 0 77px 0 0px;
+}
+
+@media(max-width:1024px) {
+  .pannel-swipe__grafic-counter {
+    padding: 0 60px 0 0;
+  }
 }
 
 @media(max-width:470px) {
