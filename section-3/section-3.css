@@ -111,6 +111,10 @@ padding: 0 0 25px 0;
 .recolor-font{
   color:#9D8665;
 }
+.explore__addtional-wrap {
+  margin: 13px 0px 0 -11px;
+}
+
 .explore__wrap-picture {
   position: relative;
   -moz-user-select: none;

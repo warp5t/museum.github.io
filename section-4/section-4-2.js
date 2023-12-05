@@ -23,7 +23,13 @@ function recalcSizeVideoCards() {
   })
 }
 
+// function resizeMainVideo() {
+//   const videoPlayer = document.querySelector('.video__player');
+//   videoPlayer.classList.add('.height100')
+// }
+
 window.addEventListener('resize', () => {
+  // resizeMainVideo() 
   console.log('resize ZZzzZZzz ------')
   setTimeout(() => {
     recalcSizeVideoCards()
