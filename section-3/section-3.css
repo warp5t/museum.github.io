@@ -3,12 +3,12 @@
 .explore__container {
   display: flex;
   flex-direction: row;
-  padding: 75px 0;
+  padding: 75px 20px;
 }
 @media(max-width:1140px){
   .explore__container{
    flex-direction: column;
-   padding: 60px 20px;
+   padding: 60px 20px 60px 20px;
   }
 }
 @media(max-width:768px){
@@ -111,8 +111,23 @@ padding: 0 0 25px 0;
 .recolor-font{
   color:#9D8665;
 }
+
 .explore__addtional-wrap {
   margin: 13px 0px 0 -11px;
+}
+
+@media(max-width:1140px){
+  .explore__addtional-wrap {
+    align-self: center;
+    overflow: hidden;
+    margin: -5px 0px 0px 0px;
+  }
+}
+
+@media(max-width:768px){
+  .explore__addtional-wrap {
+    width: 100%;
+  }
 }
 
 .explore__wrap-picture {

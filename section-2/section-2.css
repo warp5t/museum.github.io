@@ -1,12 +1,12 @@
 .visiting {}
 
 .visiting__container {
-  padding: 75px 0;
+  padding: 75px 20px;
 }
 
-@media(max-width:1060px) {
+@media(max-width:1024px) {
   .visiting__container {
-    padding: 60px 20px;
+    padding: 61px 20px 59px 20px;
   }
 }
 
@@ -112,6 +112,7 @@
 
 .card-tour__wrap {
   display: block;
+  min-width: 100%;
 }
 
 .card-tour__wrap:nth-child(1) {

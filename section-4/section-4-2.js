@@ -13,7 +13,7 @@ function recalcSizeVideoCards() {
   const sizeWrapVideo = wrapVideo.offsetWidth;
   console.log(sizeWrapVideo)
   const calcWidth = Math.round((initWidthCardVideo * sizeWrapVideo) / initWidthVideoMover);
-  const calcHeight = Math.round((initHeightCardVideo * calcWidth) / initWidthCardVideo);
+  const calcHeight = Math.round((initHeightCardVideo * (calcWidth * 0.98)) / initWidthCardVideo);
   const rawWdhtContainer = (calcWidth * 3) + (2 * marginRghtCard);
   const processedWdthResult = Math.ceil((rawWdhtContainer - sizeWrapVideo) / ammountCards) + 1;
   console.log(processedWdthResult, ' - processedWdth')
