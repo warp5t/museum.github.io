@@ -367,15 +367,24 @@ let switchIndexDot = 0;
 let differentStepDot;
 let arrItems = [];
 
+function stepCalculating() {
+  sizeStep = ((videoYouTube[1].offsetWidth + marginCommon));
+  console.log(videoYouTube[1].offsetWidth, ' - videoYouTube[1].offsetWidth\n', marginCommon, ' - marginCommon');
+}
+stepCalculating();
+
 window.addEventListener('resize', () => {
+  videoYouTube = document.querySelectorAll('.video__you-tube');
   marginCommon = parseInt(window.getComputedStyle(videoYouTube[0], "").marginRight);
   stepCalculating();
 });
+window.addEventListener('load', () => {
+  videoYouTube = document.querySelectorAll('.video__you-tube');
+  marginCommon = parseInt(window.getComputedStyle(videoYouTube[0], "").marginRight);
+  stepCalculating();
 
-function stepCalculating() {
-  sizeStep = ((videoYouTube[1].offsetWidth + marginCommon));
-}
-stepCalculating();
+});
+
 
 function dotRecoloring() {
   if (direction == 'right') {

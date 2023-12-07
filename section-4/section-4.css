@@ -428,6 +428,12 @@
   transition-duration: 1s;
 }
 
+@media(max-width:768px) {
+  .video__you-tube {
+    margin: 0 20px 0 0;
+  }
+}
+
 .video__you-tube:hover {
   cursor: pointer;
 }
