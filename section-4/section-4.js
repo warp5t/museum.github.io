@@ -368,8 +368,8 @@ let differentStepDot;
 let arrItems = [];
 
 function stepCalculating() {
-  sizeStep = ((videoYouTube[1].offsetWidth + marginCommon));
-  console.log(videoYouTube[1].offsetWidth, ' - videoYouTube[1].offsetWidth\n', marginCommon, ' - marginCommon');
+  sizeStep = ((videoYouTube[0].offsetWidth + marginCommon));
+  console.log(videoYouTube[0].offsetWidth, ' - videoYouTube[1].offsetWidth\n', marginCommon, ' - marginCommon');
 }
 stepCalculating();
 
@@ -378,11 +378,11 @@ window.addEventListener('resize', () => {
   marginCommon = parseInt(window.getComputedStyle(videoYouTube[0], "").marginRight);
   stepCalculating();
 });
+
 window.addEventListener('load', () => {
   videoYouTube = document.querySelectorAll('.video__you-tube');
   marginCommon = parseInt(window.getComputedStyle(videoYouTube[0], "").marginRight);
   stepCalculating();
-
 });
 
 
@@ -499,6 +499,7 @@ function finalRightActing() {
 }
 
 function stepRighting(countStep) {
+  stepCalculating()
   counterSlide = countStep;
   result = sizeStep * counterSlide;
   firstRightActing();
@@ -516,6 +517,7 @@ function stepRighting(countStep) {
 // ----------------------- left move scenario --------------------------------
 
 function stepLefting(countStep) {
+  stepCalculating()
   counterSlide = countStep;
   result = sizeStep * counterSlide;
   for (let i = 0; dinamicItemVideo.length > i; i++) {

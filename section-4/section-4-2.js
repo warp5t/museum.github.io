@@ -28,13 +28,12 @@ function recalcSizeVideoCards() {
     calcWidth = Math.round((widthCardVideo_768 * sizeWrapVideo) / widthWrapVideo_768);
     calcHeight = Math.round((heightCardVideo_768 * calcWidth) / widthCardVideo_768);
     processedWdthResult = 0;
-    console.log(calcHeight, calcWidth, ' -- -- - -calcWidth')
   } 
-
   arrCardVideo.forEach((el) => {
     el.style.width = (calcWidth - processedWdthResult) + 'px';
     el.style.height = calcHeight + 'px';
   })
+  videoYouTube = document.querySelectorAll('.video__you-tube');
 }
 
 // function resizeMainVideo() {
@@ -51,7 +50,6 @@ window.addEventListener('resize', () => {
 })
 
 window.addEventListener('load', () => {
-  console.log('load  ------')
   recalcSizeVideoCards()
 })
 

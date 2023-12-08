@@ -384,12 +384,19 @@
   }
 }
 
+@media(max-width:1024px) {
+  .title-section {
+    letter-spacing: 5px;
+  }
+}
+
 @media(max-width:893px) {
   .title-section {
     line-height: 60px;
     font-size: 40px;
   }
 }
+
 
 @media(max-width:470px) {
   .title-section {
