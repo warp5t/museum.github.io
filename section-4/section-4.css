@@ -208,10 +208,17 @@
   }
 }
 
-.controll-pannel__progress-line-full{
+.controll-pannel__progress-line-full {
+  display: none;
   position: absolute;
   top: 0;
   width: 100%;
+}
+
+@media(max-width:768px) {
+  .controll-pannel__progress-line-full {
+    display: block;
+  }
 }
 
 .controll-pannel__play-wrap {
@@ -239,6 +246,14 @@
   }
 }
 
+@media(max-width: 420px) {
+  .controll-pannel__play {
+    width: 14px;
+  height: 22px;
+    margin: 0 5px 0 21px;
+  }
+}
+
 .controll-pannel__pause {
   position: absolute;
   top: 0;
@@ -253,6 +268,14 @@
 @media(max-width:1240px) {
   .controll-pannel__pause {
     margin: 0 40px 0 30px;
+  }
+}
+
+@media(max-width: 420px) {
+  .controll-pannel__pause {
+    width: 14px;
+    height: 22px;
+    margin: 0 0px 0 21px;
   }
 }
 
@@ -304,7 +327,12 @@
     height: 13px;
   }
 }
-
+@media(max-width:420px) {
+  .controll-pannel__dot {
+    width: 10px;
+    height: 10px;
+  }
+}
 .controll-pannel__wrap-volume {
   position: relative;
   user-select: none;
@@ -327,6 +355,14 @@
   }
 }
 
+@media(max-width:768px) {
+  .controll-pannel__volume {
+    width: 20px;
+    height: 14px;
+    margin: 4px 22px 0px 22px;
+  }
+}
+
 .controll-pannel__volume-mute {
   position: absolute;
   top: 0;
@@ -343,6 +379,14 @@
     width: 26px;
     height: 20px;
     margin: 0 30px;
+  }
+}
+
+@media(max-width:768px) {
+  .controll-pannel__volume-mute {
+    width: 20px;
+    height: 14px;
+    margin: 4px 22px 0px 22px;
   }
 }
 
@@ -428,6 +472,14 @@
   }
 }
 
+@media(max-width:420px) {
+  .controll-pannel__full-screen-exit {
+    width: 19px;
+    height: 19px;
+    margin: 0px 19px 0 29px;
+  }
+}
+
 .controll-pannel__full-screen {
   position: relative;
   width: 35px;
@@ -451,6 +503,15 @@
   }
 }
 
+@media(max-width:420px) {
+  .controll-pannel__full-screen {
+    width: 19px;
+    height: 19px;
+    margin: 0px 19px 0 29px;
+  }
+}
+
+
 .controll-pannel__wrap-screen:hover .controll-pannel__full-screen {
   z-index: 8;
 }
@@ -473,9 +534,18 @@
     margin: 0 40px 0 0;
   }
 }
+
 @media(max-width:768px) {
   .controll-pannel__full-screen-hover {
     margin: 0 31px 0 36px;
+  }
+}
+
+@media(max-width:420px) {
+  .controll-pannel__full-screen-hover {
+    width: 19px;
+    height: 19px;
+    margin: 0px 19px 0 29px;
   }
 }
 
@@ -669,7 +739,7 @@
 
 @media(max-width:767px) {
   #video {
-    height: auto;height: 227px;
+    height: auto;
   }
 }
 
