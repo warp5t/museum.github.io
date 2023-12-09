@@ -16,6 +16,12 @@
   }
 }
 
+@media(max-width:420px) {
+  .visiting__container {
+    padding: 40px 20px 45px 20px;
+  }
+}
+
 ._container {}
 
 .visiting__title {
@@ -45,6 +51,13 @@
     font-size: 40px;
     line-height: 60px;
     padding: 0 0 20px 0;
+  }
+}
+
+@media(max-width:420px) {
+  .visiting__title {
+    font-size: 28px;
+    line-height: 39px;
   }
 }
 
@@ -255,6 +268,13 @@
   }
 }
 
+@media(max-width:420px) {
+  .card-tour__title {
+    font-size: 20px;
+    line-height: 20px;
+    padding: 0px 0 14px 0;
+  }
+}
 .card-tour__line-decor {
   height: 2px;
   width: 300px;

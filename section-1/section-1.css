@@ -33,7 +33,13 @@
 
 @media(max-width:768px) {
   .welcome__container {
-    margin: -10px 0px 0px;
+    margin: -10px 0px 0px 0px;
+  }
+}
+
+@media(max-width:420px) {
+  .welcome__container {
+    margin: 0;
   }
 }
 
