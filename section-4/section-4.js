@@ -174,22 +174,65 @@ videoPlayer.addEventListener('dblclick', function () {
 
 // ---                       --- video progress control ---                        ---
 
-let scaleVideo = document.querySelector('.controll-pannel__progress-time');
-let progressVideo = document.querySelector('.controll-pannel__passed-time');
+let scaleVideo = document.querySelectorAll('.controll-pannel__progress-time');
+let progressVideo = document.querySelectorAll('.controll-pannel__passed-time');
 
 let permissionVideo = false;
-let pastTime;
+let pastTime_0,pastTime_1;
 
-scaleVideo.addEventListener('mousedown', function (e) {
+// const arrScaleVideo = Array.from(scaleVideo);
+// const arrProgressVideo= Array.from(progressVideo);
+
+// arrScaleVideo.forEach((item) => {
+//   item.addEventListener('mousedown', function (e) {
+//     permissionVideo = true;
+//     videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo.offsetWidth;
+//     progressVideo.style.width = e.layerX + 'px';
+//   })
+// })
+
+scaleVideo[0].addEventListener('mousedown', function (e) {
   permissionVideo = true;
-  videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo.offsetWidth;
-  progressVideo.style.width = e.layerX + 'px';
+  videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo[0].offsetWidth;
+  progressVideo[0].style.width = e.layerX + 'px';
+})
+scaleVideo[1].addEventListener('mousedown', function (e) {
+  permissionVideo = true;
+  videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo[0].offsetWidth;
+  progressVideo[1].style.width = e.layerX + 'px';
 })
 
-scaleVideo.addEventListener('mousemove', function (e) {
+// arrProgressVideo.forEach((item) => {
+//   item.addEventListener('mousemove', function (e) {
+//     if (permissionVideo) {
+//       videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo.offsetWidth;
+//       progressVideo.style.width = e.layerX + 'px';
+//       if (videoPlayer.paused) {
+//         playIcon.style.zIndex = 10;
+//       } else {
+//         playIcon.style.zIndex = 8;
+//       }
+//       playPermission = false;
+//     }
+//   })
+// })
+
+scaleVideo[0].addEventListener('mousemove', function (e) {
   if (permissionVideo) {
-    videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo.offsetWidth;
-    progressVideo.style.width = e.layerX + 'px';
+    videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo[0].offsetWidth;
+    progressVideo[0].style.width = e.layerX + 'px';
+    if (videoPlayer.paused) {
+      playIcon.style.zIndex = 10;
+    } else {
+      playIcon.style.zIndex = 8;
+    }
+    playPermission = false;
+  }
+})
+scaleVideo[1].addEventListener('mousemove', function (e) {
+  if (permissionVideo) {
+    videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo[1].offsetWidth;
+    progressVideo[1].style.width = e.layerX + 'px';
     if (videoPlayer.paused) {
       playIcon.style.zIndex = 10;
     } else {
@@ -199,17 +242,30 @@ scaleVideo.addEventListener('mousemove', function (e) {
   }
 })
 
-scaleVideo.addEventListener('mouseup', function () {
+// arrScaleVideo.forEach((item) => {
+//   item.addEventListener('mouseup', function () {
+//     permissionVideo = false;
+//   })
+// })
+
+scaleVideo[0].addEventListener('mouseup', function () {
+  permissionVideo = false;
+})
+scaleVideo[1].addEventListener('mouseup', function () {
   permissionVideo = false;
 })
 
 videoPlayer.addEventListener('timeupdate', function () {
 
-  pastTime = (videoPlayer.currentTime * scaleVideo.offsetWidth) / videoPlayer.duration;
-  progressVideo.style.width = pastTime + 'px';
+  pastTime_0 = (videoPlayer.currentTime * scaleVideo[0].offsetWidth) / videoPlayer.duration;
+  pastTime_1 = (videoPlayer.currentTime * scaleVideo[1].offsetWidth) / videoPlayer.duration;
+  
+  progressVideo[0].style.width = pastTime_0 + 'px';
+  progressVideo[1].style.width = pastTime_1 + 'px';
 
   if (videoPlayer.ended) {
-    progressVideo.style.width = '0px';
+    progressVideo[0].style.width = '0px';
+    progressVideo[1].style.width = '0px';
     playIcon.style.zIndex = 10;
     playIconBig.style.display = 'flex';
   }
