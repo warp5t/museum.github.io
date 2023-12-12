@@ -16,16 +16,24 @@ console.log('section-5')
 // });
 
 
-// const galleryWrapImage = document.querySelector('.gallery__container-images');
-// const galleryWrapImageTop = galleryWrapImage.getBoundingClientRect().top;
+function addTopMargin() {
 
+  const galleryWrapImage = document.querySelector('.gallery__container-images');
+  const galleryWrapImageTop = galleryWrapImage.getBoundingClientRect().top;
+  const galleryImages = document.querySelectorAll('.gallery__image');
+  let count = 0;
+  galleryImages.forEach((image, index) => {
+    const imageTop = image.getBoundingClientRect().top;
+    if (imageTop <= galleryWrapImageTop) {
+      count++;
+      if(count === 1 || count === 3) {
+        image.classList.add('margin-top');
 
-// const galleryImages = document.querySelectorAll('.gallery__image');
+      }
+      console.log(index, ' - index')
+      console.log(count, ' - count')
+    }
+  });
+}
 
-// galleryImages.forEach(image => {
-//   const imageTop = image.getBoundingClientRect().top;
-//   if (imageTop <= galleryWrapImageTop) {
-   
-//     image.classList.add('in-contact-with-top');
-//   }
-// });
+addTopMargin()

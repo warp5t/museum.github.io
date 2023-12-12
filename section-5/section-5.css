@@ -38,13 +38,13 @@
 .gallery__container-images::after {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
   width: 100%;
-  height: 15%;
+  height: 19%;
   background-color: #030303;
-  transform: translateX(-116px) scale(2.5);
-  filter: blur(25px);
+  transform: translateY(-125px) scale(2.5);
+  filter: blur(109px);
 }
 
 .gallery__wrap-image {
@@ -131,6 +131,10 @@
   display: inline-block;
   width: 100%;
   margin-bottom: 24px;
+}
+
+.margin-top {
+  margin-top: 50px;
 }
 /* .gallery__image:nth-child(1) {
   margin: 50px 0px 0px 0px;
