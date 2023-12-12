@@ -16,4 +16,5 @@
 
 .in-contact-with-top {
   border: 40px solid red;
+  transition: 1s;
 }

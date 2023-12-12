@@ -1,25 +1,29 @@
 console.log('section-5')
 
-// Get the section element
-var sectionTwo = document.querySelector('.gallery__container-images');
+var galleryContainer = document.querySelector('.gallery__container-images');
+const galleryImages = document.querySelectorAll('.gallery__image');
 
-// Add a scroll event listener to the window
 window.addEventListener('scroll', function() {
-    // // Get the position of the section relative to the viewport
-    // var sectionTwoPosition = sectionTwo.getBoundingClientRect();
-
-    // // Check if the top of the section is within the viewport
-    // if (sectionTwoPosition.top < window.innerHeight && sectionTwoPosition.bottom >= 0) {
-    //     // The section is in the viewport, so you can start your desired action here
-    //     console.log('Section two is in view');
-    // }
-
-    console.log('SCROLL')
+    const sectionTwoPosition = galleryContainer.getBoundingClientRect();
+    const signalHeight = this.innerHeight;
+    galleryImages.forEach((image, index) => {
+      const topImage = image.getBoundingClientRect().top;
+      if (topImage <= window.innerHeight) {
+        console.log('CONTACT')
+        if(image.className !== 'unroll') {
+          image.classList.add('unroll')
+        }
+      } else {
+        image.classList.remove('unroll')
+      }
+    })
+    if (sectionTwoPosition.top < window.innerHeight ) {
+        console.log('Section two is in view');
+    }
 });
 
 
 function addTopMargin() {
-
   const galleryWrapImage = document.querySelector('.gallery__container-images');
   const galleryWrapImageTop = galleryWrapImage.getBoundingClientRect().top;
   const galleryImages = document.querySelectorAll('.gallery__image');
