@@ -5,8 +5,6 @@ const widthCardVideo_768 = 354;
 const heightCardVideo_768 = 199;
 const widthWrapVideo_768 = 728;
 
-const deguBtn = document.getElementById('debug');
-
 function recalcSizeVideoCards() {
   const videoModule = document.querySelector('.video');
   const widthVideoModule = videoModule.offsetWidth;
@@ -36,13 +34,7 @@ function recalcSizeVideoCards() {
   videoYouTube = document.querySelectorAll('.video__you-tube');
 }
 
-// function resizeMainVideo() {
-//   const videoPlayer = document.querySelector('.video__player');
-//   videoPlayer.classList.add('.height100')
-// }
-
 window.addEventListener('resize', () => {
-  // resizeMainVideo() 
   console.log('resize ZZzzZZzz ------')
   setTimeout(() => {
     recalcSizeVideoCards()
@@ -50,10 +42,5 @@ window.addEventListener('resize', () => {
 })
 
 window.addEventListener('load', () => {
-  recalcSizeVideoCards()
-})
-
-deguBtn.addEventListener('click', () => {
-  console.log('DEBUG')
   recalcSizeVideoCards()
 })
