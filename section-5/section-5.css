@@ -17,6 +17,7 @@
 
 .gallery__container {
   height: 2095px;
+  /* height: 3395px; */
 }
 
 .gallery__wrap-title {
@@ -43,81 +44,13 @@
 .gallery__wrap-image {
 
 }
-/* @media(max-width: 1920px) {
-  .gallery__wrap-image {
-    width: 464px;
-  }
+
+.gallery__column {
+  height: 3100px;
 }
-@media(max-width: 1919px) {
-  .gallery__wrap-image {
-    width: auto;
-  }
-} */
-
-/* .gallery__wrap-image:nth-child(1) {
-  padding: 52px 0 0 0;
+.gallery__column:nth-child(2n+1) {
+  padding-top: 50px;
 }
-
-.gallery__wrap-image:nth-child(2) {
-}
-
-.gallery__wrap-image:nth-child(3) {
-  padding: 52px 0 0 0;
-}
-
-.gallery__wrap-image:nth-child(4) {
-}
-
-.gallery__wrap-image:nth-child(5) {
-}
-
-.gallery__wrap-image:nth-child(6) {
-}
-
-.gallery__wrap-image:nth-child(7) {
-}
-
-.gallery__wrap-image:nth-child(8) {
-}
-
-.gallery__wrap-image:nth-child(9) {
-}
-
-.gallery__wrap-image:nth-child(10) {
-}
-
-.gallery__wrap-image:nth-child(11) {
-}
-
-.gallery__wrap-image:nth-child(12) {
-}
-
-.gallery__wrap-image:nth-child(13) {
-}
-
-.gallery__wrap-image:nth-child(14) {
-}
-
-.gallery__wrap-image:nth-child(15) {
-} */
-
-/* .gallery__wrap-image:nth-child(1) { grid-area: 1 / 1 / 2 / 2; }
-.gallery__wrap-image:nth-child(2) { grid-area: 1 / 2 / 2 / 3; }
-.gallery__wrap-image:nth-child(3) { grid-area: 1 / 3 / 2 / 4; }
-.gallery__wrap-image:nth-child(4) { grid-area: 2 / 1 / 3 / 2; }
-.gallery__wrap-image:nth-child(5) { grid-area: 2 / 2 / 3 / 3; }
-.gallery__wrap-image:nth-child(6) { grid-area: 2 / 3 / 3 / 4; }
-.gallery__wrap-image:nth-child(7) { grid-area: 3 / 1 / 4 / 2; }
-.gallery__wrap-image:nth-child(8) { grid-area: 3 / 2 / 4 / 3; }
-.gallery__wrap-image:nth-child(9) { grid-area: 3 / 3 / 4 / 4; }
-.gallery__wrap-image:nth-child(10) { grid-area: 4 / 1 / 5 / 2; }
-.gallery__wrap-image:nth-child(11) { grid-area: 4 / 2 / 5 / 3; }
-.gallery__wrap-image:nth-child(12) { grid-area: 4 / 3 / 5 / 4; }
-.gallery__wrap-image:nth-child(13) { grid-area: 5 / 1 / 6 / 2; }
-.gallery__wrap-image:nth-child(14) { grid-area: 5 / 2 / 6 / 3; }
-.gallery__wrap-image:nth-child(15) { grid-area: 5 / 3 / 6 / 4; }  */
-
-
 .gallery__image {
   display: inline-block;
   width: 90%;
@@ -129,8 +62,8 @@
 .unroll {
   width: 100%;
   opacity: 1;
+  transition: 1s;
 }
 
-.margin-top {
-  margin-top: 50px;
-}
+
+
