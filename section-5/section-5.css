@@ -30,6 +30,11 @@
     height: 1356px;
   }
 }
+@media(max-width: 800px) { /* 768px */
+  .gallery__container {
+    height: 1116px;
+  }
+}
 
 .gallery__wrap-title {
   padding: 73px 0 79px 0;
