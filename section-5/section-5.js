@@ -50,6 +50,7 @@ const galleryImages = document.querySelectorAll('.gallery__image');
 // checkTopContact()
 
 function animationImage() {
+  const galleryImages = document.querySelectorAll('.gallery__image');
   const sectionTwoPosition = galleryContainer.getBoundingClientRect();
   const signalHeight = this.innerHeight;
   let counter = 0;
@@ -67,27 +68,35 @@ function animationImage() {
 }
 
 function repositionImg() {
+  const galleryContainer = document.querySelector('.gallery__container-images');
+  galleryContainer.innerHTML = '';
   const arrIndImg = [];
   while (arrIndImg.length !== 15 ) {
-    const randNumer = Math.trunc(Math.random() * 16) - 1;  
-    const img = document.createElement("img");
-    img.classList.add("gallery-img");
+    const randNumer = Math.trunc(Math.random() * 15) + 1;  
     if(!arrIndImg.includes(randNumer)) {
+      const img = document.createElement('img');
+      img.classList.add('gallery__image');
       img.src = `section-5/gallery/galery${randNumer}.jpg`;
       arrIndImg.push(randNumer)
+      img.alt = `image`;
+      if(arrIndImg.length % 5 === 1) {
+        var galleryColumn = document.createElement('div');
+        galleryColumn.classList.add('gallery__column')
+        galleryContainer.append(galleryColumn)
+      }
+      galleryColumn.append(img); 
     }
-    img.alt = `image`;
-    galleryContainer.append(img); 
   }
+  console.log(arrIndImg)
 }
+repositionImg()
 
 window.addEventListener('scroll', function () {
   animationImage()
 });
 
 window.addEventListener('load', function () {
-  // addTopMargin()
-  // animationImage()
+  animationImage()
 });
 
 // function calcHeight() {
