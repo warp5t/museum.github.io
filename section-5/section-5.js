@@ -1,38 +1,6 @@
 const galleryContainer = document.querySelector('.gallery__container-images');
 const galleryImages = document.querySelectorAll('.gallery__image');
 
-// function addTopMargin() {
-//   const galleryWrapImage = document.querySelector('.gallery__container-images');
-//   const galleryWrapImageTop = galleryWrapImage.getBoundingClientRect().top;
-//   const galleryImages = document.querySelectorAll('.gallery__image');
-//   let count = 0;
-//   galleryImages.forEach((image) => {
-//     const imageTop = image.getBoundingClientRect().top;
-//     if (imageTop <= galleryWrapImageTop) {
-//       if (count === 0 || count === 2) { 
-//         if (!image.classList.contains('margin-top')) { 
-//           image.classList.add('margin-top');
-//         }
-//       }
-//       count++;
-//     } 
-//   });
-// }
-
-// function checkTopContact() {
-//   const galleryWrapImage = document.querySelector('.gallery__container-images');
-//   const galleryWrapImageTop = galleryWrapImage.getBoundingClientRect().top;
-//   const galleryImages = document.querySelectorAll('.gallery__image');
-// galleryImages.forEach((image) => {
-//   const imageTop = image.getBoundingClientRect().top;
-//   if (imageTop <= galleryWrapImageTop) {
-//     if (image.classList.contains('margin-top')) { 
-//       console.log('contact-top')
-//     }
-//   }
-// });
-// }
-
 // function indexIdImg() {
 //   let count = 0;
 //   const galleryImages = document.querySelectorAll('.gallery__image');
@@ -42,12 +10,6 @@ const galleryImages = document.querySelectorAll('.gallery__image');
 //   });
 // }
 // indexIdImg()
-
-
-
-
-// addTopMargin()
-// checkTopContact()
 
 function animationImage() {
   const galleryImages = document.querySelectorAll('.gallery__image');
