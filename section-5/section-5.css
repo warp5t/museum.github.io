@@ -1,8 +1,12 @@
-.gallery {}
+.gallery {
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+}
 
 .gallery::after {
   content: '';
-  position: relative;
+  position: absolute;
   display: inline-block;
   bottom: 0;
   left: 0;
@@ -14,14 +18,15 @@
 }
 
 .gallery__container {
-  height: 2095px;
+  height: 2199px;
   padding: 0 20px 0 20px;
   /* height: 3395px; */
+  overflow: hidden;
 }
 
 @media(max-width: 1920px) {
   .gallery__container {
-    height: 2095px;
+    height: 2199px;
   }
 }
 

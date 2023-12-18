@@ -1,0 +1,118 @@
+.tickets {
+  position: relative;
+  z-index: 2;
+  color: #000;
+}
+
+.tickets__container {
+
+}
+
+._container {}
+
+.tickets__wrap-title {
+  padding: 75px 0 71px 0;
+}
+
+.tickets__wrap-title::after {
+  content: '';
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background-color: #710707;
+  margin: 26px 0 0 0; 
+}
+
+.tickets__title {
+  color: #9D8665;
+  font-family: Forum;
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 90px;
+  /* 112.5% */
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+
+.tickets__wrap-order {
+  display: flex;
+}
+
+.tickets__container-picture {
+  padding: 0 60px 0 0;
+}
+
+.tickets__image {}
+
+.tickets__container-order {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.tickets__type-ticket {}
+
+.tickets__name-fieldset {}
+
+.tickets__wrap-title-fieldset {
+  padding: 0px 0 50px 0;
+}
+
+.tickets__title-fieldset {
+  color: #000;
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+.tickets__wrap-radio {
+  padding: 0 0 29px 0;
+}
+
+.tickets__subwrap-radio {
+  margin: 0px 0 -22px 0;
+}
+
+.tickets__radio-input {
+  display: inline-block;
+  transform: scale(1.3); /* Change the value to adjust the size */
+}
+
+/* Changing the color of the radio input */
+.tickets__radio-input:checked + .tickets__label-style::before {
+  background-color: #000; /* Change the color to your desired color */
+  border-color: #000; /* Change the color to your desired color */
+}
+
+.tickets__label-style {
+  color: #000;
+font-family: Roboto;
+font-size: 22px;
+font-style: normal;
+font-weight: 300;
+line-height: normal;
+padding: 0 0 0 40px;
+}
+
+.tickets__wrap-ammount-tickets {}
+
+.tickets__wrap-counter {}
+
+.tickets__mode-limit {}
+
+.tickets__counter-tickets {}
+
+.tickets__button {}
+
+.tickets__number {}
+
+.tickets__total-price {}
+
+.tickets__wrap-buy-btn {}
+
+.tickets__btn-buy {}

@@ -22,7 +22,7 @@
   <link rel="stylesheet" href="section-3/section-3.css">
   <link rel="stylesheet" href="section-4/section-4.css">
   <link rel="stylesheet" href="section-5/section-5.css">
-  
+  <link rel="stylesheet" href="section-6/section-6.css">
 
   <link rel="stylesheet" href="techic.css">
 </head>
@@ -452,7 +452,78 @@
             </div>
           </div>
       </section>
-      <section class="tickets"></section>
+      <!-- ---------------------------- section-6 --------------------------------------- -->
+      <section class="tickets">
+        <div class="tickets__container _container">
+          <div class="tickets__wrap-title">
+            <h2 class="tickets__title">
+              buy tickets
+            </h2>
+          </div>
+          <div class="tickets__wrap-order">
+            <div class="tickets__container-picture">
+              <img class="tickets__image" src="section-6/Rectangle.jpg" alt="picture">
+            </div>
+            <div class="tickets__container-order">
+              <div class="tickets__type-ticket">
+                <fieldset class="tickets__name-fieldset">
+                  <div class="tickets__wrap-title-fieldset">
+                    <h3 class="tickets__title-fieldset">Ticket Type</h3>
+                  </div>
+                  <div class="tickets__wrap-radio">
+                    <div class="tickets__subwrap-radio">
+                      <input class="tickets__radio-input" type="radio" id="permanent" name="type-ticket" value="permanent"/>
+                    </div>
+                    <label class="tickets__label-style" for="permanent">Permanent exhibition</label>
+                  </div>
+                  <div class="tickets__wrap-radio">
+                    <div class="tickets__subwrap-radio">
+                      <input class="tickets__radio-input" type="radio" id="temporary" name="type-ticket" value="temporary"/>
+                    </div>
+                    <label class="tickets__label-style" for="temporary">Temporary exhibition</label>
+                  </div>
+                  <div class="tickets__wrap-radio">
+                    <div class="tickets__subwrap-radio">
+                      <input class="tickets__radio-input" type="radio" id="combined" name="type-ticket" value="combined"/>
+                    </div>
+                    <label class="tickets__label-style" for="combined">Combined Admission</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="tickets__wrap-ammount-tickets">
+                <fieldset class="tickets__name-fieldset">
+                  <h3 class="tickets__title-fieldset">Ammount</h3>
+                  <div class="tickets__wrap-counter">
+                    <div class="tickets__mode-limit">
+                      Basic +18
+                    </div>
+                    <div class="tickets__counter-tickets">
+                      <button class="tickets__button" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                      <input class="tickets__number" type="number" min="0" max="50" value="1">
+                      <button class="tickets__button" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                    </div>
+                  </div>
+                  <div class="tickets__wrap-counter">
+                    <div class="tickets__mode-limit">
+                      Senior +65
+                    </div>
+                    <div class="tickets__counter-tickets">
+                      <button class="tickets__button" type="button" onclick="this.nextElementSibling.stepDown()">-</button>
+                      <input class="tickets__number" type="number" min="0" max="20" value="1" readonly>
+                      <button class="tickets__button" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                    </div>
+                  </div>
+                  <div class="tickets__total-price">Total €0</div>
+                  <div class="tickets__wrap-buy-btn">
+                    <button class="tickets__btn-buy">Buy Now</button>
+                  </div>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+       <!-- ---------------------------- section-7 --------------------------------------- -->
       <section class="contacts"></section>
     </main>
     <footer class="footer"></footer>
@@ -471,52 +542,8 @@
 <script src="section-4/section-4-1.js"></script>
 <script src="section-4/section-4-2.js"></script>
 <script src="section-5/section-5.js"></script>
+<script src="section-6/section-6.js"></script>
+
 <script src="debug.js"></script>
 
 </html>
-<!-- <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery2.jpg" alt="image"> 
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery9.jpg" alt="image"> 
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery4.jpg" alt="image"> 
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery6.jpg" alt="image"> 
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery1.jpg" alt="image">
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery3.jpg" alt="image"> 
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery5.jpg" alt="image"> 
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery7.jpg" alt="image"> 
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery8.jpg" alt="image">    
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery10.jpg" alt="image">
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery11.jpg" alt="image"> 
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery12.jpg" alt="image"> 
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery13.jpg" alt="image"> 
-            </div>
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery14.jpg" alt="image"> 
-            </div>  
-            <div class="gallery__wrap-image">
-              <img class="gallery__image" src="section-5/gallery/galery15.jpg" alt="image">    
-            </div> 
-          </div> -->
