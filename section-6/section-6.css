@@ -4,9 +4,7 @@
   color: #000;
 }
 
-.tickets__container {
-
-}
+.tickets__container {}
 
 ._container {}
 
@@ -21,7 +19,7 @@
   width: 100%;
   height: 3px;
   background-color: #710707;
-  margin: 26px 0 0 0; 
+  margin: 26px 0 0 0;
 }
 
 .tickets__title {
@@ -55,19 +53,35 @@
 
 .tickets__type-ticket {}
 
-.tickets__name-fieldset {}
+.tickets__name-fieldset_0 {}
+
+.tickets__name-fieldset_1 {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
 
 .tickets__wrap-title-fieldset {
   padding: 0px 0 50px 0;
 }
 
-.tickets__title-fieldset {
+.tickets__title-fieldset_0,
+.tickets__title-fieldset_1 {
   color: #000;
   font-family: Roboto;
   font-size: 28px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+
+}
+
+.tickets__title-fieldset_1 {
+  padding: 0 0 24px 0;
+}
+
+.tickets__title-fieldset_0 {
+  align-self: flex-start;
 }
 
 .tickets__wrap-radio {
@@ -80,39 +94,102 @@
 
 .tickets__radio-input {
   display: inline-block;
-  transform: scale(1.3); /* Change the value to adjust the size */
+  transform: scale(1.3);
+  /* Change the value to adjust the size */
 }
 
 /* Changing the color of the radio input */
-.tickets__radio-input:checked + .tickets__label-style::before {
-  background-color: #000; /* Change the color to your desired color */
-  border-color: #000; /* Change the color to your desired color */
+.tickets__radio-input:checked+.tickets__label-style::before {
+  background-color: #000;
+  /* Change the color to your desired color */
+  border-color: #000;
+  /* Change the color to your desired color */
 }
 
 .tickets__label-style {
   color: #000;
-font-family: Roboto;
-font-size: 22px;
-font-style: normal;
-font-weight: 300;
-line-height: normal;
-padding: 0 0 0 40px;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding: 0 0 0 40px;
 }
 
 .tickets__wrap-ammount-tickets {}
 
 .tickets__wrap-counter {}
 
-.tickets__mode-limit {}
+.tickets__wrap-counter:last-child {}
 
-.tickets__counter-tickets {}
+.tickets__mode-limit {
+  color: #000;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding: 0 0 15px 0;
+}
 
-.tickets__button {}
+.tickets__counter-tickets {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid #000;
+  width: 150px;
+  height: 50px;
+  margin: 0px 0 8px 0;
+}
 
-.tickets__number {}
+.tickets__button {
+  color: #000;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  background-color: #ffffff;
+  padding: 0 10px;
+}
 
-.tickets__total-price {}
+.tickets__number {
+  display: inline-block;
+  text-align: center;
+  color: #000;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  width: 40px;
+}
+
+.tickets__total-price {
+  color: #000;
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: 1.65px;
+  padding: 44px 0px 59px 25px;
+}
 
 .tickets__wrap-buy-btn {}
 
-.tickets__btn-buy {}
+.tickets__btn-buy {
+  color: #FFF;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 2px;
+  width: 175px;
+  height: 50px;
+  border-radius: 2px;
+  background: #000;
+}
