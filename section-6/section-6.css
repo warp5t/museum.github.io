@@ -4,7 +4,9 @@
   color: #000;
 }
 
-.tickets__container {}
+.tickets__container {
+  padding: 0 0 75px 0;
+}
 
 ._container {}
 
@@ -193,3 +195,5 @@
   border-radius: 2px;
   background: #000;
 }
+
+

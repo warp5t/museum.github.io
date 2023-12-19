@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="section-4/section-4.css">
   <link rel="stylesheet" href="section-5/section-5.css">
   <link rel="stylesheet" href="section-6/section-6.css">
+  <link rel="stylesheet" href="section-parallax/section-paralax.css">
+
 
   <link rel="stylesheet" href="techic.css">
 </head>
@@ -472,19 +474,22 @@
                   </div>
                   <div class="tickets__wrap-radio">
                     <div class="tickets__subwrap-radio">
-                      <input class="tickets__radio-input" type="radio" id="permanent" name="type-ticket" value="permanent"/>
+                      <input class="tickets__radio-input" type="radio" id="permanent" name="type-ticket"
+                        value="permanent" />
                     </div>
                     <label class="tickets__label-style" for="permanent">Permanent exhibition</label>
                   </div>
                   <div class="tickets__wrap-radio">
                     <div class="tickets__subwrap-radio">
-                      <input class="tickets__radio-input" type="radio" id="temporary" name="type-ticket" value="temporary"/>
+                      <input class="tickets__radio-input" type="radio" id="temporary" name="type-ticket"
+                        value="temporary" />
                     </div>
                     <label class="tickets__label-style" for="temporary">Temporary exhibition</label>
                   </div>
                   <div class="tickets__wrap-radio">
                     <div class="tickets__subwrap-radio">
-                      <input class="tickets__radio-input" type="radio" id="combined" name="type-ticket" value="combined"/>
+                      <input class="tickets__radio-input" type="radio" id="combined" name="type-ticket"
+                        value="combined" />
                     </div>
                     <label class="tickets__label-style" for="combined">Combined Admission</label>
                   </div>
@@ -498,9 +503,11 @@
                       Basic 18+
                     </div>
                     <div class="tickets__counter-tickets">
-                      <button class="tickets__button" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
+                      <button class="tickets__button" type="button"
+                        onclick="this.nextElementSibling.stepDown()">−</button>
                       <input class="tickets__number" type="number" min="0" max="50" value="0">
-                      <button class="tickets__button" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                      <button class="tickets__button" type="button"
+                        onclick="this.previousElementSibling.stepUp()">+</button>
                     </div>
                   </div>
                   <div class="tickets__wrap-counter">
@@ -508,22 +515,30 @@
                       Senior 65+
                     </div>
                     <div class="tickets__counter-tickets">
-                      <button class="tickets__button" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
+                      <button class="tickets__button" type="button"
+                        onclick="this.nextElementSibling.stepDown()">−</button>
                       <input class="tickets__number" type="number" min="0" max="50" value="0" readonly>
-                      <button class="tickets__button" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                      <button class="tickets__button" type="button"
+                        onclick="this.previousElementSibling.stepUp()">+</button>
                     </div>
                   </div>
                 </fieldset>
-                  <div class="tickets__total-price">Total €0</div>
-                  <div class="tickets__wrap-buy-btn">
-                    <button class="tickets__btn-buy">Buy Now</button>
-                  </div>
+                <div class="tickets__total-price">Total €0</div>
+                <div class="tickets__wrap-buy-btn">
+                  <button class="tickets__btn-buy">Buy Now</button>
+                </div>
               </div>
             </div>
           </div>
+
         </div>
       </section>
-       <!-- ---------------------------- section-7 --------------------------------------- -->
+      <!-- ---------------------------- section-parallax ---------------------------------- -->
+      <div class="parallax">
+        <div class="parallax__image">
+        </div>
+      </div>
+      <!-- ---------------------------- section-7 --------------------------------------- -->
       <section class="contacts"></section>
     </main>
     <footer class="footer"></footer>
