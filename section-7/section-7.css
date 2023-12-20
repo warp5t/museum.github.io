@@ -2,12 +2,13 @@
   padding: 0 0 0 0;
   color: #000;
 }
-.contacts__container {
 
-}
+.contacts__container {}
+
 .contacts__wrap-title {
   padding: 75px 0 0px 0;
 }
+
 .contacts__wrap-title::after {
   content: '';
   display: inline-block;
@@ -17,20 +18,45 @@
   background-color: #710707;
   margin: 0px 0 0 0;
 }
+
 .contacts__title {
+
   padding: 0 0 14px 0;
 }
 
 .contacts__inf-container {
   display: flex;
   justify-content: space-between;
+  padding: 71px 0 0 0;
 }
-.contacts__information {
-}
+
+.contacts__information {}
+
 .contacts__name-museum {
+  color: #000;
+  font-family: Roboto;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0 0 49px 0;
 }
-.contacts__item, a{
+.contacts__item + a {
+  display: inline-block;
+  list-style-type: none;
+}
+.contacts__item {
+  color: #000;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  padding: 0 0 24px 0;
+}
+
+#telephone {
   color: #000;
 }
-.contacts__wrap-map {
-}
+
+.contacts__wrap-map {}
