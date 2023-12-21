@@ -3,7 +3,9 @@
   color: #000;
 }
 
-.contacts__container {}
+.contacts__container {
+  padding: 0 0 69px 0;
+}
 
 .contacts__wrap-title {
   padding: 75px 0 0px 0;
@@ -43,7 +45,6 @@
 }
 .contacts__item + a {
   display: inline-block;
-  list-style-type: none;
 }
 .contacts__item {
   color: #000;

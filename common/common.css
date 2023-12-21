@@ -32,3 +32,6 @@ line-height: 90px; /* 112.5% */
 letter-spacing: 5px;
 text-transform: uppercase;
 }
+a {
+  list-style-type: none;
+}
