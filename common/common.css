@@ -35,3 +35,7 @@ text-transform: uppercase;
 a {
   list-style-type: none;
 }
+
+html {
+  scroll-behavior: smooth;
+}
