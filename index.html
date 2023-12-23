@@ -477,21 +477,21 @@
                   <div class="tickets__wrap-radio">
                     <div class="tickets__subwrap-radio">
                       <input class="tickets__radio-input" type="radio" id="permanent" name="type-ticket"
-                        value="permanent" />
+                        value="permanent" checked/>
                     </div>
                     <label class="tickets__label-style" for="permanent">Permanent exhibition</label>
                   </div>
                   <div class="tickets__wrap-radio">
                     <div class="tickets__subwrap-radio">
                       <input class="tickets__radio-input" type="radio" id="temporary" name="type-ticket"
-                        value="temporary" />
+                        value="temporary"/>
                     </div>
                     <label class="tickets__label-style" for="temporary">Temporary exhibition</label>
                   </div>
                   <div class="tickets__wrap-radio">
                     <div class="tickets__subwrap-radio">
                       <input class="tickets__radio-input" type="radio" id="combined" name="type-ticket"
-                        value="combined" />
+                        value="combined"/>
                     </div>
                     <label class="tickets__label-style" for="combined">Combined Admission</label>
                   </div>
@@ -506,10 +506,10 @@
                     </div>
                     <div class="tickets__counter-tickets">
                       <button class="tickets__button" type="button"
-                        onclick="this.nextElementSibling.stepDown()">−</button>
-                      <input class="tickets__number" type="number" min="0" max="50" value="0">
+                        onclick="this.nextElementSibling.stepDown()" id="minus18">−</button>
+                      <input class="tickets__number" id="ticket18" type="number" value="0" min="0" max="50" readonly/>
                       <button class="tickets__button" type="button"
-                        onclick="this.previousElementSibling.stepUp()">+</button>
+                        onclick="this.previousElementSibling.stepUp()" id="plus18">+</button>
                     </div>
                   </div>
                   <div class="tickets__wrap-counter">
@@ -518,14 +518,14 @@
                     </div>
                     <div class="tickets__counter-tickets">
                       <button class="tickets__button" type="button"
-                        onclick="this.nextElementSibling.stepDown()">−</button>
-                      <input class="tickets__number" type="number" min="0" max="50" value="0" readonly>
+                        onclick="this.nextElementSibling.stepDown()" id="minus65">−</button>
+                      <input class="tickets__number" id="ticket65" type="number" value="0" min="0" max="50" readonly/>
                       <button class="tickets__button" type="button"
-                        onclick="this.previousElementSibling.stepUp()">+</button>
+                        onclick="this.previousElementSibling.stepUp()" id="plus65">+</button>
                     </div>
                   </div>
                 </fieldset>
-                <div class="tickets__total-price">Total €0</div>
+                <div class="tickets__total-price" id="totalPrice">Total €0</div>
                 <div class="tickets__wrap-buy-btn">
                   <button class="tickets__btn-buy">Buy Now</button>
                 </div>
