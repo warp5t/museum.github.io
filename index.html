@@ -26,6 +26,7 @@
   <link rel="stylesheet" href="section-parallax/section-paralax.css">
   <link rel="stylesheet" href="section-7/section-7.css">
   <link rel="stylesheet" href="footer/footer.css">
+  <link rel="stylesheet" href="forma-tickets/forma-tickets.css">
 
 
   <link rel="stylesheet" href="techic.css">
@@ -477,21 +478,21 @@
                   <div class="tickets__wrap-radio">
                     <div class="tickets__subwrap-radio">
                       <input class="tickets__radio-input" type="radio" id="permanent" name="type-ticket"
-                        value="permanent" checked/>
+                        value="permanent" checked />
                     </div>
                     <label class="tickets__label-style" for="permanent">Permanent exhibition</label>
                   </div>
                   <div class="tickets__wrap-radio">
                     <div class="tickets__subwrap-radio">
                       <input class="tickets__radio-input" type="radio" id="temporary" name="type-ticket"
-                        value="temporary"/>
+                        value="temporary" />
                     </div>
                     <label class="tickets__label-style" for="temporary">Temporary exhibition</label>
                   </div>
                   <div class="tickets__wrap-radio">
                     <div class="tickets__subwrap-radio">
                       <input class="tickets__radio-input" type="radio" id="combined" name="type-ticket"
-                        value="combined"/>
+                        value="combined" />
                     </div>
                     <label class="tickets__label-style" for="combined">Combined Admission</label>
                   </div>
@@ -505,11 +506,11 @@
                       Basic 18+
                     </div>
                     <div class="tickets__counter-tickets">
-                      <button class="tickets__button" type="button"
-                        onclick="this.nextElementSibling.stepDown()" id="minus18">−</button>
-                      <input class="tickets__number" id="ticket18" type="number" value="0" min="0" max="50" readonly/>
-                      <button class="tickets__button" type="button"
-                        onclick="this.previousElementSibling.stepUp()" id="plus18">+</button>
+                      <button class="tickets__button" type="button" onclick="this.nextElementSibling.stepDown()"
+                        id="minus18">−</button>
+                      <input class="tickets__number" id="ticket18" type="number" value="0" min="0" max="50" readonly />
+                      <button class="tickets__button" type="button" onclick="this.previousElementSibling.stepUp()"
+                        id="plus18">+</button>
                     </div>
                   </div>
                   <div class="tickets__wrap-counter">
@@ -517,17 +518,17 @@
                       Senior 65+
                     </div>
                     <div class="tickets__counter-tickets">
-                      <button class="tickets__button" type="button"
-                        onclick="this.nextElementSibling.stepDown()" id="minus65">−</button>
-                      <input class="tickets__number" id="ticket65" type="number" value="0" min="0" max="50" readonly/>
-                      <button class="tickets__button" type="button"
-                        onclick="this.previousElementSibling.stepUp()" id="plus65">+</button>
+                      <button class="tickets__button" type="button" onclick="this.nextElementSibling.stepDown()"
+                        id="minus65">−</button>
+                      <input class="tickets__number" id="ticket65" type="number" value="0" min="0" max="50" readonly />
+                      <button class="tickets__button" type="button" onclick="this.previousElementSibling.stepUp()"
+                        id="plus65">+</button>
                     </div>
                   </div>
                 </fieldset>
                 <div class="tickets__total-price" id="totalPrice">Total €0</div>
                 <div class="tickets__wrap-buy-btn">
-                  <button class="tickets__btn-buy">Buy Now</button>
+                  <button class="tickets__btn-buy" id="btnBuy">Buy Now</button>
                 </div>
               </div>
             </div>
@@ -581,27 +582,27 @@
           <nav class="footer__navigation">
             <ul class="footer__navigation-list">
               <div class="footer__subwrap">
-              <li class="footer__navigation-item">
-                <a class="footer__item" href="#visiting">Visiting</a>
-              </li>
-              <li class="footer__navigation-item">
-                <a class="footer__item" href="#video">Explore</a>
-              </li>
-              <li class="footer__navigation-item">
-                <a class="footer__item" href="#video">Video</a>
-              </li>
-            </div>
+                <li class="footer__navigation-item">
+                  <a class="footer__item" href="#visiting">Visiting</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a class="footer__item" href="#video">Explore</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a class="footer__item" href="#video">Video</a>
+                </li>
+              </div>
               <div class="footer__subwrap">
-              <li class="footer__navigation-item">
-                <a class="footer__item" href="#gallery">Gallery</a>
-              </li>
-              <li class="footer__navigation-item">
-                <a class="footer__item" href="#tickets">Tickets</a>
-              </li>
-              <li class="footer__navigation-item">
-                <a class="footer__item" href="#contacts">Contacts</a>
-              </li>
-            </div>
+                <li class="footer__navigation-item">
+                  <a class="footer__item" href="#gallery">Gallery</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a class="footer__item" href="#tickets">Tickets</a>
+                </li>
+                <li class="footer__navigation-item">
+                  <a class="footer__item" href="#contacts">Contacts</a>
+                </li>
+              </div>
             </ul>
           </nav>
           <nav class="footer__social-net social-net">
@@ -642,11 +643,58 @@
           </div>
         </div>
       </div>
-      <!-- <div class="footer__line-decor"></div> -->
     </footer>
-  <div class="wrap-tech">
-    <button id="log">loging</button>
-    <button id="debug">Debuging</button>
+    <div class="wrap-tech">
+      <button id="log">loging</button>
+      <button id="debug">Debuging</button>
+
+      <div class="forma-tickets">
+        <div class="forma-tickets__wrap-logo">
+          <img src="forma-tickets/logo.png" alt="logo">
+        </div>
+        <h2 class="forma-tickets__title">booking tickets</h2>
+        <div class="forma-tickets__tour-to-louvre">
+          Tour to Louvre
+        </div>
+        <fieldset class="forma-tickets__forma-tickets forma-tickets">
+          <div class="forma-tickets__data-time">
+            <div class="forma-tickets__wrap-data">
+              <div class="forma-tickets__wrap-icon-forma">
+                <img class="forma-tickets__icon" src="forma-tickets/date.svg" alt="date">
+              </div>
+              <input class="forma-tickets__data" type="date" id="start" name="" min="2023-12-24" max="">
+            </div>
+            <div class="forma-tickets__wrap-time">
+              <div class="forma-tickets__wrap-icon-forma">
+                <img class="forma-tickets__icon" src="forma-tickets/time.svg" alt="date">
+              </div>
+              <select class="forma-tickets__time" name="timeDate" id="timeDate">
+                <option value="none"> </option>
+                <option value="9.00">9:00</option>
+                <option value="9.30">9:30</option>
+                <option value="10.00">10:00</option>
+                <option value="10.30">10:30</option>
+                <option value="11.00">11:00</option>
+                <option value="11.30">11:30</option>
+                <option value="12.00">12:00</option>
+                <option value="12.30">12:30</option>
+                <option value="13.00">13:00</option>
+                <option value="13.30">13:30</option>
+                <option value="14.00">14:00</option>
+                <option value="14.30">14:30</option>
+                <option value="15.00">15:00</option>
+                <option value="15.30">15:30</option>
+                <option value="16.00">16:00</option>
+                <option value="16.30">16:30</option>
+                <option value="17.00">17:00</option>
+                <option value="17.30">17:30</option>
+                <option value="18.00">18:00</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </div>
   </div>
 </body>
 <script src="header/header.js"></script>
@@ -659,6 +707,7 @@
 <script src="section-4/section-4-2.js"></script>
 <script src="section-5/section-5.js"></script>
 <script src="section-6/section-6.js"></script>
+<script src="forma-tickets/forma-tickets.js"></script>
 
 <script src="debug.js"></script>
 

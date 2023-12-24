@@ -1,5 +1,3 @@
-// const selectedValue = document.querySelector('input[name="type-ticket"]:checked').value;
-
 const plus18 = document.getElementById('plus18');
 const minus18 = document.getElementById('minus18');
 const ticket18 = document.getElementById('ticket18');
@@ -93,9 +91,30 @@ arrTicketsType.forEach((item) => {
     summary18 = calculatePrice18(ticket18.value)
     summary65 = calculatePrice65(ticket65.value)
     refreshTotalPrice()
-    // console.log('check94',item.value)
-
-    // console.log(ticket18.value)
-    // console.log(ticket65.value)
   })
 })
+
+// ---------------------- buyForma ---------------------
+
+const btnBuy = document.getElementById('btnBuy');
+
+const wrap = document.querySelector('.wrap');
+const bodyTag = document.getElementById('body');
+
+function onOffmain() {
+  console.log(bodyTag.offsetHeight)
+}
+
+btnBuy.addEventListener('click', () => {
+  const courtain = document.createElement('div');
+  courtain.classList.add('shadow');
+  bodyTag.prepend(courtain)
+  courtain.style.height = wrap.offsetHeight + 'px';
+  bodyTag.classList.add('scroll-stop');
+
+  courtain.addEventListener('click', () => {
+    courtain.remove()
+  })
+})
+
+

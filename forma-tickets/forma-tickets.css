@@ -1,0 +1,82 @@
+.forma-tickets__data {
+  opacity: 1;
+  width: 19px;
+  height: 30px;
+
+}
+
+.input-date:active {
+  opacity: 1;
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type=date] {
+  background: url("/forma-tickets/arrow.svg") #f7f9fc no-repeat 90% 50%;
+}
+
+/* input[type=time]::-webkit-calendar-picker-indicator {
+  display: none;
+}
+
+input[type=time] {
+  background: url("/forma-tickets/time.svg") #f7f9fc no-repeat 90% 50%;
+} */
+
+select {
+  appearance: none;
+  overflow: hidden;
+  background: url("/forma-tickets/arrow.svg") #f7f9fc no-repeat right;
+}
+
+#timeDate {
+  
+}
+
+
+.forma-tickets__forma-tickets {
+   color: #030303;
+}
+.forma-tickets { 
+  background-color:#FFF;
+}
+.forma-tickets__data-time { 
+ 
+}
+.forma-tickets__wrap-data {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #030303;
+  width: 190px;
+  height: 45px;
+}
+.forma-tickets__wrap-icon-forma {
+  margin: 0 0 0 14px;
+}
+.forma-tickets__icon {
+}
+.forma-tickets__data {
+  display: inline-block;
+  opacity: 1;
+  width: 19px;
+  height: 30px;
+  margin: 0 14px 0 0;
+}
+.forma-tickets__wrap-time { 
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #030303;
+  width: 190px;
+  height: 45px;
+}
+.forma-tickets__time {
+  display: inline-block;
+  height: 35px;
+  width: 99px;
+  margin: 0 14px 0 0;
+  font-size: 22px;
+}
