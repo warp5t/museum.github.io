@@ -146,12 +146,12 @@ window.addEventListener('beforeunload', () => {
   localStorage.setItem('countTickets65', ticket65.value);
 })
 
-window.addEventListener('load', () => {
+window.addEventListener('DOMContentLoaded', () => {
   const countTickets18 = Number(JSON.parse(localStorage.getItem('countTickets18')));
   const countTickets65 = Number(JSON.parse(localStorage.getItem('countTickets65')));
   const savedSupportNumber = JSON.parse(localStorage.getItem('supportNumber'));
   if(savedSupportNumber !== supportNumber && savedSupportNumber !== null) {
-    supportNumber = savedSupportNumber
+    supportNumber = String(savedSupportNumber)
   }
   summary18 = calculatePrice18(countTickets18)
   summary65 = calculatePrice65(countTickets65)
