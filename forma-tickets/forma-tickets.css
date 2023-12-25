@@ -42,6 +42,7 @@ select {
 
 .forma-tickets__contaiter {
   display: flex;
+  justify-content: center;
 }
 
 .forma-tickets__wrap-logo {}
@@ -54,6 +55,7 @@ select {
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
+  padding: 0 0 11px 0;
 }
 
 .forma-tickets__tour-to-louvre {
@@ -65,9 +67,23 @@ select {
   line-height: normal;
 }
 
-.forma-tickets__forma-tickets {}
+.forma-tickets__tour-to-louvre::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: #740C11;
+  margin: 0px 0 5px 0;
+}
 
-.forma-tickets__data-time {}
+.forma-tickets__forma-tickets {
+  padding: 50px 0 0 0;
+}
+
+.forma-tickets__data-time {
+  display: flex;
+  justify-content: space-between;
+}
 
 .forma-tickets__wrap-data {
   display: flex;
@@ -83,6 +99,16 @@ select {
 }
 
 .forma-tickets__icon {}
+
+#date {
+  color: #030303;
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding: 3px 56px 0 0;
+}
 
 .forma-tickets__data {
   display: inline-block;
@@ -104,9 +130,10 @@ select {
 .forma-tickets__time {
   display: inline-block;
   height: 35px;
-  width: 99px;
+  width: 131px;
   margin: 0 14px 0 0;
-  font-size: 22px;
+  font-size: 20px;
+
 }
 
 
@@ -114,8 +141,16 @@ select {
   width: 100%;
 }
 
+.forma-tickets__sub-containter:nth-child(1) {
+  margin: 0 40px 0 0;
+  width: 400px;
+  /* padding: 0 0 0 235px; */
+}
+
 .forma-tickets__sub-containter:nth-child(2) {
-  border: 1px solid #030303; 
+  border: 1px solid #030303;
+  width: 530px;
+  /* margin: 0 235px 0 0; */
 }
 
 
@@ -141,13 +176,7 @@ select {
   font-weight: 500;
   line-height: normal;
 }
-/* .forma-tickets__tour-to-louvre-2::after {
-content: '';
-display: inline-block;
-width: 100%;
-height: 2px;
-background-color: #740C11;
-} */
+
 
 .forma-tickets__result-wrap {
   display: flex;
@@ -167,40 +196,155 @@ background-color: #740C11;
 .forma-tickets__wrap-piramid {
   position: absolute;
   right: 0;
-  top: 0;  
+  top: 0;
 }
 
 .forma-tickets__piramid {}
 
-.forma-tickets__wrap-tickets-count {
-}
-.forma-tickets__wrap-info-tickets {
-}
-.forma-tickets__count-tickets {
-}
-.forma-tickets__type-price-one {
-}
-.forma-tickets__total-price {
-}
-.forma-tickets__total {
-}
+.forma-tickets__wrap-tickets-count {}
+
+.forma-tickets__wrap-info-tickets {}
+
+.forma-tickets__count-tickets {}
+
+.forma-tickets__type-price-one {}
+
+.forma-tickets__total-price {}
+
+.forma-tickets__total {}
+
 .forma-tickets__credit-card {
+  position: relative;
 }
-.credit-card {
-}
+
+.credit-card {}
+
 .credit-card__front-card {
+  position: relative;
+  width: 360px;
+  height: 211px;
+  background-color: #BCBCBC;
+  padding: 15px 20px;
+  border-radius: 10px;
+  z-index: 2;
 }
+
 .credit-card__card-subscribe {
+  color: #161615;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 10px 0 5px 0;
 }
+
+.credit-card__card-subscribe:first-child {
+  padding: 0 0 5px 0;
+}
+
 .credit-card__fieldset {
+  position: relative;
 }
+
+#cardNumber {
+  display: inline-block;
+  width: 215px;
+  height: 35px;
+  background-color: #FFF;
+}
+
+#expitarionFrom {
+  display: inline-block;
+  width: 100px;
+  height: 35px;
+  background-color: #FFF;
+  margin: 0 15px 0 0;
+}
+
+#expitarionTo {
+  display: inline-block;
+  width: 100px;
+  height: 35px;
+  background-color: #FFF;
+}
+
+#ownerCard {
+  display: inline-block;
+  width: 320px;
+  height: 35px;
+  background-color: #FFF;
+}
+
 .credit-card__wrap-logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55px;
 }
+
 .credit-card__logo {
+  display: inline-block;
+  margin: 0 0 15px 0;
 }
+
+.credit-card__logo:last-child {
+  margin: 0;
+}
+
 .credit-card__back-card {
+  position: absolute;
+  top: 30px;
+  left: 110px;
+  display: flex;
+  justify-content: end;
+  width: 360px;
+  height: 211px;
+  background-color: #939393; 
+  border-radius: 10px;
+  z-index: 0;
 }
+.credit-card__back-subwrap {
+  position: relative;
+display: inline-block;
+align-self: flex-end;
+padding: 0 20px 15px 0;
+}
+
+.credit-card__back-card::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  display: inline-block;
+  height: 45px;
+  width: 100%;
+  background-color: #161615;
+}
+
 .credit-card__back-CVV {
+  color: #161615;
+  font-family: Roboto;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
-.credit-card__btn {
+
+.credit-card__back-CVV:nth-child(1) {
+  color: #161615;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
+#CVC-CVV { 
+  display: inline-block;
+  width: 75px;
+  height: 35px; 
+  background-color: #FFF;
+}
+.credit-card__btn {}

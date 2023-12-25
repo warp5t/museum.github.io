@@ -506,10 +506,10 @@
                       Basic 18+
                     </div>
                     <div class="tickets__counter-tickets">
-                      <button class="tickets__button" type="button" onclick="this.nextElementSibling.stepDown()"
+                      <button class="tickets__button minusBtn18" type="button" onclick="this.nextElementSibling.stepDown()"
                         id="minus18">−</button>
-                      <input class="tickets__number" id="ticket18" type="number" value="0" min="0" max="50" readonly />
-                      <button class="tickets__button" type="button" onclick="this.previousElementSibling.stepUp()"
+                      <input class="tickets__number countTickets18" id="ticket18" type="number" value="0" min="0" max="50" readonly />
+                      <button class="tickets__button plusBtn18" type="button" onclick="this.previousElementSibling.stepUp()"
                         id="plus18">+</button>
                     </div>
                   </div>
@@ -518,10 +518,10 @@
                       Senior 65+
                     </div>
                     <div class="tickets__counter-tickets">
-                      <button class="tickets__button" type="button" onclick="this.nextElementSibling.stepDown()"
+                      <button class="tickets__button minusBtn65" type="button" onclick="this.nextElementSibling.stepDown()"
                         id="minus65">−</button>
-                      <input class="tickets__number" id="ticket65" type="number" value="0" min="0" max="50" readonly />
-                      <button class="tickets__button" type="button" onclick="this.previousElementSibling.stepUp()"
+                      <input class="tickets__number countTickets65" id="ticket65" type="number" value="0" min="0" max="50" readonly />
+                      <button class="tickets__button plusBtn65" type="button" onclick="this.previousElementSibling.stepUp()"
                         id="plus65">+</button>
                     </div>
                   </div>
@@ -665,6 +665,7 @@
                 <div class="forma-tickets__wrap-icon-forma">
                   <img class="forma-tickets__icon" src="forma-tickets/date.svg" alt="date">
                 </div>
+                <div id="date">Date</div>
                 <input class="forma-tickets__data" type="date" id="start" name="" min="2023-12-24" max="">
               </div>
               <div class="forma-tickets__wrap-time">
@@ -672,7 +673,7 @@
                   <img class="forma-tickets__icon" src="forma-tickets/time.svg" alt="date">
                 </div>
                 <select class="forma-tickets__time" name="timeDate" id="timeDate">
-                  <option value="none"> </option>
+                  <option value="none">Time</option>
                   <option value="9.00">9:00</option>
                   <option value="9.30">9:30</option>
                   <option value="10.00">10:00</option>
@@ -693,6 +694,49 @@
                   <option value="17.30">17:30</option>
                   <option value="18.00">18:00</option>
                 </select>
+              </div>
+            </div>
+            <div class="forma-tickets__wrap-setting">
+              <div class="forma-tickets__wrap-icon">
+                <img src="forma-tickets/name.svg" alt="icon">
+              </div>
+              <div class="forma-tickets__data-owner" id="nameCustomer">Name</div>
+            </div>
+            <div class="forma-tickets__wrap-setting">
+              <div class="forma-tickets__wrap-icon">
+                <img src="forma-tickets/name.svg" alt="icon">
+              </div>
+              <div class="forma-tickets__data-owner" id="nameCustomer">Name</div>
+            </div>
+            <div class="forma-tickets__wrap-setting">
+              <div class="forma-tickets__wrap-icon">
+                <img src="forma-tickets/name.svg" alt="icon">
+              </div>
+              <div class="forma-tickets__data-owner" id="nameCustomer">Name</div>
+            </div>
+            <div class="forma-tickets__wrap-setting">
+              <div class="forma-tickets__wrap-icon">
+                <img src="forma-tickets/name.svg" alt="icon">
+              </div>
+              <div class="forma-tickets__data-owner" id="nameCustomer">Name</div>
+            </div>
+            <div class="forma-tickets__wrap-setting">
+              <div class="forma-tickets__entry-ticket">Entry Ticket</div>
+              <div class="forma-tickets__setting-client">
+                <div class="forma-tickets__one-ticket-inf" id="oneTicket18">Basic 18+ (20 €)</div>
+                <div class="forma-tickets__counter-tickets">
+                  <button class="forma-tickets__button minusBtn18" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
+                  <input class="forma-tickets__number countTickets18" id="ticket18forma" type="number" value="0" min="0" max="50" readonly="">
+                  <button class="forma-tickets__button plusBtn18" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                </div>
+              </div>
+              <div class="forma-tickets__setting-client">
+                <div class="forma-tickets__one-ticket-inf" id="oneTicket65">Basic 65+ (10 €)</div>
+                <div class="forma-tickets__counter-tickets">
+                  <button class="forma-tickets__button minusBtn65" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
+                  <input class="forma-tickets__number countTickets65" id="ticket65forma" type="number" value="0" min="0" max="50" readonly="">
+                  <button class="forma-tickets__button plusBtn65" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                </div>
               </div>
             </div>
           </fieldset>
@@ -726,7 +770,6 @@
             <div class="forma-tickets__wrap-piramid">
               <img class="forma-tickets__piramid" src="forma-tickets/Rectangle 4.jpg" alt="piramid">
             </div>
-
             <div class="forma-tickets__wrap-tickets-count">
               <div class="forma-tickets__wrap-info-tickets">
                 <div class="forma-tickets__count-tickets" id="countBasic">2</div>
@@ -759,13 +802,15 @@
                 </fieldset>
               </div>
               <div class="credit-card__back-card">
-                <div class="credit-card__back-CVV">CVC/CVV</div>
-                <input id="CVC/CVV" type="number">
-                <div class="credit-card__back-CVV">
-                  The last <br>
-                  3 or 4 digits <br>
-                  on back <br>
-                  of the card
+                <div class="credit-card__back-subwrap">
+                  <div class="credit-card__back-CVV">CVC/CVV</div>
+                  <input id="CVC-CVV" type="number">
+                  <div class="credit-card__back-CVV">
+                    The last <br>
+                    3 or 4 digits <br>
+                    on back <br>
+                    of the card
+                  </div>
                 </div>
               </div>
             </div>

@@ -44,26 +44,102 @@ function refreshTotalPrice() {
   totalPrice.innerHTML = `Total €${summary18 + summary65}`
 }
 
-plus18.addEventListener('click', () => {
-  summary18 = calculatePrice18(ticket18.value)
-  refreshTotalPrice()
+// plus18.addEventListener('click', () => {
+//   summary18 = calculatePrice18(ticket18.value)
+//   refreshTotalPrice()
+// })
+
+// minus18.addEventListener('click', () => {
+//   summary18 = calculatePrice18(ticket18.value)
+//   refreshTotalPrice()
+// })
+
+// plus65.addEventListener('click', () => {
+//   summary65 = calculatePrice65(ticket65.value)
+//   refreshTotalPrice()
+// })
+
+// minus65.addEventListener('click', () => {
+//   summary65 = calculatePrice65(ticket65.value)
+//   refreshTotalPrice()
+// })
+
+
+const plusBtn18All = document.querySelectorAll('.plusBtn18');
+const arrPlusBtn18 = Array.from(plusBtn18All);
+
+const plusBtn65All = document.querySelectorAll('.plusBtn65');
+const arrPlusBtn65 = Array.from(plusBtn65All);
+
+const minusBtn18All = document.querySelectorAll('.minusBtn18');
+const arrMinusBtn18 = Array.from(minusBtn18All);
+
+const minusBtn65All = document.querySelectorAll('.minusBtn65');
+const arrMinusBtn65 = Array.from(minusBtn65All);
+
+const countTickets18 = document.querySelectorAll('.countTickets18');
+const arrCountTickets18 = Array.from(countTickets18);
+
+let supportNumber = '0';
+
+function updateArray(arr) {
+  if (arr[1] === supportNumber) {
+    arr[1] = arr[0]; 
+    supportNumber = arr[0];
+    localStorage.setItem('supportNumber', supportNumber);
+  } else if (arr[0] === supportNumber) {
+    arr[0] = arr[1]; 
+    supportNumber = arr[1];
+    localStorage.setItem('supportNumber', supportNumber);
+  }
+  console.log(arr)
+}
+
+function synchronizeTickets18() {
+  const arrCountTicket = [];
+  arrCountTickets18.forEach((el) => {
+    arrCountTicket.push(el.value)
+  })
+  updateArray(arrCountTicket)
+  console.log(arrCountTicket)
+  arrCountTickets18.forEach((el,index) => {
+    el.value = arrCountTicket[index]
+  })
+}
+
+arrPlusBtn18.forEach((el)=> {
+  el.addEventListener('click',() => { 
+    console.log('check plus18')
+    summary18 = calculatePrice18(ticket18.value)
+    refreshTotalPrice()
+    synchronizeTickets18()
+  })
 })
 
-minus18.addEventListener('click', () => {
-  summary18 = calculatePrice18(ticket18.value)
-  refreshTotalPrice()
+arrMinusBtn18.forEach((el)=> {
+  el.addEventListener('click',() => { 
+    console.log('check minus18')
+    summary18 = calculatePrice18(ticket18.value)
+    refreshTotalPrice()
+    synchronizeTickets18()
+  })
 })
 
-plus65.addEventListener('click', () => {
-  summary65 = calculatePrice65(ticket65.value)
-  refreshTotalPrice()
+arrPlusBtn65.forEach((el)=> {
+  el.addEventListener('click',() => { 
+    console.log('check plus65')
+    summary65 = calculatePrice65(ticket65.value)
+    refreshTotalPrice()
+  })
 })
 
-minus65.addEventListener('click', () => {
-  summary65 = calculatePrice65(ticket65.value)
-  refreshTotalPrice()
+arrMinusBtn65.forEach((el)=> {
+  el.addEventListener('click',() => { 
+    console.log('check minus65')
+    summary65 = calculatePrice65(ticket65.value)
+    refreshTotalPrice()
+  })
 })
-
 
 window.addEventListener('beforeunload', () => {
   localStorage.setItem('countTickets18', ticket18.value);
@@ -73,6 +149,10 @@ window.addEventListener('beforeunload', () => {
 window.addEventListener('load', () => {
   const countTickets18 = Number(JSON.parse(localStorage.getItem('countTickets18')));
   const countTickets65 = Number(JSON.parse(localStorage.getItem('countTickets65')));
+  const savedSupportNumber = JSON.parse(localStorage.getItem('supportNumber'));
+  if(savedSupportNumber !== supportNumber && savedSupportNumber !== null) {
+    supportNumber = savedSupportNumber
+  }
   summary18 = calculatePrice18(countTickets18)
   summary65 = calculatePrice65(countTickets65)
   ticket18.value = countTickets18;
