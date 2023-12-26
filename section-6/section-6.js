@@ -80,17 +80,29 @@ const arrMinusBtn65 = Array.from(minusBtn65All);
 const countTickets18 = document.querySelectorAll('.countTickets18');
 const arrCountTickets18 = Array.from(countTickets18);
 
-let supportNumber = '0';
+const countTickets65 = document.querySelectorAll('.countTickets65');
+const arrCountTickets65 = Array.from(countTickets65);
 
-function updateArray(arr) {
-  if (arr[1] === supportNumber) {
+let supportNumber18 = '0', supportNumber65 = '0';
+
+function updateArray18(arr) {
+  if (arr[1] === supportNumber18) {
     arr[1] = arr[0]; 
-    supportNumber = arr[0];
-    localStorage.setItem('supportNumber', supportNumber);
-  } else if (arr[0] === supportNumber) {
+    supportNumber18 = arr[0];
+  } else if (arr[0] === supportNumber18) {
     arr[0] = arr[1]; 
-    supportNumber = arr[1];
-    localStorage.setItem('supportNumber', supportNumber);
+    supportNumber18 = arr[1];
+  }
+  console.log(arr)
+}
+
+function updateArray65(arr) {
+  if (arr[1] === supportNumber65) {
+    arr[1] = arr[0]; 
+    supportNumber65 = arr[0];
+  } else if (arr[0] === supportNumber65) {
+    arr[0] = arr[1]; 
+    supportNumber65 = arr[1];
   }
   console.log(arr)
 }
@@ -100,9 +112,23 @@ function synchronizeTickets18() {
   arrCountTickets18.forEach((el) => {
     arrCountTicket.push(el.value)
   })
-  updateArray(arrCountTicket)
+  updateArray18(arrCountTicket)
+  localStorage.setItem('supportNumber18', supportNumber18);
   console.log(arrCountTicket)
   arrCountTickets18.forEach((el,index) => {
+    el.value = arrCountTicket[index]
+  })
+}
+
+function synchronizeTickets65() {
+  const arrCountTicket = [];
+  arrCountTickets65.forEach((el) => {
+    arrCountTicket.push(el.value)
+  })
+  updateArray65(arrCountTicket)
+  localStorage.setItem('supportNumber65', supportNumber65);
+  console.log(arrCountTicket)
+  arrCountTickets65.forEach((el,index) => {
     el.value = arrCountTicket[index]
   })
 }
@@ -130,6 +156,7 @@ arrPlusBtn65.forEach((el)=> {
     console.log('check plus65')
     summary65 = calculatePrice65(ticket65.value)
     refreshTotalPrice()
+    synchronizeTickets65()
   })
 })
 
@@ -138,6 +165,7 @@ arrMinusBtn65.forEach((el)=> {
     console.log('check minus65')
     summary65 = calculatePrice65(ticket65.value)
     refreshTotalPrice()
+    synchronizeTickets65()
   })
 })
 
@@ -149,9 +177,9 @@ window.addEventListener('beforeunload', () => {
 window.addEventListener('DOMContentLoaded', () => {
   const countTickets18 = Number(JSON.parse(localStorage.getItem('countTickets18')));
   const countTickets65 = Number(JSON.parse(localStorage.getItem('countTickets65')));
-  const savedSupportNumber = JSON.parse(localStorage.getItem('supportNumber'));
-  if(savedSupportNumber !== supportNumber && savedSupportNumber !== null) {
-    supportNumber = String(savedSupportNumber)
+  const savedSupportNumber18 = JSON.parse(localStorage.getItem('supportNumber18'));
+  if(savedSupportNumber18 !== supportNumber18 && savedSupportNumber18 !== null) {
+    supportNumber18 = String(savedSupportNumber18)
   }
   summary18 = calculatePrice18(countTickets18)
   summary65 = calculatePrice65(countTickets65)
@@ -163,7 +191,6 @@ window.addEventListener('DOMContentLoaded', () => {
 // ------------------------------------ tickets Type ------------------------------------------
 
 const ticketsType = document.querySelectorAll('.tickets__subwrap-radio');
-
 const arrTicketsType = Array.from(ticketsType);
 
 arrTicketsType.forEach((item) => {
