@@ -44,38 +44,17 @@ function refreshTotalPrice() {
   totalPrice.innerHTML = `Total €${summary18 + summary65}`
 }
 
-// plus18.addEventListener('click', () => {
-//   summary18 = calculatePrice18(ticket18.value)
-//   refreshTotalPrice()
-// })
-
-// minus18.addEventListener('click', () => {
-//   summary18 = calculatePrice18(ticket18.value)
-//   refreshTotalPrice()
-// })
-
-// plus65.addEventListener('click', () => {
-//   summary65 = calculatePrice65(ticket65.value)
-//   refreshTotalPrice()
-// })
-
-// minus65.addEventListener('click', () => {
-//   summary65 = calculatePrice65(ticket65.value)
-//   refreshTotalPrice()
-// })
-
-
-const plusBtn18All = document.querySelectorAll('.plusBtn18');
-const arrPlusBtn18 = Array.from(plusBtn18All);
-
 const plusBtn65All = document.querySelectorAll('.plusBtn65');
 const arrPlusBtn65 = Array.from(plusBtn65All);
+
+const minusBtn65All = document.querySelectorAll('.minusBtn65');
+const arrMinusBtn65 = Array.from(minusBtn65All);
 
 const minusBtn18All = document.querySelectorAll('.minusBtn18');
 const arrMinusBtn18 = Array.from(minusBtn18All);
 
-const minusBtn65All = document.querySelectorAll('.minusBtn65');
-const arrMinusBtn65 = Array.from(minusBtn65All);
+const plusBtn18All = document.querySelectorAll('.plusBtn18');
+const arrPlusBtn18 = Array.from(plusBtn18All);
 
 const countTickets18 = document.querySelectorAll('.countTickets18');
 const arrCountTickets18 = Array.from(countTickets18);
@@ -83,89 +62,91 @@ const arrCountTickets18 = Array.from(countTickets18);
 const countTickets65 = document.querySelectorAll('.countTickets65');
 const arrCountTickets65 = Array.from(countTickets65);
 
-let supportNumber18 = '0', supportNumber65 = '0';
+
+let supportNumber18 = '0',
+  supportNumber65 = '0';
 
 function updateArray18(arr) {
   if (arr[1] === supportNumber18) {
-    arr[1] = arr[0]; 
+    arr[1] = arr[0];
     supportNumber18 = arr[0];
   } else if (arr[0] === supportNumber18) {
-    arr[0] = arr[1]; 
+    arr[0] = arr[1];
     supportNumber18 = arr[1];
   }
-  console.log(arr)
 }
 
 function updateArray65(arr) {
   if (arr[1] === supportNumber65) {
-    arr[1] = arr[0]; 
+    arr[1] = arr[0];
     supportNumber65 = arr[0];
   } else if (arr[0] === supportNumber65) {
-    arr[0] = arr[1]; 
+    arr[0] = arr[1];
     supportNumber65 = arr[1];
   }
-  console.log(arr)
 }
 
-function synchronizeTickets18() {
-  const arrCountTicket = [];
+function synchronizeTickets18(arr) {
   arrCountTickets18.forEach((el) => {
-    arrCountTicket.push(el.value)
+    arr.push(el.value)
   })
-  updateArray18(arrCountTicket)
+  updateArray18(arr)
   localStorage.setItem('supportNumber18', supportNumber18);
-  console.log(arrCountTicket)
-  arrCountTickets18.forEach((el,index) => {
-    el.value = arrCountTicket[index]
+  console.log(arr)
+  arrCountTickets18.forEach((el, index) => {
+    el.value = arr[index]
   })
 }
 
-function synchronizeTickets65() {
-  const arrCountTicket = [];
+function synchronizeTickets65(arr) {
   arrCountTickets65.forEach((el) => {
-    arrCountTicket.push(el.value)
+    arr.push(el.value)
   })
-  updateArray65(arrCountTicket)
+  updateArray65(arr)
   localStorage.setItem('supportNumber65', supportNumber65);
-  console.log(arrCountTicket)
-  arrCountTickets65.forEach((el,index) => {
-    el.value = arrCountTicket[index]
+  console.log(arr)
+  arrCountTickets65.forEach((el, index) => {
+    el.value = arr[index]
   })
 }
 
-arrPlusBtn18.forEach((el)=> {
-  el.addEventListener('click',() => { 
-    console.log('check plus18')
-    summary18 = calculatePrice18(ticket18.value)
-    refreshTotalPrice()
-    synchronizeTickets18()
+function wrapRefresh18() {
+  const arrCountTicket = [];
+  synchronizeTickets18(arrCountTicket)
+  console.log('check plus18')
+  summary18 = calculatePrice18(arrCountTicket[0])
+  refreshTotalPrice()
+}
+
+function wrapRefresh65() {
+  const arrCountTicket = [];
+  synchronizeTickets65(arrCountTicket)
+  console.log('check plus65')
+  summary65 = calculatePrice65(arrCountTicket[0])
+  refreshTotalPrice()
+}
+
+arrPlusBtn18.forEach((el) => {
+  el.addEventListener('click', () => {
+    wrapRefresh18()
   })
 })
 
-arrMinusBtn18.forEach((el)=> {
-  el.addEventListener('click',() => { 
-    console.log('check minus18')
-    summary18 = calculatePrice18(ticket18.value)
-    refreshTotalPrice()
-    synchronizeTickets18()
+arrMinusBtn18.forEach((el) => {
+  el.addEventListener('click', () => {
+    wrapRefresh18()
   })
 })
 
-arrPlusBtn65.forEach((el)=> {
-  el.addEventListener('click',() => { 
-    console.log('check plus65')
-    summary65 = calculatePrice65(ticket65.value)
-    refreshTotalPrice()
-    synchronizeTickets65()
+arrPlusBtn65.forEach((el) => {
+  el.addEventListener('click', () => {
+    wrapRefresh65()
   })
 })
 
-arrMinusBtn65.forEach((el)=> {
-  el.addEventListener('click',() => { 
-    console.log('check minus65')
-    summary65 = calculatePrice65(ticket65.value)
-    refreshTotalPrice()
-    synchronizeTickets65()
+arrMinusBtn65.forEach((el) => {
+  el.addEventListener('click', () => {
+    wrapRefresh65()
   })
 })
 
@@ -178,8 +159,12 @@ window.addEventListener('DOMContentLoaded', () => {
   const countTickets18 = Number(JSON.parse(localStorage.getItem('countTickets18')));
   const countTickets65 = Number(JSON.parse(localStorage.getItem('countTickets65')));
   const savedSupportNumber18 = JSON.parse(localStorage.getItem('supportNumber18'));
-  if(savedSupportNumber18 !== supportNumber18 && savedSupportNumber18 !== null) {
+  const savedSupportNumber65 = JSON.parse(localStorage.getItem('supportNumber65'));
+  if (savedSupportNumber18 !== supportNumber18 && savedSupportNumber18 !== null) {
     supportNumber18 = String(savedSupportNumber18)
+  }
+  if (savedSupportNumber65 !== supportNumber65 && savedSupportNumber65 !== null) {
+    supportNumber65 = String(savedSupportNumber65)
   }
   summary18 = calculatePrice18(countTickets18)
   summary65 = calculatePrice65(countTickets65)
@@ -194,7 +179,7 @@ const ticketsType = document.querySelectorAll('.tickets__subwrap-radio');
 const arrTicketsType = Array.from(ticketsType);
 
 arrTicketsType.forEach((item) => {
-  item.addEventListener('click', ()=> {
+  item.addEventListener('click', () => {
     summary18 = calculatePrice18(ticket18.value)
     summary65 = calculatePrice65(ticket65.value)
     refreshTotalPrice()
@@ -223,5 +208,3 @@ btnBuy.addEventListener('click', () => {
     courtain.remove()
   })
 })
-
-
