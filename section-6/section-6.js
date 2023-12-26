@@ -206,5 +206,6 @@ btnBuy.addEventListener('click', () => {
 
   courtain.addEventListener('click', () => {
     courtain.remove()
+    bodyTag.classList.remove('scroll-stop');
   })
 })

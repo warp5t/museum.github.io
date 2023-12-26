@@ -1,10 +1,3 @@
-.forma-tickets__data {
-  opacity: 1;
-  width: 19px;
-  height: 30px;
-
-}
-
 .input-date:active {
   opacity: 1;
 }
@@ -17,14 +10,6 @@ input[type=date] {
   background: url("/forma-tickets/arrow.svg") #f7f9fc no-repeat 90% 50%;
 }
 
-/* input[type=time]::-webkit-calendar-picker-indicator {
-  display: none;
-}
-
-input[type=time] {
-  background: url("/forma-tickets/time.svg") #f7f9fc no-repeat 90% 50%;
-} */
-
 select {
   appearance: none;
   overflow: hidden;
@@ -33,248 +18,6 @@ select {
 
 #timeDate {}
 
-
-
-.forma-tickets {
-  color: #030303;
-  background-color: #FFF;
-}
-
-.forma-tickets__contaiter {
-  display: flex;
-  justify-content: center;
-}
-
-.forma-tickets__wrap-logo {}
-
-.forma-tickets__title {
-  color: #9D8665;
-  font-family: Forum;
-  font-size: 50px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  text-transform: uppercase;
-  padding: 0 0 11px 0;
-}
-
-.forma-tickets__tour-to-louvre {
-  color: #710707;
-  font-family: Roboto;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.forma-tickets__tour-to-louvre::after {
-  content: '';
-  display: inline-block;
-  width: 100%;
-  height: 2px;
-  background-color: #740C11;
-  margin: 0px 0 5px 0;
-}
-
-.forma-tickets__forma-tickets {
-  padding: 50px 0 0 0;
-}
-
-.forma-tickets__data-time {
-  display: flex;
-  justify-content: space-between;
-}
-
-.forma-tickets__wrap-data {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #030303;
-  width: 190px;
-  height: 45px;
-}
-
-.forma-tickets__wrap-icon-forma {
-  margin: 0 0 0 14px;
-}
-
-.forma-tickets__icon {}
-
-#date {
-  color: #030303;
-font-family: Roboto;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-padding: 3px 56px 0 0;
-}
-
-.forma-tickets__data {
-  display: inline-block;
-  opacity: 1;
-  width: 19px;
-  height: 30px;
-  margin: 0 14px 0 0;
-}
-
-.forma-tickets__wrap-time {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border: 1px solid #030303;
-  width: 190px;
-  height: 45px;
-}
-
-.forma-tickets__time {
-  display: inline-block;
-  height: 35px;
-  width: 131px;
-  margin: 0 14px 0 0;
-  font-size: 20px;
-
-}
-
-
-.forma-tickets__sub-containter {
-  width: 100%;
-}
-
-.forma-tickets__sub-containter:nth-child(1) {
-  margin: 0 40px 0 0;
-  width: 400px;
-  /* padding: 0 0 0 235px; */
-}
-
-.forma-tickets__sub-containter:nth-child(2) {
-  border: 1px solid #030303;
-  width: 530px;
-  /* margin: 0 235px 0 0; */
-}
-
-
-.forma-tickets__subwrap-container {
-  position: relative;
-  margin: 30px 25px 30px 25px;
-}
-
-.forma-tickets__title-overview {
-  color: #272727;
-  font-family: Roboto;
-  font-size: 32px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-
-.forma-tickets__tour-to-louvre-2 {
-  color: #740C11;
-  font-family: Roboto;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-}
-
-
-.forma-tickets__result-wrap {
-  display: flex;
-}
-
-.forma-tickets__icon-dt {}
-
-.forma-tickets__result {
-  color: #030303;
-  font-family: Roboto;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-}
-
-.forma-tickets__wrap-piramid {
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.forma-tickets__piramid {}
-
-.forma-tickets__wrap-tickets-count {}
-
-.forma-tickets__wrap-info-tickets {}
-
-.forma-tickets__count-tickets {}
-
-.forma-tickets__type-price-one {}
-
-.forma-tickets__total-price {}
-
-.forma-tickets__total {}
-
-.forma-tickets__credit-card {
-  position: relative;
-}
-
-.credit-card {}
-
-.credit-card__front-card {
-  position: relative;
-  width: 360px;
-  height: 211px;
-  background-color: #BCBCBC;
-  padding: 15px 20px;
-  border-radius: 10px;
-  z-index: 2;
-}
-
-.credit-card__card-subscribe {
-  color: #161615;
-  font-family: Roboto;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  padding: 10px 0 5px 0;
-}
-
-.credit-card__card-subscribe:first-child {
-  padding: 0 0 5px 0;
-}
-
-.credit-card__fieldset {
-  position: relative;
-}
-
-#cardNumber {
-  display: inline-block;
-  width: 215px;
-  height: 35px;
-  background-color: #FFF;
-}
-
-#expitarionFrom {
-  display: inline-block;
-  width: 100px;
-  height: 35px;
-  background-color: #FFF;
-  margin: 0 15px 0 0;
-}
-
-#expitarionTo {
-  display: inline-block;
-  width: 100px;
-  height: 35px;
-  background-color: #FFF;
-}
-
-#ownerCard {
-  display: inline-block;
-  width: 320px;
-  height: 35px;
-  background-color: #FFF;
-}
 
 .credit-card__wrap-logo {
   position: absolute;
@@ -348,3 +91,531 @@ padding: 0 20px 15px 0;
   background-color: #FFF;
 }
 .credit-card__btn {}
+
+
+
+
+
+
+  .forma-tickets {
+    color: #030303;
+    background-color: #FFF;
+  }
+
+  .forma-tickets__contaiter {
+    display: flex;
+    justify-content: center;
+  }
+
+.forma-tickets__sub-containter {
+  width: 100%;
+}
+
+.forma-tickets__sub-containter:nth-child(1) {
+  margin: 0 40px 0 0;
+  width: 400px;
+}
+
+.forma-tickets__sub-containter:nth-child(2) {
+  position: relative;
+  border: 1px solid #030303;
+  width: 530px;
+}
+
+.forma-tickets__wrap-logo {
+}
+
+.forma-tickets__title {
+  color: #9D8665;
+  font-family: Forum;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  padding: 0 0 11px 0;
+}
+
+.forma-tickets__tour-to-louvre {
+  color: #710707;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.forma-tickets__tour-to-louvre::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: #740C11;
+  margin: 0px 0 5px 0;
+}
+.forma-tickets__forma-tickets {
+  padding: 50px 0 0 0;
+}
+
+.forma-tickets__data-time {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 20px 0;
+}
+
+.forma-tickets__wrap-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #030303;
+  width: 190px;
+  height: 45px;
+}
+
+.forma-tickets__wrap-icon-forma {
+  margin: 0 0 0 14px;
+}
+
+.forma-tickets__icon {
+}
+
+#date {
+  color: #030303;
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+padding: 3px 56px 0 0;
+}
+
+.forma-tickets__data {
+  display: inline-block;
+  opacity: 1;
+  width: 19px;
+  height: 30px;
+  margin: 0 14px 0 0;
+}
+
+.forma-tickets__wrap-time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #030303;
+  width: 190px;
+  height: 45px;
+}
+
+.forma-tickets__time {
+  display: inline-block;
+  height: 35px;
+  width: 131px;
+  margin: 0 14px 0 0;
+  font-size: 20px;
+
+}
+
+.forma-tickets__wrap-setting {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  height: 45px; 
+  border: 1px solid #030303;
+  margin: 0 0 20px 0;
+}
+.forma-tickets__wrap-setting:last-child {
+  flex-direction: column;
+  margin: 0;
+  padding: 10px 15px 15px 15px;
+  height: auto;
+}
+
+.forma-tickets__wrap-icon {
+  padding: 5px 14px 0 14px;
+}
+
+.forma-tickets__data-owner {
+}
+
+.forma-tickets__entry-ticket {
+  color: #9D8665;
+font-family: Forum;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-transform: capitalize;
+width: 100%;
+}
+.forma-tickets__entry-ticket::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+  height: 2px;
+  background-color: #740C11;
+  margin: 0px 0 11px 0;
+}
+
+.forma-tickets__setting-client {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.forma-tickets__setting-client:nth-child(1) {
+  padding: 15px 0 18px 0;
+}
+
+.forma-tickets__setting-client:nth-child(2) {
+  padding: 0 0 17px 0;
+}
+
+.forma-tickets__one-ticket-inf {
+  color: #030303;
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.forma-tickets__counter-tickets {
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 105px;
+  height: 25px; 
+  border: 1px solid #030303;
+}
+
+.forma-tickets__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  background-color: #030303;
+  color: #FFF;
+  padding: 0;
+}
+
+.minusBtn18 {
+}
+
+.forma-tickets__number {
+  
+  display: inline-block;
+  color: #030303;
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: center;
+width: 30px;
+}
+
+.countTickets18 {
+}
+
+.plusBtn18 {
+}
+
+.minusBtn65 {
+}
+
+.countTickets65 {
+}
+
+.plusBtn65 {
+}
+
+.forma-tickets__subwrap-container {
+  position: relative;
+  margin: 23px 28px 30px 28px;
+}
+
+.forma-tickets__title-overview {
+  color: #272727;
+  font-family: Roboto;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0 0 2px 0;
+}
+
+.forma-tickets__tour-to-louvre-2 {
+  color: #740C11;
+  font-family: Roboto;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  padding: 0 0px 7px 2px;
+}
+
+.forma-tickets__result-wrap {
+  display: flex;
+  padding: 0 0 5px 0;
+}
+
+.tech-result-wrap {
+  margin: 0 0 18px 0;
+}
+
+.forma-tickets__icon-dt {
+  display: inline-block;
+  margin: 0 15px 0px 2px;
+}
+.forma-tickets__result {
+  color: #030303;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+}
+.forma-tickets__wrap-piramid {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.forma-tickets__piramid {
+}
+
+.forma-tickets__wrap-tickets-count {
+
+}
+
+.forma-tickets__wrap-tickets-count::after {
+  content: '';
+  display: inline-flex;
+  background-color: #740C11;
+  width: 100%;
+  height: 2px;
+  margin: 0 0 9px 0;
+}
+
+.forma-tickets__wrap-info-tickets {
+  display: flex;
+  align-items: center;
+  padding: 0 0 0 2px;
+}
+.forma-tickets__wrap-info-tickets:first-child {
+  margin: 0 0 5px 0;
+}
+.forma-tickets__wrap-info-tickets:last-child {
+  margin: 0 0 -5px 0;
+}
+.forma-tickets__count-tickets {
+  width: 34px;
+  height: 20px;
+  background-color: #030303;
+  border-radius: 6px;
+  color: #A4A4A3;
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+text-align: center;
+margin: 0 11px 0 0;
+}
+.forma-tickets__subwrap-price {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.forma-tickets__price {
+  color: #030303;
+font-family: Roboto;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+
+.forma-tickets__wrap-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0 11px 0;
+}
+.forma-tickets__text-total {
+  color: #030303;
+font-family: Roboto;
+font-size: 32px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.forma-tickets__total {
+  color: #030303;
+font-family: Roboto;
+font-size: 32px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+}
+.total-price {
+}
+
+.forma-tickets__credit-card {
+  position: relative;
+}
+
+.credit-card {
+}
+
+.credit-card__front-card {
+  position: relative;
+  width: 360px;
+  height: 211px;
+  background-color: #BCBCBC;
+  padding: 15px 20px;
+  border-radius: 2px;
+  z-index: 2;
+}
+
+.credit-card__card-subscribe {
+  color: #161615;
+  font-family: Roboto;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.7px;
+  padding: 10px 0 5px 0;
+}
+
+.credit-card__card-subscribe:first-child {
+  padding: 0 0 5px 0;
+}
+
+.credit-card__fieldset {
+  position: relative;
+}
+
+#cardNumber {
+  display: inline-block;
+  width: 215px;
+  height: 35px;
+  background-color: #FFF;
+}
+
+#expitarionFrom {
+  display: inline-block;
+  width: 100px;
+  height: 35px;
+  background-color: #FFF;
+  margin: 0 15px 0 0;
+}
+
+#expitarionTo {
+  display: inline-block;
+  width: 100px;
+  height: 35px;
+  background-color: #FFF;
+}
+
+#ownerCard {
+  display: inline-block;
+  width: 320px;
+  height: 35px;
+  background-color: #FFF;
+}
+
+.credit-card__wrap-logo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 55px;
+}
+
+.credit-card__logo {
+  display: inline-block;
+  margin: 0 0 15px 0;
+}
+
+.credit-card__logo:last-child {
+  margin: 0;
+}
+
+.credit-card__back-card {
+  position: absolute;
+  top: 30px;
+  left: 110px;
+  display: flex;
+  justify-content: end;
+  width: 360px;
+  height: 211px;
+  background-color: #939393; 
+  border-radius: 2px;
+  z-index: 0;
+}
+
+.credit-card__back-subwrap {
+  position: relative;
+display: inline-block;
+align-self: flex-end;
+padding: 0 20px 15px 0;
+}
+
+.credit-card__back-card::before {
+  content: '';
+  position: absolute;
+  top: 25px;
+  display: inline-block;
+  height: 45px;
+  width: 100%;
+  background-color: #161615;
+}
+
+.credit-card__back-CVV {
+  color: #161615;
+  font-family: Roboto;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0px 0px 0px 10px;
+}
+
+.credit-card__back-CVV:nth-child(1) {
+  color: #161615;
+  font-family: Roboto;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  padding: 0 0px 6px 9px;
+}
+
+#CVC-CVV { 
+  display: inline-block;
+  width: 75px;
+  height: 35px; 
+  background-color: #FFF;
+  margin: 0px -2px 4px 0px;
+}
+#expitarionFrom::-webkit-inner-spin-button {
+  -webkit-appearance: none; 
+}
+.credit-card__btn {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #FFF;
+font-family: Roboto;
+font-size: 22px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+  width: 220px;
+height: 45px; 
+background-color: #710707;
+opacity: 0.9; 
+margin: 0 28px 26px 0px;
+}

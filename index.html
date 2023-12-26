@@ -526,7 +526,7 @@
                     </div>
                   </div>
                 </fieldset>
-                <div class="tickets__total-price" id="totalPrice">Total €0</div>
+                <div class="tickets__total-price total-price" id="totalPrice">Total €0</div>
                 <div class="tickets__wrap-buy-btn">
                   <button class="tickets__btn-buy" id="btnBuy">Buy Now</button>
                 </div>
@@ -586,7 +586,7 @@
                   <a class="footer__item" href="#visiting">Visiting</a>
                 </li>
                 <li class="footer__navigation-item">
-                  <a class="footer__item" href="#video">Explore</a>
+                  <a class="footer__item" href="#explore">Explore</a>
                 </li>
                 <li class="footer__navigation-item">
                   <a class="footer__item" href="#video">Video</a>
@@ -704,21 +704,21 @@
             </div>
             <div class="forma-tickets__wrap-setting">
               <div class="forma-tickets__wrap-icon">
-                <img src="forma-tickets/name.svg" alt="icon">
+                <img src="forma-tickets/email.svg" alt="icon">
               </div>
-              <div class="forma-tickets__data-owner" id="nameCustomer">Name</div>
+              <div class="forma-tickets__data-owner" id="nameCustomer">E-mal</div>
             </div>
             <div class="forma-tickets__wrap-setting">
               <div class="forma-tickets__wrap-icon">
-                <img src="forma-tickets/name.svg" alt="icon">
+                <img src="forma-tickets/tel.svg" alt="icon">
               </div>
-              <div class="forma-tickets__data-owner" id="nameCustomer">Name</div>
+              <div class="forma-tickets__data-owner" id="nameCustomer">Phone</div>
             </div>
             <div class="forma-tickets__wrap-setting">
               <div class="forma-tickets__wrap-icon">
-                <img src="forma-tickets/name.svg" alt="icon">
+                <img src="forma-tickets/ballot.svg" alt="icon">
               </div>
-              <div class="forma-tickets__data-owner" id="nameCustomer">Name</div>
+              <div class="forma-tickets__data-owner" id="nameCustomer">Ticket Type</div>
             </div>
             <div class="forma-tickets__wrap-setting">
               <div class="forma-tickets__entry-ticket">Entry Ticket</div>
@@ -731,7 +731,7 @@
                 </div>
               </div>
               <div class="forma-tickets__setting-client">
-                <div class="forma-tickets__one-ticket-inf" id="oneTicket65">Basic 65+ (10 €)</div>
+                <div class="forma-tickets__one-ticket-inf" id="oneTicket65">Senior 65+ (10 €)</div>
                 <div class="forma-tickets__counter-tickets">
                   <button class="forma-tickets__button minusBtn65" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
                   <input class="forma-tickets__number countTickets65" id="ticket65forma" type="number" value="0" min="0" max="50" readonly="">
@@ -758,10 +758,10 @@
             <div class="forma-tickets__result-wrap">
               <img class="forma-tickets__icon-dt" src="forma-tickets/time.svg" alt="icon">
               <div class="forma-tickets__result" id="resultTime">
-                16:30
+                16 : 30
               </div>
             </div>
-            <div class="forma-tickets__result-wrap">
+            <div class="forma-tickets__result-wrap tech-result-wrap">
               <img class="forma-tickets__icon-dt" src="forma-tickets/check_circle_outline.svg" alt="icon">
               <div class="forma-tickets__result" id="resultType">
                 Temporary exhibition
@@ -773,17 +773,22 @@
             <div class="forma-tickets__wrap-tickets-count">
               <div class="forma-tickets__wrap-info-tickets">
                 <div class="forma-tickets__count-tickets" id="countBasic">2</div>
-                <div class="forma-tickets__type-price-one" id="priceBasic">Basic (20 €)</div>
-                <div class="forma-tickets__total-price" id="totalBasic">40 €</div>
+                <div class="forma-tickets__subwrap-price">
+                  <div class="forma-tickets__price" id="priceBasic">Basic (20 €)</div>
+                  <div class="forma-tickets__price" id="totalBasic">40 €</div>
+                </div>
               </div>
               <div class="forma-tickets__wrap-info-tickets">
                 <div class="forma-tickets__count-tickets" id="countSenior">2</div>
-                <div class="forma-tickets__type-price-one" id="priceSenior">Basic (10 €)</div>
-                <div class="forma-tickets__total-price" id="totalSenior">20 €</div>
+                <div class="forma-tickets__subwrap-price">
+                <div class="forma-tickets__price" id="priceSenior">Senior (10 €)</div>
+                <div class="forma-tickets__price" id="totalSenior">20 €</div>
+                </div>
               </div>
             </div>
-            <div class="forma-tickets__total">
-              Total: 60 €
+            <div class="forma-tickets__wrap-total">
+              <div class="forma-tickets__text-total">Total:</div>
+              <div class="forma-tickets__total total-price">60 €</div>
             </div>
             <div class="forma-tickets__credit-card credit-card">
               <div class="credit-card__front-card">
@@ -791,7 +796,13 @@
                 <fieldset class="credit-card__fieldset">
                   <input id="cardNumber" type="number">
                   <div class="credit-card__card-subscribe">Expiration date</div>
-                  <input id="expitarionFrom" type="number">
+                  <div class="credit-card__wrap-input">
+                    <input class="credit-card__number countTickets65" id="expitarionFrom" type="number" value="03" min="0" max="10" readonly="">
+                    <div class="credit-card__wrap-buttons">
+                      <button class="credit-card__button plusBtn65" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                      <button class="credit-card__button minusBtn65" type="button" onclick="this.nextElementSibling.stepDown()">−</button> 
+                    </div>
+                  </div>
                   <input id="expitarionTo" type="number">
                   <div class="credit-card__card-subscribe">Cardholder name</div>
                   <input id="ownerCard" type="text">
@@ -814,8 +825,8 @@
                 </div>
               </div>
             </div>
-            <button class="credit-card__btn">Book</button>
           </div>
+          <button class="credit-card__btn">Book</button>
         </div>
       </div>
     </div>
