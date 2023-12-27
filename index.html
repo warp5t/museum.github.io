@@ -676,25 +676,25 @@
                 </div>
                 <select class="forma-tickets__time" name="timeDate" id="timeDate">
                   <option value="none">Time</option>
-                  <option value="9.00">9:00</option>
-                  <option value="9.30">9:30</option>
-                  <option value="10.00">10:00</option>
-                  <option value="10.30">10:30</option>
-                  <option value="11.00">11:00</option>
-                  <option value="11.30">11:30</option>
-                  <option value="12.00">12:00</option>
-                  <option value="12.30">12:30</option>
-                  <option value="13.00">13:00</option>
-                  <option value="13.30">13:30</option>
-                  <option value="14.00">14:00</option>
-                  <option value="14.30">14:30</option>
-                  <option value="15.00">15:00</option>
-                  <option value="15.30">15:30</option>
-                  <option value="16.00">16:00</option>
-                  <option value="16.30">16:30</option>
-                  <option value="17.00">17:00</option>
-                  <option value="17.30">17:30</option>
-                  <option value="18.00">18:00</option>
+                  <option value="9 : 00">9:00</option>
+                  <option value="9 : 30">9:30</option>
+                  <option value="10 : 00">10:00</option>
+                  <option value="10 : 30">10:30</option>
+                  <option value="11 : 00">11:00</option>
+                  <option value="11 : 30">11:30</option>
+                  <option value="12 : 00">12:00</option>
+                  <option value="12 : 30">12:30</option>
+                  <option value="13 : 00">13:00</option>
+                  <option value="13 : 30">13:30</option>
+                  <option value="14 : 00">14:00</option>
+                  <option value="14 : 30">14:30</option>
+                  <option value="15 : 00">15:00</option>
+                  <option value="15 : 30">15:30</option>
+                  <option value="16 : 00">16:00</option>
+                  <option value="16 : 30">16:30</option>
+                  <option value="17 : 00">17:00</option>
+                  <option value="17 : 30">17:30</option>
+                  <option value="18 : 00">18:00</option>
                 </select>
               </div>
             </div>
@@ -702,25 +702,30 @@
               <div class="forma-tickets__wrap-icon">
                 <img src="forma-tickets/name.svg" alt="icon">
               </div>
-              <div class="forma-tickets__data-owner" id="nameCustomer">Name</div>
+              <input class="forma-tickets__data-owner" id="nameCustomer" type="text" placeholder="Name">
             </div>
             <div class="forma-tickets__wrap-setting">
               <div class="forma-tickets__wrap-icon">
                 <img src="forma-tickets/email.svg" alt="icon">
               </div>
-              <div class="forma-tickets__data-owner" id="nameCustomer">E-mal</div>
+              <input class="forma-tickets__data-owner" id="e-mailCustomer" type="email" placeholder="E-mail">
             </div>
             <div class="forma-tickets__wrap-setting">
               <div class="forma-tickets__wrap-icon">
                 <img src="forma-tickets/tel.svg" alt="icon">
               </div>
-              <div class="forma-tickets__data-owner" id="nameCustomer">Phone</div>
+              <input class="forma-tickets__data-owner" id="phoneCustomer" type="tel" placeholder="Phone">
             </div>
             <div class="forma-tickets__wrap-setting">
               <div class="forma-tickets__wrap-icon">
                 <img src="forma-tickets/ballot.svg" alt="icon">
               </div>
-              <div class="forma-tickets__data-owner" id="nameCustomer">Ticket Type</div>
+              <select class="forma-tickets__data-owner" name="ticketType" id="ticketType">
+                <option value="Permanent exhibition">Permanent exhibition</option>
+                <option value="Temporary exhibition">Temporary exhibition</option>
+                <option value="Combined Admission">Combined Admission</option>
+              </select>
+              <div class="forma-tickets__data-owner" id="typeSelectTicket">Ticket Type</div>
             </div>
             <div class="forma-tickets__wrap-setting">
               <div class="forma-tickets__entry-ticket">Entry Ticket</div>
@@ -796,7 +801,7 @@
             </div>
             <div class="forma-tickets__wrap-total">
               <div class="forma-tickets__text-total">Total:</div>
-              <div class="forma-tickets__total total-price">60 €</div>
+              <div class="forma-tickets__total total-price" id="totalPricePreorder">60 €</div>
             </div>
             <div class="forma-tickets__credit-card credit-card">
               <div class="credit-card__front-card">

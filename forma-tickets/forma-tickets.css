@@ -237,7 +237,14 @@ select {
   padding: 5px 14px 0 14px;
 }
 
-.forma-tickets__data-owner {}
+.forma-tickets__data-owner::placeholder {
+color: #030303;
+font-family: Roboto;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
 
 .forma-tickets__entry-ticket {
   color: #9D8665;
@@ -508,14 +515,13 @@ select {
 #expitarionFrom {
   display: inline-block;
   background-color: #FFF;
-  width: 65px;
+  width: 71px;
   height: 35px;
-  /* margin: 0 15px 0 0; */
 }
 
 #expitarionTo {
   display: inline-block;
-  width: 65px;
+  width: 71px;
   height: 35px;
   background-color: #FFF;
 }
@@ -659,13 +665,34 @@ select {
 }
 
 .credit-card__button {
+  display: flex;
+  justify-content: center;
   height: 17.5px;
-  width: 34px;
+  width: 27px;
   background-color: #FFFFFF;
   padding: 0;
   font-size: 0px;
 }
 
+.credit-card__button:first-child { 
+ align-items: end;
+}
+
+.credit-card__button:last-child { 
+  align-items: start;
+ }
+
 .credit-card__icon {
   display: inline-block;
+  padding: 2px 0;
+}
+
+#ticketType {
+  position: absolute;
+  opacity: 0;
+  width: inherit;
+}
+
+.false-validation {
+  color: red;
 }
