@@ -137,21 +137,21 @@ function refreshPreorder() {
     priceSenior.innerText = `Senior (${10} €)`;
     totalBasic.innerText = `${ticket18forma.value * 20} €`;
     totalSenior.innerText = `${ticket65forma.value * 10} €`;
+    totalPricePreorder.innerText = `${(ticket18forma.value * 20) + (ticket65forma.value * 10)} €`;
   } else if(ticketType.value === 'Temporary exhibition') {
     priceBasic.innerText = `Basic (${25} €)`;
     priceSenior.innerText = `Senior (${12} €)`;
     totalBasic.innerText = `${ticket18forma.value * 25} €`;
     totalSenior.innerText = `${ticket65forma.value * 12} €`;
+    totalPricePreorder.innerText = `${(ticket18forma.value * 25) + (ticket65forma.value * 12)} €`;
   } else if(ticketType.value === 'Combined Admission') {
     priceBasic.innerText = `Basic (${40} €)`;
     priceSenior.innerText = `Senior (${20} €)`;
     totalBasic.innerText = `${ticket18forma.value * 40} €`;
     totalSenior.innerText = `${ticket65forma.value * 20} €`;
+    totalPricePreorder.innerText = `${(ticket18forma.value * 40) + (ticket65forma.value * 20)} €`;
   }
-  // const commonSenior = Number(totalBasic.value.slice(-1));
-  // console.log(commonSenior,totalBasic.value,'-----------------------')
-  // const commonBasic = Number(totalBasic.value);
-  // totalPricePreorder.innerText = `${commonSenior + commonBasic} €`;
+
 }
 
 refreshPreorder()
