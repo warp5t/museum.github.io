@@ -506,11 +506,12 @@
                       Basic 18+
                     </div>
                     <div class="tickets__counter-tickets">
-                      <button class="tickets__button minusBtn18" type="button" onclick="this.nextElementSibling.stepDown()"
-                        id="minus18">−</button>
-                      <input class="tickets__number countTickets18" id="ticket18" type="number" value="0" min="0" max="50" readonly />
-                      <button class="tickets__button plusBtn18" type="button" onclick="this.previousElementSibling.stepUp()"
-                        id="plus18">+</button>
+                      <button class="tickets__button minusBtn18" type="button"
+                        onclick="this.nextElementSibling.stepDown()" id="minus18">−</button>
+                      <input class="tickets__number countTickets18" id="ticket18" type="number" value="0" min="0"
+                        max="50" readonly />
+                      <button class="tickets__button plusBtn18" type="button"
+                        onclick="this.previousElementSibling.stepUp()" id="plus18">+</button>
                     </div>
                   </div>
                   <div class="tickets__wrap-counter">
@@ -518,11 +519,12 @@
                       Senior 65+
                     </div>
                     <div class="tickets__counter-tickets">
-                      <button class="tickets__button minusBtn65" type="button" onclick="this.nextElementSibling.stepDown()"
-                        id="minus65">−</button>
-                      <input class="tickets__number countTickets65" id="ticket65" type="number" value="0" min="0" max="50" readonly />
-                      <button class="tickets__button plusBtn65" type="button" onclick="this.previousElementSibling.stepUp()"
-                        id="plus65">+</button>
+                      <button class="tickets__button minusBtn65" type="button"
+                        onclick="this.nextElementSibling.stepDown()" id="minus65">−</button>
+                      <input class="tickets__number countTickets65" id="ticket65" type="number" value="0" min="0"
+                        max="50" readonly />
+                      <button class="tickets__button plusBtn65" type="button"
+                        onclick="this.previousElementSibling.stepUp()" id="plus65">+</button>
                     </div>
                   </div>
                 </fieldset>
@@ -725,23 +727,29 @@
               <div class="forma-tickets__setting-client">
                 <div class="forma-tickets__one-ticket-inf" id="oneTicket18">Basic 18+ (20 €)</div>
                 <div class="forma-tickets__counter-tickets">
-                  <button class="forma-tickets__button minusBtn18" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
-                  <input class="forma-tickets__number countTickets18" id="ticket18forma" type="number" value="0" min="0" max="50" readonly="">
-                  <button class="forma-tickets__button plusBtn18" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                  <button class="forma-tickets__button minusBtn18" type="button"
+                    onclick="this.nextElementSibling.stepDown()">−</button>
+                  <input class="forma-tickets__number countTickets18" id="ticket18forma" type="number" value="0" min="0"
+                    max="50" readonly="">
+                  <button class="forma-tickets__button plusBtn18" type="button"
+                    onclick="this.previousElementSibling.stepUp()">+</button>
                 </div>
               </div>
               <div class="forma-tickets__setting-client">
                 <div class="forma-tickets__one-ticket-inf" id="oneTicket65">Senior 65+ (10 €)</div>
                 <div class="forma-tickets__counter-tickets">
-                  <button class="forma-tickets__button minusBtn65" type="button" onclick="this.nextElementSibling.stepDown()">−</button>
-                  <input class="forma-tickets__number countTickets65" id="ticket65forma" type="number" value="0" min="0" max="50" readonly="">
-                  <button class="forma-tickets__button plusBtn65" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
+                  <button class="forma-tickets__button minusBtn65" type="button"
+                    onclick="this.nextElementSibling.stepDown()">−</button>
+                  <input class="forma-tickets__number countTickets65" id="ticket65forma" type="number" value="0" min="0"
+                    max="50" readonly="">
+                  <button class="forma-tickets__button plusBtn65" type="button"
+                    onclick="this.previousElementSibling.stepUp()">+</button>
                 </div>
               </div>
             </div>
           </fieldset>
         </div>
-         <div class="forma-tickets__sub-containter">
+        <div class="forma-tickets__sub-containter">
           <div class="forma-tickets__subwrap-container">
             <h3 class="forma-tickets__title-overview">
               Overview
@@ -781,8 +789,8 @@
               <div class="forma-tickets__wrap-info-tickets">
                 <div class="forma-tickets__count-tickets" id="countSenior">2</div>
                 <div class="forma-tickets__subwrap-price">
-                <div class="forma-tickets__price" id="priceSenior">Senior (10 €)</div>
-                <div class="forma-tickets__price" id="totalSenior">20 €</div>
+                  <div class="forma-tickets__price" id="priceSenior">Senior (10 €)</div>
+                  <div class="forma-tickets__price" id="totalSenior">20 €</div>
                 </div>
               </div>
             </div>
@@ -796,14 +804,32 @@
                 <fieldset class="credit-card__fieldset">
                   <input id="cardNumber" type="number">
                   <div class="credit-card__card-subscribe">Expiration date</div>
+                  <div class="credit-card__wrap-expiration">
                   <div class="credit-card__wrap-input">
-                    <input class="credit-card__number countTickets65" id="expitarionFrom" type="number" value="03" min="0" max="10" readonly="">
+                    <input class="credit-card__number" id="expitarionFrom" type="number" value="03" min="0" max="10"
+                      readonly>
                     <div class="credit-card__wrap-buttons">
-                      <button class="credit-card__button plusBtn65" type="button" onclick="this.previousElementSibling.stepUp()">+</button>
-                      <button class="credit-card__button minusBtn65" type="button" onclick="this.nextElementSibling.stepDown()">−</button> 
+                      <button class="credit-card__button" type="button" onclick="this.previousElementSibling.stepUp()">
+                        <img class="credit-card__icon" src="/forma-tickets/arrow(1).svg" alt="icon">
+                      </button>
+                      <button class="credit-card__button" type="button" onclick="this.nextElementSibling.stepDown()">
+                        <img class="credit-card__icon" src="/forma-tickets/arrow(2).svg" alt="icon">
+                      </button>
                     </div>
                   </div>
-                  <input id="expitarionTo" type="number">
+                  <div class="credit-card__wrap-input">
+                    <input class="credit-card__number" id="expitarionTo" type="number" value="2024" min="0" max="10"
+                      readonly>
+                    <div class="credit-card__wrap-buttons">
+                      <button class="credit-card__button" type="button" onclick="this.previousElementSibling.stepUp()">
+                        <img class="credit-card__icon" src="/forma-tickets/arrow(1).svg" alt="icon">
+                      </button>
+                      <button class="credit-card__button" type="button" onclick="this.nextElementSibling.stepDown()">
+                        <img class="credit-card__icon" src="/forma-tickets/arrow(2).svg" alt="icon">
+                      </button>
+                    </div>
+                  </div>
+                  </div>
                   <div class="credit-card__card-subscribe">Cardholder name</div>
                   <input id="ownerCard" type="text">
                   <div class="credit-card__wrap-logo">
