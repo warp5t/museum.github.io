@@ -162,4 +162,24 @@ arrFormaCountBtn.forEach((el) => {
   })
 })
 
+// ------------------------------- card number ----------------------------
 
+const cardNumber = document.getElementById('cardNumber');
+cardNumber.value = '';
+
+cardNumber.addEventListener('change', () => {
+  const valueCard = cardNumber.value;
+  const cardNumberRegex = /^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12})$/;
+  if (cardNumberRegex === valueCard) {
+    cardNumber.setCustomValidity('');
+  } else {
+    cardNumber.classList.add('false-validation')
+    cardNumber.value = 'Invalid credit card number';
+  }
+  console.log('change')
+});
+
+cardNumber.addEventListener('click', () => {
+  cardNumber.classList.remove('false-validation')
+  cardNumber.value = '';
+});
