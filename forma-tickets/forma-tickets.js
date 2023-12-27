@@ -162,7 +162,7 @@ arrFormaCountBtn.forEach((el) => {
   })
 })
 
-// ------------------------------- card number ----------------------------
+// ------------------------------- card ------------------------------
 
 const cardNumber = document.getElementById('cardNumber');
 cardNumber.value = '';
@@ -182,4 +182,23 @@ cardNumber.addEventListener('change', () => {
 cardNumber.addEventListener('click', () => {
   cardNumber.classList.remove('false-validation')
   cardNumber.value = '';
+});
+
+const ownerCardInput = document.getElementById('ownerCard');
+ownerCardInput.value = '';
+
+ownerCardInput.addEventListener('input', () => {
+  const ownerName = ownerCardInput.value;
+  const ownerNameRegex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/;
+  if (ownerNameRegex.test(ownerName)) {
+    ownerCardInput.setCustomValidity('');
+  } else {
+    ownerCardInput.classList.add('false-validation')
+    ownerCardInput.value = 'Invalid credit card number';
+  }
+});
+
+ownerCardInput.addEventListener('click', () => {
+  ownerCardInput.classList.remove('false-validation')
+  ownerCardInput.value = '';
 });
