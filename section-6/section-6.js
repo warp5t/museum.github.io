@@ -15,13 +15,14 @@ function calculatePrice18(contTickets) {
   let summary = 0;
   const numberType = Number(contTickets);
   console.log(numberType)
-  if (selectedValue === 'permanent') {
+  if (selectedValue === 'Permanent exhibition') {
     summary = numberType * 20;
-  } else if (selectedValue === 'temporary') {
+  } else if (selectedValue === 'Temporary exhibition') {
     summary = numberType * 25;
-  } else if (selectedValue === 'combined') {
+  } else if (selectedValue === 'Combined Admission') {
     summary = numberType * 40;
   }
+  console.log('calculatePrice18')
   return summary;
 }
 
@@ -30,11 +31,11 @@ function calculatePrice65(contTickets) {
   let summary = 0;
   const numberType = Number(contTickets);
   console.log(numberType)
-  if (selectedValue === 'permanent') {
+  if (selectedValue === 'Permanent exhibition') {
     summary = numberType * 10;
-  } else if (selectedValue === 'temporary') {
+  } else if (selectedValue === 'Temporary exhibition') {
     summary = numberType * 12;
-  } else if (selectedValue === 'combined') {
+  } else if (selectedValue === 'Combined Admission') {
     summary = numberType * 20;
   }
   return summary;
@@ -186,26 +187,3 @@ arrTicketsType.forEach((item) => {
   })
 })
 
-// ---------------------- buyForma ---------------------
-
-const btnBuy = document.getElementById('btnBuy');
-
-const wrap = document.querySelector('.wrap');
-const bodyTag = document.getElementById('body');
-
-function onOffmain() {
-  console.log(bodyTag.offsetHeight)
-}
-
-btnBuy.addEventListener('click', () => {
-  const courtain = document.createElement('div');
-  courtain.classList.add('shadow');
-  bodyTag.prepend(courtain)
-  courtain.style.height = wrap.offsetHeight + 'px';
-  bodyTag.classList.add('scroll-stop');
-
-  courtain.addEventListener('click', () => {
-    courtain.remove()
-    bodyTag.classList.remove('scroll-stop');
-  })
-})

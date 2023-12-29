@@ -96,13 +96,19 @@ select {
 .credit-card__btn {}
 
 
-
-
-
-
 .forma-tickets {
+  position: relative;
   color: #030303;
   background-color: #FFF;
+}
+
+.forma-tickets__close-cross {
+  position: absolute;
+  top: -64px;
+  right: -206px;
+}
+.forma-tickets__close-cross:hover {
+  cursor: pointer;
 }
 
 .forma-tickets__contaiter {

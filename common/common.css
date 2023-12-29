@@ -42,11 +42,19 @@ html {
   scroll-behavior: smooth;
 }
 
+.wrap-forma-ticket {
+  position: absolute;
+  top:0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+
 .shadow {
   position: absolute;
   width: 100%;
-  background-color: black;
-  opacity: 0.5;
+  background-color: #ffffff;
+  /* opacity: 0.5; */
   z-index: 4;
   overflow: hidden;
 }
