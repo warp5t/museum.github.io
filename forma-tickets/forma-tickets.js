@@ -129,10 +129,15 @@ function initFormaTicket() {
     const totalBasic = document.getElementById('totalBasic');
     const priceSenior = document.getElementById('priceSenior');
     const totalSenior = document.getElementById('totalSenior');
+    const countBasic = document.getElementById('countBasic');
+    const countSenior = document.getElementById('countSenior');
 
     const ticket18forma = document.getElementById('ticket18forma');
     const ticket65forma = document.getElementById('ticket65forma');
 
+    countBasic.innerText = ticket18forma.value;
+    countSenior.innerText = ticket65forma.value;
+    
     const totalPricePreorder = document.getElementById('totalPricePreorder');
 
     if (typeSelectTicket.innerText === 'Permanent exhibition') {
@@ -327,6 +332,7 @@ var formaTicketHTML = `
           <img src="forma-tickets/ballot.svg" alt="icon">
         </div>
         <select class="forma-tickets__data-owner" name="ticketType" id="ticketType">
+          <option value="Ticket Type">Ticket Type</option>
           <option value="Permanent exhibition">Permanent exhibition</option>
           <option value="Temporary exhibition">Temporary exhibition</option>
           <option value="Combined Admission">Combined Admission</option>

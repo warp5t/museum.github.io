@@ -40,6 +40,12 @@
   display: flex;
 }
 
+@media(max-width:1305px) {
+  .tickets__wrap-order {
+    justify-content: space-between;
+  }
+}
+
 .tickets__container-picture {
   padding: 0 60px 0 0;
 }
@@ -52,7 +58,19 @@
   width: 100%;
 }
 
+@media(max-width:1305px) {
+  .tickets__container-order {
+    width: initial;
+  }
+}
+
 .tickets__type-ticket {}
+
+@media(max-width:1305px) {
+  .tickets__type-ticket {
+    display: none;
+  }
+}
 
 .tickets__name-fieldset_0 {}
 
