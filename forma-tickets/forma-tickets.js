@@ -255,216 +255,216 @@ btnBuy.addEventListener('click', () => {
 
 var formaTicketHTML = `
 <div class="forma-tickets">
-      <div class="forma-tickets__close-cross" id="close-cross">
-        <img src="/forma-tickets/Close(1).svg" alt="icon">
+<div class="forma-tickets__close-cross" id="close-cross">
+  <img src="/forma-tickets/Close(1).svg" alt="icon">
+</div>
+<div class="forma-tickets__contaiter _container">
+  <div class="forma-tickets__sub-containter">
+    <div class="forma-tickets__wrap-logo">
+      <img src="forma-tickets/logo.png" alt="logo">
+    </div>
+    <h2 class="forma-tickets__title">booking tickets</h2>
+    <div class="forma-tickets__tour-to-louvre">
+      Tour to Louvre
+    </div>
+    <fieldset class="forma-tickets__forma-tickets forma-tickets">
+      <div class="forma-tickets__data-time">
+        <div class="forma-tickets__wrap-data">
+          <div class="forma-tickets__wrap-icon-forma">
+            <img class="forma-tickets__icon" src="forma-tickets/date.svg" alt="date">
+          </div>
+          <div id="date">Date</div>
+          <input class="forma-tickets__data" type="date" id="start" name="date">
+        </div>
+        <div class="forma-tickets__wrap-time">
+          <div class="forma-tickets__wrap-icon-forma">
+            <img class="forma-tickets__icon" src="forma-tickets/time.svg" alt="date">
+          </div>
+          <select class="forma-tickets__time" name="timeDate" id="timeDate">
+            <option value="none">Time</option>
+            <option value="9 : 00">9:00</option>
+            <option value="9 : 30">9:30</option>
+            <option value="10 : 00">10:00</option>
+            <option value="10 : 30">10:30</option>
+            <option value="11 : 00">11:00</option>
+            <option value="11 : 30">11:30</option>
+            <option value="12 : 00">12:00</option>
+            <option value="12 : 30">12:30</option>
+            <option value="13 : 00">13:00</option>
+            <option value="13 : 30">13:30</option>
+            <option value="14 : 00">14:00</option>
+            <option value="14 : 30">14:30</option>
+            <option value="15 : 00">15:00</option>
+            <option value="15 : 30">15:30</option>
+            <option value="16 : 00">16:00</option>
+            <option value="16 : 30">16:30</option>
+            <option value="17 : 00">17:00</option>
+            <option value="17 : 30">17:30</option>
+            <option value="18 : 00">18:00</option>
+          </select>
+        </div>
       </div>
-      <div class="forma-tickets__contaiter _container">
-        <div class="forma-tickets__sub-containter">
-          <div class="forma-tickets__wrap-logo">
-            <img src="forma-tickets/logo.png" alt="logo">
+      <div class="forma-tickets__wrap-setting">
+        <div class="forma-tickets__wrap-icon">
+          <img src="forma-tickets/name.svg" alt="icon">
+        </div>
+        <input class="forma-tickets__data-owner" id="nameCustomer" type="text" placeholder="Name">
+      </div>
+      <div class="forma-tickets__wrap-setting">
+        <div class="forma-tickets__wrap-icon">
+          <img src="forma-tickets/email.svg" alt="icon">
+        </div>
+        <input class="forma-tickets__data-owner" id="e-mailCustomer" type="email" placeholder="E-mail">
+      </div>
+      <div class="forma-tickets__wrap-setting">
+        <div class="forma-tickets__wrap-icon">
+          <img src="forma-tickets/tel.svg" alt="icon">
+        </div>
+        <input class="forma-tickets__data-owner" id="phoneCustomer" type="tel" placeholder="Phone">
+      </div>
+      <div class="forma-tickets__wrap-setting">
+        <div class="forma-tickets__wrap-icon">
+          <img src="forma-tickets/ballot.svg" alt="icon">
+        </div>
+        <select class="forma-tickets__data-owner" name="ticketType" id="ticketType">
+          <option value="Permanent exhibition">Permanent exhibition</option>
+          <option value="Temporary exhibition">Temporary exhibition</option>
+          <option value="Combined Admission">Combined Admission</option>
+        </select>
+        <div class="forma-tickets__data-owner" id="typeSelectTicket">Ticket Type</div>
+      </div>
+      <div class="forma-tickets__wrap-setting">
+        <div class="forma-tickets__entry-ticket">Entry Ticket</div>
+        <div class="forma-tickets__setting-client">
+          <div class="forma-tickets__one-ticket-inf" id="oneTicket18">Basic 18+ (20 €)</div>
+          <div class="forma-tickets__counter-tickets">
+            <button class="forma-tickets__button minusBtn18" type="button"
+              onclick="this.nextElementSibling.stepDown()">−</button>
+            <input class="forma-tickets__number countTickets18" id="ticket18forma" type="number" value="0" min="0"
+              max="50" readonly="">
+            <button class="forma-tickets__button plusBtn18" type="button"
+              onclick="this.previousElementSibling.stepUp()">+</button>
           </div>
-          <h2 class="forma-tickets__title">booking tickets</h2>
-          <div class="forma-tickets__tour-to-louvre">
-            Tour to Louvre
+        </div>
+        <div class="forma-tickets__setting-client">
+          <div class="forma-tickets__one-ticket-inf" id="oneTicket65">Senior 65+ (10 €)</div>
+          <div class="forma-tickets__counter-tickets">
+            <button class="forma-tickets__button minusBtn65" type="button"
+              onclick="this.nextElementSibling.stepDown()">−</button>
+            <input class="forma-tickets__number countTickets65" id="ticket65forma" type="number" value="0" min="0"
+              max="50" readonly="">
+            <button class="forma-tickets__button plusBtn65" type="button"
+              onclick="this.previousElementSibling.stepUp()">+</button>
           </div>
-          <fieldset class="forma-tickets__forma-tickets forma-tickets">
-            <div class="forma-tickets__data-time">
-              <div class="forma-tickets__wrap-data">
-                <div class="forma-tickets__wrap-icon-forma">
-                  <img class="forma-tickets__icon" src="forma-tickets/date.svg" alt="date">
-                </div>
-                <div id="date">Date</div>
-                <input class="forma-tickets__data" type="date" id="start" name="" min="2023-12-24" max="">
-              </div>
-              <div class="forma-tickets__wrap-time">
-                <div class="forma-tickets__wrap-icon-forma">
-                  <img class="forma-tickets__icon" src="forma-tickets/time.svg" alt="date">
-                </div>
-                <select class="forma-tickets__time" name="timeDate" id="timeDate">
-                  <option value="none">Time</option>
-                  <option value="9 : 00">9:00</option>
-                  <option value="9 : 30">9:30</option>
-                  <option value="10 : 00">10:00</option>
-                  <option value="10 : 30">10:30</option>
-                  <option value="11 : 00">11:00</option>
-                  <option value="11 : 30">11:30</option>
-                  <option value="12 : 00">12:00</option>
-                  <option value="12 : 30">12:30</option>
-                  <option value="13 : 00">13:00</option>
-                  <option value="13 : 30">13:30</option>
-                  <option value="14 : 00">14:00</option>
-                  <option value="14 : 30">14:30</option>
-                  <option value="15 : 00">15:00</option>
-                  <option value="15 : 30">15:30</option>
-                  <option value="16 : 00">16:00</option>
-                  <option value="16 : 30">16:30</option>
-                  <option value="17 : 00">17:00</option>
-                  <option value="17 : 30">17:30</option>
-                  <option value="18 : 00">18:00</option>
-                </select>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="forma-tickets__sub-containter">
+    <div class="forma-tickets__subwrap-container">
+      <h3 class="forma-tickets__title-overview">
+        Overview
+      </h3>
+      <div class="forma-tickets__tour-to-louvre-2">
+        Tour to Louvre
+      </div>
+      <div class="forma-tickets__result-wrap">
+        <img class="forma-tickets__icon-dt" src="forma-tickets/date.svg" alt="icon">
+        <div class="forma-tickets__result" id="resultData">
+          Friday, August 19
+        </div>
+      </div>
+      <div class="forma-tickets__result-wrap">
+        <img class="forma-tickets__icon-dt" src="forma-tickets/time.svg" alt="icon">
+        <div class="forma-tickets__result" id="resultTime">
+          16 : 30
+        </div>
+      </div>
+      <div class="forma-tickets__result-wrap tech-result-wrap">
+        <img class="forma-tickets__icon-dt" src="forma-tickets/check_circle_outline.svg" alt="icon">
+        <div class="forma-tickets__result" id="resultType">
+          Temporary exhibition
+        </div>
+      </div>
+      <div class="forma-tickets__wrap-piramid">
+        <img class="forma-tickets__piramid" src="forma-tickets/Rectangle 4.jpg" alt="piramid">
+      </div>
+      <div class="forma-tickets__wrap-tickets-count">
+        <div class="forma-tickets__wrap-info-tickets">
+          <div class="forma-tickets__count-tickets" id="countBasic">2</div>
+          <div class="forma-tickets__subwrap-price">
+            <div class="forma-tickets__price" id="priceBasic">Basic (20 €)</div>
+            <div class="forma-tickets__price" id="totalBasic">40 €</div>
+          </div>
+        </div>
+        <div class="forma-tickets__wrap-info-tickets">
+          <div class="forma-tickets__count-tickets" id="countSenior">2</div>
+          <div class="forma-tickets__subwrap-price">
+            <div class="forma-tickets__price" id="priceSenior">Senior (10 €)</div>
+            <div class="forma-tickets__price" id="totalSenior">20 €</div>
+          </div>
+        </div>
+      </div>
+      <div class="forma-tickets__wrap-total">
+        <div class="forma-tickets__text-total">Total:</div>
+        <div class="forma-tickets__total total-price" id="totalPricePreorder">60 €</div>
+      </div>
+      <div class="forma-tickets__credit-card credit-card">
+        <div class="credit-card__front-card">
+          <div class="credit-card__card-subscribe">Card number</div>
+          <fieldset class="credit-card__fieldset">
+            <input id="cardNumber" type="text">
+            <div class="credit-card__card-subscribe">Expiration date</div>
+            <div class="credit-card__wrap-expiration">
+            <div class="credit-card__wrap-input">
+              <input class="credit-card__number" id="expitarionFrom" type="number" value="03" min="0" max="10"
+                readonly>
+              <div class="credit-card__wrap-buttons">
+                <button class="credit-card__button" type="button" onclick="this.previousElementSibling.stepUp()">
+                  <img class="credit-card__icon" src="/forma-tickets/arrow(1).svg" alt="icon">
+                </button>
+                <button class="credit-card__button" type="button" onclick="this.nextElementSibling.stepDown()">
+                  <img class="credit-card__icon" src="/forma-tickets/arrow(2).svg" alt="icon">
+                </button>
               </div>
             </div>
-            <div class="forma-tickets__wrap-setting">
-              <div class="forma-tickets__wrap-icon">
-                <img src="forma-tickets/name.svg" alt="icon">
+            <div class="credit-card__wrap-input">
+              <input class="credit-card__number" id="expitarionTo" type="number" value="2024" min="0" max="10"
+                readonly>
+              <div class="credit-card__wrap-buttons">
+                <button class="credit-card__button" type="button" onclick="this.previousElementSibling.stepUp()">
+                  <img class="credit-card__icon" src="/forma-tickets/arrow(1).svg" alt="icon">
+                </button>
+                <button class="credit-card__button" type="button" onclick="this.nextElementSibling.stepDown()">
+                  <img class="credit-card__icon" src="/forma-tickets/arrow(2).svg" alt="icon">
+                </button>
               </div>
-              <input class="forma-tickets__data-owner" id="nameCustomer" type="text" placeholder="Name">
             </div>
-            <div class="forma-tickets__wrap-setting">
-              <div class="forma-tickets__wrap-icon">
-                <img src="forma-tickets/email.svg" alt="icon">
-              </div>
-              <input class="forma-tickets__data-owner" id="e-mailCustomer" type="email" placeholder="E-mail">
             </div>
-            <div class="forma-tickets__wrap-setting">
-              <div class="forma-tickets__wrap-icon">
-                <img src="forma-tickets/tel.svg" alt="icon">
-              </div>
-              <input class="forma-tickets__data-owner" id="phoneCustomer" type="tel" placeholder="Phone">
-            </div>
-            <div class="forma-tickets__wrap-setting">
-              <div class="forma-tickets__wrap-icon">
-                <img src="forma-tickets/ballot.svg" alt="icon">
-              </div>
-              <select class="forma-tickets__data-owner" name="ticketType" id="ticketType">
-                <option value="Permanent exhibition">Permanent exhibition</option>
-                <option value="Temporary exhibition">Temporary exhibition</option>
-                <option value="Combined Admission">Combined Admission</option>
-              </select>
-              <div class="forma-tickets__data-owner" id="typeSelectTicket">Ticket Type</div>
-            </div>
-            <div class="forma-tickets__wrap-setting">
-              <div class="forma-tickets__entry-ticket">Entry Ticket</div>
-              <div class="forma-tickets__setting-client">
-                <div class="forma-tickets__one-ticket-inf" id="oneTicket18">Basic 18+ (20 €)</div>
-                <div class="forma-tickets__counter-tickets">
-                  <button class="forma-tickets__button minusBtn18" type="button"
-                    onclick="this.nextElementSibling.stepDown()">−</button>
-                  <input class="forma-tickets__number countTickets18" id="ticket18forma" type="number" value="0" min="0"
-                    max="50" readonly="">
-                  <button class="forma-tickets__button plusBtn18" type="button"
-                    onclick="this.previousElementSibling.stepUp()">+</button>
-                </div>
-              </div>
-              <div class="forma-tickets__setting-client">
-                <div class="forma-tickets__one-ticket-inf" id="oneTicket65">Senior 65+ (10 €)</div>
-                <div class="forma-tickets__counter-tickets">
-                  <button class="forma-tickets__button minusBtn65" type="button"
-                    onclick="this.nextElementSibling.stepDown()">−</button>
-                  <input class="forma-tickets__number countTickets65" id="ticket65forma" type="number" value="0" min="0"
-                    max="50" readonly="">
-                  <button class="forma-tickets__button plusBtn65" type="button"
-                    onclick="this.previousElementSibling.stepUp()">+</button>
-                </div>
-              </div>
+            <div class="credit-card__card-subscribe">Cardholder name</div>
+            <input id="ownerCard" type="text">
+            <div class="credit-card__wrap-logo">
+              <img class="credit-card__logo" src="forma-tickets/Visa.svg" alt="icon">
+              <img class="credit-card__logo" src="forma-tickets/Mastercard.svg" alt="icon">
             </div>
           </fieldset>
         </div>
-        <div class="forma-tickets__sub-containter">
-          <div class="forma-tickets__subwrap-container">
-            <h3 class="forma-tickets__title-overview">
-              Overview
-            </h3>
-            <div class="forma-tickets__tour-to-louvre-2">
-              Tour to Louvre
-            </div>
-            <div class="forma-tickets__result-wrap">
-              <img class="forma-tickets__icon-dt" src="forma-tickets/date.svg" alt="icon">
-              <div class="forma-tickets__result" id="resultData">
-                Friday, August 19
-              </div>
-            </div>
-            <div class="forma-tickets__result-wrap">
-              <img class="forma-tickets__icon-dt" src="forma-tickets/time.svg" alt="icon">
-              <div class="forma-tickets__result" id="resultTime">
-                16 : 30
-              </div>
-            </div>
-            <div class="forma-tickets__result-wrap tech-result-wrap">
-              <img class="forma-tickets__icon-dt" src="forma-tickets/check_circle_outline.svg" alt="icon">
-              <div class="forma-tickets__result" id="resultType">
-                Temporary exhibition
-              </div>
-            </div>
-            <div class="forma-tickets__wrap-piramid">
-              <img class="forma-tickets__piramid" src="forma-tickets/Rectangle 4.jpg" alt="piramid">
-            </div>
-            <div class="forma-tickets__wrap-tickets-count">
-              <div class="forma-tickets__wrap-info-tickets">
-                <div class="forma-tickets__count-tickets" id="countBasic">2</div>
-                <div class="forma-tickets__subwrap-price">
-                  <div class="forma-tickets__price" id="priceBasic">Basic (20 €)</div>
-                  <div class="forma-tickets__price" id="totalBasic">40 €</div>
-                </div>
-              </div>
-              <div class="forma-tickets__wrap-info-tickets">
-                <div class="forma-tickets__count-tickets" id="countSenior">2</div>
-                <div class="forma-tickets__subwrap-price">
-                  <div class="forma-tickets__price" id="priceSenior">Senior (10 €)</div>
-                  <div class="forma-tickets__price" id="totalSenior">20 €</div>
-                </div>
-              </div>
-            </div>
-            <div class="forma-tickets__wrap-total">
-              <div class="forma-tickets__text-total">Total:</div>
-              <div class="forma-tickets__total total-price" id="totalPricePreorder">60 €</div>
-            </div>
-            <div class="forma-tickets__credit-card credit-card">
-              <div class="credit-card__front-card">
-                <div class="credit-card__card-subscribe">Card number</div>
-                <fieldset class="credit-card__fieldset">
-                  <input id="cardNumber" type="text">
-                  <div class="credit-card__card-subscribe">Expiration date</div>
-                  <div class="credit-card__wrap-expiration">
-                  <div class="credit-card__wrap-input">
-                    <input class="credit-card__number" id="expitarionFrom" type="number" value="03" min="0" max="10"
-                      readonly>
-                    <div class="credit-card__wrap-buttons">
-                      <button class="credit-card__button" type="button" onclick="this.previousElementSibling.stepUp()">
-                        <img class="credit-card__icon" src="/forma-tickets/arrow(1).svg" alt="icon">
-                      </button>
-                      <button class="credit-card__button" type="button" onclick="this.nextElementSibling.stepDown()">
-                        <img class="credit-card__icon" src="/forma-tickets/arrow(2).svg" alt="icon">
-                      </button>
-                    </div>
-                  </div>
-                  <div class="credit-card__wrap-input">
-                    <input class="credit-card__number" id="expitarionTo" type="number" value="2024" min="0" max="10"
-                      readonly>
-                    <div class="credit-card__wrap-buttons">
-                      <button class="credit-card__button" type="button" onclick="this.previousElementSibling.stepUp()">
-                        <img class="credit-card__icon" src="/forma-tickets/arrow(1).svg" alt="icon">
-                      </button>
-                      <button class="credit-card__button" type="button" onclick="this.nextElementSibling.stepDown()">
-                        <img class="credit-card__icon" src="/forma-tickets/arrow(2).svg" alt="icon">
-                      </button>
-                    </div>
-                  </div>
-                  </div>
-                  <div class="credit-card__card-subscribe">Cardholder name</div>
-                  <input id="ownerCard" type="text">
-                  <div class="credit-card__wrap-logo">
-                    <img class="credit-card__logo" src="forma-tickets/Visa.svg" alt="icon">
-                    <img class="credit-card__logo" src="forma-tickets/Mastercard.svg" alt="icon">
-                  </div>
-                </fieldset>
-              </div>
-              <div class="credit-card__back-card">
-                <div class="credit-card__back-subwrap">
-                  <div class="credit-card__back-CVV">CVC/CVV</div>
-                  <input id="CVC-CVV" type="number" maxlength="4">
-                  <div class="credit-card__back-CVV">
-                    The last <br>
-                    3 or 4 digits <br>
-                    on back <br>
-                    of the card
-                  </div>
-                </div>
-              </div>
+        <div class="credit-card__back-card">
+          <div class="credit-card__back-subwrap">
+            <div class="credit-card__back-CVV">CVC/CVV</div>
+            <input id="CVC-CVV" type="password" maxlength="4">
+            <div class="credit-card__back-CVV">
+              The last <br>
+              3 or 4 digits <br>
+              on back <br>
+              of the card
             </div>
           </div>
-          <button class="credit-card__btn">Book</button>
         </div>
       </div>
     </div>
+    <button class="credit-card__btn">Book</button>
+  </div>
+</div>
+</div>
 `;
