@@ -8,10 +8,22 @@
   padding: 0 20px 75px 20px;
 }
 
+@media(max-width:1100px) {
+  .tickets__container {
+  padding: 0 20px 60px 20px;
+  }
+}
+
 ._container {}
 
 .tickets__wrap-title {
   padding: 75px 0 71px 0;
+}
+
+@media(max-width:1100px) {
+  .tickets__wrap-title {
+    padding: 52px 0 56px 0;
+  }
 }
 
 .tickets__wrap-title::after {
@@ -24,6 +36,12 @@
   margin: 26px 0 0 0;
 }
 
+@media(max-width:1100px) {
+  .tickets__wrap-title::after {
+    margin: 13px 0 0 0;
+  }
+}
+
 .tickets__title {
   color: #9D8665;
   font-family: Forum;
@@ -34,6 +52,12 @@
   /* 112.5% */
   letter-spacing: 5px;
   text-transform: uppercase;
+}
+
+@media(max-width:1100px) {
+  .tickets__title {
+    font-size: 50px;
+  }
 }
 
 .tickets__wrap-order {
@@ -50,17 +74,91 @@
   padding: 0 60px 0 0;
 }
 
+@media(max-width:1100px) {
+  .tickets__container-picture {
+    padding: 0 0px 0 0;
+  }
+}
+
 .tickets__image {}
+
+.tickets__image:nth-child(1) {}
+
+.tickets__image:nth-child(2) {
+  display: none;
+}
+
+.tickets__image:nth-child(3) {
+  display: none;
+}
+
+.tickets__image:nth-child(4) {
+  display: none;
+}
+
+@media(max-width:1024px) {
+  .tickets__image:nth-child(1) {
+    display: none;
+  }
+
+  .tickets__image:nth-child(2) {
+    display: inline-block;
+  }
+
+  .tickets__image:nth-child(3) {
+    display: none;
+  }
+
+  .tickets__image:nth-child(4) {
+    display: none;
+  }
+}
+
+@media(max-width:800px) {
+  .tickets__image:nth-child(1) {
+    display: none;
+  }
+
+  .tickets__image:nth-child(2) {
+    display: none;
+  }
+
+  .tickets__image:nth-child(3) {
+    display: inline-block;
+  }
+
+  .tickets__image:nth-child(4) {
+    display: none;
+  }
+}
+
+@media(max-width:500px) {
+  .tickets__image:nth-child(1) {
+    display: none;
+  }
+
+  .tickets__image:nth-child(2) {
+    display: none;
+  }
+
+  .tickets__image:nth-child(3) {
+    display: none;
+  }
+
+  .tickets__image:nth-child(4) {
+    display: inline-block;
+  }
+}
 
 .tickets__container-order {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: initial;
 }
 
-@media(max-width:1305px) {
+@media(max-width:1100px) {
   .tickets__container-order {
-    width: initial;
+    padding: 0 29px 0 0;
   }
 }
 
@@ -80,6 +178,25 @@
   align-items: end;
 }
 
+@media(max-width:1100px) {
+  .tickets__name-fieldset_1 {
+    align-items: start;
+    width: inherit;
+    padding: 0 0 0px 0;
+  }
+}
+
+.tickets__title-fieldset_1 {
+  padding: 0 0 24px 0;
+}
+
+@media(max-width:1100px) {
+  .tickets__title-fieldset_1 {
+    padding: 0 0 31px 0;
+  }
+}
+
+
 .tickets__wrap-title-fieldset {
   padding: 0px 0 50px 0;
 }
@@ -92,11 +209,6 @@
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-
-}
-
-.tickets__title-fieldset_1 {
-  padding: 0 0 24px 0;
 }
 
 .tickets__title-fieldset_0 {
@@ -137,6 +249,12 @@
 
 .tickets__wrap-ammount-tickets {}
 
+@media(max-width:1100px) {
+  .tickets__wrap-ammount-tickets {
+    width: inherit;
+  }
+}
+
 .tickets__wrap-counter {}
 
 .tickets__wrap-counter:last-child {}
@@ -151,6 +269,12 @@
   padding: 0 0 15px 0;
 }
 
+@media(max-width: 1100px) {
+  .tickets__mode-limit {
+    padding: 0 0 9px 0;
+  }
+}
+
 .tickets__counter-tickets {
   position: relative;
   display: flex;
@@ -159,6 +283,14 @@
   width: 150px;
   height: 50px;
   margin: 0px 0 8px 0;
+}
+
+@media(max-width: 1100px) {
+  .tickets__counter-tickets {
+    margin: 0px 0 29px 0;
+    width: 175px;
+    height: 49px;
+  }
 }
 
 .tickets__button {
@@ -196,6 +328,13 @@
   padding: 44px 0px 59px 25px;
 }
 
+@media(max-width:1100px) {
+  .tickets__total-price {
+    padding: 0px 0px 69px 0px;
+    margin: -4px 0 0 0;
+  }
+}
+
 .tickets__wrap-buy-btn {}
 
 .tickets__btn-buy {
@@ -212,5 +351,3 @@
   border-radius: 2px;
   background: #000;
 }
-
-

@@ -107,6 +107,20 @@ select {
   top: -64px;
   right: -206px;
 }
+
+@media(max-width:1400px) {
+  .forma-tickets__close-cross { 
+    right: -106px;
+  }
+}
+
+@media(max-width:1245px) {
+  .forma-tickets__close-cross { 
+    right: 0;
+    top: -46px;
+  }
+}
+
 .forma-tickets__close-cross:hover {
   cursor: pointer;
 }
