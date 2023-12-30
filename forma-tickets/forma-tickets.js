@@ -387,7 +387,7 @@ var formaTicketHTML = `
         </div>
       </div>
       <div class="forma-tickets__wrap-piramid">
-        <img class="forma-tickets__piramid" src="forma-tickets/Rectangle 4.jpg" alt="piramid">
+        <img class="forma-tickets__piramid" src="forma-tickets/Rectangle4.jpg" alt="piramid">
       </div>
       <div class="forma-tickets__wrap-tickets-count">
         <div class="forma-tickets__wrap-info-tickets">

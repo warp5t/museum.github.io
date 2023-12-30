@@ -13,6 +13,7 @@ let summary18, summary65;
 function calculatePrice18(contTickets) {
   const selectedValue = document.querySelector('input[name="type-ticket"]:checked').value;
   let summary = 0;
+  console.log('BEFORE process - ',contTickets)
   const numberType = Number(contTickets);
   console.log(numberType)
   if (selectedValue === 'Permanent exhibition') {
@@ -88,14 +89,19 @@ function updateArray65(arr) {
 }
 
 function synchronizeTickets18(arr) {
-  arrCountTickets18.forEach((el) => {
+  arrCountTickets18.forEach((el,index) => {
     arr.push(el.value)
   })
   updateArray18(arr)
   localStorage.setItem('supportNumber18', supportNumber18);
   console.log(arr)
   arrCountTickets18.forEach((el, index) => {
-    el.value = arr[index]
+    if(arr[index] === undefined) {
+      arr[index] = 0;
+      el.value = 0;
+    } else {
+      el.value = arr[index];
+    }
   })
 }
 
@@ -107,7 +113,12 @@ function synchronizeTickets65(arr) {
   localStorage.setItem('supportNumber65', supportNumber65);
   console.log(arr)
   arrCountTickets65.forEach((el, index) => {
-    el.value = arr[index]
+    if(arr[index] === undefined) {
+      arr[index] = 0;
+      el.value = 0;
+    } else {
+      el.value = arr[index];
+    }
   })
 }
 
@@ -181,6 +192,7 @@ const arrTicketsType = Array.from(ticketsType);
 
 arrTicketsType.forEach((item) => {
   item.addEventListener('click', () => {
+    console.log(ticket18.value, ' - ticket18.value')
     summary18 = calculatePrice18(ticket18.value)
     summary65 = calculatePrice65(ticket65.value)
     refreshTotalPrice()
