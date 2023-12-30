@@ -934,9 +934,19 @@
   }
 }
 
-/* .white-space {
+.white-space {
   white-space: nowrap;
-} */
+}
+
+.break-line {
+  display: none;
+}
+
+@media(max-width: 768px) {
+  .break-line {
+    display: block;
+  }
+}
 
 .container-repadding-768 {
   padding: 0 2px 0px 20px;

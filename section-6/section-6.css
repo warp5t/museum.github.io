@@ -5,7 +5,7 @@
 }
 
 .tickets__container {
-  padding: 0 0 75px 0;
+  padding: 0 20px 75px 20px;
 }
 
 ._container {}
@@ -35,7 +35,6 @@
   letter-spacing: 5px;
   text-transform: uppercase;
 }
-
 
 .tickets__wrap-order {
   display: flex;

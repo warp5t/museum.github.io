@@ -32,19 +32,19 @@
 
 @media(max-width: 1150px) { /* 1024px */
   .gallery__container {
-    height: 1356px;
+    height: 1459px;
   }
 }
 
 @media(max-width: 800px) { /* 768px */
   .gallery__container {
-    height: 1116px;
+    height: 1220px;
   }
 }
 
 @media(max-width: 500px) { /* 420px */
   .gallery__container {
-    height: 653px;
+    height: 757px;
   }
 }
 
