@@ -1,6 +1,7 @@
 .parallax {
   position: relative;
 }
+
 .parallax__image { 
   background-image: url("/section-parallax/parallax.jpg");
   min-height: 400px;
@@ -8,4 +9,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
+}
+
+@media(max-width:500px) {
+  .parallax__image {
+    min-height: 300px;
+    background-size: 309%;
+   }
 }
