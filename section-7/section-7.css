@@ -76,7 +76,7 @@
   }
 }
 
-@media(max-width: 500px) {
+@media(max-width: 610px) {
   .contacts__inf-container {
     display: flex;
     flex-direction: column;
@@ -162,7 +162,7 @@
   }
 }
 
-@media(max-width:500px) {
+@media(max-width: 610px) {
   .contacts__wrap-map {
   width: 100%;
   }
@@ -182,7 +182,7 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 610px) {
   .contacts__wrap-map {
     padding-bottom: 64%; 
   }
