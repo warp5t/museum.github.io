@@ -18,6 +18,19 @@ select {
 
 #timeDate {}
 
+.wrap-forma-ticket {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+}
+
+@media(max-width: 1023px) {
+  .wrap-forma-ticket {
+    width: 100%;
+  }
+}
 
 .credit-card__wrap-logo {
   position: absolute;
@@ -102,6 +115,26 @@ select {
   background-color: #FFF;
 }
 
+.border-1023 {}
+
+@media(max-width: 1023px) {
+  .border-1023 {
+    margin: 0 30px;
+  }
+}
+
+@media(max-width: 768px) {
+  .border-1023 {
+    margin: 0 119px;
+  }
+}
+
+@media(max-width: 767px) {
+  .border-1023 {
+    margin: 0 30px;
+  }
+}
+
 .forma-tickets__close-cross {
   position: absolute;
   top: -64px;
@@ -109,15 +142,21 @@ select {
 }
 
 @media(max-width:1400px) {
-  .forma-tickets__close-cross { 
+  .forma-tickets__close-cross {
     right: -106px;
   }
 }
 
 @media(max-width:1245px) {
-  .forma-tickets__close-cross { 
+  .forma-tickets__close-cross {
     right: 0;
     top: -46px;
+  }
+}
+
+@media(max-width:768px) {
+  .forma-tickets__close-cross {
+    top: -53px;
   }
 }
 
@@ -130,6 +169,12 @@ select {
   justify-content: center;
 }
 
+@media(max-width:1023px) {
+  .forma-tickets__contaiter {
+    flex-direction: column;
+  }
+}
+
 .forma-tickets__sub-containter {
   width: 100%;
 }
@@ -139,10 +184,24 @@ select {
   width: 400px;
 }
 
+@media(max-width:1023px) {
+  .forma-tickets__sub-containter:nth-child(1) {
+    margin: 0;
+  }
+}
+
 .forma-tickets__sub-containter:nth-child(2) {
   position: relative;
   border: 1px solid #030303;
   width: 530px;
+}
+
+@media(max-width:1023px) {
+
+  .forma-tickets__sub-containter:nth-child(1),
+  .forma-tickets__sub-containter:nth-child(2) {
+    width: 100%;
+  }
 }
 
 .forma-tickets__wrap-logo {}
@@ -180,6 +239,18 @@ select {
   padding: 50px 0 0 0;
 }
 
+@media(max-width:1023px) {
+  .forma-tickets__forma-tickets {
+    padding: 50px 0 50px 0;
+  }
+}
+
+@media(max-width:768px) {
+  .forma-tickets__forma-tickets {
+    padding: 30px 0 50px 0;
+  }
+}
+
 .forma-tickets__data-time {
   display: flex;
   justify-content: space-between;
@@ -193,6 +264,13 @@ select {
   border: 1px solid #030303;
   width: 190px;
   height: 45px;
+}
+
+@media(max-width:1023px) {
+  .forma-tickets__wrap-data {
+    width: 100%;
+    margin: 0 28px 0 0;
+  }
 }
 
 .forma-tickets__wrap-icon-forma {
@@ -211,6 +289,32 @@ select {
   padding: 3px 56px 0 0;
 }
 
+@media(max-width:1023px) {
+  #date {
+    padding: 0px 74% 0 0;
+  }
+}
+
+@media(max-width:920px) {
+  #date {
+    padding: 0px 67% 0 0;
+  }
+}
+
+@media(max-width:768px) {
+  #date {
+    padding: 0px 50% 0 0;
+  }
+}
+
+@media(max-width:730px) {
+  #date {
+    padding: 0px 61% 0 0;
+  }
+}
+
+
+
 .forma-tickets__data {
   display: inline-block;
   opacity: 1;
@@ -228,14 +332,33 @@ select {
   height: 45px;
 }
 
+@media(max-width:1023px) {
+  .forma-tickets__wrap-time {
+    width: 100%;
+  }
+}
+
+
 .forma-tickets__time {
   display: inline-block;
   height: 35px;
   width: 131px;
   margin: 0 14px 0 0;
   font-size: 20px;
-
 }
+
+@media(max-width:1023px) {
+  .forma-tickets__time {
+    width: 88%;
+  }
+}
+
+@media(max-width:768px) {
+  .forma-tickets__time {
+    width: 78%;
+  }
+}
+
 
 .forma-tickets__wrap-setting {
   display: flex;
@@ -244,6 +367,12 @@ select {
   height: 45px;
   border: 1px solid #030303;
   margin: 0 0 20px 0;
+}
+
+@media(max-width: 1023px) {
+  .forma-tickets__wrap-setting {
+    width: 100%;
+  }
 }
 
 .forma-tickets__wrap-setting:last-child {
@@ -258,12 +387,12 @@ select {
 }
 
 .forma-tickets__data-owner::placeholder {
-color: #030303;
-font-family: Roboto;
-font-size: 18px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  color: #030303;
+  font-family: Roboto;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .forma-tickets__entry-ticket {
@@ -356,6 +485,12 @@ line-height: normal;
 .forma-tickets__subwrap-container {
   position: relative;
   margin: 23px 28px 30px 28px;
+}
+
+@media(max-width:768px) {
+  .forma-tickets__subwrap-container {
+    margin: 23px 15px 30px 15px;
+  }
 }
 
 .forma-tickets__title-overview {
@@ -470,6 +605,12 @@ line-height: normal;
   padding: 0 0 11px 0;
 }
 
+@media(max-width:768px) {
+  .forma-tickets__wrap-total {
+    padding: 0 0 16px 0;
+  }
+}
+
 .forma-tickets__text-total {
   color: #030303;
   font-family: Roboto;
@@ -492,6 +633,18 @@ line-height: normal;
 
 .forma-tickets__credit-card {
   position: relative;
+}
+
+@media(max-width:1023px) {
+  .forma-tickets__credit-card {
+    padding: 0 0 130px 0;
+  }
+}
+
+@media(max-width:768px) {
+  .forma-tickets__credit-card {
+    padding: 0 0 93px 0;
+  }
 }
 
 .credit-card {}
@@ -585,6 +738,12 @@ line-height: normal;
   z-index: 0;
 }
 
+@media(max-width:768px) {
+  .credit-card__back-card {
+    left: 139px;
+  }
+}
+
 .credit-card__back-subwrap {
   position: relative;
   display: inline-block;
@@ -651,6 +810,12 @@ line-height: normal;
   margin: 0 28px 26px 0px;
 }
 
+@media(max-width:768px) {
+  .credit-card__btn {
+    margin: 0 14px 24px 0px;
+  }
+}
+
 .credit-card__wrap-expiration {
   position: relative;
   display: flex;
@@ -694,13 +859,13 @@ line-height: normal;
   font-size: 0px;
 }
 
-.credit-card__button:first-child { 
- align-items: end;
+.credit-card__button:first-child {
+  align-items: end;
 }
 
-.credit-card__button:last-child { 
+.credit-card__button:last-child {
   align-items: start;
- }
+}
 
 .credit-card__icon {
   display: inline-block;

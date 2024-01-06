@@ -491,7 +491,16 @@ padding: 0px 0 15px 0;
   width: 175px;
   height: 50px;
   border-radius: 2px;
-  background: #000;
+  background-color: #000;
+  transition-duration: 0.7s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tickets__btn-buy:hover {
+    background-color: #9D8665;
+    color: #000000;
+    transition-duration: 0.2s;
+  }
 }
 
 @media(max-width:500px) {

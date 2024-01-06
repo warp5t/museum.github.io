@@ -42,14 +42,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.wrap-forma-ticket {
-  position: absolute;
-  top:0;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 6;
-}
-
 .shadow {
   position: absolute;
   width: 100%;
@@ -62,6 +54,13 @@ html {
 .scroll-stop {
 overflow: auto;
 overflow-y: hidden;
+}
+
+@media(max-width:1023px){
+  .scroll-stop {
+  overflow: unset;
+  overflow-y: unset;
+  }
 }
 
 .time-picker {
