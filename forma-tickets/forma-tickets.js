@@ -137,7 +137,7 @@ function initFormaTicket() {
 
     countBasic.innerText = ticket18forma.value;
     countSenior.innerText = ticket65forma.value;
-    
+
     const totalPricePreorder = document.getElementById('totalPricePreorder');
 
     if (typeSelectTicket.innerText === 'Permanent exhibition') {
@@ -220,6 +220,53 @@ const btnBuy = document.getElementById('btnBuy');
 const wrap = document.querySelector('.wrap');
 const bodyTag = document.getElementById('body');
 
+function initBackCard() {
+  const plusTo = document.getElementById('plusTo');
+  const minusTo = document.getElementById('minusTo');
+  const plusFrom = document.getElementById('plusFrom');
+  const minusFrom = document.getElementById('minusFrom');
+  const expitarionTo = document.getElementById('expitarionTo');
+  const expitarionFrom = document.getElementById('expitarionFrom');
+
+  plusTo.addEventListener('click', () => {
+    let valueYear = Number(expitarionTo.value);
+    valueYear++;
+    expitarionTo.value = valueYear
+    console.log(valueYear)
+  })
+
+  minusTo.addEventListener('click', () => {
+    let valueYear = Number(expitarionTo.value);
+    valueYear--;
+    expitarionTo.value = valueYear
+    console.log(valueYear)
+  })
+
+  plusFrom.addEventListener('click', () => {
+    let valueYear = parseInt(expitarionFrom.value);
+    valueYear++;
+    if (valueYear >= 10) {
+      expitarionFrom.value = valueYear;
+    } else if (valueYear < 10) {
+      expitarionFrom.value = '0' + valueYear;
+    }
+  })
+
+  minusFrom.addEventListener('click', () => {
+    let valueYear = parseInt(expitarionFrom.value);
+    valueYear--;
+    if (valueYear >= 0) {
+      if (valueYear >= 10) {
+        expitarionFrom.value = valueYear;
+      } else if (valueYear < 10) {
+        expitarionFrom.value = '0' + valueYear;
+      } else {
+        expitarionFrom.value = '00'
+      }
+    }
+  })
+}
+
 function onOffmain() {
   console.log(bodyTag.offsetHeight)
 }
@@ -256,7 +303,9 @@ btnBuy.addEventListener('click', () => {
     wrapFormaTicket.remove()
     bodyTag.classList.remove('scroll-stop');
   })
+  initBackCard()
 })
+
 
 var formaTicketHTML = `
 <div class="forma-tickets border-1023">
@@ -426,10 +475,10 @@ var formaTicketHTML = `
               <input class="credit-card__number" id="expitarionFrom" type="number" value="03" min="0" max="10"
                 readonly>
               <div class="credit-card__wrap-buttons">
-                <button class="credit-card__button" type="button" onclick="this.previousElementSibling.stepUp()">
+                <button class="credit-card__button" id="plusFrom" type="button">
                   <img class="credit-card__icon" src="/forma-tickets/arrow(1).svg" alt="icon">
                 </button>
-                <button class="credit-card__button" type="button" onclick="this.nextElementSibling.stepDown()">
+                <button class="credit-card__button" id="minusFrom" type="button" >
                   <img class="credit-card__icon" src="/forma-tickets/arrow(2).svg" alt="icon">
                 </button>
               </div>
@@ -438,10 +487,10 @@ var formaTicketHTML = `
               <input class="credit-card__number" id="expitarionTo" type="number" value="2024" min="0" max="10"
                 readonly>
               <div class="credit-card__wrap-buttons">
-                <button class="credit-card__button" type="button" onclick="this.previousElementSibling.stepUp()">
+                <button class="credit-card__button" id="plusTo" type="button">
                   <img class="credit-card__icon" src="/forma-tickets/arrow(1).svg" alt="icon">
                 </button>
-                <button class="credit-card__button" type="button" onclick="this.nextElementSibling.stepDown()">
+                <button class="credit-card__button" id="minusTo" type="button">
                   <img class="credit-card__icon" src="/forma-tickets/arrow(2).svg" alt="icon">
                 </button>
               </div>
