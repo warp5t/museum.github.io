@@ -274,13 +274,23 @@ videoPlayer.addEventListener('timeupdate', function () {
 // ---                       --- keyboard control player ---                        ---
 
 let displaySpeed = document.querySelector('.video__speed-cooficent');
+const sectionVideo = document.querySelector('.video__player');
 let shift, left, right, spc, mute, fllscr;
 let speedCooficent = 1;
 let codeCommand;
 
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
 window.addEventListener('keydown', function (e) {
-  console.log(e.key)
-  console.log(e.keyCode)
+  if (isElementInViewport(sectionVideo)) {
   if (e.key == 'Shift') {
     shift = true;
   }
@@ -301,10 +311,12 @@ window.addEventListener('keydown', function (e) {
   }
   comboValidating()
   cooficentSpeedDrawing()
+}
 });
 
 
 window.addEventListener('keyup', function (e) {
+  if (isElementInViewport(sectionVideo)) {
   if (e.key == 'Shift') {
     shift = false;
   }
@@ -323,6 +335,7 @@ window.addEventListener('keyup', function (e) {
   if (e.key == 'f') {
     fllscr = false;
   }
+}
 });
 
 function comboValidating() {
