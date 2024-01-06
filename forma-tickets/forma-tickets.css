@@ -197,7 +197,6 @@ select {
 }
 
 @media(max-width:1023px) {
-
   .forma-tickets__sub-containter:nth-child(1),
   .forma-tickets__sub-containter:nth-child(2) {
     width: 100%;
@@ -215,7 +214,21 @@ select {
   line-height: normal;
   text-transform: uppercase;
   padding: 0 0 11px 0;
+}  
+
+@media(max-width:469px) {
+  .forma-tickets__title {
+    font-size: 32px;
+  }
 }
+
+@media(max-width:420px) {
+  .forma-tickets__title {
+    padding: 0 0 15px 0;
+  }
+}
+
+
 
 .forma-tickets__tour-to-louvre {
   color: #710707;
@@ -257,6 +270,12 @@ select {
   padding: 0 0 20px 0;
 }
 
+@media(max-width:420px) {
+  .forma-tickets__data-time {
+    flex-direction: column;
+  }
+}
+
 .forma-tickets__wrap-data {
   display: flex;
   justify-content: space-between;
@@ -270,6 +289,13 @@ select {
   .forma-tickets__wrap-data {
     width: 100%;
     margin: 0 28px 0 0;
+  }
+}
+
+@media(max-width:420px) {
+  .forma-tickets__wrap-data {
+    width: 100%;
+    margin: 0 0 19px 0;
   }
 }
 
@@ -313,7 +339,23 @@ select {
   }
 }
 
+@media(max-width:597px) {
+  #date {
+    padding: 0px 49% 0 0;
+  }
+}
 
+@media(max-width:471px) {
+  #date {
+    padding: 0px 28% 0 0;
+  }
+}
+
+@media(max-width:420px) {
+  #date {
+    padding: 0px 65% 0 0;
+  }
+}
 
 .forma-tickets__data {
   display: inline-block;
@@ -359,6 +401,18 @@ select {
   }
 }
 
+@media(max-width:471px) {
+  .forma-tickets__time {
+    width: 69%
+  }
+}
+
+@media(max-width:420px) {
+  .forma-tickets__time {
+    width: 84%;
+    font-size: 19px;
+  }
+}
 
 .forma-tickets__wrap-setting {
   display: flex;
@@ -544,6 +598,12 @@ select {
 
 .forma-tickets__piramid {}
 
+@media(max-width:768px) {
+  .forma-tickets__piramid {
+    width: 118px;
+  }
+}
+
 .forma-tickets__wrap-tickets-count {}
 
 .forma-tickets__wrap-tickets-count::after {
@@ -647,6 +707,21 @@ select {
   }
 }
 
+@media(max-width:589px) {
+  .forma-tickets__credit-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+@media(max-width:420px) {
+  .forma-tickets__credit-card {
+    padding: 0 0 81px 0;
+  }
+}
+
 .credit-card {}
 
 .credit-card__front-card {
@@ -657,6 +732,19 @@ select {
   padding: 15px 20px;
   border-radius: 2px;
   z-index: 2;
+}
+
+@media(max-width:589px) {
+  .credit-card__front-card {
+    margin: 0 0 25px 0;
+  }
+}
+
+@media(max-width:469px) {
+  .credit-card__front-card {
+    width: 330px;
+    height: 209px;
+  }
 }
 
 .credit-card__card-subscribe {
@@ -706,6 +794,12 @@ select {
   background-color: #FFF;
 }
 
+@media(max-width:469px) {
+  #ownerCard {
+    width: 289px;
+  }
+}
+
 .credit-card__wrap-logo {
   position: absolute;
   top: 0;
@@ -741,6 +835,21 @@ select {
 @media(max-width:768px) {
   .credit-card__back-card {
     left: 139px;
+  }
+}
+
+@media(max-width:589px) {
+  .credit-card__back-card {
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+}
+
+@media(max-width:469px) {
+  .credit-card__back-card {
+    width: 330px;
+    height: 209px;
   }
 }
 
