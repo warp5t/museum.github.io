@@ -197,6 +197,7 @@ select {
 }
 
 @media(max-width:1023px) {
+
   .forma-tickets__sub-containter:nth-child(1),
   .forma-tickets__sub-containter:nth-child(2) {
     width: 100%;
@@ -214,7 +215,7 @@ select {
   line-height: normal;
   text-transform: uppercase;
   padding: 0 0 11px 0;
-}  
+}
 
 @media(max-width:469px) {
   .forma-tickets__title {
@@ -392,6 +393,12 @@ select {
 @media(max-width:1023px) {
   .forma-tickets__time {
     width: 88%;
+  }
+}
+
+@media(max-width:850px) {
+  .forma-tickets__time {
+    width: 83%;
   }
 }
 
@@ -604,6 +611,12 @@ select {
   }
 }
 
+@media(max-width:419px) {
+  .forma-tickets__piramid {
+    width: 96px;
+  }
+}
+
 .forma-tickets__wrap-tickets-count {}
 
 .forma-tickets__wrap-tickets-count::after {
@@ -747,6 +760,13 @@ select {
   }
 }
 
+@media(max-width:419px) {
+  .credit-card__front-card {
+    width: 280px;
+    height: 175px;
+  }
+}
+
 .credit-card__card-subscribe {
   color: #161615;
   font-family: Roboto;
@@ -773,6 +793,14 @@ select {
   background-color: #FFF;
 }
 
+@media(max-width:419px) {
+  #cardNumber {
+    width: 170px;
+    height: 20px;
+    font-size: 9px;
+  }
+}
+
 #expitarionFrom {
   display: inline-block;
   background-color: #FFF;
@@ -780,11 +808,25 @@ select {
   height: 35px;
 }
 
+@media(max-width:419px) {
+  #expitarionFrom {
+    width: 55px;
+    height: 20px;
+  }
+}
+
 #expitarionTo {
   display: inline-block;
   width: 71px;
   height: 35px;
   background-color: #FFF;
+}
+
+@media(max-width:419px) {
+  #expitarionTo {
+    width: 55px;
+    height: 20px;
+  }
 }
 
 #ownerCard {
@@ -797,6 +839,14 @@ select {
 @media(max-width:469px) {
   #ownerCard {
     width: 289px;
+  }
+}
+
+@media(max-width:419px) {
+  #ownerCard {
+    width: 240px;
+    height: 20px;
+    font-size: 9px;
   }
 }
 
@@ -813,6 +863,12 @@ select {
 .credit-card__logo {
   display: inline-block;
   margin: 0 0 15px 0;
+}
+
+@media(max-width:419px) {
+  .credit-card__logo {
+    width: 89%;
+  }
 }
 
 .credit-card__logo:last-child {
@@ -853,6 +909,13 @@ select {
   }
 }
 
+@media(max-width:419px) {
+  .credit-card__back-card {
+    width: 280px;
+    height: 175px;
+  }
+}
+
 .credit-card__back-subwrap {
   position: relative;
   display: inline-block;
@@ -868,6 +931,12 @@ select {
   height: 45px;
   width: 100%;
   background-color: #161615;
+}
+
+@media(max-width:419px) {
+  .credit-card__back-card::before {
+    height: 30px;
+  }
 }
 
 .credit-card__back-CVV {
@@ -896,6 +965,12 @@ select {
   height: 35px;
   background-color: #FFF;
   margin: 0px -2px 4px 0px;
+}
+
+@media(max-width:419px) {
+  #CVC-CVV {
+    height: 20px;
+  }
 }
 
 #expitarionFrom::-webkit-inner-spin-button {
@@ -935,6 +1010,14 @@ select {
   display: flex;
   width: 94px;
   height: 35px;
+}
+
+@media(max-width:419px) {
+  .credit-card__wrap-input {
+    width: 80px;
+    height: 20px;
+    font-size: 9px;
+  }
 }
 
 .credit-card__wrap-input:first-child {
