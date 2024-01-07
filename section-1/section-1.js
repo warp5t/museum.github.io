@@ -291,13 +291,13 @@ function heighting_768() {
     section_1_768.style.height = breakPoint_1.height + 'px';
     section_1_768.style.height = (breakPoint_1.height - difference) + 'px';
     switcher_768 = false;
-  } else if (section_1_768.offsetWidth <= breakPoint_2.width && switcher_768 == true) {
+  } else if (section_1_768.offsetWidth <= breakPoint_2.width && switcher_768 === true) {
   
   const  difference = (breakPoint_2.width - section_1_768.offsetWidth) / 2;
     section_1_768.style.height = breakPoint_2.height + 'px';
     section_1_768.style.height = (breakPoint_2.height - difference) + 'px';
     switcher_768 = false;
-  } else if (switcher_768 == false) {
+  } else if (switcher_768 === false) {
     section_1_768.style.height = 'auto';
     switcher_768 = true;
   }

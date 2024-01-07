@@ -27,7 +27,7 @@ playButton.onclick = function () {
 }
 
 function playPausing() {
-  if (playPermission == false) {
+  if (playPermission === false) {
     videoPlayer.play()
     playIcon.style.zIndex = 8;
     playIconBig.style.display = 'none';
@@ -49,7 +49,7 @@ let switcherHide = false;
 let mouseover = false;
 
 function pannelHide() {
-  if (mouseover == false) {
+  if (mouseover === false) {
     controllPannel.style.bottom = '-85px';
   }
   switcherHide = false;
@@ -57,7 +57,7 @@ function pannelHide() {
 
 videoPlayer.addEventListener('mousemove', function () {
   switcherHide = true;
-  if (switcherHide == true) {
+  if (switcherHide === true) {
     controllPannel.style.bottom = '0px';
     setTimeout(pannelHide, 5000)
   }
@@ -179,17 +179,6 @@ let progressVideo = document.querySelectorAll('.controll-pannel__passed-time');
 let permissionVideo = false;
 let pastTime_0,pastTime_1;
 
-// const arrScaleVideo = Array.from(scaleVideo);
-// const arrProgressVideo= Array.from(progressVideo);
-
-// arrScaleVideo.forEach((item) => {
-//   item.addEventListener('mousedown', function (e) {
-//     permissionVideo = true;
-//     videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo.offsetWidth;
-//     progressVideo.style.width = e.layerX + 'px';
-//   })
-// })
-
 scaleVideo[0].addEventListener('mousedown', function (e) {
   permissionVideo = true;
   videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo[0].offsetWidth;
@@ -200,21 +189,6 @@ scaleVideo[1].addEventListener('mousedown', function (e) {
   videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo[0].offsetWidth;
   progressVideo[1].style.width = e.layerX + 'px';
 })
-
-// arrProgressVideo.forEach((item) => {
-//   item.addEventListener('mousemove', function (e) {
-//     if (permissionVideo) {
-//       videoPlayer.currentTime = (videoPlayer.duration * e.layerX) / scaleVideo.offsetWidth;
-//       progressVideo.style.width = e.layerX + 'px';
-//       if (videoPlayer.paused) {
-//         playIcon.style.zIndex = 10;
-//       } else {
-//         playIcon.style.zIndex = 8;
-//       }
-//       playPermission = false;
-//     }
-//   })
-// })
 
 scaleVideo[0].addEventListener('mousemove', function (e) {
   if (permissionVideo) {
@@ -290,22 +264,22 @@ function isElementInViewport(el) {
 
 window.addEventListener('keydown', function (e) {
   if (isElementInViewport(sectionVideo)) {
-  if (e.key == 'Shift') {
+  if (e.key === 'Shift') {
     shift = true;
   }
-  if (e.key == '>') {
+  if (e.key === '>') {
     right = true;
   }
-  if (e.key == '<') {
+  if (e.key === '<') {
     left = true;
   }
-  if (e.key == ' ') {
+  if (e.key === ' ') {
     spc = true;
   }
-  if (e.key == 'm') {
+  if (e.key === 'm') {
     mute = true;
   }
-  if (e.key == 'f') {
+  if (e.key === 'f') {
     fllscr = true;
   }
   comboValidating()
@@ -316,29 +290,29 @@ window.addEventListener('keydown', function (e) {
 
 window.addEventListener('keyup', function (e) {
   if (isElementInViewport(sectionVideo)) {
-  if (e.key == 'Shift') {
+  if (e.key === 'Shift') {
     shift = false;
   }
-  if (e.key == '>') {
+  if (e.key === '>') {
     right = false;
   }
-  if (e.key == '<') {
+  if (e.key === '<') {
     left = false;
   }
-  if (e.key == ' ') {
+  if (e.key === ' ') {
     spc = false;
   }
-  if (e.key == 'm') {
+  if (e.key === 'm') {
     mute = false;
   }
-  if (e.key == 'f') {
+  if (e.key === 'f') {
     fllscr = false;
   }
 }
 });
 
 function comboValidating() {
-  if (shift == true && right == true) {
+  if (shift === true && right === true) {
     if (speedCooficent < 3.5 && speedCooficent >= 1) {
       speedCooficent += 0.5;
       videoPlayer.playbackRate = speedCooficent;
@@ -347,7 +321,7 @@ function comboValidating() {
       speedCooficent = Number(speedCooficent.toFixed(1));
       videoPlayer.playbackRate = speedCooficent;
     }
-  } else if (shift == true && left == true) {
+  } else if (shift === true && left === true) {
     if (speedCooficent > 1) {
       speedCooficent -= 0.5;
       videoPlayer.playbackRate = speedCooficent;
@@ -356,13 +330,13 @@ function comboValidating() {
       speedCooficent = Number(speedCooficent.toFixed(1));
       videoPlayer.playbackRate = speedCooficent;
     }
-  } else if (spc == true) {
+  } else if (spc === true) {
     if (bckspPermission) {
       playPausing()
     }
-  } else if (mute == true) {
+  } else if (mute === true) {
     soundToggling()
-  } else if (fllscr == true) {
+  } else if (fllscr === true) {
     toggleFullscreen()
   }
 }
@@ -395,19 +369,19 @@ videoPlayer.src = videoContainer.videoSrc_2;
 videoPlayer.poster = videoContainer.poster_2;
 
 function mainVideoChanging(dot) {
-  if (dot == 0) {
+  if (dot === 0) {
     videoPlayer.src = videoContainer.videoSrc_2;
     videoPlayer.poster = videoContainer.poster_2;
-  } else if (dot == 1) {
+  } else if (dot === 1) {
     videoPlayer.src = videoContainer.videoSrc_3;
     videoPlayer.poster = videoContainer.poster_3;
-  } else if (dot == 2) {
+  } else if (dot === 2) {
     videoPlayer.src = videoContainer.videoSrc_4;
     videoPlayer.poster = videoContainer.poster_4;
-  } else if (dot == 3) {
+  } else if (dot === 3) {
     videoPlayer.src = videoContainer.videoSrc_5;
     videoPlayer.poster = videoContainer.poster_5;
-  } else if (dot == 4) {
+  } else if (dot === 4) {
     videoPlayer.src = videoContainer.videoSrc_1;
     videoPlayer.poster = videoContainer.poster_1;
   }
@@ -452,26 +426,26 @@ window.addEventListener('load', () => {
 
 
 function dotRecoloring() {
-  if (direction == 'right') {
+  if (direction === 'right') {
     switchIndexDot++;
     if (switchIndexDot > 4) {
       switchIndexDot = 0;
       dotItems[switchIndexDot].style.backgroundColor = '#333333';
       dotItems[4].style.backgroundColor = '#999999';
-    } else if (switchIndexDot == 0) {
+    } else if (switchIndexDot === 0) {
       dotItems[switchIndexDot].style.backgroundColor = '#333333';
       dotItems[4].style.backgroundColor = '#999999';
     } else {
       dotItems[switchIndexDot].style.backgroundColor = '#333333';
       dotItems[switchIndexDot - 1].style.backgroundColor = '#999999';
     }
-  } else if (direction == 'left') {
+  } else if (direction === 'left') {
     switchIndexDot--;
     if (switchIndexDot < 0) {
       switchIndexDot = 4;
       dotItems[switchIndexDot].style.backgroundColor = '#333333';
       dotItems[0].style.backgroundColor = '#999999';
-    } else if (switchIndexDot == 0) {
+    } else if (switchIndexDot === 0) {
       dotItems[switchIndexDot].style.backgroundColor = '#333333';
       dotItems[1].style.backgroundColor = '#999999';
     } else {
@@ -518,11 +492,11 @@ function permissing() {
 
 dotItems.forEach(function (item, index) {
   item.addEventListener('click', function () {
-    if (permissionButton == true) {
+    if (permissionButton === true) {
       dotItems[switchIndexDot].style.backgroundColor = '#999999';
       item.style.backgroundColor = '#333333';
       differentStepDot = index - switchIndexDot;
-      if (differentStepDot == 0) {
+      if (differentStepDot === 0) {
 
       } else if (differentStepDot > 0) {
         stepRighting(differentStepDot)

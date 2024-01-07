@@ -26,7 +26,7 @@ slideLine.addEventListener('mousedown', function(e) {
 })
 
 wrapPicture.addEventListener('mousemove', function(e) {
-  if (permissionLine == true) {
+  if (permissionLine === true) {
     mouseMoving(e);
   }
 })
@@ -42,7 +42,7 @@ slideLine.addEventListener('touchstart', function(e) {
 })
 
 wrapPicture.addEventListener('touchmove', function(e) {
-  if (permissionLine == true) {
+  if (permissionLine === true) {
     mouseMoving(e);
   }
 })
@@ -55,20 +55,20 @@ slideLine.addEventListener('touchend', function() {
 function mouseDowning(e){
   permissionLine = true;
 
-  if(touch == false){
+  if(touch === false){
     startX = e.pageX;
   }
-  else if(touch == true){
+  else if(touch === true){
     touchobj = e.changedTouches[0];
 		startX = touchobj.pageX;
   }
 }
 
 function mouseMoving(e){
-  if(touch == false){
+  if(touch === false){
     moveX = e.pageX;
   }
-  else if(touch == true){
+  else if(touch === true){
     touchobj = e.changedTouches[0];
 		moveX = touchobj.pageX;
   }
