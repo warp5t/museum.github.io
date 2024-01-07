@@ -421,6 +421,13 @@ select {
   }
 }
 
+@media(max-width:419px) {
+  .forma-tickets__time {
+    width: 55%;
+    font-size: 19px;
+  }
+}
+
 .forma-tickets__wrap-setting {
   display: flex;
   align-items: center;
