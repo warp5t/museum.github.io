@@ -43,7 +43,6 @@ function initFormaTicket() {
   });
 
   timeDate.addEventListener('change', () => {
-    console.log()
     resultTime.innerText = timeDate.value;
   })
 
@@ -51,12 +50,10 @@ function initFormaTicket() {
     typeSelectTicket.innerText = ticketType.value;
     resultType.innerText = ticketType.value;
     refreshPreorder()
-    console.log('wrapTicketChange 54')
   }
 
   ticketType.addEventListener('change', () => {
     wrapTicketChange()
-    console.log('click 59', ticketType.value)
   })
 
   const selectedValue = document.querySelector('input[name="type-ticket"]:checked').value
@@ -153,7 +150,6 @@ function initFormaTicket() {
       totalSenior.innerText = `${ticket65forma.value * 12} €`;
       totalPricePreorder.innerText = `${(ticket18forma.value * 25) + (ticket65forma.value * 12)} €`;
     } else if (typeSelectTicket.innerText === 'Combined Admission') {
-      console.log('tek-dek-tek')
       priceBasic.innerText = `Basic (${40} €)`;
       priceSenior.innerText = `Senior (${20} €)`;
       totalBasic.innerText = `${ticket18forma.value * 40} €`;
@@ -184,7 +180,6 @@ function initFormaTicket() {
       cardNumber.classList.add('false-validation')
       cardNumber.value = 'Invalid credit card number';
     }
-    console.log('change')
   });
 
   cardNumber.addEventListener('click', () => {
@@ -232,14 +227,12 @@ function initBackCard() {
     let valueYear = Number(expitarionTo.value);
     valueYear++;
     expitarionTo.value = valueYear
-    console.log(valueYear)
   })
 
   minusTo.addEventListener('click', () => {
     let valueYear = Number(expitarionTo.value);
     valueYear--;
     expitarionTo.value = valueYear
-    console.log(valueYear)
   })
 
   plusFrom.addEventListener('click', () => {
@@ -265,10 +258,6 @@ function initBackCard() {
       }
     }
   })
-}
-
-function onOffmain() {
-  console.log(bodyTag.offsetHeight)
 }
 
 btnBuy.addEventListener('click', () => {
@@ -298,7 +287,6 @@ btnBuy.addEventListener('click', () => {
   const closeCross = document.getElementById('close-cross');
 
   closeCross.addEventListener('click', () => {
-    console.log('close')
     courtain.remove()
     wrapFormaTicket.remove()
     bodyTag.classList.remove('scroll-stop');

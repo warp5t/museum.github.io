@@ -132,8 +132,6 @@ let arrPlayers = [];
 
 cardShroud.forEach(function (item, index) {
   item.addEventListener('click', function () {
-    console.log(index, '851');
-    console.log(item.id);
     playingStoping(item.id)
   })
   arrPlayers[index] = item;
@@ -152,7 +150,6 @@ let playStopPermission_1 = true,
 
 function playingStoping(target) {
   if (target == 'shroud_1' || target == 'playBtn_1') {
-    console.log('playingStoping - ', target);
     if (playStopPermission_1) {
       playStopPermission_1 = false;
       playStopPermission_2 = true;
@@ -188,7 +185,6 @@ function playingStoping(target) {
       player_1.pauseVideo();
     }
   } else if (target == 'shroud_2' || target == 'playBtn_2') {
-    console.log('playingStoping - ', target);
     if (playStopPermission_2) {
       playStopPermission_2 = false;
       playStopPermission_1 = true;
@@ -224,7 +220,6 @@ function playingStoping(target) {
       player_2.pauseVideo();
     }
   } else if (target == 'shroud_3' || target == 'playBtn_3') {
-    console.log('playingStoping - ', target);
     if (playStopPermission_3) {
       playStopPermission_3 = false;
       playStopPermission_1 = true;
@@ -255,7 +250,6 @@ function playingStoping(target) {
       player_3.pauseVideo();
     }
   } else if (target == 'shroud_4' || target == 'playBtn_4') {
-    console.log('playingStoping - ', target);
     if (playStopPermission_4) {
       playStopPermission_4 = false;
       playStopPermission_1 = true;
@@ -291,7 +285,6 @@ function playingStoping(target) {
       player_4.pauseVideo();
     }
   } else if (target == 'shroud_5' || target == 'playBtn_5') {
-    console.log('playingStoping - ', target);
     if (playStopPermission_5) {
       playStopPermission_5 = false;
       playStopPermission_1 = true;
@@ -327,7 +320,6 @@ function playingStoping(target) {
       player_5.pauseVideo();
     }
   } else if (target == 'shroud_6' || target == 'playBtn_6') {
-    console.log('playingStoping - ', target);
     if (playStopPermission_6) {
       playStopPermission_6 = false;
       playStopPermission_1 = true;
@@ -363,7 +355,6 @@ function playingStoping(target) {
       player_6.pauseVideo();
     }
   } else if (target == 'shroud_7' || target == 'playBtn_7') {
-    console.log('playingStoping - ', target);
     if (playStopPermission_7) {
       playStopPermission_7 = false;
       playStopPermission_1 = true;
@@ -399,7 +390,6 @@ function playingStoping(target) {
       player_7.pauseVideo();
     }
   } else if (target == 'shroud_8' || target == 'playBtn_8') {
-    console.log('playingStoping - ', target);
     if (playStopPermission_8) {
       playStopPermission_8 = false;
       playStopPermission_1 = true;
@@ -435,7 +425,6 @@ function playingStoping(target) {
       player_8.pauseVideo();
     }
   } else if (target == 'shroud_9' || target == 'playBtn_9') {
-    console.log('playingStoping - ', target);
     if (playStopPermission_9) {
       playStopPermission_9 = false;
       playStopPermission_1 = true;
@@ -471,7 +460,6 @@ function playingStoping(target) {
       player_9.pauseVideo();
     }
   } else if (target == 'shroud_10' || target == 'playBtn_10') {
-    console.log('playingStoping - ', target);
     if (playStopPermission_10) {
       playStopPermission_10 = false;
       playStopPermission_1 = true;

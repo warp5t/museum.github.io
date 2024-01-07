@@ -72,7 +72,7 @@ function mouseMoving(e){
     touchobj = e.changedTouches[0];
 		moveX = touchobj.pageX;
   }
-  if (moveX != startX) {console.log(startX);
+  if (moveX != startX) {
     different = startX - moveX;
     lineCoordinateX = currentPosition + ((-1) * different);
     slideLine.style.left = (lineCoordinateX) + 'px';
@@ -128,7 +128,6 @@ function slideLineHalfing(){
 
   lowerPartLine.style.height = Math.round(reHeightLine_D) + 'px';
   upperPartLine.style.height = Math.round(reHeightLine_U ) + 'px';
- // console.log(calcHeightPicture);
 }
 
 setTimeout(wrapCalling,5);
@@ -150,7 +149,6 @@ window.addEventListener("resize",function(){
 function imageResizing(){
   pictureBefore.style.height = wrapPicture.offsetHeight + 'px';
   pictureBefore.style.width = wrapPicture.offsetWidth + 'px';
- // console.log('imageResizing');
 };
 
 imageResizing();

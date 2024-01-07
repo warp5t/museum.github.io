@@ -35,7 +35,6 @@ function recalcSizeVideoCards() {
 }
 
 window.addEventListener('resize', () => {
-  // console.log('resize ZZzzZZzz ------')
   setTimeout(() => {
     recalcSizeVideoCards()
   }, 500);

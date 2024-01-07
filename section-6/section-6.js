@@ -13,9 +13,7 @@ let summary18, summary65;
 function calculatePrice18(contTickets) {
   const selectedValue = document.querySelector('input[name="type-ticket"]:checked').value;
   let summary = 0;
-  console.log('BEFORE process - ',contTickets)
   const numberType = Number(contTickets);
-  console.log(numberType)
   if (selectedValue === 'Permanent exhibition') {
     summary = numberType * 20;
   } else if (selectedValue === 'Temporary exhibition') {
@@ -23,7 +21,6 @@ function calculatePrice18(contTickets) {
   } else if (selectedValue === 'Combined Admission') {
     summary = numberType * 40;
   }
-  console.log('calculatePrice18')
   return summary;
 }
 
@@ -31,7 +28,6 @@ function calculatePrice65(contTickets) {
   const selectedValue = document.querySelector('input[name="type-ticket"]:checked').value;
   let summary = 0;
   const numberType = Number(contTickets);
-  console.log(numberType)
   if (selectedValue === 'Permanent exhibition') {
     summary = numberType * 10;
   } else if (selectedValue === 'Temporary exhibition') {
@@ -94,7 +90,6 @@ function synchronizeTickets18(arr) {
   })
   updateArray18(arr)
   localStorage.setItem('supportNumber18', supportNumber18);
-  console.log(arr)
   arrCountTickets18.forEach((el, index) => {
     if(arr[index] === undefined) {
       arr[index] = 0;
@@ -111,7 +106,6 @@ function synchronizeTickets65(arr) {
   })
   updateArray65(arr)
   localStorage.setItem('supportNumber65', supportNumber65);
-  console.log(arr)
   arrCountTickets65.forEach((el, index) => {
     if(arr[index] === undefined) {
       arr[index] = 0;
@@ -125,7 +119,6 @@ function synchronizeTickets65(arr) {
 function wrapRefresh18() {
   const arrCountTicket = [];
   synchronizeTickets18(arrCountTicket)
-  console.log('check plus18')
   summary18 = calculatePrice18(arrCountTicket[0])
   refreshTotalPrice()
 }
@@ -133,7 +126,6 @@ function wrapRefresh18() {
 function wrapRefresh65() {
   const arrCountTicket = [];
   synchronizeTickets65(arrCountTicket)
-  console.log('check plus65')
   summary65 = calculatePrice65(arrCountTicket[0])
   refreshTotalPrice()
 }
@@ -192,7 +184,6 @@ const arrTicketsType = Array.from(ticketsType);
 
 arrTicketsType.forEach((item) => {
   item.addEventListener('click', () => {
-    console.log(ticket18.value, ' - ticket18.value')
     summary18 = calculatePrice18(ticket18.value)
     summary65 = calculatePrice65(ticket65.value)
     refreshTotalPrice()

@@ -165,7 +165,6 @@ function toggleFullscreen() {
 
 fullscreenButton.addEventListener('click', function () {
   toggleFullscreen();
-  console.log(scaleVideo.offsetWidth);
 });
 
 videoPlayer.addEventListener('dblclick', function () {
@@ -348,7 +347,6 @@ function comboValidating() {
       speedCooficent = Number(speedCooficent.toFixed(1));
       videoPlayer.playbackRate = speedCooficent;
     }
-    console.log(speedCooficent);
   } else if (shift == true && left == true) {
     if (speedCooficent > 1) {
       speedCooficent -= 0.5;
@@ -358,7 +356,6 @@ function comboValidating() {
       speedCooficent = Number(speedCooficent.toFixed(1));
       videoPlayer.playbackRate = speedCooficent;
     }
-    console.log(speedCooficent);
   } else if (spc == true) {
     if (bckspPermission) {
       playPausing()
@@ -438,7 +435,6 @@ let arrItems = [];
 
 function stepCalculating() {
   sizeStep = ((videoYouTube[0].offsetWidth + marginCommon));
-  console.log(videoYouTube[0].offsetWidth, ' - videoYouTube[1].offsetWidth\n', marginCommon, ' - marginCommon');
 }
 stepCalculating();
 
@@ -533,7 +529,6 @@ dotItems.forEach(function (item, index) {
       } else if (differentStepDot < 0) {
         stepLefting(differentStepDot)
       }
-      console.log('975', differentStepDot);
       switchIndexDot = index;
       mainVideoChanging(index);
       allStopping();
