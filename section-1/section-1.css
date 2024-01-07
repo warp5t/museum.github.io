@@ -120,6 +120,7 @@
 .welcome__version-1024px {
   transform: translateX(-144%);
   transition-duration: 0.2s;
+  padding: 0 0 25px 0;
 }
 
 @media(max-width:1023px) {
@@ -129,6 +130,18 @@
     left: 0;
     width: 93%;
   }
+}
+
+ @media(max-width: 800px) {   /*768px */
+  .welcome__version-1024px {
+    padding: 0 0 35px 0;
+  } 
+}
+
+@media(max-width: 500px) {   /*420px */
+  .welcome__version-1024px {
+    padding: 0 0 25px 0;
+  } 
 }
 
 .welcome__info-show-1024 {

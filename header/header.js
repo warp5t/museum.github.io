@@ -13,6 +13,6 @@ function burgerEngine(){
 
  slidingSide();
  galleryHiding();
- heighting_768();
+ heighting();
  widtingLineDecor();
 }

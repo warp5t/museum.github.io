@@ -263,43 +263,21 @@ function galleryHiding() {
 
 // --------------------- adaptive height 768 slide ---------------------------
 
-const section_1_768 = document.querySelector('.welcome__container');
-let switcher_768 = true;
-const breakPoint_0 = {
-  width: 893,
-  height: 949,
-};
-const breakPoint_1 = {
-  width: 470,
-  height: 593,
-};
-const breakPoint_2 = {
-  width: 420,
-  height: 543,
-};
+let isSideBar = false;
+let heightWelcomeCont;
 
-function heighting_768() {
-  if (section_1_768.offsetWidth <= breakPoint_0.width && section_1_768.offsetWidth > breakPoint_1.width && switcher_768 == true) {
+function heighting() {
+  console.log('heighting');
+  const welcomeCont = document.querySelector('.welcome__container');
+  const welcomeSideBar = document.querySelector('.welcome__version-1024px');
   
-  const  difference = (breakPoint_0.width - section_1_768.offsetWidth) / 2;
-    section_1_768.style.height = breakPoint_0.height + 'px';
-    section_1_768.style.height = (breakPoint_0.height - difference) + 'px';
-    switcher_768 = false;
-  } else if (section_1_768.offsetWidth <= breakPoint_1.width && section_1_768.offsetWidth > breakPoint_2.width && switcher_768 == true) {
-  
-  const  difference = (breakPoint_1.width - section_1_768.offsetWidth) / 2;
-    section_1_768.style.height = breakPoint_1.height + 'px';
-    section_1_768.style.height = (breakPoint_1.height - difference) + 'px';
-    switcher_768 = false;
-  } else if (section_1_768.offsetWidth <= breakPoint_2.width && switcher_768 === true) {
-  
-  const  difference = (breakPoint_2.width - section_1_768.offsetWidth) / 2;
-    section_1_768.style.height = breakPoint_2.height + 'px';
-    section_1_768.style.height = (breakPoint_2.height - difference) + 'px';
-    switcher_768 = false;
-  } else if (switcher_768 === false) {
-    section_1_768.style.height = 'auto';
-    switcher_768 = true;
+  if (!isSideBar) {
+    heightWelcomeCont = welcomeCont.offsetHeight;
+    welcomeCont.style.height = welcomeSideBar.offsetHeight + 'px';
+    isSideBar = true;
+  } else {
+    welcomeCont.style.height = heightWelcomeCont + 'px';
+    isSideBar = false;
   }
 }
 
