@@ -260,6 +260,7 @@ function initBackCard() {
   })
 }
 
+
 btnBuy.addEventListener('click', () => {
   const courtain = document.createElement('div');
   courtain.classList.add('shadow');
