@@ -298,7 +298,7 @@ btnBuy.addEventListener('click', () => {
 var formaTicketHTML = `
 <div class="forma-tickets border-1023">
 <div class="forma-tickets__close-cross" id="close-cross">
-  <img src="/forma-tickets/Close.jpg" alt="icon">
+  <img src="forma-tickets/Close(1).svg" alt="icon">
 </div>
 <div class="forma-tickets__contaiter _container">
   <div class="forma-tickets__sub-containter">
@@ -464,10 +464,10 @@ var formaTicketHTML = `
                 readonly>
               <div class="credit-card__wrap-buttons">
                 <button class="credit-card__button" id="plusFrom" type="button">
-                  <img class="credit-card__icon" src="/forma-tickets/arrow(1).svg" alt="icon">
+                  <img class="credit-card__icon" src="forma-tickets/arrow(1).svg" alt="icon">
                 </button>
                 <button class="credit-card__button" id="minusFrom" type="button" >
-                  <img class="credit-card__icon" src="/forma-tickets/arrow(2).svg" alt="icon">
+                  <img class="credit-card__icon" src="forma-tickets/arrow(2).svg" alt="icon">
                 </button>
               </div>
             </div>
@@ -476,10 +476,10 @@ var formaTicketHTML = `
                 readonly>
               <div class="credit-card__wrap-buttons">
                 <button class="credit-card__button" id="plusTo" type="button">
-                  <img class="credit-card__icon" src="/forma-tickets/arrow(1).svg" alt="icon">
+                  <img class="credit-card__icon" src="forma-tickets/arrow(1).svg" alt="icon">
                 </button>
                 <button class="credit-card__button" id="minusTo" type="button">
-                  <img class="credit-card__icon" src="/forma-tickets/arrow(2).svg" alt="icon">
+                  <img class="credit-card__icon" src="forma-tickets/arrow(2).svg" alt="icon">
                 </button>
               </div>
             </div>
