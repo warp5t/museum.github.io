@@ -11,8 +11,9 @@ function burgerEngine(){
   burgerLine_2.classList.toggle('header__burger-line-2_angle');
   burgerLine_3.classList.toggle('header__burger-line_del');
 
- slidingSide();
- galleryHiding();
- heighting();
- widtingLineDecor();
+ slidingSide()
+ galleryHiding()
+ heighting()
+ changeZindexSurface()
+ widtingLineDecor()
 }

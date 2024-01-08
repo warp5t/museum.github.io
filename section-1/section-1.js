@@ -261,6 +261,20 @@ function galleryHiding() {
   }
 }
 
+// ----------------------------- z-index surface-swipe ----------------------
+
+let isZsurface = false;
+
+function changeZindexSurface() {
+  const surfaceSwipe_0 = document.getElementById('surface-swipe_0');
+  surfaceSwipe_0.classList.toggle('z-index-lower');
+  if(isZsurface) {
+    isZsurface = true;
+  } else {
+    isZsurface = false;
+  }
+}
+
 // --------------------- adaptive height 768 slide ---------------------------
 
 let isSideBar = false;
