@@ -220,14 +220,21 @@ function delayingSlide() {
   if (switch_1024) {
     welcomeInfo_1024.classList.toggle('welcome__info-show-1024');
     switch_1024 = false;
-    welcomeCont.style.padding = '0 2px 0px 20px';
+    // welcomeCont.style.padding = '0 2px 0px 20px';
+    welcomeCont.classList.add('stayte-padding-1')
+    welcomeCont.classList.remove('stayte-padding-0')
   } else {
     welcomeInfo_1920.classList.toggle('welcome__info-hide-1920');
     switch_1024 = true;
-    welcomeCont.style.padding = '0 20px 0px 20px';
+    // welcomeCont.style.padding = '0 20px 0px 20px';
+    welcomeCont.classList.remove('stayte-padding-1')
+    welcomeCont.classList.add('stayte-padding-0')
   }
   if(welcomeCont.offsetWidth <= 419) {
-    welcomeCont.style.padding = '0';
+    welcomeCont.classList.toggle('margin419')
+    welcomeCont.classList.toggle('padding419')
+    welcomeCont.classList.remove('stayte-padding-1')
+    welcomeCont.classList.remove('stayte-padding-0')
   }
 }
 
@@ -278,11 +285,13 @@ function changeZindexSurface() {
   }
 }
 
+
 // --------------------- adaptive height 768 slide ---------------------------
 
 let isSideBar = false;
 let heightWelcomeCont;
 const breakPoint1023 = 1023;
+const breakPoint419 = 419;
 
 function heighting() {
   console.log('heighting');
@@ -298,6 +307,10 @@ function heighting() {
       isSideBar = false;
     }
   }
+  // if(breakPoint419 <= welcomeCont.offsetWidth) {
+  //   welcomeCont.classList.toggle('margin419')
+  //   console.log(welcomeCont.offsetWidth)
+  // }
 }
 
 // ----------------------- width line decor -----------------------------

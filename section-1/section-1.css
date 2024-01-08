@@ -43,12 +43,6 @@
   }
 }
 
-@media(max-width:419px) {
-  .welcome__container {
-    margin: 0 0px 0 -23px;
-  }
-}
-
 .welcome__info {
   position: relative;
   display: flex;
@@ -987,4 +981,20 @@
 
 .z-index-lower {
  z-index: 9;
+}
+
+.margin419 {
+  margin: 0 0px 0 -23px;
+}
+
+.padding419 {
+  padding: 0;
+}
+
+.stayte-padding-0{
+ padding: 0 2px 0px 20px;
+}
+
+.stayte-padding-1{
+  padding: 0 20px 0px 20px;
 }
