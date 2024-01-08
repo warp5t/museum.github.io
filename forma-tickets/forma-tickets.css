@@ -358,6 +358,12 @@ select {
   }
 }
 
+@media(max-width:419px) {
+  #date {
+    padding: 0px 5% 0 0;
+  }
+}
+
 .forma-tickets__data {
   display: inline-block;
   opacity: 1;

@@ -298,7 +298,7 @@ btnBuy.addEventListener('click', () => {
 var formaTicketHTML = `
 <div class="forma-tickets border-1023">
 <div class="forma-tickets__close-cross" id="close-cross">
-  <img src="/forma-tickets/Close(1).svg" alt="icon">
+  <img src="/forma-tickets/Close.jpg" alt="icon">
 </div>
 <div class="forma-tickets__contaiter _container">
   <div class="forma-tickets__sub-containter">
