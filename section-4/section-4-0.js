@@ -123,6 +123,35 @@ function onYouTubeIframeAPIReady() {
   });
 }
 
+function addLazyIframe() {
+  return new Promise((resolve, reject) => {
+    const iframe = document.querySelectorAll('iframe');
+    const arrIframe = Array.from(iframe);
+    if (iframe.length === 10) {
+      resolve('Lazy loading applied to iframes');
+    } else {
+      reject('No iframes found');
+    }
+  });
+}
+
+addLazyIframe()
+  .then(() => {
+    console.log('PROMISE')
+    // const iframe = document.querySelectorAll('iframe');
+    // const arrIframe = Array.from(iframe);
+    const arrPlayers = [];
+    arrPlayers.push(player_1, player_2, player_3, player_4, player_5, player_6, player_7, player_8, player_9, player_10)
+    arrPlayers.forEach((tagIframe) => {
+      tagIframe.style.loading = 'lazy';
+      tagIframe.style.margin = '100px';
+    });
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+
+
 let cardPlayer = document.querySelectorAll('.video__you-tube .video__wrap-upper');
 var cardShroud = document.querySelectorAll('.video__you-tube .video__shroud');
 let coverPlayer = document.querySelector('.video__wrap-cover');

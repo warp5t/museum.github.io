@@ -10,13 +10,14 @@
   justify-content: space-between;
   align-items: center;
   height: 150px;
+  padding: 0 20px;
 }
 
-@media(max-width:1446px) {
+/* @media(max-width:1446px) {
   .header__container {
     padding: 0 20px;
   }
-}
+} */
 
 @media(max-width:1446px) {
   .header__container {
