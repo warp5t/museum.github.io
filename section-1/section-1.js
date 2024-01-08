@@ -279,19 +279,21 @@ function changeZindexSurface() {
 
 let isSideBar = false;
 let heightWelcomeCont;
+const breakPoint1023 = 1023;
 
 function heighting() {
   console.log('heighting');
   const welcomeCont = document.querySelector('.welcome__container');
   const welcomeSideBar = document.querySelector('.welcome__version-1024px');
-  
-  if (!isSideBar) {
-    heightWelcomeCont = welcomeCont.offsetHeight;
-    welcomeCont.style.height = welcomeSideBar.offsetHeight + 'px';
-    isSideBar = true;
-  } else {
-    welcomeCont.style.height = heightWelcomeCont + 'px';
-    isSideBar = false;
+  if(breakPoint1023 >= welcomeCont.offsetWidth) {
+    if (!isSideBar) {
+      heightWelcomeCont = welcomeCont.offsetHeight;
+      welcomeCont.style.height = welcomeSideBar.offsetHeight + 'px';
+      isSideBar = true;
+    } else {
+      welcomeCont.style.height = heightWelcomeCont + 'px';
+      isSideBar = false;
+    }
   }
 }
 

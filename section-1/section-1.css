@@ -108,7 +108,7 @@
 
 .welcome__info-hide-1920 {
   transition-duration: 1s;
-  transform: translateX(-465px);
+  transform: translateX(-130%);
 }
 
 @media(max-width:1023px) {
