@@ -3,7 +3,7 @@
 }
 
 .parallax__image { 
-  background-image: url("/section-parallax/parallax.jpg");
+  background-image: url("/section-parallax/parallax.jpg"), url("/section-parallax/parallax1.png");
   min-height: 400px;
   background-attachment: fixed;
   background-position: center;
