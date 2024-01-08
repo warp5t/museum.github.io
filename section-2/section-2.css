@@ -275,6 +275,13 @@
     padding: 0px 0 14px 0;
   }
 }
+
+@media(max-width:410px) {
+  .card-tour__title {
+    white-space: unset;
+  }
+}
+
 .card-tour__line-decor {
   height: 2px;
   width: 300px;

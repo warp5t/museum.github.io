@@ -226,6 +226,9 @@ function delayingSlide() {
     switch_1024 = true;
     welcomeCont.style.padding = '0 20px 0px 20px';
   }
+  if(welcomeCont.offsetWidth <= 419) {
+    welcomeCont.style.padding = '0';
+  }
 }
 
 // ---------------------- resizing surface-swipe -------------------------

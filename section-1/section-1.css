@@ -43,6 +43,12 @@
   }
 }
 
+@media(max-width:419px) {
+  .welcome__container {
+    margin: 0 0px 0 -23px;
+  }
+}
+
 .welcome__info {
   position: relative;
   display: flex;
@@ -346,9 +352,16 @@
     padding: 0 35px 0 0;
   }
 }
+
 @media(max-width:430px) {
   .welcome__social-net-768 {
     padding: 0 60px 0 0;
+  }
+}
+
+@media(max-width:419px) {
+  .welcome__social-net-768 {
+    padding: 0;
   }
 }
 
