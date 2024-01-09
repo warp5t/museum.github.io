@@ -11,7 +11,11 @@ function initApiYouTube() {
 }
 initApiYouTube()
 
-function onYouTubeIframeAPIReady() {
+const videoMoverClick = document.querySelector('.video__mover');
+
+videoMover.addEventListener('click', () => {
+  console.log('videoMover 17')
+// function onYouTubeIframeAPIReady() {
   player_1 = new YT.Player('player_1', {
     height: '100%',
     width: '100%',
@@ -121,35 +125,34 @@ function onYouTubeIframeAPIReady() {
       'host': 'https://www.youtube.com',
     },
   });
-}
+// }
+})
 
-function addLazyIframe() {
-  return new Promise((resolve, reject) => {
-    const iframe = document.querySelectorAll('iframe');
-    const arrIframe = Array.from(iframe);
-    if (iframe.length === 10) {
-      resolve('Lazy loading applied to iframes');
-    } else {
-      reject('No iframes found');
-    }
-  });
-}
+// function addLazyIframe() {
+//   return new Promise((resolve, reject) => {
+//     const iframe = document.querySelectorAll('iframe');
+//     const arrIframe = Array.from(iframe);
+//     if (iframe) {
+//       resolve('Lazy loading applied to iframes');
+//     } else {
+//       reject('No iframes found');
+//     }
+//   });
+// }
 
-addLazyIframe()
-  .then(() => {
-    console.log('PROMISE')
-    // const iframe = document.querySelectorAll('iframe');
-    // const arrIframe = Array.from(iframe);
-    const arrPlayers = [];
-    arrPlayers.push(player_1, player_2, player_3, player_4, player_5, player_6, player_7, player_8, player_9, player_10)
-    arrPlayers.forEach((tagIframe) => {
-      tagIframe.style.loading = 'lazy';
-      tagIframe.style.margin = '100px';
-    });
-  })
-  .catch((error) => {
-    console.error(error);
-  });
+// addLazyIframe()
+//   .then(() => {
+//     console.log('PROMISE')
+//     const collectionPlayers = document.querySelectorAll('.video__player');
+//     const arrCollectionPlayers = Array.from(collectionPlayers);
+//     arrCollectionPlayers.forEach((tagIframe) => {
+//       tagIframe.allow = '';
+//       tagIframe.loading = 'lazy';
+//     });
+//   })
+//   .catch((error) => {
+//     console.error(error);
+//   });
 
 
 let cardPlayer = document.querySelectorAll('.video__you-tube .video__wrap-upper');
