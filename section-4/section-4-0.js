@@ -1,5 +1,6 @@
 // ------------------------ API youtube ----------------------------------
-
+const videoMoverClick = document.querySelector('.video__mover');
+videoMover.addEventListener('click', () => {
 let player_1, player_2, player_3, player_4, player_5, player_6, player_7, player_8, player_9, player_10;
 
 function initApiYouTube() {
@@ -11,9 +12,8 @@ function initApiYouTube() {
 }
 initApiYouTube()
 
-const videoMoverClick = document.querySelector('.video__mover');
+  videoMoverClick.classList.remove('transparent-video');
 
-videoMover.addEventListener('click', () => {
   player_1 = new YT.Player('player_1', {
     height: '100%',
     width: '100%',
@@ -124,22 +124,11 @@ videoMover.addEventListener('click', () => {
     },
   });
 
-})
-
-
-let cardPlayer = document.querySelectorAll('.video__you-tube .video__wrap-upper');
 var cardShroud = document.querySelectorAll('.video__you-tube .video__shroud');
-let coverPlayer = document.querySelector('.video__wrap-cover');
-let dinamicCards = document.querySelector('.video__list-video').getElementsByClassName("video__you-tube");
+
+const mainPlayer_control = document.getElementById('video');
 
 let arrPlayers = [];
-
-cardShroud.forEach(function (item, index) {
-  item.addEventListener('click', function () {
-    playingStoping(item.id)
-  })
-  arrPlayers[index] = item;
-})
 
 let playStopPermission_1 = true,
   playStopPermission_2 = true,
@@ -153,6 +142,9 @@ let playStopPermission_1 = true,
   playStopPermission_10 = true;
 
 function playingStoping(target) {
+  
+  mainPlayer_control.pause()
+
   if (target === 'shroud_1' || target === 'playBtn_1') {
     if (playStopPermission_1) {
       playStopPermission_1 = false;
@@ -513,3 +505,18 @@ function allStopping() {
   player_9.stopVideo();
   player_10.stopVideo();
 }
+
+const mainPlayer = document.querySelector('.video__player-wrap');
+
+mainPlayer.addEventListener('click', () => {
+  console.log('mainPlayer 520')
+  allStopping()
+})
+
+cardShroud.forEach(function (item, index) {
+  item.addEventListener('click', function () {
+    playingStoping(item.id)
+  })
+  arrPlayers[index] = item;
+})
+})
