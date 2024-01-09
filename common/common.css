@@ -51,7 +51,7 @@ html {
   /* overflow: hidden; */
 }
 
-.scroll-stop {
+/* .scroll-stop {
 overflow: auto;
 overflow-y: hidden;
 }
@@ -61,7 +61,7 @@ overflow-y: hidden;
   overflow: unset;
   overflow-y: unset;
   }
-}
+} */
 
 .time-picker {
   text-align: center;
