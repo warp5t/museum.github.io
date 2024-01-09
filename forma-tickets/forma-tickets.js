@@ -266,7 +266,7 @@ btnBuy.addEventListener('click', () => {
   courtain.classList.add('shadow');
   bodyTag.prepend(courtain)
   courtain.style.height = wrap.offsetHeight + 'px';
-  bodyTag.classList.add('scroll-stop');
+  // bodyTag.classList.add('scroll-stop');
 
   const wrapFormaTicket = document.createElement('div');
   wrapFormaTicket.classList.add('wrap-forma-ticket');
@@ -282,7 +282,7 @@ btnBuy.addEventListener('click', () => {
   courtain.addEventListener('click', () => {
     courtain.remove()
     wrapFormaTicket.remove()
-    bodyTag.classList.remove('scroll-stop');
+    // bodyTag.classList.remove('scroll-stop');
   })
 
   const closeCross = document.getElementById('close-cross');
@@ -290,7 +290,7 @@ btnBuy.addEventListener('click', () => {
   closeCross.addEventListener('click', () => {
     courtain.remove()
     wrapFormaTicket.remove()
-    bodyTag.classList.remove('scroll-stop');
+    // bodyTag.classList.remove('scroll-stop');
   })
   initBackCard()
 })
