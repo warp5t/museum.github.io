@@ -128,32 +128,6 @@ videoMover.addEventListener('click', () => {
 // }
 })
 
-// function addLazyIframe() {
-//   return new Promise((resolve, reject) => {
-//     const iframe = document.querySelectorAll('iframe');
-//     const arrIframe = Array.from(iframe);
-//     if (iframe) {
-//       resolve('Lazy loading applied to iframes');
-//     } else {
-//       reject('No iframes found');
-//     }
-//   });
-// }
-
-// addLazyIframe()
-//   .then(() => {
-//     console.log('PROMISE')
-//     const collectionPlayers = document.querySelectorAll('.video__player');
-//     const arrCollectionPlayers = Array.from(collectionPlayers);
-//     arrCollectionPlayers.forEach((tagIframe) => {
-//       tagIframe.allow = '';
-//       tagIframe.loading = 'lazy';
-//     });
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
-
 
 let cardPlayer = document.querySelectorAll('.video__you-tube .video__wrap-upper');
 var cardShroud = document.querySelectorAll('.video__you-tube .video__shroud');
