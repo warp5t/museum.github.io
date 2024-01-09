@@ -14,8 +14,6 @@ initApiYouTube()
 const videoMoverClick = document.querySelector('.video__mover');
 
 videoMover.addEventListener('click', () => {
-  console.log('videoMover 17')
-// function onYouTubeIframeAPIReady() {
   player_1 = new YT.Player('player_1', {
     height: '100%',
     width: '100%',
@@ -125,7 +123,7 @@ videoMover.addEventListener('click', () => {
       'host': 'https://www.youtube.com',
     },
   });
-// }
+
 })
 
 

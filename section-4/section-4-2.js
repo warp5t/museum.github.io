@@ -1,3 +1,5 @@
+function recalcSizeVideoCards() {
+  
 const initWidthVideoMover = 1440;
 const initWidthCardVideo = 452;
 const initHeightCardVideo = 254;
@@ -5,7 +7,6 @@ const widthCardVideo_768 = 354;
 const heightCardVideo_768 = 199;
 const widthWrapVideo_768 = 728;
 
-function recalcSizeVideoCards() {
   const videoModule = document.querySelector('.video');
   const widthVideoModule = videoModule.offsetWidth;
   const wrapVideo = document.querySelector('.video__wrap-video');
@@ -43,3 +44,4 @@ window.addEventListener('resize', () => {
 window.addEventListener('load', () => {
   recalcSizeVideoCards()
 })
+
