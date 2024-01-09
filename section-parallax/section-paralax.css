@@ -3,14 +3,14 @@
 }
 
 .parallax__image { 
-  background-image: url("/section-parallax/parallax.jpg"), url("/section-parallax/parallax1.png");
+  background-image: url("/section-parallax/parallax.jpg");
   min-height: 400px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100%;
+  width: 100%;
 }
-
 
 @media(max-width:768px) {
   .parallax__image {
@@ -25,3 +25,30 @@
     background-size: 309%;
    }
 }
+
+
+
+
+
+/* .parallax-container {
+  position: relative;
+}
+
+.parallax-img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+
+.parallax-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  z-index: 1;
+} */
