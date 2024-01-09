@@ -51,18 +51,6 @@ html {
   /* overflow: hidden; */
 }
 
-/* .scroll-stop {
-overflow: auto;
-overflow-y: hidden;
-}
-
-@media(max-width:1023px){
-  .scroll-stop {
-  overflow: unset;
-  overflow-y: unset;
-  }
-} */
-
 .time-picker {
   text-align: center;
   margin-bottom: 20px;

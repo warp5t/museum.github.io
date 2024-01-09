@@ -1,3 +1,6 @@
+function initSection3Js() { 
+
+
 let pictureBefore = document.querySelector('.explore__before');
 let pictureAfter = document.querySelector('.explore__after');
 let wrapPicture = document.querySelector('.explore__wrap-picture');
@@ -8,7 +11,7 @@ let upperPartLine = document.querySelector('.explore__line-1');
 let startX, moveX, different = 0;
 let permissionLine = false;
 let initionalPosition = 421;
-lineCoodinating();
+// lineCoodinating();
 let number = initionalPosition;
 let currentPosition;
 let widthLineSwipe = Math.round(slideLine.offsetWidth / 2);
@@ -116,6 +119,7 @@ function lineCoodinating(){
     slideLine.style.left = (initionalPosition) + 'px';
   }
 }
+lineCoodinating()
 
 let reHeightLine_U, heightLine_U_prcnt = 47.1, reHeightLine_D;
 let initHeightPicture_prcnt = 100;
@@ -152,5 +156,6 @@ function imageResizing(){
 };
 
 imageResizing();
+}
 
-
+window.addEventListener('load', initSection3Js)
