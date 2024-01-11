@@ -11,6 +11,9 @@ function burgerEngine(){
   burgerLine_2.classList.toggle('header__burger-line-2_angle');
   burgerLine_3.classList.toggle('header__burger-line_del');
 
+  const sideMenu = document.querySelector('.welcome__version-1024px');
+
+  sideMenu.classList.toggle('offElement')
  slidingSide()
  galleryHiding()
  heighting()
