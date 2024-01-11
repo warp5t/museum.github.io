@@ -218,18 +218,15 @@ function delayingSlide() {
     welcomeInfo_1024.classList.toggle('welcome__info-show-1024');
     switch_1024 = false;  
     welcomeCont.classList.add('stayte-padding-1')
-    welcomeCont.classList.remove('stayte-padding-0')
   } else {
     welcomeInfo_1920.classList.toggle('welcome__info-hide-1920');
     switch_1024 = true;
     welcomeCont.classList.remove('stayte-padding-1')
-    welcomeCont.classList.add('stayte-padding-0')
   }
   if(welcomeCont.offsetWidth <= 419) {
     welcomeCont.classList.toggle('margin419')
     welcomeCont.classList.toggle('padding419')
     welcomeCont.classList.remove('stayte-padding-1')
-    welcomeCont.classList.remove('stayte-padding-0')
   }
 }
 
