@@ -81,14 +81,14 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 147%;
+  /* width: 147%; */
   transition-duration: 1s;
   padding: 150px 0 0 0;
 }
 
 @media(max-width: 1330px) {
   .welcome__version-1920px {
-    width: 200%;
+    /* width: 200%; */
     padding: 50px 0 0 0;
   }
 }
@@ -96,7 +96,7 @@
 @media(max-width: 1023px) {
   .welcome__version-1920px {
     position: relative;
-    width: 100%;
+    /* width: 100%; */
     padding: 0 0 0 0;
   }
 }

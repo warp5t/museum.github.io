@@ -147,9 +147,6 @@ const swipedetect = (el) => {
   }, false);
 }
 
-// var surfaceSwipe_0 = document.getElementById('surface-swipe_0');
-// swipedetect(surfaceSwipe_0);
-
 // -------------------------------- grafic-counter-carousel --------------------
 var indexGraficItem = 0;
 var graficItem = document.querySelectorAll('.pannel-swipe__grafic-item');
@@ -219,14 +216,12 @@ function slidingSide() {
 function delayingSlide() {
   if (switch_1024) {
     welcomeInfo_1024.classList.toggle('welcome__info-show-1024');
-    switch_1024 = false;
-    // welcomeCont.style.padding = '0 2px 0px 20px';
+    switch_1024 = false;  
     welcomeCont.classList.add('stayte-padding-1')
     welcomeCont.classList.remove('stayte-padding-0')
   } else {
     welcomeInfo_1920.classList.toggle('welcome__info-hide-1920');
     switch_1024 = true;
-    // welcomeCont.style.padding = '0 20px 0px 20px';
     welcomeCont.classList.remove('stayte-padding-1')
     welcomeCont.classList.add('stayte-padding-0')
   }
@@ -238,28 +233,11 @@ function delayingSlide() {
   }
 }
 
-// ---------------------- resizing surface-swipe -------------------------
-const gallerySize = document.querySelector('.welcome__gallery');
-const body = document.getElementById('body');
+// ---------------------- init surface-swipe -------------------------
+
 const surfaceSwipe_1 = document.getElementById('surface-swipe_1');
-
-function resizingSurfaceSwipe() {
-  setTimeout(function () {
-    if (body.offsetWidth >= 894) {
-      // surfaceSwipe_0.style.width = gallerySize.offsetWidth + 'px';
-      // surfaceSwipe_0.style.height = gallerySize.offsetHeight + 'px';
-    } else if (body.offsetWidth <= 893) {
-     
-    }
-  }, 1000);
-}
-
-(function wrapResizing() {
-  resizingSurfaceSwipe();
-}());
-
  swipedetect(surfaceSwipe_1);
-window.addEventListener('resize', resizingSurfaceSwipe);
+
 
 // ------------------- gallery hide ------------------------------------
 const gallery = document.querySelector('.welcome__wrap-gallery');
@@ -271,21 +249,6 @@ function galleryHiding() {
     controlPannelSwipe.classList.toggle('hide-control-pannel')
   }
 }
-
-// ----------------------------- z-index surface-swipe ----------------------
-
-// let isZsurface = false;
-
-// function changeZindexSurface() {
-//   const surfaceSwipe_0 = document.getElementById('surface-swipe_0');
-//   surfaceSwipe_0.classList.toggle('z-index-lower');
-//   if(isZsurface) {
-//     isZsurface = true;
-//   } else {
-//     isZsurface = false;
-//   }
-// }
-
 
 // --------------------- adaptive height 768 slide ---------------------------
 
@@ -308,10 +271,6 @@ function heighting() {
       isSideBar = false;
     }
   }
-  // if(breakPoint419 <= welcomeCont.offsetWidth) {
-  //   welcomeCont.classList.toggle('margin419')
-  //   console.log(welcomeCont.offsetWidth)
-  // }
 }
 
 // ----------------------- width line decor -----------------------------
