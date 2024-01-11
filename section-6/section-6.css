@@ -136,7 +136,10 @@
   }
 }
 
-.tickets__image {}
+.tickets__image {
+  max-width: 100%;
+  height: auto;
+}
 
 .tickets__image:nth-child(1) {}
 

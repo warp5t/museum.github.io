@@ -277,7 +277,8 @@
 }
 
 .welcome__image-768 {
-  width: 100%;
+  max-width: 100%;
+  height: auto;
 }
 
 .welcome__image-768:nth-child(1) {
@@ -310,7 +311,10 @@
   }
 }
 
-.welcome__image-420 {}
+.welcome__image-420 {
+  max-width: 100%;
+  height: auto;
+}
 
 .welcome__image-420:not(:last-child) {
   padding: 0 12px 0 0;
@@ -633,6 +637,8 @@
   position: relative;
   animation: 1s ease-in-out;
   margin: 0 auto;
+  max-width: 100%;
+  height: auto;
 }
 
 @media(max-width:1446px) {
