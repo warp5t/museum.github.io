@@ -147,8 +147,8 @@ const swipedetect = (el) => {
   }, false);
 }
 
-var surfaceSwipe_0 = document.getElementById('surface-swipe_0');
-swipedetect(surfaceSwipe_0);
+// var surfaceSwipe_0 = document.getElementById('surface-swipe_0');
+// swipedetect(surfaceSwipe_0);
 
 // -------------------------------- grafic-counter-carousel --------------------
 var indexGraficItem = 0;
@@ -246,10 +246,10 @@ const surfaceSwipe_1 = document.getElementById('surface-swipe_1');
 function resizingSurfaceSwipe() {
   setTimeout(function () {
     if (body.offsetWidth >= 894) {
-      surfaceSwipe_0.style.width = gallerySize.offsetWidth + 'px';
-      surfaceSwipe_0.style.height = gallerySize.offsetHeight + 'px';
+      // surfaceSwipe_0.style.width = gallerySize.offsetWidth + 'px';
+      // surfaceSwipe_0.style.height = gallerySize.offsetHeight + 'px';
     } else if (body.offsetWidth <= 893) {
-      swipedetect(surfaceSwipe_1);
+     
     }
   }, 1000);
 }
@@ -258,6 +258,7 @@ function resizingSurfaceSwipe() {
   resizingSurfaceSwipe();
 }());
 
+ swipedetect(surfaceSwipe_1);
 window.addEventListener('resize', resizingSurfaceSwipe);
 
 // ------------------- gallery hide ------------------------------------
@@ -273,17 +274,17 @@ function galleryHiding() {
 
 // ----------------------------- z-index surface-swipe ----------------------
 
-let isZsurface = false;
+// let isZsurface = false;
 
-function changeZindexSurface() {
-  const surfaceSwipe_0 = document.getElementById('surface-swipe_0');
-  surfaceSwipe_0.classList.toggle('z-index-lower');
-  if(isZsurface) {
-    isZsurface = true;
-  } else {
-    isZsurface = false;
-  }
-}
+// function changeZindexSurface() {
+//   const surfaceSwipe_0 = document.getElementById('surface-swipe_0');
+//   surfaceSwipe_0.classList.toggle('z-index-lower');
+//   if(isZsurface) {
+//     isZsurface = true;
+//   } else {
+//     isZsurface = false;
+//   }
+// }
 
 
 // --------------------- adaptive height 768 slide ---------------------------
