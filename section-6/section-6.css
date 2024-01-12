@@ -137,7 +137,7 @@
 }
 
 .tickets__image {
-  max-width: 100%;
+  /* max-width: 100%; */
   height: auto;
 }
 
