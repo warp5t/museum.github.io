@@ -18,7 +18,7 @@
 
 @media(max-width:420px) {
   .visiting__container {
-    padding: 40px 20px 45px 20px;
+    padding: 40px 20px 38px 20px;
   }
 }
 
@@ -213,14 +213,14 @@
 }
 
 .card-tour__image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   margin: 0 0 25px 0;
 }
 
 @media(max-width:768px) {
   .card-tour__image {
-    margin: 0px 0 20px 0;
+    margin: 0px 0 21px 0;
   }
 }
 

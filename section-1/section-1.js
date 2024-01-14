@@ -256,6 +256,7 @@ const breakPoint419 = 419;
 
 function heighting() {
   console.log('heighting');
+  // const controlPannel = document.getElementById('controllPanner_1');
   const welcomeCont = document.querySelector('.welcome__container');
   const welcomeSideBar = document.querySelector('.welcome__version-1024px');
   if(breakPoint1023 >= welcomeCont.offsetWidth) {

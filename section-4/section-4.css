@@ -57,7 +57,7 @@
 .video__title {
   white-space: nowrap;
   color: #9D8665;
-  padding: 0 101px 0 0;
+  padding: 0 115px 0 0;
 }
 
 @media(max-width:1240px) {
@@ -606,12 +606,6 @@
   overflow: hidden;
   transition-duration: 10s;
 }
-
-/* @media(max-width:1024px){
-  .video__mover {
-    margin: 0px 0px 40px 0px;
-  }
-} */
 
 .video__you-tube {
   position: relative;
