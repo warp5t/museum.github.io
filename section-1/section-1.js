@@ -28,32 +28,98 @@ function mouseOut_R() {
 }
 
 // -------------------------------------  carousel-pictures  ------------------------------------
+
 const collectionPictures = document.querySelectorAll('.welcome__picture');
+const collectionPictures_1030 = document.querySelectorAll('.welcome__picture-1030');
+const collectionPictures_530 = document.querySelectorAll('.welcome__picture-530');
+
+const welcomeCont = document.querySelector('.welcome__container');
+
 let currentItem = 0;
 let isEnabled = true;
 
+const breakPoint_1030 = 1030;
+const breakPoint_530 = 530;
+
 function changeCurrentItem(n) {
-  currentItem = (n + collectionPictures.length) % collectionPictures.length;
-  recoloringItemClick();
+  const collectionPictures = document.querySelectorAll('.welcome__picture');
+  const collectionPictures_1030 = document.querySelectorAll('.welcome__picture-1030');
+  const collectionPictures_530 = document.querySelectorAll('.welcome__picture-530');
+  const widthContainer = welcomeCont.offsetWidth;
+  if (widthContainer > breakPoint_1030 &&
+    widthContainer > breakPoint_530) {
+    currentItem = (n + collectionPictures.length) % collectionPictures.length;
+    recoloringItemClick();
+  } else if (widthContainer <= breakPoint_1030 &&
+    widthContainer > breakPoint_530) {
+    currentItem = (n + collectionPictures_1030.length) % collectionPictures_1030.length;
+    recoloringItemClick();
+  } else if (widthContainer < breakPoint_1030 &&
+    widthContainer <= breakPoint_530) {
+    currentItem = (n + collectionPictures_530.length) % collectionPictures_530.length;
+    recoloringItemClick();
+  }
 }
 
 function hideItem(direction) {
   isEnabled = false;
   changingCount();
-  collectionPictures[currentItem].classList.add(direction);
-  collectionPictures[currentItem].addEventListener('animationend', function () {
-    this.classList.remove('active', direction);
-  });
+  const collectionPictures = document.querySelectorAll('.welcome__picture');
+  const collectionPictures_1030 = document.querySelectorAll('.welcome__picture-1030');
+  const collectionPictures_530 = document.querySelectorAll('.welcome__picture-530');
+  const widthContainer = welcomeCont.offsetWidth;
+  if (widthContainer > breakPoint_1030 &&
+    widthContainer > breakPoint_530) {
+    collectionPictures[currentItem].classList.add(direction);
+    collectionPictures[currentItem].addEventListener('animationend', function () {
+      this.classList.remove('active', direction);
+    });
+  } else if (widthContainer <= breakPoint_1030 &&
+    widthContainer > breakPoint_530) {
+    collectionPictures_1030[currentItem].classList.add(direction);
+    collectionPictures_1030[currentItem].addEventListener('animationend', function () {
+      this.classList.remove('active', direction);
+    });
+  } else if (widthContainer < breakPoint_1030 &&
+    widthContainer <= breakPoint_530) {
+    collectionPictures_530[currentItem].classList.add(direction);
+    collectionPictures_530[currentItem].addEventListener('animationend', function () {
+      this.classList.remove('active', direction);
+    });
+  }
 }
 
 function showItem(direction) {
   changingCount();
-  collectionPictures[currentItem].classList.add('next', direction);
-  collectionPictures[currentItem].addEventListener('animationend', function () {
-    this.classList.remove('next', direction);
-    this.classList.add('active');
-    isEnabled = true;
-  });
+  const collectionPictures = document.querySelectorAll('.welcome__picture');
+  const collectionPictures_1030 = document.querySelectorAll('.welcome__picture-1030');
+  const collectionPictures_530 = document.querySelectorAll('.welcome__picture-530');
+  const widthContainer = welcomeCont.offsetWidth;
+  if (widthContainer > breakPoint_1030 &&
+    widthContainer > breakPoint_530) {
+    collectionPictures[currentItem].classList.add('next', direction);
+    collectionPictures[currentItem].addEventListener('animationend', function () {
+      this.classList.remove('next', direction);
+      this.classList.add('active');
+      isEnabled = true;
+    });
+  } else if (widthContainer <= breakPoint_1030 &&
+    widthContainer > breakPoint_530) {
+    collectionPictures_1030[currentItem].classList.add('next', direction);
+    collectionPictures_1030[currentItem].addEventListener('animationend', function () {
+      this.classList.remove('next', direction);
+      this.classList.add('active');
+      isEnabled = true;
+    });
+  } else if (widthContainer < breakPoint_1030 &&
+    widthContainer <= breakPoint_530) {
+    collectionPictures_530[currentItem].classList.add('next', direction);
+    collectionPictures_530[currentItem].addEventListener('animationend', function () {
+      this.classList.remove('next', direction);
+      this.classList.add('active');
+      isEnabled = true;
+    });
+  }
 }
 
 function nextItem(n) {
@@ -199,7 +265,6 @@ function changingCount() {
 var welcomeInfo_1920 = document.querySelector('.welcome__version-1920px');
 var welcomeInfo_1024 = document.querySelector('.welcome__version-1024px');
 const welcomeContRePadding = document.querySelector('.container-repadding-768');
-const welcomeCont = document.querySelector('.welcome__container');
 
 let switch_1024 = true;
 
@@ -216,14 +281,14 @@ function slidingSide() {
 function delayingSlide() {
   if (switch_1024) {
     welcomeInfo_1024.classList.toggle('welcome__info-show-1024');
-    switch_1024 = false;  
+    switch_1024 = false;
     welcomeCont.classList.add('stayte-padding-1')
   } else {
     welcomeInfo_1920.classList.toggle('welcome__info-hide-1920');
     switch_1024 = true;
     welcomeCont.classList.remove('stayte-padding-1')
   }
-  if(welcomeCont.offsetWidth <= 419) {
+  if (welcomeCont.offsetWidth <= 419) {
     welcomeCont.classList.toggle('margin419')
     welcomeCont.classList.toggle('padding419')
     welcomeCont.classList.remove('stayte-padding-1')
@@ -233,7 +298,7 @@ function delayingSlide() {
 // ---------------------- init surface-swipe -------------------------
 
 const surfaceSwipe_1 = document.getElementById('surface-swipe_1');
- swipedetect(surfaceSwipe_1);
+swipedetect(surfaceSwipe_1);
 
 
 // ------------------- gallery hide ------------------------------------
@@ -259,7 +324,7 @@ function heighting() {
   // const controlPannel = document.getElementById('controllPanner_1');
   const welcomeCont = document.querySelector('.welcome__container');
   const welcomeSideBar = document.querySelector('.welcome__version-1024px');
-  if(breakPoint1023 >= welcomeCont.offsetWidth) {
+  if (breakPoint1023 >= welcomeCont.offsetWidth) {
     if (!isSideBar) {
       heightWelcomeCont = welcomeCont.offsetHeight;
       welcomeCont.style.height = welcomeSideBar.offsetHeight + 'px';
@@ -282,5 +347,5 @@ function widtingLineDecor() {
     lineDecor.style.width = gallery_768.offsetWidth + 'px';
   } else if (body.offsetWidth <= 470 && body.offsetWidth > 420) {
     lineDecor.style.width = (gallery_420.offsetWidth) + 'px';
-  } 
+  }
 }
