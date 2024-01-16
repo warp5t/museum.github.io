@@ -521,6 +521,7 @@
 // })
 // })
 
+function initSection4_0() {
 
 let card_1 = document.getElementById('card_1'),
   card_2 = document.getElementById('card_2'),
@@ -910,3 +911,22 @@ const mainPlayer = document.querySelector('.video__player-wrap');
 mainPlayer.addEventListener('click', () => {
   allStopping()
 })
+
+}
+
+
+const target = document.querySelector('.video__container');
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+         console.log('initiated 4-0')
+         initSection4_0()
+        }
+      });
+    }, {
+      root: null, // use the viewport as the root
+      rootMargin: '0px',
+      threshold: 0.5 // 0.5 means the callback will be invoked when 50% of the target is visible
+    });
+
+    observer.observe(target);
