@@ -574,7 +574,7 @@ arrCard.forEach((cardVideo, index) => {
       arrIsRun[index] = false;
     }
 
-    playingStoping()
+    // playingStoping()
   })
 })
 
@@ -599,8 +599,6 @@ cardShroud.forEach(function (item,index) {
   })
 })
 
-
-
 const mainPlayer_control = document.getElementById('video');
 
 let playStopPermission_1 = true,
@@ -613,6 +611,14 @@ let playStopPermission_1 = true,
   playStopPermission_8 = true,
   playStopPermission_9 = true,
   playStopPermission_10 = true;
+
+  function iteratingCards(indexCard) {
+    arrPlayers.forEach((card,index) => {
+      if(card && index !== indexCard) {
+        arrPlayers[index].pauseVideo();
+      }
+    })
+  }
 
 function playingStoping(target) {
 
@@ -631,15 +637,7 @@ function playingStoping(target) {
       playStopPermission_9 = true;
       playStopPermission_10 = true;
       arrPlayers[0].playVideo();
-      arrPlayers[1].pauseVideo();
-      arrPlayers[2].pauseVideo();
-      arrPlayers[3].pauseVideo();
-      arrPlayers[4].pauseVideo();
-      arrPlayers[5].pauseVideo();
-      arrPlayers[6].pauseVideo();
-      arrPlayers[7].pauseVideo();
-      arrPlayers[8].pauseVideo();
-      arrPlayers[9].pauseVideo();
+      iteratingCards(0)
     } else {
       playStopPermission_1 = true;
       playStopPermission_2 = true;
@@ -666,15 +664,7 @@ function playingStoping(target) {
       playStopPermission_9 = true;
       playStopPermission_10 = true;
       arrPlayers[1].playVideo();
-      arrPlayers[0].pauseVideo();
-      arrPlayers[2].pauseVideo();
-      arrPlayers[3].pauseVideo();
-      arrPlayers[4].pauseVideo();
-      arrPlayers[5].pauseVideo();
-      arrPlayers[6].pauseVideo();
-      arrPlayers[7].pauseVideo();
-      arrPlayers[8].pauseVideo();
-      arrPlayers[9].pauseVideo();
+      iteratingCards(1)
     } else {
       playStopPermission_2 = true;
       playStopPermission_1 = true;
@@ -701,15 +691,7 @@ function playingStoping(target) {
       playStopPermission_9 = true;
       playStopPermission_10 = true;
       arrPlayers[2].playVideo();
-      arrPlayers[0].pauseVideo();
-      arrPlayers[1].pauseVideo();
-      arrPlayers[3].pauseVideo();
-      arrPlayers[4].pauseVideo();
-      arrPlayers[5].pauseVideo();
-      arrPlayers[6].pauseVideo();
-      arrPlayers[7].pauseVideo();
-      arrPlayers[8].pauseVideo();
-      arrPlayers[9].pauseVideo();
+      iteratingCards(2)
     } else {
       playStopPermission_3 = true;
       playStopPermission_1 = true;
@@ -736,15 +718,7 @@ function playingStoping(target) {
       playStopPermission_9 = true;
       playStopPermission_10 = true;
       arrPlayers[3].playVideo();
-      arrPlayers[0].pauseVideo();
-      arrPlayers[1].pauseVideo();
-      arrPlayers[2].pauseVideo();
-      arrPlayers[4].pauseVideo();
-      arrPlayers[5].pauseVideo();
-      arrPlayers[6].pauseVideo();
-      arrPlayers[7].pauseVideo();
-      arrPlayers[8].pauseVideo();
-      arrPlayers[9].pauseVideo();
+      iteratingCards(3)
     } else {
       playStopPermission_4 = true;
       playStopPermission_1 = true;
@@ -771,15 +745,7 @@ function playingStoping(target) {
       playStopPermission_9 = true;
       playStopPermission_10 = true;
       arrPlayers[4].playVideo();
-      arrPlayers[0].pauseVideo();
-      arrPlayers[1].pauseVideo();
-      arrPlayers[2].pauseVideo();
-      arrPlayers[3].pauseVideo();
-      arrPlayers[5].pauseVideo();
-      arrPlayers[6].pauseVideo();
-      arrPlayers[7].pauseVideo();
-      arrPlayers[8].pauseVideo();
-      arrPlayers[9].pauseVideo();
+      iteratingCards(4)
     } else {
       playStopPermission_5 = true;
       playStopPermission_1 = true;
@@ -806,15 +772,7 @@ function playingStoping(target) {
       playStopPermission_9 = true;
       playStopPermission_10 = true;
       arrPlayers[5].playVideo();
-      arrPlayers[0].pauseVideo();
-      arrPlayers[1].pauseVideo();
-      arrPlayers[2].pauseVideo();
-      arrPlayers[3].pauseVideo();
-      arrPlayers[4].pauseVideo();
-      arrPlayers[6].pauseVideo();
-      arrPlayers[7].pauseVideo();
-      arrPlayers[8].pauseVideo();
-      arrPlayers[9].pauseVideo();
+      iteratingCards(5)
     } else {
       playStopPermission_6 = true;
       playStopPermission_1 = true;
@@ -841,15 +799,7 @@ function playingStoping(target) {
       playStopPermission_9 = true;
       playStopPermission_10 = true;
       arrPlayers[6].playVideo();
-      arrPlayers[0].pauseVideo();
-      arrPlayers[1].pauseVideo();
-      arrPlayers[2].pauseVideo();
-      arrPlayers[3].pauseVideo();
-      arrPlayers[4].pauseVideo();
-      arrPlayers[5].pauseVideo();
-      arrPlayers[7].pauseVideo();
-      arrPlayers[8].pauseVideo();
-      arrPlayers[9].pauseVideo();
+      iteratingCards(6)
     } else {
       playStopPermission_7 = true;
       playStopPermission_1 = true;
@@ -876,15 +826,7 @@ function playingStoping(target) {
       playStopPermission_9 = true;
       playStopPermission_10 = true;
       arrPlayers[7].playVideo();
-      arrPlayers[0].pauseVideo();
-      arrPlayers[1].pauseVideo();
-      arrPlayers[2].pauseVideo();
-      arrPlayers[3].pauseVideo();
-      arrPlayers[4].pauseVideo();
-      arrPlayers[5].pauseVideo();
-      arrPlayers[6].pauseVideo();
-      arrPlayers[8].pauseVideo();
-      arrPlayers[9].pauseVideo();
+      iteratingCards(7)
     } else {
       playStopPermission_8 = true;
       playStopPermission_1 = true;
@@ -911,15 +853,7 @@ function playingStoping(target) {
       playStopPermission_8 = true;
       playStopPermission_10 = true;
       arrPlayers[8].playVideo();
-      arrPlayers[0].pauseVideo();
-      arrPlayers[1].pauseVideo();
-      arrPlayers[2].pauseVideo();
-      arrPlayers[3].pauseVideo();
-      arrPlayers[4].pauseVideo();
-      arrPlayers[5].pauseVideo();
-      arrPlayers[6].pauseVideo();
-      arrPlayers[7].pauseVideo();
-      arrPlayers[9].pauseVideo();
+      iteratingCards(8)
     } else {
       playStopPermission_9 = true;
       playStopPermission_1 = true;
@@ -946,15 +880,7 @@ function playingStoping(target) {
       playStopPermission_8 = true;
       playStopPermission_9 = true;
       arrPlayers[9].playVideo();
-      arrPlayers[0].pauseVideo();
-      arrPlayers[1].pauseVideo();
-      arrPlayers[2].pauseVideo();
-      arrPlayers[3].pauseVideo();
-      arrPlayers[4].pauseVideo();
-      arrPlayers[5].pauseVideo();
-      arrPlayers[6].pauseVideo();
-      arrPlayers[7].pauseVideo();
-      arrPlayers[8].pauseVideo();
+      iteratingCards(9)
     } else {
       playStopPermission_10 = true;
       playStopPermission_1 = true;
@@ -972,21 +898,15 @@ function playingStoping(target) {
 }
 
 function allStopping() {
-  arrPlayers[0].stopVideo();
-  arrPlayers[1].stopVideo();
-  arrPlayers[2].stopVideo();
-  arrPlayers[3].stopVideo();
-  arrPlayers[4].stopVideo();
-  arrPlayers[5].stopVideo();
-  arrPlayers[6].stopVideo();
-  arrPlayers[7].stopVideo();
-  arrPlayers[8].stopVideo();
-  arrPlayers[9].stopVideo();
+  arrPlayers.forEach((card,index) => {
+    if(card) {
+      arrPlayers[index].pauseVideo();
+    }
+  })
 }
 
 const mainPlayer = document.querySelector('.video__player-wrap');
 
 mainPlayer.addEventListener('click', () => {
-  console.log('mainPlayer 520')
   allStopping()
 })
