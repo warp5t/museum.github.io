@@ -27,6 +27,5 @@ function burgerEngine(){
  slidingSide()
  galleryHiding()
  heighting()
- changeZindexSurface()
  widtingLineDecor()
 }

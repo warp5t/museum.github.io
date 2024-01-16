@@ -40,7 +40,7 @@ function initSection4_0() {
         arrPlayers[index] = new YT.Player(`player_${numberId}`, {
           height: '100%',
           width: '100%',
-          videoId: arrVideoId[(numberId - 1) % 5],
+          videoId: arrVideoId[(numberId - 1) % countId],
           playerVars: {
             'playsinline': 1,
             'controls': 1,
@@ -49,8 +49,6 @@ function initSection4_0() {
         });
         arrIsRun[index] = false;
       }
-
-      // playingStoping()
     })
   })
 
