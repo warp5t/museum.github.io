@@ -354,15 +354,15 @@ function cooficentSpeedDrawing() {
 // ---                 --- postering main video ---                   -----
 let videoContainer = {
   videoSrc_1: "section-4/video0.mp4",
-  poster_1: "section-4/poster1.jpg",
+  poster_1: "section-4/poster1.webP",
   videoSrc_2: "section-4/video1.mp4",
-  poster_2: "section-4/poster2.jpg",
+  poster_2: "section-4/poster2.webP",
   videoSrc_3: "section-4/video2.mp4",
-  poster_3: "section-4/poster3.jpg",
+  poster_3: "section-4/poster3.webP",
   videoSrc_4: "section-4/video3.mp4",
-  poster_4: "section-4/poster4.jpg",
+  poster_4: "section-4/poster4.webP",
   videoSrc_5: "section-4/video4.mp4",
-  poster_5: "section-4/poster5.jpg"
+  poster_5: "section-4/poster5.webP"
 }
 
 videoPlayer.src = videoContainer.videoSrc_2;
